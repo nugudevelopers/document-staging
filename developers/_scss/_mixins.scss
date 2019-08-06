@@ -1,0 +1,168 @@
+@charset "UTF-8";
+
+// --------------------------------------
+// # rem 변환
+// --------------------------------------
+
+$base-rem-size : 16;
+
+@function rem($px, $base: $base-rem-size) {
+  @return ($px / $base) * 1rem;
+}
+
+@mixin top($px) {
+  top: $px + px;
+  top: rem($px);
+}
+@mixin right($px) {
+  right: $px + px;
+  right: rem($px);
+}
+@mixin bottom($px) {
+  bottom: $px + px;
+  bottom: rem($px);
+}
+@mixin left($px) {
+  left: $px + px;
+  left: rem($px);
+}
+@mixin margin-top($px) {
+  margin-top: $px + px;
+  margin-top: rem($px);
+}
+@mixin margin-right($px) {
+  margin-right: $px + px;
+  margin-right: rem($px);
+}
+@mixin margin-bottom($px) {
+  margin-bottom: $px + px;
+  margin-bottom: rem($px);
+}
+@mixin margin-left($px) {
+  margin-left: $px + px;
+  margin-left: rem($px);
+}
+@mixin margin-all($px) {
+  margin-top: $px + px;
+  margin-top: rem($px);
+  margin-right: $px + px;
+  margin-right: rem($px);
+  margin-bottom: $px + px;
+  margin-bottom: rem($px);
+  margin-left: $px + px;
+  margin-left: rem($px);
+}
+@mixin margin($top,$right,$bottom,$left) {
+  margin-top: $top + px;
+  margin-top: rem($top);
+  margin-right: $right + px;
+  margin-right: rem($right);
+  margin-bottom: $bottom + px;
+  margin-bottom: rem($bottom);
+  margin-left: $left + px;
+  margin-left: rem($left);
+}
+@mixin padding-top($px) {
+  padding-top: $px + px;
+  padding-top: rem($px);
+}
+@mixin padding-right($px) {
+  padding-right: $px + px;
+  padding-right: rem($px);
+}
+@mixin padding-bottom($px) {
+  padding-bottom: $px + px;
+  padding-bottom: rem($px);
+}
+@mixin padding-left($px) {
+  padding-left: $px + px;
+  padding-left: rem($px);
+}
+@mixin padding-all($px) {
+  padding-top: $px + px;
+  padding-top: rem($px);
+  padding-right: $px + px;
+  padding-right: rem($px);
+  padding-bottom: $px + px;
+  padding-bottom: rem($px);
+  padding-left: $px + px;
+  padding-left: rem($px);
+}
+@mixin padding($top,$right,$bottom,$left) {
+  padding-top: $top + px;
+  padding-top: rem($top);
+  padding-right: $right + px;
+  padding-right: rem($right);
+  padding-bottom: $bottom + px;
+  padding-bottom: rem($bottom);
+  padding-left: $left + px;
+  padding-left: rem($left);
+}
+@mixin width($px) {
+  width: $px + px;
+  width: rem($px);
+}
+@mixin min-width($px) {
+  min-width: $px + px;
+  min-width: rem($px);
+}
+@mixin max-width($px) {
+  max-width: $px + px;
+  max-width: rem($px);
+}
+@mixin height($px) {
+  height: $px + px;
+  height: rem($px);
+}
+@mixin min-height($px) {
+  min-height: $px + px;
+  min-height: rem($px);
+}
+@mixin max-height($px) {
+  max-height: $px + px;
+  max-height: rem($px);
+}
+@mixin font-size($px) {
+  font-size: $px + px;
+  font-size: rem($px);
+}
+@mixin line-height($px) {
+  line-height: $px + px;
+  line-height: rem($px);
+}
+@mixin letter-spacing($px) {
+  letter-spacing: $px + px;
+  letter-spacing: rem($px);
+}
+@mixin border-radius-all($px) {
+  border-radius: $px + px;
+  border-radius: rem($px);
+}
+@mixin border-radius($topLeft, $topRight, $bottomRight, $bottomLeft) {
+  border-top-left-radius: $topLeft + px;
+  border-top-left-radius: rem($topLeft);
+  border-top-right-radius: $topRight + px;
+  border-top-right-radius: rem($topRight);
+  border-bottom-right-radius: $bottomRight + px;
+  border-bottom-right-radius: rem($bottomRight);
+  border-bottom-left-radius: $bottomLeft + px;
+  border-bottom-left-radius: rem($bottomLeft);
+}
+
+// --------------------------------------
+// # vw 변환
+// --------------------------------------
+
+$design-size: 360;
+
+@function vw($px, $base: $design-size) {
+  @return ($px / ($base * 0.01)) + 0vw;
+}
+
+@mixin vw-font-size($px) {
+  font-size: $px + px;
+  font-size: vw($px);
+}
+
+
+

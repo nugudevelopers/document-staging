@@ -1,0 +1,7 @@
+url: "https://developers-doc.nugu.co.kr"
+base_url: ""
+
+exclude:
+  - "*.iml"
+  - ".idea/"
+  - ".github/"

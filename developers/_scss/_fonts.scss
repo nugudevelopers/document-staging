@@ -1,0 +1,59 @@
+$font: "../fonts/";
+
+@font-face {
+  font-family: 'Apple SD Gothic Neo';
+  font-style: normal;
+  font-weight: 100;
+  src: url($font + 'AppleSDGothicNeoT.woff') format('woff'),
+  url($font + 'AppleSDGothicNeoT.otf') format('opentype');
+}
+@font-face {
+  font-family: 'Apple SD Gothic Neo';
+  font-style: normal;
+  font-weight: 300;
+  src: url($font + 'AppleSDGothicNeoL.woff') format('woff'),
+  url($font + 'AppleSDGothicNeoL.otf') format('opentype');
+}
+@font-face {
+  font-family: 'Apple SD Gothic Neo';
+  font-style: normal;
+  font-weight: 400;
+  src: url($font + 'AppleSDGothicNeoR.woff') format('woff'),
+  url($font + 'AppleSDGothicNeoR.otf') format('opentype');
+}
+@font-face {
+  font-family: 'Apple SD Gothic Neo';
+  font-style: normal;
+  font-weight: 500;
+  src: url($font + 'AppleSDGothicNeoM.woff') format('woff'),
+  url($font + 'AppleSDGothicNeoM.otf') format('opentype');
+}
+@font-face {
+  font-family: 'Apple SD Gothic Neo';
+  font-style: normal;
+  font-weight: 600;
+  src: url($font + 'AppleSDGothicNeoSB.woff') format('woff'),
+  url($font + 'AppleSDGothicNeoSB.otf') format('opentype');
+}
+@font-face {
+  font-family: 'Apple SD Gothic Neo';
+  font-style: normal;
+  font-weight: 700;
+  src: url($font + 'AppleSDGothicNeoB.woff') format('woff'),
+  url($font + 'AppleSDGothicNeoB.otf') format('opentype');
+}
+@font-face {
+  font-family: 'Apple SD Gothic Neo';
+  font-style: normal;
+  font-weight: 800;
+  src: url($font + 'AppleSDGothicNeoEB.woff') format('woff'),
+  url($font + 'AppleSDGothicNeoEB.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  font-style: normal;
+  font-weight: 700;
+  src: url($font + 'HelveticaNeueB.woff') format('woff'),
+  url($font + 'HelveticaNeueB.otf') format('opentype');
+}

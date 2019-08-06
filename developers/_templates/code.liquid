@@ -1,0 +1,10 @@
+<article class="{{ code_class }}">
+    {% if title %}
+        <header>{{ title }}</header>
+    {% endif %}
+    <div class="copy">
+        <span class="{{ success_class }}" data-skip-search-index>복사성공!</span>
+        <button type="button" class="icon icon--copy" data-code-copy-target-id></button>
+    </div>
+    <div class="body">{{ body }}</div>
+</article>

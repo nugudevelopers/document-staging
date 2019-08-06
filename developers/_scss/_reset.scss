@@ -1,0 +1,168 @@
+@charset "UTF-8";
+
+// --------------------------------------
+// # 초기화
+// --------------------------------------
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+form,
+fieldset,
+p,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+strong,
+span,
+small,
+label,
+i {
+  padding: 0;
+  margin: 0;
+  font-weight: 400;
+}
+
+a,
+img {
+  border: 0;
+}
+
+a {
+  text-decoration: none;
+  font-family: inherit;
+}
+
+i,
+em {
+  font-style: normal;
+}
+
+ul,
+ol {
+
+  li {
+    list-style: none;
+  }
+}
+
+figure {
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-stretch: normal;
+}
+
+// ## 폼 요소 초기화
+button,
+input,
+optgroup,
+select,
+textarea {
+  display: inline-block;
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  //line-height: 1.15; /* 1 */
+  line-height: 1;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+  padding: 0;
+}
+
+textarea {
+  resize: none;
+}
+
+// ## 입력창 초기화
+input[type=tel],
+input[type=text],
+input[type=email],
+input[type=date],
+input[type=number],
+input[type=password],
+input[type=submit],
+input[type=button],
+input[type=reset],
+textarea {
+  box-sizing: border-box;
+  border: none;
+  background: transparent;
+  appearance: none;
+  outline: none;
+}
+
+button,
+input {
+  /* 1 */
+  overflow: visible;
+}
+
+button,
+select {
+  /* 1 */
+  text-transform: none;
+}
+
+select {
+  vertical-align: top;
+  appearance: none;
+
+  &::-ms-expand {
+    display: none;
+  }
+}
+
+fieldset,
+a,
+img {
+  border: 0;
+}
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  border: 0;
+  background: transparent;
+  -webkit-appearance: button;
+  outline: none;
+  cursor: pointer;
+  line-height: 1;
+}
+
+caption,
+legend {
+  width: 0;
+  height: 0;
+  opacity: 0;
+  text-indent: -9999px;
+  line-height: 0;
+  overflow: hidden;
+}
+
+
+html {
+  height: 100%;
+}

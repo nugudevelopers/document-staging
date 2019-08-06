@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    {% include head.html %}
+</head>
+<body>
+<div class="wrap">
+    <header class="header">
+        {% include header.html %}
+    </header>
+
+    <section id="section" class="section">
+        <div class="flex-left flex-left--nav">
+            <nav>
+                <div class="menu" id="open_nav"><span class="blind">메뉴</span></div>
+                {% include nav.html %}
+            </nav>
+            <div class="footer footer--left">
+                {% include footer.html %}
+            </div>
+        </div>
+
+        <div id="container_wrapper" class="flex-right flex-right--container">
+            <div id="container" class="container">
+                <div class="title">
+                    <h1>{{ page.title }}</h1>
+                    {% if page.description %}
+                    <div class="title-desc">
+                        {{ page.description }}
+                    </div>
+                    {% endif %}
+                </div>
+                <div class="content">
+                    {{ content | markdownify }}
+                    {% pagination %}
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer footer--bottom">
+            {% include footer.html %}
+        </footer>
+    </section>
+</div>
+{% include image.html %}
+{% include search.html %}
+<div class="dimmed" style="display: none;"></div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<div class="scroll-hori">
+    <article class="api unfold">
+        <header>
+            <div class="api-method">{{ method | upcase }}</div>
+            <div class="api-url">
+                <span>{{ base_url }}</span>
+                <strong>{{ path }}</strong>
+            </div>
+        </header>
+        <div class="api-summary">{{ summary }}</div>
+        <div class="api-cont">
+            {{ description }}
+            <div class="api-cont-wrap">
+                <div class="api-cont-title">Parameters</div>
+                {% if query_parameters %}
+                <div class="api-cont-cate-title">Query</div>
+                <div class="api-items">
+                    {{ query_parameters }}
+                </div>
+                {% endif %}
+            </div>
+            <div class="api-cont-wrap">
+                {% if body_parameters %}
+                <div class="api-cont-cate-title">Body</div>
+                <div class="api-items">
+                    {{ body_parameters }}
+                </div>
+                {% endif %}
+            </div>
+            <div class="api-cont-wrap api-type-response">
+                <div class="api-cont-title">Response</div>
+                <div class="api-items">
+                    {{ responses }}
+                </div>
+            </div>
+        </div>
+    </article>
+</div>
