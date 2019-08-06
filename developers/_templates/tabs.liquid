@@ -1,0 +1,8 @@
+<div id="{{ id }}" class="{{ tabs_class }}">
+    <ul class="tab-nav">
+        {% for tab in tabs %}
+            <li data-tabs-content-id="{{ tab.id }}" class="{% if tab.first %}{{ active_class }}{% endif %}"><span>{{ tab.title }}</span></li>
+        {% endfor %}
+    </ul>
+    {{ contents }}
+</div>

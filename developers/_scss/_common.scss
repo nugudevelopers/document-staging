@@ -1,0 +1,167 @@
+@charset "UTF-8";
+
+@import "reset";
+@import "mixins";
+@import "fonts";
+
+// 기본 z-index
+$z: 1;
+
+// 이미지경로
+$img: '../img/';
+
+// --------------------------------------
+// # Color
+// --------------------------------------
+$white: #ffffff;
+$white-trans-10: rgba(255,255,255,0.1);
+
+$black: #000000;
+$black-trans-10: rgba(0,0,0,0.1);
+$black-trans-50: rgba(0,0,0,0.5);
+
+$grey-2: #FCFCFD;
+$grey-5: #F7F8FB;
+$grey-15: #EBECEF;
+$grey-30: #D9DCE2;
+$grey-40: #C5C8CE;
+$grey-50: #B1B4BA;
+$grey-60: #93969C;
+$grey-65: #6B6E74;
+$grey-85: #222222;
+
+$blue-primary: #019DFF;
+
+$yellow-light: #FFFBF3;
+$yellow-normal: #F9A932;
+
+$red-light: #FFF7F7;
+$red-normal: #EE4C00;
+
+$green-light: #F6FDF6;
+$green-normal: #44CD7A;
+
+// --------------------------------------
+// # Font
+// --------------------------------------
+$default-font: 'Apple SD Gothic Neo','Helvetica Neue',system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+$helvetica-font: 'Helvetica Neue','Apple SD Gothic Neo',system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+
+// --------------------------------------
+// # Icon
+// --------------------------------------
+.icon {
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  &--attach {
+    background-image: url($img + 'ico-attach.svg');
+  }
+  &--link {
+    background-image: url($img + 'ico-link.svg');
+  }
+  &--page {
+    background-image: url($img + 'ico-page.svg');
+  }
+  &--search {
+    @include width(24);
+    @include height(24);
+    background-image: url($img + 'ico-search.svg');
+  }
+  &--copy {
+    @include width(18);
+    @include height(18);
+    background-image: url($img + 'ico-copy.svg');
+  }
+  &--close-sm {
+    @include width(20);
+    @include height(20);
+    background: url($img + "ico-close-sm.svg") 50% 50% no-repeat;
+  }
+  &--close-lg {
+    @include width(30);
+    @include height(30);
+    background: url($img + "ico-close-lg.svg") 50% 50% no-repeat;
+  }
+}
+
+// --------------------------------------
+// # Input
+// --------------------------------------
+input[type=tel],
+input[type=text],
+input[type=email],
+input[type=date],
+input[type=number],
+input[type=password],
+input[type=submit],
+input[type=button],
+input[type=reset],
+textarea {
+  @include font-size(14);
+
+  &::placeholder {
+    @include font-size(14);
+    @include line-height(16);
+    color: $grey-40;
+  }
+}
+
+// --------------------------------------
+// # Btn
+// --------------------------------------
+
+// ## Btn 사이즈
+%btn-normal {
+  @include height(50);
+  @include padding(15,20,15,20);
+  @include font-size(16);
+  @include line-height(20);
+  font-weight: 600;
+}
+
+// ## Btn 스타일
+%btn-default {
+  color: $grey-85;
+  border: 1px solid $grey-40;
+  background-color: $white;
+  @include border-radius-all(8);
+
+  &:hover {
+    border-color: $grey-85;
+  }
+}
+
+.btn {
+  display: block;
+  text-align: center;
+  text-decoration: none !important;
+  box-sizing: border-box;
+  cursor: pointer;
+
+  &.btn-normal {
+    @extend %btn-normal;
+  }
+
+  &.btn-normal-fix {
+    @extend %btn-normal;
+    @include width(240);
+  }
+
+  &.btn-default {
+    @extend %btn-default;
+  }
+}
+
+// --------------------------------------
+// # etc
+// --------------------------------------
+.blind {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  clip: rect(0px, 0px, 0px, 0px);
+  overflow: hidden;
+}

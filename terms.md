@@ -1,0 +1,28 @@
+---
+depth_order: 6
+---
+
+# 용어 정의
+
+| 용어                   | 정의                                                                                                                                                                                                                                                 |
+|:---------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Play                 | NUGU Platform의 최소 서비스 단위로, 사용자와 상호 작용하여 의도를 파악하고 적절한 답변을 주거나 명령을 수행합니다.                                                                                                                                                                            |
+| NUGU play kit        | Play를 관리/심사요청/배포를 하는 도구로, Play를 만드는 도구인 Play Builder와 함께 구성되어 있습니다.                                                                                                                                                                                |
+| Play Builder         | Play를 만드는 도구로, 개발자가 아니어도 자신만의 Play를 만들 수 있도록 도와줍니다.<br/>사용자의 발화를 이해하는 User Utterance Model, 이를 기반으로 기능을 수행하는 Action을 조합하여 하나의 완결된 Play를 만듭니다.                                                                                                      |
+| Intent               | Intent는 Play의 기능을 동작시키기 위해 표현하는 사용자 의도를 의미하며, Play의 필수 구성 요소입니다.                                                                                                                                                                                   |
+| Custom Intent        | Play를 만드는 사람이 생성한 Intent를 의미합니다.                                                                                                                                                                                                                   |
+| Built-in Intent      | NUGU Platform에서 미리 만들어 훈련시켜둔 Intent 입니다.<br/>Custom Intent와 동일한 방법으로 Action에서 사용할 수 있습니다.                                                                                                                                                          |
+| Entity               | Entity는 Intent만으로 특정 기능의 발화 의도를 표현하기 어려울 때 사용하는 부가 상세 정보를 의미하는 개체입니다.                                                                                                                                                                              |
+| Play 호출 이름           | Play 호출 이름은 사용자가 Play를 호출하기 위해 발화하는 고유한 이름을 말합니다.<br/>사용자가 Play 호출 이름을 발화하면 해당 Play의 세션으로 진입하여 해당 Play의 기능을 사용할 수 있게 됩니다.<br/>자세한 내용은 [호출 이름 정의하기](./nugu-play/play-registration-and-review/register-a-play#define-an-invocation-name)를 참고해야 합니다.  |
+| Public Play          | 심사를 통해 배포되면, 모두가 사용할 수 있는 Play입니다.<br/>추후 공개 예정인 스토어에 Play가 등록되면 NUGU 사용자가 선택할 수 있습니다.<br/>스토어가 공개되기 전까지는 선택 과정 없이 바로 사용할 수 있습니다.                                                                                                                  |
+| Private Play         | 등록된 디바이스 혹은 초대된 사용자만 사용할 수 있는 Play입니다.<br/>예를 들어, 회사 내에서만 혹은 가족/친구끼리만 사용하는 Play로도 활용할 수 있습니다.<br/>특정 디바이스를 등록하거나 제한된 사용자만 초대하는 것은 NUGU biz에서 설정할 수 있습니다.                                                                                           |
+| Backend proxy        | 외부 서버로부터 필요한 정보를 가져와서 응답을 생성해야 하는 경우, 외부 서버를 호출하여 대화 관리자에게 정보를 전달하는 서버를 의미합니다.                                                                                                                                                                     |
+| Capability interface | 디바이스의 여러 기능을 제어하기 위한 규격으로, 응답을 재생하는 기능 외에 오디오 재생, 무드등 제어, 음량 조절 등 다양한 기능을 제어할 수 있습니다.                                                                                                                                                              |
+| NUGU Biz             | Play를 만든 기획/개발자가 특정 디바이스(Shared device) 또는 특정 사용자 그룹(Enrolled User) 대상에 한하여 해당 Play를 이용할 수 있도록 관리하는 기능을 제공하는 툴입니다.                                                                                                                                 |
+| ASR                  | Auto Speech Recognition의 줄임말로 음성인식 엔진을 의미합니다.                                                                                                                                                                                                      |
+| NLU                  | Natural Language Understanding으로 자연어이해 엔진을 의미합니다.                                                                                                                                                                                                  |
+| TTS                  | Text To Speech로 음성합성 엔진을 의미합니다.                                                                                                                                                                                                                    |
+| DM                   | Dialog Management로 대화처리 엔진을 의미합니다.                                                                                                                                                                                                                 |
+| NUGU SDK             | 제휴사의 다양한 디바이스 또는 어플리케이션 등에서 NUGU 플랫폼에 연동하여 음성명령 기반의 NUGU 기능을 제공할 수 있도록 지원하는 Software Developement Kit입니다.                                                                                                                                          |
+| Prompt               | 사용자에게 전달되는 응답 메시지를 의미합니다.                                                                                                                                                                                                                          |
+

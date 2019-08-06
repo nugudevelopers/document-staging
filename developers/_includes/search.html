@@ -1,0 +1,41 @@
+<script type="text/x-jsrender" id="search_contents_tmpl">
+{% raw %}
+<div class="item">
+    <a href="{{:url}}">
+        <div class="item-tit">{{:title}}</div>
+        {{for sentences}}
+        <div class="item-desc">{{:}}</div>
+        {{/for}}
+    </a>
+</div>
+{% endraw %}
+</script>
+<div class="popup popup-md search" style="display: none;">
+    <section>
+        <header>
+            <button type="button" class="icon icon--close-lg"></button>
+        </header>
+        <div class="cont">
+            <div class="cont-top">
+                <div class="search-area">
+                    <div class="search-block">
+                        <input id="search_keyword" type="text" class="inp-text" placeholder="search">
+                        <button type="button" class="icon icon--search"></button>
+                    </div>
+                </div>
+            </div>
+            <div class="cont-bottom">
+                <!-- 검색결과 있음 -->
+                <div id="search_result" class="search-result" style="display: block">
+                </div>
+
+                <!-- 검색결과 없음 -->
+                <div class="search-result no-data" style="display: none">
+                    <p>검색 결과가 없습니다.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</div>
+

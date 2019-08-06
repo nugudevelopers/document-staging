@@ -1,0 +1,64 @@
+collections:
+  posts:
+    output: false
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    block:
+      line_numbers: true
+
+sass:
+  style: compressed
+
+########################################
+plugins:
+  - jekyll-spaceship
+
+jekyll-spaceship:
+  processors:
+    - table-processor
+    - media-processor
+    - mathjax-processor
+    - polyfill-processor
+  mathjax-processor:
+    config:
+      options:
+        enableMenu: false
+
+########################################
+jekyll_potion:
+  site:
+    index_page: "index.md"
+    permalink: "/:path/:basename"
+    title: "Developers | Guide"
+    icon: "assets/img/logo-nugu.svg"
+    theme: "developers"
+    favicon: "assets/favicon/favicon.html"
+    exclude:
+      - "README.md"
+  theme:
+    - developers:
+        path: "developers"
+        assets:
+          priority_files:
+            - "js/jsrender.min.js"
+          scss_files:
+            - "style.scss"
+        content_x_path: "#container > div.content"
+        tags:
+          alerts:
+            info: "alerts--noti"
+            warning: "alerts--warning"
+            danger: "alerts--error"
+            success: "alerts--confirm"
+  processor:
+    - make_navigation_processor
+    - make_empty_content_processor
+    - make_header_link_processor
+    - rewrite_img_processor
+    - rewrite_a_href_processor
+    - make_search_index_processor
+    - make_og_tag_processor

@@ -1,0 +1,22 @@
+<div class="pagination pagination--nav" data-skip-search-index>
+    {% if potion.has_before? %}
+    <a href="{{ potion.before.url }}" class="left">
+        <div class="block">
+            <div class="cont">
+                <div class="cont-desc">Previous</div>
+                <div class="cont-tit">{{ potion.before.title }}</div>
+            </div>
+        </div>
+    </a>
+    {% endif %}
+    {% if potion.has_after? %}
+    <a href="{{ potion.after.url }}" class="right">
+        <div class="block">
+            <div class="cont">
+                <div class="cont-desc">Next</div>
+                <div class="cont-tit">{{ potion.after.title }}</div>
+            </div>
+        </div>
+    </a>
+    {% endif %}
+</div>
