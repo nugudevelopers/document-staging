@@ -1,0 +1,2508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Pragma" content="no-cache">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+
+<meta http-equiv="Last-Modified" content="2023-01-04 08:49:05 +0000">
+<meta http-equiv="Title" content="Developers | Guide - 기능 정의">
+<title>Developers | Guide - 기능 정의</title>
+<meta property="og:url" content="https://nugudevelopers.github.io/document-staging/nugu-play/nugu-ux/target-user-analysis-and-task-definition">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Developers | Guide - 기능 정의">
+<meta property="og:image" content="https://nugudevelopers.github.io/document-staging/assets/img/logo-nugu.svg">
+<script type="text/javascript" src="/document-staging/_assets/base/jquery-3.6.0.min.js"></script><script type="text/javascript" src="/document-staging/_assets/base/code.js"></script><script type="text/javascript" src="/document-staging/_assets/base/tabs.js"></script><script type="text/javascript" src="/document-staging/_assets/base/navigation.js"></script><link rel="stylesheet" href="/document-staging/_assets/css/style.css">
+<link rel="stylesheet" href="/document-staging/_assets/css/syntax.css">
+<script type="text/javascript" src="/document-staging/_assets/js/main.js"></script><script type="text/javascript" src="/document-staging/_assets/js/jsrender.min.js"></script><script type="text/javascript" src="/document-staging/_assets/base/header.js"></script>
+    <link rel="apple-touch-icon" sizes="57x57" href="/document-staging/_assets/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/document-staging/_assets/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/document-staging/_assets/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/document-staging/_assets/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/document-staging/_assets/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/document-staging/_assets/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/document-staging/_assets/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/document-staging/_assets/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/document-staging/_assets/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/document-staging/_assets/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/document-staging/_assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/document-staging/_assets/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/document-staging/_assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/document-staging/_assets/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/document-staging/_assets/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+<script type="text/javascript" src="/document-staging/_assets/base/search.js"></script>
+</head>
+<body>
+<div class="wrap">
+    <header class="header">
+        <div class="flex-left flex-left--logo">
+    <a href="/document-staging/" class="logo a-internal">
+        <img src="/document-staging/assets/img/logo-nugu.svg" alt="NUGU developers documentation">
+    </a>
+</div>
+
+<div class="flex-right flex-right--search">
+    <div class="search-round">
+        <input type="text" class="inp-text" placeholder="search">
+        <button type="button" class="icon icon--search"></button>
+    </div>
+</div>
+
+    </header>
+
+    <section id="section" class="section">
+        <div class="flex-left flex-left--nav">
+            <nav>
+                <div class="menu" id="open_nav"><span class="blind">메뉴</span></div>
+                <div class="nav-container">
+    <ul class="nav-menu">
+    
+        <li data-nav-link-id="/document-staging/">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/">
+        <a href="/document-staging/" class="nav-href a-internal" data-nav-link>NUGU developers 소개</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/"> </span>
+    </div>
+    
+</li>
+
+    
+        <li data-nav-link-id="/document-staging/nugu-play">
+    <div class="nav-link fold has-child " data-fold-target-id="/document-staging/nugu-play">
+        <a href="/document-staging/nugu-play" class="nav-href a-internal" data-nav-link>NUGU play</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play"> </span>
+    </div>
+    
+        <ul class="nav-menu">
+            
+                <li data-nav-link-id="/document-staging/nugu-play/nugu-ux">
+    <div class="nav-link fold has-child " data-fold-target-id="/document-staging/nugu-play/nugu-ux">
+        <a href="/document-staging/nugu-play/nugu-ux" class="nav-href a-internal" data-nav-link>Voice UX Design Guide</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/nugu-ux"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/nugu-ux"> </span>
+    </div>
+    
+        <ul class="nav-menu">
+            
+                <li data-nav-link-id="/document-staging/nugu-play/nugu-ux/target-user-analysis-and-task-definition">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-play/nugu-ux/target-user-analysis-and-task-definition">
+        <a href="/document-staging/nugu-play/nugu-ux/target-user-analysis-and-task-definition" class="nav-href a-internal" data-nav-link>기능 정의</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/nugu-ux/target-user-analysis-and-task-definition"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/nugu-ux/target-user-analysis-and-task-definition"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-play/nugu-ux/voice-interaction-design">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-play/nugu-ux/voice-interaction-design">
+        <a href="/document-staging/nugu-play/nugu-ux/voice-interaction-design" class="nav-href a-internal" data-nav-link>사용자 발화(User Utterance) 예상 하기</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/nugu-ux/voice-interaction-design"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/nugu-ux/voice-interaction-design"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-play/nugu-ux/design-a-dialog-flow">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-play/nugu-ux/design-a-dialog-flow">
+        <a href="/document-staging/nugu-play/nugu-ux/design-a-dialog-flow" class="nav-href a-internal" data-nav-link>대화 흐름 디자인</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/nugu-ux/design-a-dialog-flow"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/nugu-ux/design-a-dialog-flow"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-play/nugu-ux/write-a-prompt">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-play/nugu-ux/write-a-prompt">
+        <a href="/document-staging/nugu-play/nugu-ux/write-a-prompt" class="nav-href a-internal" data-nav-link>Prompt 디자인</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/nugu-ux/write-a-prompt"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/nugu-ux/write-a-prompt"> </span>
+    </div>
+    
+</li>
+
+            
+        </ul>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-play/create-plays-with-play-builder">
+    <div class="nav-link fold has-child " data-fold-target-id="/document-staging/nugu-play/create-plays-with-play-builder">
+        <a href="/document-staging/nugu-play/create-plays-with-play-builder" class="nav-href a-internal" data-nav-link>Play Builder로 Play 만들기</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/create-plays-with-play-builder"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/create-plays-with-play-builder"> </span>
+    </div>
+    
+        <ul class="nav-menu">
+            
+                <li data-nav-link-id="/document-staging/nugu-play/create-plays-with-play-builder/hello-aria">
+    <div class="nav-link fold has-child " data-fold-target-id="/document-staging/nugu-play/create-plays-with-play-builder/hello-aria">
+        <a href="/document-staging/nugu-play/create-plays-with-play-builder/hello-aria" class="nav-href a-internal" data-nav-link>아리아, 안녕!</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/create-plays-with-play-builder/hello-aria"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/create-plays-with-play-builder/hello-aria"> </span>
+    </div>
+    
+        <ul class="nav-menu">
+            
+                <li data-nav-link-id="/document-staging/nugu-play/create-plays-with-play-builder/hello-aria/create-a-play">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-play/create-plays-with-play-builder/hello-aria/create-a-play">
+        <a href="/document-staging/nugu-play/create-plays-with-play-builder/hello-aria/create-a-play" class="nav-href a-internal" data-nav-link>1) Play 생성하기</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/create-plays-with-play-builder/hello-aria/create-a-play"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/create-plays-with-play-builder/hello-aria/create-a-play"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-play/create-plays-with-play-builder/hello-aria/create-an-intent-and-custom-utterances">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-play/create-plays-with-play-builder/hello-aria/create-an-intent-and-custom-utterances">
+        <a href="/document-staging/nugu-play/create-plays-with-play-builder/hello-aria/create-an-intent-and-custom-utterances" class="nav-href a-internal" data-nav-link>2) Intent 만들고 예상 발화 등록하기</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/create-plays-with-play-builder/hello-aria/create-an-intent-and-custom-utterances"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/create-plays-with-play-builder/hello-aria/create-an-intent-and-custom-utterances"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-play/create-plays-with-play-builder/hello-aria/create-an-action-and-an-answer">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-play/create-plays-with-play-builder/hello-aria/create-an-action-and-an-answer">
+        <a href="/document-staging/nugu-play/create-plays-with-play-builder/hello-aria/create-an-action-and-an-answer" class="nav-href a-internal" data-nav-link>3) Action 만들고 응답 등록하기</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/create-plays-with-play-builder/hello-aria/create-an-action-and-an-answer"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/create-plays-with-play-builder/hello-aria/create-an-action-and-an-answer"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-play/create-plays-with-play-builder/hello-aria/test-and-build-a-play">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-play/create-plays-with-play-builder/hello-aria/test-and-build-a-play">
+        <a href="/document-staging/nugu-play/create-plays-with-play-builder/hello-aria/test-and-build-a-play" class="nav-href a-internal" data-nav-link>4) Play 테스트 및 빌드하기</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/create-plays-with-play-builder/hello-aria/test-and-build-a-play"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/create-plays-with-play-builder/hello-aria/test-and-build-a-play"> </span>
+    </div>
+    
+</li>
+
+            
+        </ul>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-play/create-plays-with-play-builder/before-start">
+    <div class="nav-link fold has-child " data-fold-target-id="/document-staging/nugu-play/create-plays-with-play-builder/before-start">
+        <a href="/document-staging/nugu-play/create-plays-with-play-builder/before-start" class="nav-href a-internal" data-nav-link>시작하기 전에 알면 좋은 것들</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/create-plays-with-play-builder/before-start"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/create-plays-with-play-builder/before-start"> </span>
+    </div>
+    
+        <ul class="nav-menu">
+            
+                <li data-nav-link-id="/document-staging/nugu-play/create-plays-with-play-builder/before-start/play">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-play/create-plays-with-play-builder/before-start/play">
+        <a href="/document-staging/nugu-play/create-plays-with-play-builder/before-start/play" class="nav-href a-internal" data-nav-link>Play</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/create-plays-with-play-builder/before-start/play"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/create-plays-with-play-builder/before-start/play"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-play/create-plays-with-play-builder/before-start/intents-and-entities">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-play/create-plays-with-play-builder/before-start/intents-and-entities">
+        <a href="/document-staging/nugu-play/create-plays-with-play-builder/before-start/intents-and-entities" class="nav-href a-internal" data-nav-link>Intent와 Entity</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/create-plays-with-play-builder/before-start/intents-and-entities"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/create-plays-with-play-builder/before-start/intents-and-entities"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-play/create-plays-with-play-builder/before-start/backend-proxy">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-play/create-plays-with-play-builder/before-start/backend-proxy">
+        <a href="/document-staging/nugu-play/create-plays-with-play-builder/before-start/backend-proxy" class="nav-href a-internal" data-nav-link>Backend proxy</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/create-plays-with-play-builder/before-start/backend-proxy"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/create-plays-with-play-builder/before-start/backend-proxy"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-play/create-plays-with-play-builder/before-start/capability-interface">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-play/create-plays-with-play-builder/before-start/capability-interface">
+        <a href="/document-staging/nugu-play/create-plays-with-play-builder/before-start/capability-interface" class="nav-href a-internal" data-nav-link>Capability interface</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/create-plays-with-play-builder/before-start/capability-interface"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/create-plays-with-play-builder/before-start/capability-interface"> </span>
+    </div>
+    
+</li>
+
+            
+        </ul>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-play/create-plays-with-play-builder/customize-a-play">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-play/create-plays-with-play-builder/customize-a-play">
+        <a href="/document-staging/nugu-play/create-plays-with-play-builder/customize-a-play" class="nav-href a-internal" data-nav-link>Play 설정하기</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/create-plays-with-play-builder/customize-a-play"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/create-plays-with-play-builder/customize-a-play"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-play/create-plays-with-play-builder/define-user-utterance-model">
+    <div class="nav-link fold has-child " data-fold-target-id="/document-staging/nugu-play/create-plays-with-play-builder/define-user-utterance-model">
+        <a href="/document-staging/nugu-play/create-plays-with-play-builder/define-user-utterance-model" class="nav-href a-internal" data-nav-link>User Utterance Model 정의하기 (Intent &amp; Entity)</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/create-plays-with-play-builder/define-user-utterance-model"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/create-plays-with-play-builder/define-user-utterance-model"> </span>
+    </div>
+    
+        <ul class="nav-menu">
+            
+                <li data-nav-link-id="/document-staging/nugu-play/create-plays-with-play-builder/define-user-utterance-model/built-in-intents">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-play/create-plays-with-play-builder/define-user-utterance-model/built-in-intents">
+        <a href="/document-staging/nugu-play/create-plays-with-play-builder/define-user-utterance-model/built-in-intents" class="nav-href a-internal" data-nav-link>Built-in Intent</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/create-plays-with-play-builder/define-user-utterance-model/built-in-intents"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/create-plays-with-play-builder/define-user-utterance-model/built-in-intents"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-play/create-plays-with-play-builder/define-user-utterance-model/how-to-write-customer-utterances">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-play/create-plays-with-play-builder/define-user-utterance-model/how-to-write-customer-utterances">
+        <a href="/document-staging/nugu-play/create-plays-with-play-builder/define-user-utterance-model/how-to-write-customer-utterances" class="nav-href a-internal" data-nav-link>예상 발화 작성 가이드</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/create-plays-with-play-builder/define-user-utterance-model/how-to-write-customer-utterances"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/create-plays-with-play-builder/define-user-utterance-model/how-to-write-customer-utterances"> </span>
+    </div>
+    
+</li>
+
+            
+        </ul>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-play/create-plays-with-play-builder/define-an-action">
+    <div class="nav-link fold has-child " data-fold-target-id="/document-staging/nugu-play/create-plays-with-play-builder/define-an-action">
+        <a href="/document-staging/nugu-play/create-plays-with-play-builder/define-an-action" class="nav-href a-internal" data-nav-link>Action 정의하기</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/create-plays-with-play-builder/define-an-action"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/create-plays-with-play-builder/define-an-action"> </span>
+    </div>
+    
+        <ul class="nav-menu">
+            
+                <li data-nav-link-id="/document-staging/nugu-play/create-plays-with-play-builder/define-an-action/built-in-actions">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-play/create-plays-with-play-builder/define-an-action/built-in-actions">
+        <a href="/document-staging/nugu-play/create-plays-with-play-builder/define-an-action/built-in-actions" class="nav-href a-internal" data-nav-link>Built-in Actions</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/create-plays-with-play-builder/define-an-action/built-in-actions"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/create-plays-with-play-builder/define-an-action/built-in-actions"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-play/create-plays-with-play-builder/define-an-action/use-parameters">
+    <div class="nav-link fold has-child " data-fold-target-id="/document-staging/nugu-play/create-plays-with-play-builder/define-an-action/use-parameters">
+        <a href="/document-staging/nugu-play/create-plays-with-play-builder/define-an-action/use-parameters" class="nav-href a-internal" data-nav-link>Parameter</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/create-plays-with-play-builder/define-an-action/use-parameters"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/create-plays-with-play-builder/define-an-action/use-parameters"> </span>
+    </div>
+    
+        <ul class="nav-menu">
+            
+                <li data-nav-link-id="/document-staging/nugu-play/create-plays-with-play-builder/define-an-action/use-parameters/define-a-parameter">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-play/create-plays-with-play-builder/define-an-action/use-parameters/define-a-parameter">
+        <a href="/document-staging/nugu-play/create-plays-with-play-builder/define-an-action/use-parameters/define-a-parameter" class="nav-href a-internal" data-nav-link>Parameter 정의하기</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/create-plays-with-play-builder/define-an-action/use-parameters/define-a-parameter"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/create-plays-with-play-builder/define-an-action/use-parameters/define-a-parameter"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-play/create-plays-with-play-builder/define-an-action/use-parameters/write-responses">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-play/create-plays-with-play-builder/define-an-action/use-parameters/write-responses">
+        <a href="/document-staging/nugu-play/create-plays-with-play-builder/define-an-action/use-parameters/write-responses" class="nav-href a-internal" data-nav-link>Parameter로 응답 작성하기</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/create-plays-with-play-builder/define-an-action/use-parameters/write-responses"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/create-plays-with-play-builder/define-an-action/use-parameters/write-responses"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-play/create-plays-with-play-builder/define-an-action/use-parameters/slot-filling-prompt">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-play/create-plays-with-play-builder/define-an-action/use-parameters/slot-filling-prompt">
+        <a href="/document-staging/nugu-play/create-plays-with-play-builder/define-an-action/use-parameters/slot-filling-prompt" class="nav-href a-internal" data-nav-link>필수 Entity 정의하기 (Slot-Filling Prompt)</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/create-plays-with-play-builder/define-an-action/use-parameters/slot-filling-prompt"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/create-plays-with-play-builder/define-an-action/use-parameters/slot-filling-prompt"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-play/create-plays-with-play-builder/define-an-action/use-parameters/multi-entity-mapping">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-play/create-plays-with-play-builder/define-an-action/use-parameters/multi-entity-mapping">
+        <a href="/document-staging/nugu-play/create-plays-with-play-builder/define-an-action/use-parameters/multi-entity-mapping" class="nav-href a-internal" data-nav-link>하나의 Parameter에 여러 Entity mapping 하기</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/create-plays-with-play-builder/define-an-action/use-parameters/multi-entity-mapping"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/create-plays-with-play-builder/define-an-action/use-parameters/multi-entity-mapping"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-play/create-plays-with-play-builder/define-an-action/use-parameters/configurable-parameter">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-play/create-plays-with-play-builder/define-an-action/use-parameters/configurable-parameter">
+        <a href="/document-staging/nugu-play/create-plays-with-play-builder/define-an-action/use-parameters/configurable-parameter" class="nav-href a-internal" data-nav-link>Configurable Parameter</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/create-plays-with-play-builder/define-an-action/use-parameters/configurable-parameter"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/create-plays-with-play-builder/define-an-action/use-parameters/configurable-parameter"> </span>
+    </div>
+    
+</li>
+
+            
+        </ul>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-play/create-plays-with-play-builder/define-an-action/use-responses">
+    <div class="nav-link fold has-child " data-fold-target-id="/document-staging/nugu-play/create-plays-with-play-builder/define-an-action/use-responses">
+        <a href="/document-staging/nugu-play/create-plays-with-play-builder/define-an-action/use-responses" class="nav-href a-internal" data-nav-link>Response</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/create-plays-with-play-builder/define-an-action/use-responses"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/create-plays-with-play-builder/define-an-action/use-responses"> </span>
+    </div>
+    
+        <ul class="nav-menu">
+            
+                <li data-nav-link-id="/document-staging/nugu-play/create-plays-with-play-builder/define-an-action/use-responses/use-prompts">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-play/create-plays-with-play-builder/define-an-action/use-responses/use-prompts">
+        <a href="/document-staging/nugu-play/create-plays-with-play-builder/define-an-action/use-responses/use-prompts" class="nav-href a-internal" data-nav-link>Prompt 사용하기</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/create-plays-with-play-builder/define-an-action/use-responses/use-prompts"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/create-plays-with-play-builder/define-an-action/use-responses/use-prompts"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-play/create-plays-with-play-builder/define-an-action/use-responses/use-directives">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-play/create-plays-with-play-builder/define-an-action/use-responses/use-directives">
+        <a href="/document-staging/nugu-play/create-plays-with-play-builder/define-an-action/use-responses/use-directives" class="nav-href a-internal" data-nav-link>Directive 사용하기</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/create-plays-with-play-builder/define-an-action/use-responses/use-directives"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/create-plays-with-play-builder/define-an-action/use-responses/use-directives"> </span>
+    </div>
+    
+</li>
+
+            
+        </ul>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-play/create-plays-with-play-builder/define-an-action/use-branch-actions">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-play/create-plays-with-play-builder/define-an-action/use-branch-actions">
+        <a href="/document-staging/nugu-play/create-plays-with-play-builder/define-an-action/use-branch-actions" class="nav-href a-internal" data-nav-link>Branch Action (Action Tree)</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/create-plays-with-play-builder/define-an-action/use-branch-actions"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/create-plays-with-play-builder/define-an-action/use-branch-actions"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-play/create-plays-with-play-builder/define-an-action/response-with-branch-actions">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-play/create-plays-with-play-builder/define-an-action/response-with-branch-actions">
+        <a href="/document-staging/nugu-play/create-plays-with-play-builder/define-an-action/response-with-branch-actions" class="nav-href a-internal" data-nav-link>Response + Branch Action (멀티턴 대화)</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/create-plays-with-play-builder/define-an-action/response-with-branch-actions"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/create-plays-with-play-builder/define-an-action/response-with-branch-actions"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-play/create-plays-with-play-builder/define-an-action/manage-exceptions">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-play/create-plays-with-play-builder/define-an-action/manage-exceptions">
+        <a href="/document-staging/nugu-play/create-plays-with-play-builder/define-an-action/manage-exceptions" class="nav-href a-internal" data-nav-link>예외 상황 관리</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/create-plays-with-play-builder/define-an-action/manage-exceptions"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/create-plays-with-play-builder/define-an-action/manage-exceptions"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-play/create-plays-with-play-builder/define-an-action/use-common-actions">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-play/create-plays-with-play-builder/define-an-action/use-common-actions">
+        <a href="/document-staging/nugu-play/create-plays-with-play-builder/define-an-action/use-common-actions" class="nav-href a-internal" data-nav-link>Common Action 사용하기</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/create-plays-with-play-builder/define-an-action/use-common-actions"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/create-plays-with-play-builder/define-an-action/use-common-actions"> </span>
+    </div>
+    
+</li>
+
+            
+        </ul>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-play/create-plays-with-play-builder/create-a-play-using-backend-proxy">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-play/create-plays-with-play-builder/create-a-play-using-backend-proxy">
+        <a href="/document-staging/nugu-play/create-plays-with-play-builder/create-a-play-using-backend-proxy" class="nav-href a-internal" data-nav-link>외부 연동 서버 (Backend proxy) 연결하기</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/create-plays-with-play-builder/create-a-play-using-backend-proxy"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/create-plays-with-play-builder/create-a-play-using-backend-proxy"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-play/create-plays-with-play-builder/define-response-filters">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-play/create-plays-with-play-builder/define-response-filters">
+        <a href="/document-staging/nugu-play/create-plays-with-play-builder/define-response-filters" class="nav-href a-internal" data-nav-link>Response Filter 사용하기</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/create-plays-with-play-builder/define-response-filters"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/create-plays-with-play-builder/define-response-filters"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-play/create-plays-with-play-builder/test-a-play">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-play/create-plays-with-play-builder/test-a-play">
+        <a href="/document-staging/nugu-play/create-plays-with-play-builder/test-a-play" class="nav-href a-internal" data-nav-link>테스트하기</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/create-plays-with-play-builder/test-a-play"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/create-plays-with-play-builder/test-a-play"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-play/create-plays-with-play-builder/create-a-play-with-audioplayer">
+    <div class="nav-link fold has-child " data-fold-target-id="/document-staging/nugu-play/create-plays-with-play-builder/create-a-play-with-audioplayer">
+        <a href="/document-staging/nugu-play/create-plays-with-play-builder/create-a-play-with-audioplayer" class="nav-href a-internal" data-nav-link>AudioPlayer Interface 지원하는 Play 만들기</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/create-plays-with-play-builder/create-a-play-with-audioplayer"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/create-plays-with-play-builder/create-a-play-with-audioplayer"> </span>
+    </div>
+    
+        <ul class="nav-menu">
+            
+                <li data-nav-link-id="/document-staging/nugu-play/create-plays-with-play-builder/create-a-play-with-audioplayer/audioplayer-define-custom-intent">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-play/create-plays-with-play-builder/create-a-play-with-audioplayer/audioplayer-define-custom-intent">
+        <a href="/document-staging/nugu-play/create-plays-with-play-builder/create-a-play-with-audioplayer/audioplayer-define-custom-intent" class="nav-href a-internal" data-nav-link>Custom Intent 정의하기</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/create-plays-with-play-builder/create-a-play-with-audioplayer/audioplayer-define-custom-intent"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/create-plays-with-play-builder/create-a-play-with-audioplayer/audioplayer-define-custom-intent"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-play/create-plays-with-play-builder/create-a-play-with-audioplayer/audioplayer-define-action">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-play/create-plays-with-play-builder/create-a-play-with-audioplayer/audioplayer-define-action">
+        <a href="/document-staging/nugu-play/create-plays-with-play-builder/create-a-play-with-audioplayer/audioplayer-define-action" class="nav-href a-internal" data-nav-link>Action 정의하기</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/create-plays-with-play-builder/create-a-play-with-audioplayer/audioplayer-define-action"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/create-plays-with-play-builder/create-a-play-with-audioplayer/audioplayer-define-action"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-play/create-plays-with-play-builder/create-a-play-with-audioplayer/audioplayer-define-built-in-intent">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-play/create-plays-with-play-builder/create-a-play-with-audioplayer/audioplayer-define-built-in-intent">
+        <a href="/document-staging/nugu-play/create-plays-with-play-builder/create-a-play-with-audioplayer/audioplayer-define-built-in-intent" class="nav-href a-internal" data-nav-link>Built-in Intent를 위한 Action 정의하기</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/create-plays-with-play-builder/create-a-play-with-audioplayer/audioplayer-define-built-in-intent"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/create-plays-with-play-builder/create-a-play-with-audioplayer/audioplayer-define-built-in-intent"> </span>
+    </div>
+    
+</li>
+
+            
+        </ul>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-play/create-plays-with-play-builder/use-backend-proxy">
+    <div class="nav-link fold has-child " data-fold-target-id="/document-staging/nugu-play/create-plays-with-play-builder/use-backend-proxy">
+        <a href="/document-staging/nugu-play/create-plays-with-play-builder/use-backend-proxy" class="nav-href a-internal" data-nav-link>Backend proxy 개발 가이드</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/create-plays-with-play-builder/use-backend-proxy"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/create-plays-with-play-builder/use-backend-proxy"> </span>
+    </div>
+    
+        <ul class="nav-menu">
+            
+                <li data-nav-link-id="/document-staging/nugu-play/create-plays-with-play-builder/use-backend-proxy/backend-proxy">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-play/create-plays-with-play-builder/use-backend-proxy/backend-proxy">
+        <a href="/document-staging/nugu-play/create-plays-with-play-builder/use-backend-proxy/backend-proxy" class="nav-href a-internal" data-nav-link>Backend proxy 구축하기</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/create-plays-with-play-builder/use-backend-proxy/backend-proxy"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/create-plays-with-play-builder/use-backend-proxy/backend-proxy"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces">
+    <div class="nav-link fold has-child " data-fold-target-id="/document-staging/nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces">
+        <a href="/document-staging/nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces" class="nav-href a-internal" data-nav-link>Capability Interfaces</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces"> </span>
+    </div>
+    
+        <ul class="nav-menu">
+            
+                <li data-nav-link-id="/document-staging/nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces/audioplayer-interface">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces/audioplayer-interface">
+        <a href="/document-staging/nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces/audioplayer-interface" class="nav-href a-internal" data-nav-link>AudioPlayer Interface</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces/audioplayer-interface"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces/audioplayer-interface"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces/audioplayer-display-interface">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces/audioplayer-display-interface">
+        <a href="/document-staging/nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces/audioplayer-display-interface" class="nav-href a-internal" data-nav-link>AudioPlayer를 위한 Display Interface</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces/audioplayer-display-interface"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces/audioplayer-display-interface"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces/display-interface">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces/display-interface">
+        <a href="/document-staging/nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces/display-interface" class="nav-href a-internal" data-nav-link>Display Interface</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces/display-interface"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces/display-interface"> </span>
+    </div>
+    
+</li>
+
+            
+        </ul>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-play/create-plays-with-play-builder/use-backend-proxy/backend-proxy-api-reference">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-play/create-plays-with-play-builder/use-backend-proxy/backend-proxy-api-reference">
+        <a href="/document-staging/nugu-play/create-plays-with-play-builder/use-backend-proxy/backend-proxy-api-reference" class="nav-href a-internal" data-nav-link>Backend proxy API Reference</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/create-plays-with-play-builder/use-backend-proxy/backend-proxy-api-reference"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/create-plays-with-play-builder/use-backend-proxy/backend-proxy-api-reference"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-play/create-plays-with-play-builder/use-backend-proxy/link-enrolled-user-api">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-play/create-plays-with-play-builder/use-backend-proxy/link-enrolled-user-api">
+        <a href="/document-staging/nugu-play/create-plays-with-play-builder/use-backend-proxy/link-enrolled-user-api" class="nav-href a-internal" data-nav-link>Biz 사용자(Enrolled user) 정보 수신 연동</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/create-plays-with-play-builder/use-backend-proxy/link-enrolled-user-api"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/create-plays-with-play-builder/use-backend-proxy/link-enrolled-user-api"> </span>
+    </div>
+    
+</li>
+
+            
+        </ul>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-play/create-plays-with-play-builder/link-oauth20">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-play/create-plays-with-play-builder/link-oauth20">
+        <a href="/document-staging/nugu-play/create-plays-with-play-builder/link-oauth20" class="nav-href a-internal" data-nav-link>OAuth 2.0 연동하기</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/create-plays-with-play-builder/link-oauth20"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/create-plays-with-play-builder/link-oauth20"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-play/create-plays-with-play-builder/support-tools">
+    <div class="nav-link fold has-child " data-fold-target-id="/document-staging/nugu-play/create-plays-with-play-builder/support-tools">
+        <a href="/document-staging/nugu-play/create-plays-with-play-builder/support-tools" class="nav-href a-internal" data-nav-link>지원 도구</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/create-plays-with-play-builder/support-tools"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/create-plays-with-play-builder/support-tools"> </span>
+    </div>
+    
+        <ul class="nav-menu">
+            
+                <li data-nav-link-id="/document-staging/nugu-play/create-plays-with-play-builder/support-tools/corpus-inspection-1">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-play/create-plays-with-play-builder/support-tools/corpus-inspection-1">
+        <a href="/document-staging/nugu-play/create-plays-with-play-builder/support-tools/corpus-inspection-1" class="nav-href a-internal" data-nav-link>훈련 데이터 검증</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/create-plays-with-play-builder/support-tools/corpus-inspection-1"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/create-plays-with-play-builder/support-tools/corpus-inspection-1"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-play/create-plays-with-play-builder/support-tools/log-mining">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-play/create-plays-with-play-builder/support-tools/log-mining">
+        <a href="/document-staging/nugu-play/create-plays-with-play-builder/support-tools/log-mining" class="nav-href a-internal" data-nav-link>실패 발화 분석</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/create-plays-with-play-builder/support-tools/log-mining"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/create-plays-with-play-builder/support-tools/log-mining"> </span>
+    </div>
+    
+</li>
+
+            
+        </ul>
+    
+</li>
+
+            
+        </ul>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-play/smarthome-play">
+    <div class="nav-link fold has-child " data-fold-target-id="/document-staging/nugu-play/smarthome-play">
+        <a href="/document-staging/nugu-play/smarthome-play" class="nav-href a-internal" data-nav-link>Pre-built Play Builder로 스마트홈 Play 만들기</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/smarthome-play"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/smarthome-play"> </span>
+    </div>
+    
+        <ul class="nav-menu">
+            
+                <li data-nav-link-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype">
+    <div class="nav-link fold has-child " data-fold-target-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype">
+        <a href="/document-staging/nugu-play/smarthome-play/smarthomedevicetype" class="nav-href a-internal" data-nav-link>SmartHomeDeviceType</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype"> </span>
+    </div>
+    
+        <ul class="nav-menu">
+            
+                <li data-nav-link-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-1">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-1">
+        <a href="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-1" class="nav-href a-internal" data-nav-link>가스차단기</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-1"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-1"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-2">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-2">
+        <a href="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-2" class="nav-href a-internal" data-nav-link>가습기</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-2"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-2"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-3">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-3">
+        <a href="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-3" class="nav-href a-internal" data-nav-link>건조기</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-3"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-3"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-4">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-4">
+        <a href="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-4" class="nav-href a-internal" data-nav-link>공기센서</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-4"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-4"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-4-1">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-4-1">
+        <a href="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-4-1" class="nav-href a-internal" data-nav-link>공기청정기</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-4-1"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-4-1"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-5">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-5">
+        <a href="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-5" class="nav-href a-internal" data-nav-link>냉장고</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-5"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-5"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-6">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-6">
+        <a href="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-6" class="nav-href a-internal" data-nav-link>로봇청소기</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-6"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-6"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-7">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-7">
+        <a href="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-7" class="nav-href a-internal" data-nav-link>보일러</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-7"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-7"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-8">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-8">
+        <a href="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-8" class="nav-href a-internal" data-nav-link>선풍기</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-8"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-8"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-9">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-9">
+        <a href="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-9" class="nav-href a-internal" data-nav-link>세탁기</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-9"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-9"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-10">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-10">
+        <a href="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-10" class="nav-href a-internal" data-nav-link>스마트스위치</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-10"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-10"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-11">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-11">
+        <a href="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-11" class="nav-href a-internal" data-nav-link>스마트플러그</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-11"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-11"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-12">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-12">
+        <a href="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-12" class="nav-href a-internal" data-nav-link>식기세척기</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-12"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-12"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-13">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-13">
+        <a href="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-13" class="nav-href a-internal" data-nav-link>에너지미터</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-13"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-13"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-14">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-14">
+        <a href="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-14" class="nav-href a-internal" data-nav-link>에어워셔</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-14"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-14"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-15">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-15">
+        <a href="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-15" class="nav-href a-internal" data-nav-link>에어컨</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-15"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-15"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-16">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-16">
+        <a href="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-16" class="nav-href a-internal" data-nav-link>열림감지센서</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-16"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-16"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-17">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-17">
+        <a href="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-17" class="nav-href a-internal" data-nav-link>오븐</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-17"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-17"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-18">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-18">
+        <a href="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-18" class="nav-href a-internal" data-nav-link>의류관리기</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-18"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-18"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-19">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-19">
+        <a href="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-19" class="nav-href a-internal" data-nav-link>정수기</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-19"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-19"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-20">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-20">
+        <a href="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-20" class="nav-href a-internal" data-nav-link>제습기</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-20"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-20"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-21">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-21">
+        <a href="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-21" class="nav-href a-internal" data-nav-link>조명</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-21"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-21"> </span>
+    </div>
+    
+</li>
+
+            
+        </ul>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-play/smarthome-play/smarthomecapability">
+    <div class="nav-link fold has-child " data-fold-target-id="/document-staging/nugu-play/smarthome-play/smarthomecapability">
+        <a href="/document-staging/nugu-play/smarthome-play/smarthomecapability" class="nav-href a-internal" data-nav-link>SmartHomeCapability</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/smarthome-play/smarthomecapability"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/smarthome-play/smarthomecapability"> </span>
+    </div>
+    
+        <ul class="nav-menu">
+            
+                <li data-nav-link-id="/document-staging/nugu-play/smarthome-play/smarthomecapability/airflowcontrol-interface">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-play/smarthome-play/smarthomecapability/airflowcontrol-interface">
+        <a href="/document-staging/nugu-play/smarthome-play/smarthomecapability/airflowcontrol-interface" class="nav-href a-internal" data-nav-link>AirflowControl Interface</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/smarthome-play/smarthomecapability/airflowcontrol-interface"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/smarthome-play/smarthomecapability/airflowcontrol-interface"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-play/smarthome-play/smarthomecapability/airqualitycheck-interface">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-play/smarthome-play/smarthomecapability/airqualitycheck-interface">
+        <a href="/document-staging/nugu-play/smarthome-play/smarthomecapability/airqualitycheck-interface" class="nav-href a-internal" data-nav-link>AirQualityCheck Interface</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/smarthome-play/smarthomecapability/airqualitycheck-interface"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/smarthome-play/smarthomecapability/airqualitycheck-interface"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-play/smarthome-play/smarthomecapability/brightnesscontrol-interface">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-play/smarthome-play/smarthomecapability/brightnesscontrol-interface">
+        <a href="/document-staging/nugu-play/smarthome-play/smarthomecapability/brightnesscontrol-interface" class="nav-href a-internal" data-nav-link>BrightnessControl Interface</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/smarthome-play/smarthomecapability/brightnesscontrol-interface"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/smarthome-play/smarthomecapability/brightnesscontrol-interface"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-play/smarthome-play/smarthomecapability/chargecontrol-interface">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-play/smarthome-play/smarthomecapability/chargecontrol-interface">
+        <a href="/document-staging/nugu-play/smarthome-play/smarthomecapability/chargecontrol-interface" class="nav-href a-internal" data-nav-link>ChargeControl Interface</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/smarthome-play/smarthomecapability/chargecontrol-interface"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/smarthome-play/smarthomecapability/chargecontrol-interface"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-play/smarthome-play/smarthomecapability/colorcontrol-interface">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-play/smarthome-play/smarthomecapability/colorcontrol-interface">
+        <a href="/document-staging/nugu-play/smarthome-play/smarthomecapability/colorcontrol-interface" class="nav-href a-internal" data-nav-link>ColorControl Interface</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/smarthome-play/smarthomecapability/colorcontrol-interface"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/smarthome-play/smarthomecapability/colorcontrol-interface"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-play/smarthome-play/smarthomecapability/devicetemperaturecontrol-interface">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-play/smarthome-play/smarthomecapability/devicetemperaturecontrol-interface">
+        <a href="/document-staging/nugu-play/smarthome-play/smarthomecapability/devicetemperaturecontrol-interface" class="nav-href a-internal" data-nav-link>DeviceTemperatureControl Interface</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/smarthome-play/smarthomecapability/devicetemperaturecontrol-interface"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/smarthome-play/smarthomecapability/devicetemperaturecontrol-interface"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-play/smarthome-play/smarthomecapability/humiditycontrol-interface">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-play/smarthome-play/smarthomecapability/humiditycontrol-interface">
+        <a href="/document-staging/nugu-play/smarthome-play/smarthomecapability/humiditycontrol-interface" class="nav-href a-internal" data-nav-link>HumidityControl Interface</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/smarthome-play/smarthomecapability/humiditycontrol-interface"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/smarthome-play/smarthomecapability/humiditycontrol-interface"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-play/smarthome-play/smarthomecapability/modecontrol-interface">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-play/smarthome-play/smarthomecapability/modecontrol-interface">
+        <a href="/document-staging/nugu-play/smarthome-play/smarthomecapability/modecontrol-interface" class="nav-href a-internal" data-nav-link>ModeControl Interface</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/smarthome-play/smarthomecapability/modecontrol-interface"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/smarthome-play/smarthomecapability/modecontrol-interface"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-play/smarthome-play/smarthomecapability/powercheck-interface">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-play/smarthome-play/smarthomecapability/powercheck-interface">
+        <a href="/document-staging/nugu-play/smarthome-play/smarthomecapability/powercheck-interface" class="nav-href a-internal" data-nav-link>PowerCheck Interface</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/smarthome-play/smarthomecapability/powercheck-interface"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/smarthome-play/smarthomecapability/powercheck-interface"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-play/smarthome-play/smarthomecapability/powercontrol-interface">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-play/smarthome-play/smarthomecapability/powercontrol-interface">
+        <a href="/document-staging/nugu-play/smarthome-play/smarthomecapability/powercontrol-interface" class="nav-href a-internal" data-nav-link>PowerControl Interface</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/smarthome-play/smarthomecapability/powercontrol-interface"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/smarthome-play/smarthomecapability/powercontrol-interface"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-play/smarthome-play/smarthomecapability/settimecontrol-interface">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-play/smarthome-play/smarthomecapability/settimecontrol-interface">
+        <a href="/document-staging/nugu-play/smarthome-play/smarthomecapability/settimecontrol-interface" class="nav-href a-internal" data-nav-link>SetTimeControl Interface</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/smarthome-play/smarthomecapability/settimecontrol-interface"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/smarthome-play/smarthomecapability/settimecontrol-interface"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-play/smarthome-play/smarthomecapability/statecheck-interface">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-play/smarthome-play/smarthomecapability/statecheck-interface">
+        <a href="/document-staging/nugu-play/smarthome-play/smarthomecapability/statecheck-interface" class="nav-href a-internal" data-nav-link>StateCheck Interface</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/smarthome-play/smarthomecapability/statecheck-interface"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/smarthome-play/smarthomecapability/statecheck-interface"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-play/smarthome-play/smarthomecapability/temperaturecontrol-interface">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-play/smarthome-play/smarthomecapability/temperaturecontrol-interface">
+        <a href="/document-staging/nugu-play/smarthome-play/smarthomecapability/temperaturecontrol-interface" class="nav-href a-internal" data-nav-link>TemperatureControl Interface</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/smarthome-play/smarthomecapability/temperaturecontrol-interface"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/smarthome-play/smarthomecapability/temperaturecontrol-interface"> </span>
+    </div>
+    
+</li>
+
+            
+        </ul>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-play/smarthome-play/smarthomeattribute">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-play/smarthome-play/smarthomeattribute">
+        <a href="/document-staging/nugu-play/smarthome-play/smarthomeattribute" class="nav-href a-internal" data-nav-link>SmartHomeAttribute</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/smarthome-play/smarthomeattribute"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/smarthome-play/smarthomeattribute"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-play/smarthome-play/smarthomeerror">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-play/smarthome-play/smarthomeerror">
+        <a href="/document-staging/nugu-play/smarthome-play/smarthomeerror" class="nav-href a-internal" data-nav-link>SmartHomeError</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/smarthome-play/smarthomeerror"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/smarthome-play/smarthomeerror"> </span>
+    </div>
+    
+</li>
+
+            
+        </ul>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-play/play-registration-and-review">
+    <div class="nav-link fold has-child " data-fold-target-id="/document-staging/nugu-play/play-registration-and-review">
+        <a href="/document-staging/nugu-play/play-registration-and-review" class="nav-href a-internal" data-nav-link>Play 정보 등록 및 심사 요청하기</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/play-registration-and-review"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/play-registration-and-review"> </span>
+    </div>
+    
+        <ul class="nav-menu">
+            
+                <li data-nav-link-id="/document-staging/nugu-play/play-registration-and-review/register-a-play">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-play/play-registration-and-review/register-a-play">
+        <a href="/document-staging/nugu-play/play-registration-and-review/register-a-play" class="nav-href a-internal" data-nav-link>Play 정보 등록</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/play-registration-and-review/register-a-play"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/play-registration-and-review/register-a-play"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-play/play-registration-and-review/play-smarthome-play">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-play/play-registration-and-review/play-smarthome-play">
+        <a href="/document-staging/nugu-play/play-registration-and-review/play-smarthome-play" class="nav-href a-internal" data-nav-link>Play 정보 등록 (smarthome play)</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/play-registration-and-review/play-smarthome-play"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/play-registration-and-review/play-smarthome-play"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-play/play-registration-and-review/modify-or-delete-play-information">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-play/play-registration-and-review/modify-or-delete-play-information">
+        <a href="/document-staging/nugu-play/play-registration-and-review/modify-or-delete-play-information" class="nav-href a-internal" data-nav-link>Play 정보 수정 및 삭제</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/play-registration-and-review/modify-or-delete-play-information"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/play-registration-and-review/modify-or-delete-play-information"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-play/play-registration-and-review/play-review">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-play/play-registration-and-review/play-review">
+        <a href="/document-staging/nugu-play/play-registration-and-review/play-review" class="nav-href a-internal" data-nav-link>Play 심사</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/play-registration-and-review/play-review"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/play-registration-and-review/play-review"> </span>
+    </div>
+    
+</li>
+
+            
+        </ul>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-play/distribute-and-manage-a-play">
+    <div class="nav-link fold has-child " data-fold-target-id="/document-staging/nugu-play/distribute-and-manage-a-play">
+        <a href="/document-staging/nugu-play/distribute-and-manage-a-play" class="nav-href a-internal" data-nav-link>Play 배포 및 관리하기</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/distribute-and-manage-a-play"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/distribute-and-manage-a-play"> </span>
+    </div>
+    
+        <ul class="nav-menu">
+            
+                <li data-nav-link-id="/document-staging/nugu-play/distribute-and-manage-a-play/distribute-a-play">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-play/distribute-and-manage-a-play/distribute-a-play">
+        <a href="/document-staging/nugu-play/distribute-and-manage-a-play/distribute-a-play" class="nav-href a-internal" data-nav-link>Play 배포</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/distribute-and-manage-a-play/distribute-a-play"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/distribute-and-manage-a-play/distribute-a-play"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-play/distribute-and-manage-a-play/update-a-play">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-play/distribute-and-manage-a-play/update-a-play">
+        <a href="/document-staging/nugu-play/distribute-and-manage-a-play/update-a-play" class="nav-href a-internal" data-nav-link>Play 업데이트</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/distribute-and-manage-a-play/update-a-play"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/distribute-and-manage-a-play/update-a-play"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-play/distribute-and-manage-a-play/manage-a-play">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-play/distribute-and-manage-a-play/manage-a-play">
+        <a href="/document-staging/nugu-play/distribute-and-manage-a-play/manage-a-play" class="nav-href a-internal" data-nav-link>Play 관리</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/distribute-and-manage-a-play/manage-a-play"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/distribute-and-manage-a-play/manage-a-play"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-play/distribute-and-manage-a-play/monitor-play-stats">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-play/distribute-and-manage-a-play/monitor-play-stats">
+        <a href="/document-staging/nugu-play/distribute-and-manage-a-play/monitor-play-stats" class="nav-href a-internal" data-nav-link>Play 이용 통계 확인</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/distribute-and-manage-a-play/monitor-play-stats"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/distribute-and-manage-a-play/monitor-play-stats"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-play/distribute-and-manage-a-play/play-operation-policy">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-play/distribute-and-manage-a-play/play-operation-policy">
+        <a href="/document-staging/nugu-play/distribute-and-manage-a-play/play-operation-policy" class="nav-href a-internal" data-nav-link>Play 운영 정책</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/distribute-and-manage-a-play/play-operation-policy"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/distribute-and-manage-a-play/play-operation-policy"> </span>
+    </div>
+    
+</li>
+
+            
+        </ul>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-play/releases">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-play/releases">
+        <a href="/document-staging/nugu-play/releases" class="nav-href a-internal" data-nav-link>Release note</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-play/releases"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-play/releases"> </span>
+    </div>
+    
+</li>
+
+            
+        </ul>
+    
+</li>
+
+    
+        <li data-nav-link-id="/document-staging/work-with-nugu-biz">
+    <div class="nav-link fold has-child " data-fold-target-id="/document-staging/work-with-nugu-biz">
+        <a href="/document-staging/work-with-nugu-biz" class="nav-href a-internal" data-nav-link>NUGU biz kit</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/work-with-nugu-biz"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/work-with-nugu-biz"> </span>
+    </div>
+    
+        <ul class="nav-menu">
+            
+                <li data-nav-link-id="/document-staging/work-with-nugu-biz/nugu-biz-concept">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/work-with-nugu-biz/nugu-biz-concept">
+        <a href="/document-staging/work-with-nugu-biz/nugu-biz-concept" class="nav-href a-internal" data-nav-link>주요 개념</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/work-with-nugu-biz/nugu-biz-concept"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/work-with-nugu-biz/nugu-biz-concept"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/work-with-nugu-biz/describebiz">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/work-with-nugu-biz/describebiz">
+        <a href="/document-staging/work-with-nugu-biz/describebiz" class="nav-href a-internal" data-nav-link>체험판 및 정식판</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/work-with-nugu-biz/describebiz"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/work-with-nugu-biz/describebiz"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/work-with-nugu-biz/private-play">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/work-with-nugu-biz/private-play">
+        <a href="/document-staging/work-with-nugu-biz/private-play" class="nav-href a-internal" data-nav-link>Private Play</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/work-with-nugu-biz/private-play"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/work-with-nugu-biz/private-play"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/work-with-nugu-biz/manage-shared-device">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/work-with-nugu-biz/manage-shared-device">
+        <a href="/document-staging/work-with-nugu-biz/manage-shared-device" class="nav-href a-internal" data-nav-link>Biz 전용 디바이스 관리</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/work-with-nugu-biz/manage-shared-device"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/work-with-nugu-biz/manage-shared-device"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/work-with-nugu-biz/manage-enrolled-user">
+    <div class="nav-link fold has-child " data-fold-target-id="/document-staging/work-with-nugu-biz/manage-enrolled-user">
+        <a href="/document-staging/work-with-nugu-biz/manage-enrolled-user" class="nav-href a-internal" data-nav-link>Biz 사용자 관리</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/work-with-nugu-biz/manage-enrolled-user"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/work-with-nugu-biz/manage-enrolled-user"> </span>
+    </div>
+    
+        <ul class="nav-menu">
+            
+                <li data-nav-link-id="/document-staging/work-with-nugu-biz/manage-enrolled-user/enrolled-user-invitation-trial">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/work-with-nugu-biz/manage-enrolled-user/enrolled-user-invitation-trial">
+        <a href="/document-staging/work-with-nugu-biz/manage-enrolled-user/enrolled-user-invitation-trial" class="nav-href a-internal" data-nav-link>Biz 사용자 초대 (체험판)</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/work-with-nugu-biz/manage-enrolled-user/enrolled-user-invitation-trial"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/work-with-nugu-biz/manage-enrolled-user/enrolled-user-invitation-trial"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/work-with-nugu-biz/manage-enrolled-user/enrolled-user-invitation-biz">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/work-with-nugu-biz/manage-enrolled-user/enrolled-user-invitation-biz">
+        <a href="/document-staging/work-with-nugu-biz/manage-enrolled-user/enrolled-user-invitation-biz" class="nav-href a-internal" data-nav-link>Biz 사용자 초대 (정식판)</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/work-with-nugu-biz/manage-enrolled-user/enrolled-user-invitation-biz"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/work-with-nugu-biz/manage-enrolled-user/enrolled-user-invitation-biz"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/work-with-nugu-biz/manage-enrolled-user/biz-nugu-app">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/work-with-nugu-biz/manage-enrolled-user/biz-nugu-app">
+        <a href="/document-staging/work-with-nugu-biz/manage-enrolled-user/biz-nugu-app" class="nav-href a-internal" data-nav-link>Biz 사용자 설정 (NUGU APP)</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/work-with-nugu-biz/manage-enrolled-user/biz-nugu-app"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/work-with-nugu-biz/manage-enrolled-user/biz-nugu-app"> </span>
+    </div>
+    
+</li>
+
+            
+        </ul>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/work-with-nugu-biz/biz-api">
+    <div class="nav-link fold has-child " data-fold-target-id="/document-staging/work-with-nugu-biz/biz-api">
+        <a href="/document-staging/work-with-nugu-biz/biz-api" class="nav-href a-internal" data-nav-link>Biz API</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/work-with-nugu-biz/biz-api"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/work-with-nugu-biz/biz-api"> </span>
+    </div>
+    
+        <ul class="nav-menu">
+            
+                <li data-nav-link-id="/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser">
+    <div class="nav-link fold has-child " data-fold-target-id="/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser">
+        <a href="/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser" class="nav-href a-internal" data-nav-link>Biz 사용자 API</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser"> </span>
+    </div>
+    
+        <ul class="nav-menu">
+            
+                <li data-nav-link-id="/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser/biz">
+    <div class="nav-link fold has-child " data-fold-target-id="/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser/biz">
+        <a href="/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser/biz" class="nav-href a-internal" data-nav-link>Biz 사용자 그룹 관련</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser/biz"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser/biz"> </span>
+    </div>
+    
+        <ul class="nav-menu">
+            
+                <li data-nav-link-id="/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser/biz/api-enrolleduser-creategroup">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser/biz/api-enrolleduser-creategroup">
+        <a href="/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser/biz/api-enrolleduser-creategroup" class="nav-href a-internal" data-nav-link>Biz 사용자 그룹 생성</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser/biz/api-enrolleduser-creategroup"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser/biz/api-enrolleduser-creategroup"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser/biz/api-enrolleduser-modgroup">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser/biz/api-enrolleduser-modgroup">
+        <a href="/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser/biz/api-enrolleduser-modgroup" class="nav-href a-internal" data-nav-link>Biz 사용자 그룹 수정</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser/biz/api-enrolleduser-modgroup"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser/biz/api-enrolleduser-modgroup"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser/biz/api-enrolleduser-deletegroup">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser/biz/api-enrolleduser-deletegroup">
+        <a href="/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser/biz/api-enrolleduser-deletegroup" class="nav-href a-internal" data-nav-link>Biz 사용자 그룹 삭제</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser/biz/api-enrolleduser-deletegroup"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser/biz/api-enrolleduser-deletegroup"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser/biz/api-enrolleduser-group-getlist">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser/biz/api-enrolleduser-group-getlist">
+        <a href="/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser/biz/api-enrolleduser-group-getlist" class="nav-href a-internal" data-nav-link>Biz 사용자 그룹 목록 조회</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser/biz/api-enrolleduser-group-getlist"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser/biz/api-enrolleduser-group-getlist"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser/biz/api-enrolleduser-group-getinfo">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser/biz/api-enrolleduser-group-getinfo">
+        <a href="/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser/biz/api-enrolleduser-group-getinfo" class="nav-href a-internal" data-nav-link>Biz 사용자 그룹 상세 조회</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser/biz/api-enrolleduser-group-getinfo"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser/biz/api-enrolleduser-group-getinfo"> </span>
+    </div>
+    
+</li>
+
+            
+        </ul>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser/biz-1">
+    <div class="nav-link fold has-child " data-fold-target-id="/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser/biz-1">
+        <a href="/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser/biz-1" class="nav-href a-internal" data-nav-link>Biz 사용자 관련</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser/biz-1"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser/biz-1"> </span>
+    </div>
+    
+        <ul class="nav-menu">
+            
+                <li data-nav-link-id="/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser/biz-1/api-enrolleduser-invite">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser/biz-1/api-enrolleduser-invite">
+        <a href="/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser/biz-1/api-enrolleduser-invite" class="nav-href a-internal" data-nav-link>Biz 사용자 초대</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser/biz-1/api-enrolleduser-invite"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser/biz-1/api-enrolleduser-invite"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser/biz-1/api-enrolleduser-moduser">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser/biz-1/api-enrolleduser-moduser">
+        <a href="/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser/biz-1/api-enrolleduser-moduser" class="nav-href a-internal" data-nav-link>Biz 사용자 수정</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser/biz-1/api-enrolleduser-moduser"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser/biz-1/api-enrolleduser-moduser"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser/biz-1/api-enrolleduser-deleteuser">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser/biz-1/api-enrolleduser-deleteuser">
+        <a href="/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser/biz-1/api-enrolleduser-deleteuser" class="nav-href a-internal" data-nav-link>Biz 사용자 삭제</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser/biz-1/api-enrolleduser-deleteuser"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser/biz-1/api-enrolleduser-deleteuser"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser/biz-1/api-enrolleduser-getlist">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser/biz-1/api-enrolleduser-getlist">
+        <a href="/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser/biz-1/api-enrolleduser-getlist" class="nav-href a-internal" data-nav-link>Biz 사용자 목록 조회</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser/biz-1/api-enrolleduser-getlist"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser/biz-1/api-enrolleduser-getlist"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser/biz-1/api-enrolleduser-getinfo">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser/biz-1/api-enrolleduser-getinfo">
+        <a href="/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser/biz-1/api-enrolleduser-getinfo" class="nav-href a-internal" data-nav-link>Biz 사용자 상세 조회</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser/biz-1/api-enrolleduser-getinfo"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser/biz-1/api-enrolleduser-getinfo"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser/biz-1/api-enrolleduser-getinviteinfo">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser/biz-1/api-enrolleduser-getinviteinfo">
+        <a href="/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser/biz-1/api-enrolleduser-getinviteinfo" class="nav-href a-internal" data-nav-link>Biz 사용자 초대 목록 조회</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser/biz-1/api-enrolleduser-getinviteinfo"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser/biz-1/api-enrolleduser-getinviteinfo"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser/biz-1/api-enrolleduser-createtoken">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser/biz-1/api-enrolleduser-createtoken">
+        <a href="/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser/biz-1/api-enrolleduser-createtoken" class="nav-href a-internal" data-nav-link>Biz 사용자 API Token 생성</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser/biz-1/api-enrolleduser-createtoken"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser/biz-1/api-enrolleduser-createtoken"> </span>
+    </div>
+    
+</li>
+
+            
+        </ul>
+    
+</li>
+
+            
+        </ul>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/work-with-nugu-biz/biz-api/api-shareddevice">
+    <div class="nav-link fold has-child " data-fold-target-id="/document-staging/work-with-nugu-biz/biz-api/api-shareddevice">
+        <a href="/document-staging/work-with-nugu-biz/biz-api/api-shareddevice" class="nav-href a-internal" data-nav-link>Biz 전용 디바이스 API</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/work-with-nugu-biz/biz-api/api-shareddevice"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/work-with-nugu-biz/biz-api/api-shareddevice"> </span>
+    </div>
+    
+        <ul class="nav-menu">
+            
+                <li data-nav-link-id="/document-staging/work-with-nugu-biz/biz-api/api-shareddevice/api-sharedevice-groupinquiry">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/work-with-nugu-biz/biz-api/api-shareddevice/api-sharedevice-groupinquiry">
+        <a href="/document-staging/work-with-nugu-biz/biz-api/api-shareddevice/api-sharedevice-groupinquiry" class="nav-href a-internal" data-nav-link>전용 디바이스 그룹 조회</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/work-with-nugu-biz/biz-api/api-shareddevice/api-sharedevice-groupinquiry"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/work-with-nugu-biz/biz-api/api-shareddevice/api-sharedevice-groupinquiry"> </span>
+    </div>
+    
+</li>
+
+            
+        </ul>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/work-with-nugu-biz/biz-api/api-announcement">
+    <div class="nav-link fold has-child " data-fold-target-id="/document-staging/work-with-nugu-biz/biz-api/api-announcement">
+        <a href="/document-staging/work-with-nugu-biz/biz-api/api-announcement" class="nav-href a-internal" data-nav-link>API 발송 (Announcement)</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/work-with-nugu-biz/biz-api/api-announcement"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/work-with-nugu-biz/biz-api/api-announcement"> </span>
+    </div>
+    
+        <ul class="nav-menu">
+            
+                <li data-nav-link-id="/document-staging/work-with-nugu-biz/biz-api/api-announcement/api-announcement-shareddevice">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/work-with-nugu-biz/biz-api/api-announcement/api-announcement-shareddevice">
+        <a href="/document-staging/work-with-nugu-biz/biz-api/api-announcement/api-announcement-shareddevice" class="nav-href a-internal" data-nav-link>전용디바이스 그룹별 Announcement 전송</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/work-with-nugu-biz/biz-api/api-announcement/api-announcement-shareddevice"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/work-with-nugu-biz/biz-api/api-announcement/api-announcement-shareddevice"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/work-with-nugu-biz/biz-api/api-announcement/api-announcement-bizuser">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/work-with-nugu-biz/biz-api/api-announcement/api-announcement-bizuser">
+        <a href="/document-staging/work-with-nugu-biz/biz-api/api-announcement/api-announcement-bizuser" class="nav-href a-internal" data-nav-link>Biz 사용자별 Announcement 전송</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/work-with-nugu-biz/biz-api/api-announcement/api-announcement-bizuser"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/work-with-nugu-biz/biz-api/api-announcement/api-announcement-bizuser"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/work-with-nugu-biz/biz-api/api-announcement/api-announcement-usergroup">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/work-with-nugu-biz/biz-api/api-announcement/api-announcement-usergroup">
+        <a href="/document-staging/work-with-nugu-biz/biz-api/api-announcement/api-announcement-usergroup" class="nav-href a-internal" data-nav-link>Biz 사용자 그룹별 Announcement 전송</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/work-with-nugu-biz/biz-api/api-announcement/api-announcement-usergroup"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/work-with-nugu-biz/biz-api/api-announcement/api-announcement-usergroup"> </span>
+    </div>
+    
+</li>
+
+            
+        </ul>
+    
+</li>
+
+            
+        </ul>
+    
+</li>
+
+            
+        </ul>
+    
+</li>
+
+    
+        <li data-nav-link-id="/document-staging/nugu-sdk">
+    <div class="nav-link fold has-child " data-fold-target-id="/document-staging/nugu-sdk">
+        <a href="/document-staging/nugu-sdk" class="nav-href a-internal" data-nav-link>NUGU SDK</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-sdk"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-sdk"> </span>
+    </div>
+    
+        <ul class="nav-menu">
+            
+                <li data-nav-link-id="/document-staging/nugu-sdk/describetrial">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-sdk/describetrial">
+        <a href="/document-staging/nugu-sdk/describetrial" class="nav-href a-internal" data-nav-link>체험판과 정식판</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-sdk/describetrial"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-sdk/describetrial"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-sdk/trialprocess">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-sdk/trialprocess">
+        <a href="/document-staging/nugu-sdk/trialprocess" class="nav-href a-internal" data-nav-link>체험판 신청하기</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-sdk/trialprocess"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-sdk/trialprocess"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-sdk/manage-poc">
+    <div class="nav-link fold has-child " data-fold-target-id="/document-staging/nugu-sdk/manage-poc">
+        <a href="/document-staging/nugu-sdk/manage-poc" class="nav-href a-internal" data-nav-link>PoC 관리하기</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-sdk/manage-poc"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-sdk/manage-poc"> </span>
+    </div>
+    
+        <ul class="nav-menu">
+            
+                <li data-nav-link-id="/document-staging/nugu-sdk/manage-poc/poc">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-sdk/manage-poc/poc">
+        <a href="/document-staging/nugu-sdk/manage-poc/poc" class="nav-href a-internal" data-nav-link>PoC 관리</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-sdk/manage-poc/poc"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-sdk/manage-poc/poc"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-sdk/manage-poc/statistic">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-sdk/manage-poc/statistic">
+        <a href="/document-staging/nugu-sdk/manage-poc/statistic" class="nav-href a-internal" data-nav-link>이용 통계 확인</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-sdk/manage-poc/statistic"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-sdk/manage-poc/statistic"> </span>
+    </div>
+    
+</li>
+
+            
+        </ul>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-sdk/authentication">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-sdk/authentication">
+        <a href="/document-staging/nugu-sdk/authentication" class="nav-href a-internal" data-nav-link>Authentication</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-sdk/authentication"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-sdk/authentication"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-sdk/capability-interface">
+    <div class="nav-link fold has-child " data-fold-target-id="/document-staging/nugu-sdk/capability-interface">
+        <a href="/document-staging/nugu-sdk/capability-interface" class="nav-href a-internal" data-nav-link>Capability Interface</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-sdk/capability-interface"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-sdk/capability-interface"> </span>
+    </div>
+    
+        <ul class="nav-menu">
+            
+                <li data-nav-link-id="/document-staging/nugu-sdk/capability-interface/audioplayer">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-sdk/capability-interface/audioplayer">
+        <a href="/document-staging/nugu-sdk/capability-interface/audioplayer" class="nav-href a-internal" data-nav-link>AudioPlayer</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-sdk/capability-interface/audioplayer"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-sdk/capability-interface/audioplayer"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-sdk/capability-interface/display">
+    <div class="nav-link fold has-child " data-fold-target-id="/document-staging/nugu-sdk/capability-interface/display">
+        <a href="/document-staging/nugu-sdk/capability-interface/display" class="nav-href a-internal" data-nav-link>Display</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-sdk/capability-interface/display"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-sdk/capability-interface/display"> </span>
+    </div>
+    
+        <ul class="nav-menu">
+            
+                <li data-nav-link-id="/document-staging/nugu-sdk/capability-interface/display/display-directive">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-sdk/capability-interface/display/display-directive">
+        <a href="/document-staging/nugu-sdk/capability-interface/display/display-directive" class="nav-href a-internal" data-nav-link>Display-Directive</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-sdk/capability-interface/display/display-directive"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-sdk/capability-interface/display/display-directive"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-sdk/capability-interface/display/display-event">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-sdk/capability-interface/display/display-event">
+        <a href="/document-staging/nugu-sdk/capability-interface/display/display-event" class="nav-href a-internal" data-nav-link>Display-Event</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-sdk/capability-interface/display/display-event"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-sdk/capability-interface/display/display-event"> </span>
+    </div>
+    
+</li>
+
+            
+        </ul>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-sdk/capability-interface/system">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-sdk/capability-interface/system">
+        <a href="/document-staging/nugu-sdk/capability-interface/system" class="nav-href a-internal" data-nav-link>System</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-sdk/capability-interface/system"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-sdk/capability-interface/system"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-sdk/capability-interface/tts">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-sdk/capability-interface/tts">
+        <a href="/document-staging/nugu-sdk/capability-interface/tts" class="nav-href a-internal" data-nav-link>TTS</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-sdk/capability-interface/tts"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-sdk/capability-interface/tts"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-sdk/capability-interface/asr">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-sdk/capability-interface/asr">
+        <a href="/document-staging/nugu-sdk/capability-interface/asr" class="nav-href a-internal" data-nav-link>ASR</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-sdk/capability-interface/asr"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-sdk/capability-interface/asr"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-sdk/capability-interface/text">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-sdk/capability-interface/text">
+        <a href="/document-staging/nugu-sdk/capability-interface/text" class="nav-href a-internal" data-nav-link>Text</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-sdk/capability-interface/text"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-sdk/capability-interface/text"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-sdk/capability-interface/location">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-sdk/capability-interface/location">
+        <a href="/document-staging/nugu-sdk/capability-interface/location" class="nav-href a-internal" data-nav-link>Location</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-sdk/capability-interface/location"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-sdk/capability-interface/location"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-sdk/capability-interface/extension">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-sdk/capability-interface/extension">
+        <a href="/document-staging/nugu-sdk/capability-interface/extension" class="nav-href a-internal" data-nav-link>Extension</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-sdk/capability-interface/extension"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-sdk/capability-interface/extension"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-sdk/capability-interface/speaker">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-sdk/capability-interface/speaker">
+        <a href="/document-staging/nugu-sdk/capability-interface/speaker" class="nav-href a-internal" data-nav-link>Speaker</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-sdk/capability-interface/speaker"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-sdk/capability-interface/speaker"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-sdk/capability-interface/bluetooth">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-sdk/capability-interface/bluetooth">
+        <a href="/document-staging/nugu-sdk/capability-interface/bluetooth" class="nav-href a-internal" data-nav-link>Bluetooth</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-sdk/capability-interface/bluetooth"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-sdk/capability-interface/bluetooth"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-sdk/capability-interface/mic">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-sdk/capability-interface/mic">
+        <a href="/document-staging/nugu-sdk/capability-interface/mic" class="nav-href a-internal" data-nav-link>Mic</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-sdk/capability-interface/mic"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-sdk/capability-interface/mic"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-sdk/capability-interface/screen">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-sdk/capability-interface/screen">
+        <a href="/document-staging/nugu-sdk/capability-interface/screen" class="nav-href a-internal" data-nav-link>Screen</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-sdk/capability-interface/screen"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-sdk/capability-interface/screen"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-sdk/capability-interface/battery">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-sdk/capability-interface/battery">
+        <a href="/document-staging/nugu-sdk/capability-interface/battery" class="nav-href a-internal" data-nav-link>Battery</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-sdk/capability-interface/battery"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-sdk/capability-interface/battery"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-sdk/capability-interface/sound">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-sdk/capability-interface/sound">
+        <a href="/document-staging/nugu-sdk/capability-interface/sound" class="nav-href a-internal" data-nav-link>Sound</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-sdk/capability-interface/sound"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-sdk/capability-interface/sound"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-sdk/capability-interface/chips">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-sdk/capability-interface/chips">
+        <a href="/document-staging/nugu-sdk/capability-interface/chips" class="nav-href a-internal" data-nav-link>Chips</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-sdk/capability-interface/chips"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-sdk/capability-interface/chips"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-sdk/capability-interface/session">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-sdk/capability-interface/session">
+        <a href="/document-staging/nugu-sdk/capability-interface/session" class="nav-href a-internal" data-nav-link>Session</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-sdk/capability-interface/session"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-sdk/capability-interface/session"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-sdk/capability-interface/phonecall">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-sdk/capability-interface/phonecall">
+        <a href="/document-staging/nugu-sdk/capability-interface/phonecall" class="nav-href a-internal" data-nav-link>PhoneCall</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-sdk/capability-interface/phonecall"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-sdk/capability-interface/phonecall"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-sdk/capability-interface/message">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-sdk/capability-interface/message">
+        <a href="/document-staging/nugu-sdk/capability-interface/message" class="nav-href a-internal" data-nav-link>Message</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-sdk/capability-interface/message"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-sdk/capability-interface/message"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-sdk/capability-interface/mediaplayer">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-sdk/capability-interface/mediaplayer">
+        <a href="/document-staging/nugu-sdk/capability-interface/mediaplayer" class="nav-href a-internal" data-nav-link>MediaPlayer</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-sdk/capability-interface/mediaplayer"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-sdk/capability-interface/mediaplayer"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-sdk/capability-interface/routine">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-sdk/capability-interface/routine">
+        <a href="/document-staging/nugu-sdk/capability-interface/routine" class="nav-href a-internal" data-nav-link>Routine</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-sdk/capability-interface/routine"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-sdk/capability-interface/routine"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-sdk/capability-interface/utility">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-sdk/capability-interface/utility">
+        <a href="/document-staging/nugu-sdk/capability-interface/utility" class="nav-href a-internal" data-nav-link>Utility</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-sdk/capability-interface/utility"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-sdk/capability-interface/utility"> </span>
+    </div>
+    
+</li>
+
+            
+        </ul>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-sdk/platform">
+    <div class="nav-link fold has-child " data-fold-target-id="/document-staging/nugu-sdk/platform">
+        <a href="/document-staging/nugu-sdk/platform" class="nav-href a-internal" data-nav-link>Platform</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-sdk/platform"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-sdk/platform"> </span>
+    </div>
+    
+        <ul class="nav-menu">
+            
+                <li data-nav-link-id="/document-staging/nugu-sdk/platform/ios">
+    <div class="nav-link fold has-child " data-fold-target-id="/document-staging/nugu-sdk/platform/ios">
+        <a href="/document-staging/nugu-sdk/platform/ios" class="nav-href a-internal" data-nav-link>iOS</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-sdk/platform/ios"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-sdk/platform/ios"> </span>
+    </div>
+    
+        <ul class="nav-menu">
+            
+                <li data-nav-link-id="/document-staging/nugu-sdk/platform/ios/start">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-sdk/platform/ios/start">
+        <a href="/document-staging/nugu-sdk/platform/ios/start" class="nav-href a-internal" data-nav-link>시작하기</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-sdk/platform/ios/start"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-sdk/platform/ios/start"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-sdk/platform/ios/component">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-sdk/platform/ios/component">
+        <a href="/document-staging/nugu-sdk/platform/ios/component" class="nav-href a-internal" data-nav-link>구성요소</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-sdk/platform/ios/component"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-sdk/platform/ios/component"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-sdk/platform/ios/background">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-sdk/platform/ios/background">
+        <a href="/document-staging/nugu-sdk/platform/ios/background" class="nav-href a-internal" data-nav-link>Background 동작 처리</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-sdk/platform/ios/background"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-sdk/platform/ios/background"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-sdk/platform/ios/web-server">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-sdk/platform/ios/web-server">
+        <a href="/document-staging/nugu-sdk/platform/ios/web-server" class="nav-href a-internal" data-nav-link>NUGU 서비스 관리 web server 연동</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-sdk/platform/ios/web-server"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-sdk/platform/ios/web-server"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-sdk/platform/ios/nugu-display-template-server">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-sdk/platform/ios/nugu-display-template-server">
+        <a href="/document-staging/nugu-sdk/platform/ios/nugu-display-template-server" class="nav-href a-internal" data-nav-link>NUGU Display의 노출과 제어</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-sdk/platform/ios/nugu-display-template-server"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-sdk/platform/ios/nugu-display-template-server"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-sdk/platform/ios/nugu">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-sdk/platform/ios/nugu">
+        <a href="/document-staging/nugu-sdk/platform/ios/nugu" class="nav-href a-internal" data-nav-link>NUGU 사용자 인터페이스</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-sdk/platform/ios/nugu"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-sdk/platform/ios/nugu"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-sdk/platform/ios/dark-mode">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-sdk/platform/ios/dark-mode">
+        <a href="/document-staging/nugu-sdk/platform/ios/dark-mode" class="nav-href a-internal" data-nav-link>Dark Mode 지원</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-sdk/platform/ios/dark-mode"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-sdk/platform/ios/dark-mode"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-sdk/platform/ios/testing_sdk_integration">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-sdk/platform/ios/testing_sdk_integration">
+        <a href="/document-staging/nugu-sdk/platform/ios/testing_sdk_integration" class="nav-href a-internal" data-nav-link>테스트 환경 설정</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-sdk/platform/ios/testing_sdk_integration"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-sdk/platform/ios/testing_sdk_integration"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-sdk/platform/ios/1.0">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-sdk/platform/ios/1.0">
+        <a href="/document-staging/nugu-sdk/platform/ios/1.0" class="nav-href a-internal" data-nav-link>1.0 으로 업그레이드</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-sdk/platform/ios/1.0"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-sdk/platform/ios/1.0"> </span>
+    </div>
+    
+</li>
+
+            
+        </ul>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-sdk/platform/android">
+    <div class="nav-link fold has-child " data-fold-target-id="/document-staging/nugu-sdk/platform/android">
+        <a href="/document-staging/nugu-sdk/platform/android" class="nav-href a-internal" data-nav-link>Android</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-sdk/platform/android"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-sdk/platform/android"> </span>
+    </div>
+    
+        <ul class="nav-menu">
+            
+                <li data-nav-link-id="/document-staging/nugu-sdk/platform/android/start">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-sdk/platform/android/start">
+        <a href="/document-staging/nugu-sdk/platform/android/start" class="nav-href a-internal" data-nav-link>시작하기</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-sdk/platform/android/start"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-sdk/platform/android/start"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-sdk/platform/android/intro_components">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-sdk/platform/android/intro_components">
+        <a href="/document-staging/nugu-sdk/platform/android/intro_components" class="nav-href a-internal" data-nav-link>구성요소</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-sdk/platform/android/intro_components"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-sdk/platform/android/intro_components"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-sdk/platform/android/background">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-sdk/platform/android/background">
+        <a href="/document-staging/nugu-sdk/platform/android/background" class="nav-href a-internal" data-nav-link>Background 동작 처리</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-sdk/platform/android/background"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-sdk/platform/android/background"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-sdk/platform/android/nugu-web-server">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-sdk/platform/android/nugu-web-server">
+        <a href="/document-staging/nugu-sdk/platform/android/nugu-web-server" class="nav-href a-internal" data-nav-link>NUGU 서비스 관리 web server 연동</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-sdk/platform/android/nugu-web-server"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-sdk/platform/android/nugu-web-server"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-sdk/platform/android/nugu-display">
+    <div class="nav-link fold has-child " data-fold-target-id="/document-staging/nugu-sdk/platform/android/nugu-display">
+        <a href="/document-staging/nugu-sdk/platform/android/nugu-display" class="nav-href a-internal" data-nav-link>NUGU Display의 노출과 제어</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-sdk/platform/android/nugu-display"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-sdk/platform/android/nugu-display"> </span>
+    </div>
+    
+        <ul class="nav-menu">
+            
+                <li data-nav-link-id="/document-staging/nugu-sdk/platform/android/nugu-display/templaterenderer">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-sdk/platform/android/nugu-display/templaterenderer">
+        <a href="/document-staging/nugu-sdk/platform/android/nugu-display/templaterenderer" class="nav-href a-internal" data-nav-link>TemplateRenderer</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-sdk/platform/android/nugu-display/templaterenderer"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-sdk/platform/android/nugu-display/templaterenderer"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-sdk/platform/android/nugu-display/templatehandler">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-sdk/platform/android/nugu-display/templatehandler">
+        <a href="/document-staging/nugu-sdk/platform/android/nugu-display/templatehandler" class="nav-href a-internal" data-nav-link>TemplateHandler</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-sdk/platform/android/nugu-display/templatehandler"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-sdk/platform/android/nugu-display/templatehandler"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-sdk/platform/android/nugu-display/templateview">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-sdk/platform/android/nugu-display/templateview">
+        <a href="/document-staging/nugu-sdk/platform/android/nugu-display/templateview" class="nav-href a-internal" data-nav-link>TemplateView</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-sdk/platform/android/nugu-display/templateview"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-sdk/platform/android/nugu-display/templateview"> </span>
+    </div>
+    
+</li>
+
+            
+        </ul>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-sdk/platform/android/nugu-user-interface">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-sdk/platform/android/nugu-user-interface">
+        <a href="/document-staging/nugu-sdk/platform/android/nugu-user-interface" class="nav-href a-internal" data-nav-link>NUGU 사용자 인터페이스</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-sdk/platform/android/nugu-user-interface"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-sdk/platform/android/nugu-user-interface"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-sdk/platform/android/dark-mode">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-sdk/platform/android/dark-mode">
+        <a href="/document-staging/nugu-sdk/platform/android/dark-mode" class="nav-href a-internal" data-nav-link>Dark Mode 지원</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-sdk/platform/android/dark-mode"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-sdk/platform/android/dark-mode"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-sdk/platform/android/testing_sdk_integration">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-sdk/platform/android/testing_sdk_integration">
+        <a href="/document-staging/nugu-sdk/platform/android/testing_sdk_integration" class="nav-href a-internal" data-nav-link>테스트 환경 설정</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-sdk/platform/android/testing_sdk_integration"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-sdk/platform/android/testing_sdk_integration"> </span>
+    </div>
+    
+</li>
+
+            
+        </ul>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-sdk/platform/linux">
+    <div class="nav-link fold has-child " data-fold-target-id="/document-staging/nugu-sdk/platform/linux">
+        <a href="/document-staging/nugu-sdk/platform/linux" class="nav-href a-internal" data-nav-link>Linux</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-sdk/platform/linux"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-sdk/platform/linux"> </span>
+    </div>
+    
+        <ul class="nav-menu">
+            
+                <li data-nav-link-id="/document-staging/nugu-sdk/platform/linux/start">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-sdk/platform/linux/start">
+        <a href="/document-staging/nugu-sdk/platform/linux/start" class="nav-href a-internal" data-nav-link>시작하기</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-sdk/platform/linux/start"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-sdk/platform/linux/start"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-sdk/platform/linux/component">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-sdk/platform/linux/component">
+        <a href="/document-staging/nugu-sdk/platform/linux/component" class="nav-href a-internal" data-nav-link>구성요소</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-sdk/platform/linux/component"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-sdk/platform/linux/component"> </span>
+    </div>
+    
+</li>
+
+            
+        </ul>
+    
+</li>
+
+            
+        </ul>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-sdk/api-references">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-sdk/api-references">
+        <a href="/document-staging/nugu-sdk/api-references" class="nav-href a-internal" data-nav-link>API References</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-sdk/api-references"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-sdk/api-references"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-sdk/source-code">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-sdk/source-code">
+        <a href="/document-staging/nugu-sdk/source-code" class="nav-href a-internal" data-nav-link>Source code</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-sdk/source-code"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-sdk/source-code"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-sdk/sdk-design-guide">
+    <div class="nav-link fold has-child " data-fold-target-id="/document-staging/nugu-sdk/sdk-design-guide">
+        <a href="/document-staging/nugu-sdk/sdk-design-guide" class="nav-href a-internal" data-nav-link>SDK UX Guide</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-sdk/sdk-design-guide"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-sdk/sdk-design-guide"> </span>
+    </div>
+    
+        <ul class="nav-menu">
+            
+                <li data-nav-link-id="/document-staging/nugu-sdk/sdk-design-guide/nugu-device">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-sdk/sdk-design-guide/nugu-device">
+        <a href="/document-staging/nugu-sdk/sdk-design-guide/nugu-device" class="nav-href a-internal" data-nav-link>NUGU 기기</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-sdk/sdk-design-guide/nugu-device"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-sdk/sdk-design-guide/nugu-device"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-sdk/sdk-design-guide/booting">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-sdk/sdk-design-guide/booting">
+        <a href="/document-staging/nugu-sdk/sdk-design-guide/booting" class="nav-href a-internal" data-nav-link>부팅화면</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-sdk/sdk-design-guide/booting"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-sdk/sdk-design-guide/booting"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-sdk/sdk-design-guide/voice-chrome">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-sdk/sdk-design-guide/voice-chrome">
+        <a href="/document-staging/nugu-sdk/sdk-design-guide/voice-chrome" class="nav-href a-internal" data-nav-link>Voice Chrome</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-sdk/sdk-design-guide/voice-chrome"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-sdk/sdk-design-guide/voice-chrome"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-sdk/sdk-design-guide/display-template">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-sdk/sdk-design-guide/display-template">
+        <a href="/document-staging/nugu-sdk/sdk-design-guide/display-template" class="nav-href a-internal" data-nav-link>Display Template</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-sdk/sdk-design-guide/display-template"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-sdk/sdk-design-guide/display-template"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-sdk/sdk-design-guide/nugu-inside">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-sdk/sdk-design-guide/nugu-inside">
+        <a href="/document-staging/nugu-sdk/sdk-design-guide/nugu-inside" class="nav-href a-internal" data-nav-link>NUGU Inside</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-sdk/sdk-design-guide/nugu-inside"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-sdk/sdk-design-guide/nugu-inside"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-sdk/sdk-design-guide/error-handling">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-sdk/sdk-design-guide/error-handling">
+        <a href="/document-staging/nugu-sdk/sdk-design-guide/error-handling" class="nav-href a-internal" data-nav-link>Error handling</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-sdk/sdk-design-guide/error-handling"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-sdk/sdk-design-guide/error-handling"> </span>
+    </div>
+    
+</li>
+
+            
+        </ul>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/nugu-sdk/release-note">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/nugu-sdk/release-note">
+        <a href="/document-staging/nugu-sdk/release-note" class="nav-href a-internal" data-nav-link>Release note</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/nugu-sdk/release-note"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/nugu-sdk/release-note"> </span>
+    </div>
+    
+</li>
+
+            
+        </ul>
+    
+</li>
+
+    
+        <li data-nav-link-id="/document-staging/reference">
+    <div class="nav-link fold has-child " data-fold-target-id="/document-staging/reference">
+        <a href="/document-staging/reference" class="nav-href a-internal" data-nav-link>관련정보</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/reference"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/reference"> </span>
+    </div>
+    
+        <ul class="nav-menu">
+            
+                <li data-nav-link-id="/document-staging/reference/status">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/reference/status">
+        <a href="/document-staging/reference/status" class="nav-href a-internal" data-nav-link>NUGU 대화 상태</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/reference/status"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/reference/status"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/reference/layer">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/reference/layer">
+        <a href="/document-staging/reference/layer" class="nav-href a-internal" data-nav-link>Layer 정책</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/reference/layer"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/reference/layer"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/reference/register-icon">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/reference/register-icon">
+        <a href="/document-staging/reference/register-icon" class="nav-href a-internal" data-nav-link>Icon 등록</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/reference/register-icon"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/reference/register-icon"> </span>
+    </div>
+    
+</li>
+
+            
+                <li data-nav-link-id="/document-staging/reference/list-of-unit-tags-supported-by-utterance-options">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/reference/list-of-unit-tags-supported-by-utterance-options">
+        <a href="/document-staging/reference/list-of-unit-tags-supported-by-utterance-options" class="nav-href a-internal" data-nav-link>발화 옵션에서 UNIT 태그로 지원하는 단위</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/reference/list-of-unit-tags-supported-by-utterance-options"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/reference/list-of-unit-tags-supported-by-utterance-options"> </span>
+    </div>
+    
+</li>
+
+            
+        </ul>
+    
+</li>
+
+    
+        <li data-nav-link-id="/document-staging/terms">
+    <div class="nav-link fold" data-fold-target-id="/document-staging/terms">
+        <a href="/document-staging/terms" class="nav-href a-internal" data-nav-link>용어 정의</a>
+        <span class="nav-unfold" data-unfold-id="/document-staging/terms"> </span>
+        <span class="nav-fold" data-fold-id="/document-staging/terms"> </span>
+    </div>
+    
+</li>
+
+    
+</ul>
+
+</div>
+
+            </nav>
+            <div class="footer footer--left">
+                <div class="f-item">
+    <ul class="f-link">
+        <li><a href="https://developers.nugu.co.kr/#/partners/proposition"><span>제휴제안</span></a></li>
+        <li><a href="https://developers.nugu.co.kr/#/customer/terms"><span>이용약관</span></a></li>
+        <li><a href="https://privacy.sktelecom.com/view.do?ctg=policy&amp;name=policy"><strong>개인정보처리방침</strong></a></li>
+    </ul>
+    <ul class="f-corp">
+        <li>
+            <span>서울특별시 중구 을지로 65</span>
+            <span>대표이사/사장  박정호</span>
+        </li>
+        <li><span>사업자등록번호  104-81-37225</span></li>
+        <li><span>Powered by SK텔레콤</span></li>
+    </ul>
+    <div class="f-logo"></div>
+</div>
+
+            </div>
+        </div>
+
+        <div id="container_wrapper" class="flex-right flex-right--container">
+            <div id="container" class="container">
+                <div class="title">
+                    <h1>기능 정의</h1>
+                    
+                </div>
+                <div class="content">
+                    <p>VUX 디자인의 첫 번째 단계는 제공하고자 하는 서비스의 타겟 사용자와 사용자의 상황을 분석하고, 제공할 주요 기능을 목록으로 정의하는 단계입니다. 즉, 이 서비스를 어떤 사용자가 어떤 환경에서 주로 이용할 것인지를 고려하여 제공할 기능 범위를 정의합니다.</p>
+
+<p>예를 들어, 자동차에서 스타벅스 커피를 주문하고, 해당 매장에 도착해서 주문한 커피를 받아가는 서비스를 제공한다고 할 경우에는 사용자의 운전 상황에 대한 이해와 사용자의 요구를 바탕으로 서비스 범위를 결정해야 합니다.</p>
+
+<p>기존 커피 주문 시에는 샷이나 얼음 추가 등 여러 가지 옵션을 추가할 수 있지만, 운전 상황에서 여러 번의 사용자 선택을 거치는 것은 사고 발생의 위험이 있으므로 차량 내 커피 주문 서비스에서는 옵션 추가 기능을 제공하지 않을 수 있습니다. 이처럼 제공하고자 하는 기능 범위가 결정되면 이를 단위 기능으로 분류하고 흐름을 구조화합니다.</p>
+
+<h2 id="서비스-제공-범위-정의">서비스 제공 범위 정의<a href="#%EC%84%9C%EB%B9%84%EC%8A%A4-%EC%A0%9C%EA%B3%B5-%EB%B2%94%EC%9C%84-%EC%A0%95%EC%9D%98" class="go-hash hash-internal a-internal"></a><div class="copy-link" data-header-link="/document-staging/nugu-play/nugu-ux/target-user-analysis-and-task-definition#서비스-제공-범위-정의"></div>
+</h2>
+
+<p>제공하고자 하는 기능(Task) 목록을 정의하고, 각 기능을 사용자가 예측 가능한 범위로 분리 또는 병합한 뒤 핵심 기능과 주변 기능을 계층 또는 흐름으로 구조화합니다.</p>
+
+<div class="alerts alerts--noti">
+    <i class="icon"></i>
+    <div class="text">
+<p><strong>커피 주문 서비스 태스크</strong></p>
+
+<ul>
+  <li>사전 등록: 계정 연동 / 결제 방식 등록</li>
+  <li>커피 주문: 주문 시작 / 메뉴 선택 / 매장 선택 / 주문 접수 / 주문 진행 상태 알림</li>
+  <li>주문 관리: 주문 조회 / 잔액 조회 / 주문 취소</li>
+  <li>기타 : 도움말</li>
+</ul>
+</div>
+</div>
+
+<h2 id="단위-태스크-정의">단위 태스크 정의<a href="#%EB%8B%A8%EC%9C%84-%ED%83%9C%EC%8A%A4%ED%81%AC-%EC%A0%95%EC%9D%98" class="go-hash hash-internal a-internal"></a><div class="copy-link" data-header-link="/document-staging/nugu-play/nugu-ux/target-user-analysis-and-task-definition#단위-태스크-정의"></div>
+</h2>
+
+<p>사용자의 발화 패턴을 바탕으로 발생 가능한 경우(case)를 구분하여 세부 기능 단위로 정의합니다.</p>
+
+<div class="alerts alerts--noti">
+    <i class="icon"></i>
+    <div class="text">
+<p><strong>커피 주문(주문 시작. 메뉴 선택, 매장 선택)</strong></p>
+
+<ul>
+  <li>Case 1 : 메뉴명, 지점명을 모두 발화한 경우 “스타벅스 소공동점에서 아메리카노 톨 사이즈 한 잔 주문해줘”</li>
+  <li>Case 2 : 메뉴명, 지점명을 발화하지 않은 경우 “스타벅스에서 주문해줘”</li>
+  <li>Case 3 : 메뉴명만 발화한 경우 “스타벅스에서 아메리카노 주문해줘”</li>
+  <li>Case 4 : 지점명만 발화한 경우 “스타벅스 소공동점에서 주문해줘”</li>
+</ul>
+</div>
+</div>
+
+                    <div class="pagination pagination--nav" data-skip-search-index>
+    
+    <a href="/document-staging/nugu-play/nugu-ux" class="left a-internal">
+        <div class="block">
+            <div class="cont">
+                <div class="cont-desc">Previous</div>
+                <div class="cont-tit">Voice UX Design Guide</div>
+            </div>
+        </div>
+    </a>
+    
+    
+    <a href="/document-staging/nugu-play/nugu-ux/voice-interaction-design" class="right a-internal">
+        <div class="block">
+            <div class="cont">
+                <div class="cont-desc">Next</div>
+                <div class="cont-tit">사용자 발화(User Utterance) 예상 하기</div>
+            </div>
+        </div>
+    </a>
+    
+</div>
+
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer footer--bottom">
+            <div class="f-item">
+    <ul class="f-link">
+        <li><a href="https://developers.nugu.co.kr/#/partners/proposition"><span>제휴제안</span></a></li>
+        <li><a href="https://developers.nugu.co.kr/#/customer/terms"><span>이용약관</span></a></li>
+        <li><a href="https://privacy.sktelecom.com/view.do?ctg=policy&amp;name=policy"><strong>개인정보처리방침</strong></a></li>
+    </ul>
+    <ul class="f-corp">
+        <li>
+            <span>서울특별시 중구 을지로 65</span>
+            <span>대표이사/사장  박정호</span>
+        </li>
+        <li><span>사업자등록번호  104-81-37225</span></li>
+        <li><span>Powered by SK텔레콤</span></li>
+    </ul>
+    <div class="f-logo"></div>
+</div>
+
+        </footer>
+    </section>
+</div>
+<div class="popup image" style="display: none;">
+    <section>
+        <img id="modal_image" class="modal-image" src="" data-skip-src-to-absolute>
+    </section>
+</div>
+
+<script type="text/x-jsrender" id="search_contents_tmpl">
+
+<div class="item">
+    <a href="{{:url}}">
+        <div class="item-tit">{{:title}}</div>
+        {{for sentences}}
+        <div class="item-desc">{{:}}</div>
+        {{/for}}
+    </a>
+</div>
+
+</script>
+<div class="popup popup-md search" style="display: none;">
+    <section>
+        <header>
+            <button type="button" class="icon icon--close-lg"></button>
+        </header>
+        <div class="cont">
+            <div class="cont-top">
+                <div class="search-area">
+                    <div class="search-block">
+                        <input id="search_keyword" type="text" class="inp-text" placeholder="search">
+                        <button type="button" class="icon icon--search"></button>
+                    </div>
+                </div>
+            </div>
+            <div class="cont-bottom">
+                <!-- 검색결과 있음 -->
+                <div id="search_result" class="search-result" style="display: block">
+                </div>
+
+                <!-- 검색결과 없음 -->
+                <div class="search-result no-data" style="display: none">
+                    <p>검색 결과가 없습니다.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</div>
+
+
+<div class="dimmed" style="display: none;"></div>
+</body>
+</html>
