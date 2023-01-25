@@ -1,7 +1,7 @@
 [
   {
   "url": "/document-staging/nugu-sdk/platform/ios/1.0",
-  "order": 180,
+  "order": 181,
   "indexes": [
     {
   "title": "1.0 으로 업그레이드",
@@ -633,7 +633,7 @@
 },
   {
   "url": "/document-staging/nugu-sdk/platform/android",
-  "order": 181,
+  "order": 182,
   "indexes": [
     {
   "title": "Android",
@@ -656,34 +656,34 @@
   ]
 },
   {
-  "url": "/document-staging/work-with-nugu-biz/biz-api/api-announcement/api-announcement-bizuser",
-  "order": 137,
+  "url": "/document-staging/work-with-nugu-biz/biz-api/api-announcement/api-announcement-bizuser-v2",
+  "order": 138,
   "indexes": [
     {
-  "title": "Biz 사용자별 Announcement 전송",
+  "title": "Biz 사용자별 Announcement 전송 V2",
   "hash": "",
   "sentences": [
-    "Biz 사용자별 Announcement 전송",
+    "Biz 사용자별 Announcement 전송 V2",
     "등록된 Biz 사용자가 Biz API 수신 및 제휴사 계정 인증을 한 경우, 계정 인증을 통해 생성된 토큰을 바탕으로 개인에게 특화된 Announcement 메세지를 사용자의 디바이스에 발송 할 수 있습니다."
   ]
 },
     {
-  "title": "Biz 사용자별 Announcement 전송 > 1. URL",
+  "title": "Biz 사용자별 Announcement 전송 V2 > 1. URL",
   "hash": "#1-url-",
   "sentences": [
     "1. URL",
-    "[POST] https://biz-api.sktnugu.com/api/v1/enrolledUser/user/{userApiToken}/announcement"
+    "[POST] https://biz-api.sktnugu.com/api/v2/enrolledUser/user/{userApiToken}/announcement?callBack={callBackUrl}"
   ]
 },
     {
-  "title": "Biz 사용자별 Announcement 전송 > 2. Request",
+  "title": "Biz 사용자별 Announcement 전송 V2 > 2. Request",
   "hash": "#2-request-",
   "sentences": [
     "2. Request"
   ]
 },
     {
-  "title": "Biz 사용자별 Announcement 전송 > 2.1 Body",
+  "title": "Biz 사용자별 Announcement 전송 V2 > 2.1 Body",
   "hash": "#21-body-",
   "sentences": [
     "2.1 Body",
@@ -692,7 +692,107 @@
   ]
 },
     {
-  "title": "Biz 사용자별 Announcement 전송 > 2.2 설명",
+  "title": "Biz 사용자별 Announcement 전송 V2 > 2.2 설명",
+  "hash": "#22-설명-",
+  "sentences": [
+    "2.2 설명",
+    "Publisher-Token | Header | string | Y | 퍼블리셔가 보유한 토큰",
+    "userApiToken | path | string | Y | 발송할 사용자의 API 토큰",
+    "callBackUrl | query param | string |   | 처리결과를 받을 URL(80/443포트만 허용)미입력시 전송되지 않는다.",
+    "playServiceId | body | string | Y | 발송 대상 play대상 play의 합성음, TTS Domain을 기준으로 SKML을 생성",
+    "tts | body | object |   | TTS를 구성하는 객체",
+    "tts.text | body | string | Y | 발화문장발화문장, Display 객체 중 반드시 1개 이상은 존재해야 한다.",
+    "tts.speed | body | string |   | 발화속도85, 90… 120까지의 5단위 값기본값은 100",
+    "tts.pause1 | body | string |   | 문장 사이 묵음 구간 길이300, 400… 900까지의 100단위 값기본값은 600",
+    "tts.pause2 | body | string |   | 100, 200… 500까지의 100단위 값기본값은 300",
+    "display | body | object | Y | Display 객체발화문장, Display 객체 중 반드시 1개 이상은 존재해야 한다.",
+    "display.type | body | string | Y | 사용할 Display TemplateFullText1, ImageText2중 하나",
+    "display.title | body | string | Y | 화면 타이틀",
+    "display.header | body | string | Y | 본문 제목",
+    "display.body | body | string | Y | 본문 내용",
+    "display.footer | body | string |   | 본문 부가 설명",
+    "display.image | body | string |   | 이미지ImageText Type에서 이미지가 없을 경우, 디폴트 이미지 노출",
+    "display.grammarGuide | body | array of string |   | 가이드 발화문"
+  ]
+},
+    {
+  "title": "Biz 사용자별 Announcement 전송 V2 > 3. Response",
+  "hash": "#3-response-",
+  "sentences": [
+    "3. Response"
+  ]
+},
+    {
+  "title": "Biz 사용자별 Announcement 전송 V2 > 3.1 HTTP Status",
+  "hash": "#31-http-status-",
+  "sentences": [
+    "3.1 HTTP Status",
+    "200 |   | 정상 요청",
+    "403 |   | 퍼블리셔 API Token이 유효하지 않거나, 유효하지 않은 자원에 접근할 경우 리턴",
+    "404 |   | 발송 요청한 사용자가 존재하지 않을 때 응답값",
+    "400 | V1ANN001 | body 값을 파싱할 수 없음",
+    "400 | V1ANN002 | playServiceId 없음",
+    "400 | V1ANN101 | tts 객체가 모두 존재하지 않음",
+    "400 | V1ANN102 | tts.text 없음",
+    "400 | V1ANN103 | tts.speed 값이 잘못됨",
+    "400 | V1ANN104 | tts.pause1 값이 잘못됨",
+    "400 | V1ANN105 | tts.pause2 값이 잘못됨",
+    "400 | V1ANN201 | display.type 값이 잘못됨",
+    "400 | V1ANN202 | display.title 값이 없음",
+    "400 | V1ANN203 | display.header 값이 없음",
+    "400 | V1ANN204 | display.body 값이 없음",
+    "400 | V1ANN301 | 허용되지 않는 playServiceId"
+  ]
+},
+    {
+  "title": "Biz 사용자별 Announcement 전송 V2 > 3.2 Body",
+  "hash": "#32-body-",
+  "sentences": [
+    "3.2 Body",
+    "callback URL을 입력했을 경우에만 전달받음",
+    "{\n  \"id\": \"XXX\",\n  \"name\": \"XXX\",\n  \"email\": \"XXX\",\n  \"resultCode\": \"OK\",\n  \"deviceResults\": [\n    {\n      \"code\": \"XXX\"\n    }\n  ]\n}"
+  ]
+}
+  ]
+},
+  {
+  "url": "/document-staging/work-with-nugu-biz/biz-api/api-announcement/api-announcement-bizuser",
+  "order": 137,
+  "indexes": [
+    {
+  "title": "Biz 사용자별 Announcement 전송 V1",
+  "hash": "",
+  "sentences": [
+    "Biz 사용자별 Announcement 전송 V1",
+    "등록된 Biz 사용자가 Biz API 수신 및 제휴사 계정 인증을 한 경우, 계정 인증을 통해 생성된 토큰을 바탕으로 개인에게 특화된 Announcement 메세지를 사용자의 디바이스에 발송 할 수 있습니다."
+  ]
+},
+    {
+  "title": "Biz 사용자별 Announcement 전송 V1 > 1. URL",
+  "hash": "#1-url-",
+  "sentences": [
+    "1. URL",
+    "[POST] https://biz-api.sktnugu.com/api/v1/enrolledUser/user/{userApiToken}/announcement"
+  ]
+},
+    {
+  "title": "Biz 사용자별 Announcement 전송 V1 > 2. Request",
+  "hash": "#2-request-",
+  "sentences": [
+    "2. Request"
+  ]
+},
+    {
+  "title": "Biz 사용자별 Announcement 전송 V1 > 2.1 Body",
+  "hash": "#21-body-",
+  "sentences": [
+    "2.1 Body",
+    "body",
+    "{\n  \"playServiceId\": \"XXX\",\n  \"tts\": {\n    \"text\": \"발송 내용\",\n    \"speed\": \"100\",\n    \"pause1\": \"600\",\n    \"pause2\": \"300\"\n  },\n  \"display\": {\n    \"type\": \"imageText2\",\n    \"title\": \"타이틀\",\n    \"header\": \"헤더\",\n    \"body\": \"본문\",\n    \"footer\": \"부가설명\",\n    \"image\": \"http://imageUrl\",\n    \"grammarGuide\": [\n      \"발화문1\",\n      \"발화문2\"\n    ]\n  }\n}"
+  ]
+},
+    {
+  "title": "Biz 사용자별 Announcement 전송 V1 > 2.2 설명",
   "hash": "#22-설명-",
   "sentences": [
     "2.2 설명",
@@ -715,14 +815,14 @@
   ]
 },
     {
-  "title": "Biz 사용자별 Announcement 전송 > 3. Response",
+  "title": "Biz 사용자별 Announcement 전송 V1 > 3. Response",
   "hash": "#3-response-",
   "sentences": [
     "3. Response"
   ]
 },
     {
-  "title": "Biz 사용자별 Announcement 전송 > 3.1 HTTP Status",
+  "title": "Biz 사용자별 Announcement 전송 V1 > 3.1 HTTP Status",
   "hash": "#31-http-status-",
   "sentences": [
     "3.1 HTTP Status",
@@ -744,7 +844,7 @@
   ]
 },
     {
-  "title": "Biz 사용자별 Announcement 전송 > 3.2 Body",
+  "title": "Biz 사용자별 Announcement 전송 V1 > 3.2 Body",
   "hash": "#32-body-",
   "sentences": [
     "3.2 Body",
@@ -854,7 +954,7 @@
 },
   {
   "url": "/document-staging/work-with-nugu-biz/biz-api/api-announcement/api-announcement-usergroup",
-  "order": 138,
+  "order": 139,
   "indexes": [
     {
   "title": "Biz 사용자 그룹별 Announcement 전송",
@@ -1750,7 +1850,7 @@
 },
   {
   "url": "/document-staging/nugu-sdk/api-references",
-  "order": 196,
+  "order": 197,
   "indexes": [
 
   ]
@@ -1818,7 +1918,7 @@
 },
   {
   "url": "/document-staging/nugu-sdk/capability-interface/asr",
-  "order": 153,
+  "order": 154,
   "indexes": [
     {
   "title": "ASR",
@@ -2520,7 +2620,7 @@
 },
   {
   "url": "/document-staging/nugu-sdk/capability-interface/audioplayer",
-  "order": 147,
+  "order": 148,
   "indexes": [
     {
   "title": "AudioPlayer",
@@ -3147,7 +3247,7 @@
 },
   {
   "url": "/document-staging/nugu-sdk/authentication",
-  "order": 145,
+  "order": 146,
   "indexes": [
     {
   "title": "Authentication",
@@ -3436,6 +3536,13 @@
   ]
 },
   {
+  "url": "/document-staging/nugu-play/create-plays-with-play-builder/before-start/backend-proxy",
+  "order": 16,
+  "indexes": [
+
+  ]
+},
+  {
   "url": "/document-staging/nugu-play/create-plays-with-play-builder/use-backend-proxy/backend-proxy",
   "order": 45,
   "indexes": [
@@ -3524,15 +3631,8 @@
   ]
 },
   {
-  "url": "/document-staging/nugu-play/create-plays-with-play-builder/before-start/backend-proxy",
-  "order": 16,
-  "indexes": [
-
-  ]
-},
-  {
-  "url": "/document-staging/nugu-sdk/platform/ios/background",
-  "order": 174,
+  "url": "/document-staging/nugu-sdk/platform/android/background",
+  "order": 185,
   "indexes": [
     {
   "title": "Background 동작 처리",
@@ -3546,8 +3646,8 @@
   ]
 },
   {
-  "url": "/document-staging/nugu-sdk/platform/android/background",
-  "order": 184,
+  "url": "/document-staging/nugu-sdk/platform/ios/background",
+  "order": 175,
   "indexes": [
     {
   "title": "Background 동작 처리",
@@ -3562,7 +3662,7 @@
 },
   {
   "url": "/document-staging/nugu-sdk/capability-interface/battery",
-  "order": 161,
+  "order": 162,
   "indexes": [
     {
   "title": "Battery",
@@ -3737,7 +3837,7 @@
 },
   {
   "url": "/document-staging/nugu-sdk/capability-interface/bluetooth",
-  "order": 158,
+  "order": 159,
   "indexes": [
     {
   "title": "Bluetooth",
@@ -4059,7 +4159,7 @@
 },
   {
   "url": "/document-staging/nugu-sdk/sdk-design-guide/booting",
-  "order": 200,
+  "order": 201,
   "indexes": [
 
   ]
@@ -4403,8 +4503,40 @@
   ]
 },
   {
+  "url": "/document-staging/nugu-play/create-plays-with-play-builder/before-start/capability-interface",
+  "order": 17,
+  "indexes": [
+    {
+  "title": "Capability interface",
+  "hash": "",
+  "sentences": [
+    "Capability interface",
+    "디바이스의 여러 기능을 제어하기 위한 규격을 Capability Interface라 합니다. 응답을 재생하는 기능 외에 오디오 재생, 무드등 제어, 음량 조절 등 다양한 기능을 제어할 수 있습니다.",
+    "현재는 디바이스에서 오디오 스트리밍을 통해 음악을 재생하기 위한 AudioPlayer Interface와  NUGU nemo, Btv, T전화 등 Display Device에서 Display template를 사용할 수 있는 Display Interface 지원됩니다. Play를 생성하는 시점에 Play에서 지원하고자 하는 Capability Interface를 선택하면 사용할 수 있습니다.",
+    "각 Capability Interface는 다음의 세 요소로 구성되어 있습니다."
+  ]
+},
+    {
+  "title": "Capability interface > Built-in Intent",
+  "hash": "#built-in-intent",
+  "sentences": [
+    "Built-in Intent",
+    "기능을 제어하기 위해 기본으로 제공하는 Intent입니다. 사용자가 직접 정의하지 않아도 사용할 수 있습니다."
+  ]
+},
+    {
+  "title": "Capability interface > Directive",
+  "hash": "#directive",
+  "sentences": [
+    "Directive",
+    "디바이스의 기능을 제어하기 위해 Play에서 디바이스로 전달하는 명령어입니다."
+  ]
+}
+  ]
+},
+  {
   "url": "/document-staging/nugu-sdk/capability-interface",
-  "order": 146,
+  "order": 147,
   "indexes": [
     {
   "title": "Capability Interface",
@@ -4494,38 +4626,6 @@
     "그 외 event\n    \n      해당 capability interface 의 context\n      다른 capability interface 의 context 중 version 만 포함",
     "해당 capability interface 의 context",
     "다른 capability interface 의 context 중 version 만 포함"
-  ]
-}
-  ]
-},
-  {
-  "url": "/document-staging/nugu-play/create-plays-with-play-builder/before-start/capability-interface",
-  "order": 17,
-  "indexes": [
-    {
-  "title": "Capability interface",
-  "hash": "",
-  "sentences": [
-    "Capability interface",
-    "디바이스의 여러 기능을 제어하기 위한 규격을 Capability Interface라 합니다. 응답을 재생하는 기능 외에 오디오 재생, 무드등 제어, 음량 조절 등 다양한 기능을 제어할 수 있습니다.",
-    "현재는 디바이스에서 오디오 스트리밍을 통해 음악을 재생하기 위한 AudioPlayer Interface와  NUGU nemo, Btv, T전화 등 Display Device에서 Display template를 사용할 수 있는 Display Interface 지원됩니다. Play를 생성하는 시점에 Play에서 지원하고자 하는 Capability Interface를 선택하면 사용할 수 있습니다.",
-    "각 Capability Interface는 다음의 세 요소로 구성되어 있습니다."
-  ]
-},
-    {
-  "title": "Capability interface > Built-in Intent",
-  "hash": "#built-in-intent",
-  "sentences": [
-    "Built-in Intent",
-    "기능을 제어하기 위해 기본으로 제공하는 Intent입니다. 사용자가 직접 정의하지 않아도 사용할 수 있습니다."
-  ]
-},
-    {
-  "title": "Capability interface > Directive",
-  "hash": "#directive",
-  "sentences": [
-    "Directive",
-    "디바이스의 기능을 제어하기 위해 Play에서 디바이스로 전달하는 명령어입니다."
   ]
 }
   ]
@@ -4740,7 +4840,7 @@
 },
   {
   "url": "/document-staging/nugu-sdk/capability-interface/chips",
-  "order": 163,
+  "order": 164,
   "indexes": [
     {
   "title": "Chips",
@@ -4910,55 +5010,8 @@
   ]
 },
   {
-  "url": "/document-staging/nugu-sdk/platform/linux/component",
-  "order": 195,
-  "indexes": [
-    {
-  "title": "구성요소",
-  "hash": "",
-  "sentences": [
-    "구성요소"
-  ]
-},
-    {
-  "title": "구성요소 > 구성요소 목록",
-  "hash": "#구성요소-목록",
-  "sentences": [
-    "구성요소 목록",
-    "NUGU Component (Common)\n    \n      \nNuguClientKit: NUGU 서비스를 쉽게 개발할 수 있도록 도와주는 기능을 제공합니다.\n      \nNuguCapability: Capability를 쉽게 제어할 수 있는 API를 제공합니다.\n      \nNuguCore: NUGU 서비스 개발에 필요한 구성요소들을 제공합니다.",
-    "NuguClientKit: NUGU 서비스를 쉽게 개발할 수 있도록 도와주는 기능을 제공합니다.",
-    "NuguCapability: Capability를 쉽게 제어할 수 있는 API를 제공합니다.",
-    "NuguCore: NUGU 서비스 개발에 필요한 구성요소들을 제공합니다.",
-    "NUGU Component (Depends on platform)\n    \n      Plug-in: 디바이스 특성에 맞게 미디어 드라이버를 구현할 수 있는 API를 제공합니다.\n      \ngstreamer: plug-in에서 제공하는 player_driver를 이용해서 gstreamer를 통한 미디어 재생 기능을 제공합니다.\n      \nportaudio: plug-in에서 제공하는 recorder_driver, pcm_driver를 이용해서 portaudio를 통한 음성 데이터 입/출력 기능을 제공합니다.\n      \nopus: plug-in에서 제공하는 decoder_deriver를 이용해서 opus 코덱을 디코딩 합니다.",
-    "Plug-in: 디바이스 특성에 맞게 미디어 드라이버를 구현할 수 있는 API를 제공합니다.",
-    "gstreamer: plug-in에서 제공하는 player_driver를 이용해서 gstreamer를 통한 미디어 재생 기능을 제공합니다.",
-    "portaudio: plug-in에서 제공하는 recorder_driver, pcm_driver를 이용해서 portaudio를 통한 음성 데이터 입/출력 기능을 제공합니다.",
-    "opus: plug-in에서 제공하는 decoder_deriver를 이용해서 opus 코덱을 디코딩 합니다.",
-    "Vendor Component\n    \n      \nlibnugu-kwd: NUGU의 키워드를 감지하는 기능을 제공합니다.\n      \nlibnugu-epd: 발화의 시작과 끝을 감지하는 기능을 제공합니다.",
-    "libnugu-kwd: NUGU의 키워드를 감지하는 기능을 제공합니다.",
-    "libnugu-epd: 발화의 시작과 끝을 감지하는 기능을 제공합니다."
-  ]
-},
-    {
-  "title": "구성요소 > Github",
-  "hash": "#github",
-  "sentences": [
-    "Github"
-  ]
-},
-    {
-  "title": "구성요소 > NUGU",
-  "hash": "#nugu",
-  "sentences": [
-    "NUGU",
-    "nugu-linux | https://github.com/nugu-developers/nugu-linux"
-  ]
-}
-  ]
-},
-  {
   "url": "/document-staging/nugu-sdk/platform/ios/component",
-  "order": 173,
+  "order": 174,
   "indexes": [
     {
   "title": "구성요소",
@@ -5015,6 +5068,53 @@
     "External",
     "RxSwift | https://github.com/ReactiveX/RxSwift",
     "Lottie-iOS | https://github.com/airbnb/lottie-ios"
+  ]
+}
+  ]
+},
+  {
+  "url": "/document-staging/nugu-sdk/platform/linux/component",
+  "order": 196,
+  "indexes": [
+    {
+  "title": "구성요소",
+  "hash": "",
+  "sentences": [
+    "구성요소"
+  ]
+},
+    {
+  "title": "구성요소 > 구성요소 목록",
+  "hash": "#구성요소-목록",
+  "sentences": [
+    "구성요소 목록",
+    "NUGU Component (Common)\n    \n      \nNuguClientKit: NUGU 서비스를 쉽게 개발할 수 있도록 도와주는 기능을 제공합니다.\n      \nNuguCapability: Capability를 쉽게 제어할 수 있는 API를 제공합니다.\n      \nNuguCore: NUGU 서비스 개발에 필요한 구성요소들을 제공합니다.",
+    "NuguClientKit: NUGU 서비스를 쉽게 개발할 수 있도록 도와주는 기능을 제공합니다.",
+    "NuguCapability: Capability를 쉽게 제어할 수 있는 API를 제공합니다.",
+    "NuguCore: NUGU 서비스 개발에 필요한 구성요소들을 제공합니다.",
+    "NUGU Component (Depends on platform)\n    \n      Plug-in: 디바이스 특성에 맞게 미디어 드라이버를 구현할 수 있는 API를 제공합니다.\n      \ngstreamer: plug-in에서 제공하는 player_driver를 이용해서 gstreamer를 통한 미디어 재생 기능을 제공합니다.\n      \nportaudio: plug-in에서 제공하는 recorder_driver, pcm_driver를 이용해서 portaudio를 통한 음성 데이터 입/출력 기능을 제공합니다.\n      \nopus: plug-in에서 제공하는 decoder_deriver를 이용해서 opus 코덱을 디코딩 합니다.",
+    "Plug-in: 디바이스 특성에 맞게 미디어 드라이버를 구현할 수 있는 API를 제공합니다.",
+    "gstreamer: plug-in에서 제공하는 player_driver를 이용해서 gstreamer를 통한 미디어 재생 기능을 제공합니다.",
+    "portaudio: plug-in에서 제공하는 recorder_driver, pcm_driver를 이용해서 portaudio를 통한 음성 데이터 입/출력 기능을 제공합니다.",
+    "opus: plug-in에서 제공하는 decoder_deriver를 이용해서 opus 코덱을 디코딩 합니다.",
+    "Vendor Component\n    \n      \nlibnugu-kwd: NUGU의 키워드를 감지하는 기능을 제공합니다.\n      \nlibnugu-epd: 발화의 시작과 끝을 감지하는 기능을 제공합니다.",
+    "libnugu-kwd: NUGU의 키워드를 감지하는 기능을 제공합니다.",
+    "libnugu-epd: 발화의 시작과 끝을 감지하는 기능을 제공합니다."
+  ]
+},
+    {
+  "title": "구성요소 > Github",
+  "hash": "#github",
+  "sentences": [
+    "Github"
+  ]
+},
+    {
+  "title": "구성요소 > NUGU",
+  "hash": "#nugu",
+  "sentences": [
+    "NUGU",
+    "nugu-linux | https://github.com/nugu-developers/nugu-linux"
   ]
 }
   ]
@@ -5312,7 +5412,7 @@
 },
   {
   "url": "/document-staging/nugu-sdk/platform/android/dark-mode",
-  "order": 191,
+  "order": 192,
   "indexes": [
     {
   "title": "Dark Mode 지원",
@@ -5332,7 +5432,7 @@
 },
   {
   "url": "/document-staging/nugu-sdk/platform/ios/dark-mode",
-  "order": 178,
+  "order": 179,
   "indexes": [
 
   ]
@@ -5570,7 +5670,7 @@
 },
   {
   "url": "/document-staging/nugu-sdk/describetrial",
-  "order": 140,
+  "order": 141,
   "indexes": [
     {
   "title": "체험판과 정식판",
@@ -5846,7 +5946,7 @@
 },
   {
   "url": "/document-staging/nugu-sdk/capability-interface/display/display-directive",
-  "order": 149,
+  "order": 150,
   "indexes": [
     {
   "title": "Display-Directive",
@@ -6486,7 +6586,7 @@
 },
   {
   "url": "/document-staging/nugu-sdk/capability-interface/display/display-event",
-  "order": 150,
+  "order": 151,
   "indexes": [
     {
   "title": "Display-Event",
@@ -7184,7 +7284,7 @@
 },
   {
   "url": "/document-staging/nugu-sdk/sdk-design-guide/display-template",
-  "order": 202,
+  "order": 203,
   "indexes": [
     {
   "title": "Display Template",
@@ -7199,7 +7299,7 @@
 },
   {
   "url": "/document-staging/nugu-sdk/capability-interface/display",
-  "order": 148,
+  "order": 149,
   "indexes": [
     {
   "title": "Display",
@@ -7783,14 +7883,14 @@
 },
   {
   "url": "/document-staging/nugu-sdk/sdk-design-guide/error-handling",
-  "order": 204,
+  "order": 205,
   "indexes": [
 
   ]
 },
   {
   "url": "/document-staging/nugu-sdk/capability-interface/extension",
-  "order": 156,
+  "order": 157,
   "indexes": [
     {
   "title": "Extension",
@@ -8348,7 +8448,7 @@
 },
   {
   "url": "/document-staging/nugu-sdk/platform/android/intro_components",
-  "order": 183,
+  "order": 184,
   "indexes": [
     {
   "title": "구성요소",
@@ -8398,7 +8498,7 @@
 },
   {
   "url": "/document-staging/nugu-sdk/platform/ios",
-  "order": 171,
+  "order": 172,
   "indexes": [
     {
   "title": "iOS",
@@ -8422,7 +8522,7 @@
 },
   {
   "url": "/document-staging/reference/layer",
-  "order": 208,
+  "order": 209,
   "indexes": [
 
   ]
@@ -8672,7 +8772,7 @@
 },
   {
   "url": "/document-staging/nugu-sdk/platform/linux",
-  "order": 193,
+  "order": 194,
   "indexes": [
     {
   "title": "Linux",
@@ -8696,14 +8796,14 @@
 },
   {
   "url": "/document-staging/reference/list-of-unit-tags-supported-by-utterance-options",
-  "order": 210,
+  "order": 211,
   "indexes": [
 
   ]
 },
   {
   "url": "/document-staging/nugu-sdk/capability-interface/location",
-  "order": 155,
+  "order": 156,
   "indexes": [
     {
   "title": "Location",
@@ -8951,7 +9051,7 @@
 },
   {
   "url": "/document-staging/nugu-sdk/manage-poc",
-  "order": 142,
+  "order": 143,
   "indexes": [
 
   ]
@@ -9133,7 +9233,7 @@
 },
   {
   "url": "/document-staging/nugu-sdk/capability-interface/mediaplayer",
-  "order": 167,
+  "order": 168,
   "indexes": [
     {
   "title": "MediaPlayer",
@@ -9757,7 +9857,7 @@
 },
   {
   "url": "/document-staging/nugu-sdk/capability-interface/message",
-  "order": 166,
+  "order": 167,
   "indexes": [
     {
   "title": "Message",
@@ -10026,7 +10126,7 @@
 },
   {
   "url": "/document-staging/nugu-sdk/capability-interface/mic",
-  "order": 159,
+  "order": 160,
   "indexes": [
     {
   "title": "Mic",
@@ -10408,7 +10508,7 @@
 },
   {
   "url": "/document-staging/nugu-sdk/sdk-design-guide/nugu-device",
-  "order": 199,
+  "order": 200,
   "indexes": [
     {
   "title": "NUGU 기기",
@@ -10527,7 +10627,7 @@
 },
   {
   "url": "/document-staging/nugu-sdk/platform/ios/nugu-display-template-server",
-  "order": 176,
+  "order": 177,
   "indexes": [
     {
   "title": "NUGU Display의 노출과 제어",
@@ -10589,7 +10689,7 @@
 },
   {
   "url": "/document-staging/nugu-sdk/platform/android/nugu-display",
-  "order": 186,
+  "order": 187,
   "indexes": [
     {
   "title": "NUGU Display의 노출과 제어",
@@ -10633,7 +10733,7 @@
 },
   {
   "url": "/document-staging/nugu-sdk/sdk-design-guide/nugu-inside",
-  "order": 203,
+  "order": 204,
   "indexes": [
     {
   "title": "NUGU Inside",
@@ -10758,14 +10858,14 @@
 },
   {
   "url": "/document-staging/nugu-sdk",
-  "order": 139,
+  "order": 140,
   "indexes": [
 
   ]
 },
   {
   "url": "/document-staging/nugu-sdk/platform/android/nugu-user-interface",
-  "order": 190,
+  "order": 191,
   "indexes": [
     {
   "title": "NUGU 사용자 인터페이스",
@@ -10934,7 +11034,7 @@
 },
   {
   "url": "/document-staging/nugu-sdk/platform/android/nugu-web-server",
-  "order": 185,
+  "order": 186,
   "indexes": [
     {
   "title": "NUGU 서비스 관리 web server 연동",
@@ -10990,7 +11090,7 @@
 },
   {
   "url": "/document-staging/nugu-sdk/platform/ios/nugu",
-  "order": 177,
+  "order": 178,
   "indexes": [
     {
   "title": "NUGU 사용자 인터페이스",
@@ -11057,7 +11157,7 @@
 },
   {
   "url": "/document-staging/nugu-sdk/capability-interface/phonecall",
-  "order": 165,
+  "order": 166,
   "indexes": [
     {
   "title": "PhoneCall",
@@ -11372,7 +11472,7 @@
 },
   {
   "url": "/document-staging/nugu-sdk/platform",
-  "order": 170,
+  "order": 171,
   "indexes": [
     {
   "title": "Platform",
@@ -11792,7 +11892,7 @@
 },
   {
   "url": "/document-staging/nugu-sdk/manage-poc/poc",
-  "order": 143,
+  "order": 144,
   "indexes": [
     {
   "title": "PoC 관리",
@@ -12117,7 +12217,7 @@
 },
   {
   "url": "/document-staging/reference",
-  "order": 206,
+  "order": 207,
   "indexes": [
 
   ]
@@ -12256,14 +12356,14 @@
 },
   {
   "url": "/document-staging/reference/register-icon",
-  "order": 209,
+  "order": 210,
   "indexes": [
 
   ]
 },
   {
   "url": "/document-staging/nugu-sdk/release-note",
-  "order": 205,
+  "order": 206,
   "indexes": [
     {
   "title": "Release note",
@@ -12863,7 +12963,7 @@
 },
   {
   "url": "/document-staging/nugu-sdk/capability-interface/routine",
-  "order": 168,
+  "order": 169,
   "indexes": [
     {
   "title": "Routine",
@@ -13050,7 +13150,7 @@
 },
   {
   "url": "/document-staging/nugu-sdk/capability-interface/screen",
-  "order": 160,
+  "order": 161,
   "indexes": [
     {
   "title": "Screen",
@@ -13158,14 +13258,14 @@
 },
   {
   "url": "/document-staging/nugu-sdk/sdk-design-guide",
-  "order": 198,
+  "order": 199,
   "indexes": [
 
   ]
 },
   {
   "url": "/document-staging/nugu-sdk/capability-interface/session",
-  "order": 164,
+  "order": 165,
   "indexes": [
     {
   "title": "Session",
@@ -13886,7 +13986,7 @@
 },
   {
   "url": "/document-staging/nugu-sdk/capability-interface/sound",
-  "order": 162,
+  "order": 163,
   "indexes": [
     {
   "title": "Sound",
@@ -13994,14 +14094,14 @@
 },
   {
   "url": "/document-staging/nugu-sdk/source-code",
-  "order": 197,
+  "order": 198,
   "indexes": [
 
   ]
 },
   {
   "url": "/document-staging/nugu-sdk/capability-interface/speaker",
-  "order": 157,
+  "order": 158,
   "indexes": [
     {
   "title": "Speaker",
@@ -14161,8 +14261,206 @@
   ]
 },
   {
+  "url": "/document-staging/nugu-sdk/platform/linux/start",
+  "order": 195,
+  "indexes": [
+    {
+  "title": "시작하기",
+  "hash": "",
+  "sentences": [
+    "시작하기"
+  ]
+},
+    {
+  "title": "시작하기 > Step 1: 최소 요구사항 확인하기",
+  "hash": "#step-1-최소-요구사항-확인하기",
+  "sentences": [
+    "Step 1: 최소 요구사항 확인하기",
+    "Ubuntu bionic(18.04)"
+  ]
+},
+    {
+  "title": "시작하기 > Step 2: NUGU SDK 설치하기",
+  "hash": "#step-2-nugu-sdk-설치하기",
+  "sentences": [
+    "Step 2: NUGU SDK 설치하기",
+    "NUGU SDK for Linux는 설치에 필요한 패키지(",
+    "*.deb",
+    ") 파일들을 쉽게 다운로드 받을 수 있도록 Ubuntu에서 제공하는",
+    "PPA",
+    "(",
+    "https://launchpad.net",
+    ")를 통해 배포하고 있습니다."
+  ]
+},
+    {
+  "title": "시작하기 > PPA 추가하기",
+  "hash": "#ppa-추가하기",
+  "sentences": [
+    "PPA 추가하기",
+    "아래 명령을 통해 시스템에 PPA를 추가할 수 있습니다.",
+    "Ubuntu",
+    "Debian",
+    "sudo add-apt-repository ppa:nugulinux/sdk\nsudo apt-get update",
+    "사용하고 있는 Debian 버전에 따라 NUGU SDK의 Bionic 또는 Xenial PPA 주소를 추가해야 합니다.",
+    "# Debian 버전이 Buster일 경우\n$ sudo vi /etc/apt/sources.list.d/nugu.list\ndeb http://ppa.launchpad.net/nugulinux/sdk/ubuntu bionic main\n\n# Debian 버전이 Stretch일 경우\n$ sudo vi /etc/apt/sources.list.d/nugu.list\ndeb http://ppa.launchpad.net/nugulinux/sdk/ubuntu xenial main",
+    "이제 NUGU SDK PPA에 대한 인증키를 설치해야 합니다.",
+    "sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key 5DE933034EEA59C4\nsudo apt-get update"
+  ]
+},
+    {
+  "title": "시작하기 > 패키지 설치하기",
+  "hash": "#패키지-설치하기",
+  "sentences": [
+    "패키지 설치하기",
+    "NUGU SDK for Linux는 아래의 패키지들로 구성되어 있습니다.",
+    "libnugu | NUGU SDK 동작에 필요한 패키지- shared library(*.so.{version} files)",
+    "libnugu-plugins-default | 기본 제공 플러그인 모음 패키지- gstreamer.so, opus.so, portaudio.so 등",
+    "libnugu-dev | 빌드에 필요한 패키지- header files, pkg-config(nugu.pc) 및 libnugu.so",
+    "libnugu-examples | 예제 프로그램 패키지- 콘솔 기반의 예제 프로그램, OAuth2 클라이언트 예제",
+    "아래 명령을 통해 시스템에 설치할 수 있습니다.",
+    "sudo apt-get install libnugu libnugu-plugins-default libnugu-dev libnugu-examples"
+  ]
+},
+    {
+  "title": "시작하기 > Step 3: 프로젝트 설정하기",
+  "hash": "#step-3-프로젝트-설정하기",
+  "sentences": [
+    "Step 3: 프로젝트 설정하기"
+  ]
+},
+    {
+  "title": "시작하기 > PoC 정보 입력하기",
+  "hash": "#poc-정보-입력하기",
+  "sentences": [
+    "PoC 정보 입력하기",
+    "NUGU PoC를 생성하기 위해서는 NUGU Developers를 통해 제휴가 필요합니다.\n더 자세한 내용은 NUGU SDK 소개에서 확인이 가능합니다.",
+    "체험판은 체험판 신청을 통해 발급 가능합니다.",
+    "발급받은 PoC 정보를 확인하기 위해서",
+    "NUGU SDK PoC목록",
+    "으로 이동해서 Client ID, Client Secret, Redirect URI 정보를 확인하세요.",
+    "체험판은 체험판 신청 내역에서 확인 가능합니다.",
+    "체험판은 Redirect URI가 필요하지 않습니다."
+  ]
+},
+    {
+  "title": "시작하기 > 음성인식 모델 파일 설정하기",
+  "hash": "#음성인식-모델-파일-설정하기",
+  "sentences": [
+    "음성인식 모델 파일 설정하기"
+  ]
+},
+    {
+  "title": "시작하기 > 다운로드 받기",
+  "hash": "#다운로드-받기",
+  "sentences": [
+    "다운로드 받기",
+    "NUGU SDK PoC목록",
+    "에서 음성인식 모델 파일을 다운로드 받습니다.",
+    "체험판은 체험판 신청 내역에서 음성인식 모델파일을 다운로드 받습니다."
+  ]
+},
+    {
+  "title": "시작하기 > 설정하기",
+  "hash": "#설정하기",
+  "sentences": [
+    "설정하기",
+    "다운로드가 완료되면, Linux 디바이스에 임의의 디렉토리를 생성한 후, 아래와 같은 파일명으로 복사해 주시면 됩니다.",
+    "nugu_model_wakeup_net.raw - keyword detection에 사용되는 model 파일 (1/2)",
+    "nugu_model_wakeup_search.raw - keyword detection에 사용되는 model 파일 (2/2)",
+    "nugu_model_epd.raw - VAD(Voice Activity Detection) 에 사용되는 model 파일"
+  ]
+},
+    {
+  "title": "시작하기 > OAuth2 client 구현하기",
+  "hash": "#oauth2-client-구현하기",
+  "sentences": [
+    "OAuth2 client 구현하기",
+    "NUGU SDK for Linux는 아래의 이유로 인해 iOS, Android와 달리 인증을 위한 기능을 제공하고 있지 않습니다.",
+    "Linux 기반의 제품은 대부분 디스플레이가 없어 별도의 연동 어플리케이션을 통한 사용자 인증을 필요로 합니다.",
+    "다른 플랫폼과 달리 GUI framework이 다양하기 때문에 표준화된 인증 UI를 SDK에서 제공해 주기 어렵습니다.",
+    "하지만, 인증을 쉽게 테스트할 수 있도록 아래의 NUGU SDK for Linux Github에 Python으로 작성된 별도의 웹기반 OAuth2 client 예제를 제공하고 있습니다.",
+    "NUGU SDK for Linux OAuth2 client python sample",
+    "NUGU SDK for Linux. Contribute to nugu-developers/nugu-linux development by creating an account on GitHub.",
+    "NUGU SDK PoC목록",
+    "에서 nugu-config.json 파일을 다운로드 받은 후, Client ID, Client Secret 정보를 활용하여 위 OAuth2 client 예제를 통해 인증을 진행할 수 있습니다.",
+    "체험판은 체험판 신청 내역에서 nugu-config.json 파일을 다운로드 받습니다."
+  ]
+},
+    {
+  "title": "시작하기 > Step 4: NUGU 사용하기",
+  "hash": "#step-4-nugu-사용하기",
+  "sentences": [
+    "Step 4: NUGU 사용하기"
+  ]
+},
+    {
+  "title": "시작하기 > GMainLoop 사용하기",
+  "hash": "#gmainloop-사용하기",
+  "sentences": [
+    "GMainLoop 사용하기",
+    "NUGU SDK for Linux는 event-driven 방식으로 어플리케이션을 개발할 수 있도록",
+    "glib",
+    "에서 제공하는",
+    "event loop",
+    "을 사용하고 있습니다. 따라서",
+    "main()",
+    "코드는 아래 구조로 작성되어야 합니다.",
+    "#include <glib.h>\n\nint main(int argc, char *argv[])\n{\n  GMainLoop *loop;\n\n  /* event loop 생성 */\n  loop = g_main_loop_new (NULL, FALSE);\n\n  /* 사용자의 초기화 코드 등록(nugu sdk 코드 등) */\n\n  /* event loop 시작 */\n  g_main_loop_run (loop);\n\n  /* event loop 해제 */\n  g_main_loop_unref (loop);\n\n  return 0;\n}"
+  ]
+},
+    {
+  "title": "시작하기 > NUGU 음성인식 사용하기",
+  "hash": "#nugu-음성인식-사용하기",
+  "sentences": [
+    "NUGU 음성인식 사용하기",
+    "음성인식을 요청하기 위해서는 아래와 같은 코드를 작성해야 합니다.",
+    "⁣1. 헤더 파일(nugu_client.hh, capability_factory.hh)을 include에 포함시키고,",
+    "NuguClientKit, NuguCapability",
+    "namespace를 사용하도록 설정합니다.",
+    "#include <clientkit/nugu_client.hh>\n#include <capability/capability_factory.hh>\n\nusing namespace NuguClientKit;\nusing namespace NuguCapability;",
+    "⁣2.",
+    "IASRHandler",
+    "객체를 생성하고, 음성인식 모델 파일을 설정합니다.",
+    "auto my_asr_listener(std::make_shared<MyASR>());\nauto asr_handler(std::shared_ptr<IASRHandler>(\n   CapabilityFactory::makeCapability<ASRAgent, IASRHandler>(my_asr_listener.get())));\nasr_handler->setAttribute(ASRAttribute { \"/var/lib/nugu/model\", \"CLIENT\", \"PARTIAL\" });",
+    "⁣3.",
+    "NuguClient",
+    "객체를 생성하고,",
+    "ASR Capability",
+    "추가 후, SDK를 초기화 합니다.",
+    "NuguClient* nugu_client = new NuguClient());\nnugu_client->getCapabilityBuilder()\n       ->add(CapabilityType::ASR, my_asr_listener.get())\n       ->construct();\nnugu_client->initialize();",
+    "⁣4. 음성인식 기능을 사용하기 위해 OAuth2 access-token 설정 후, NUGU 서비스 연결을 요청합니다.",
+    "auto network_manager(nugu_client->getNetworkManager());\nnetwork_manager->setToken(\"...\");\nnetwork_manager->connect();",
+    "전체 코드는 Github의 아래 wiki에서 확인할 수 있습니다.",
+    "NUGU SDK for Linux Wiki - Create your first application",
+    "NUGU SDK for Linux. Contribute to nugu-developers/nugu-linux development by creating an account on GitHub."
+  ]
+},
+    {
+  "title": "시작하기 > Build",
+  "hash": "#build",
+  "sentences": [
+    "Build",
+    "NUGU SDK for Linux는 빌드 설정을 쉽게 구성할 수 있도록",
+    "pkg-config",
+    "파일을 제공합니다. 따라서, 아래와 같이",
+    "nugu.pc",
+    "를 사용해 빌드 명령을 수행할 수 있습니다.",
+    "$ g++ -std=c++11 hello.cc `pkg-config --cflags --libs nugu` -o hello"
+  ]
+},
+    {
+  "title": "시작하기 > 더 알아보기",
+  "hash": "#더-알아보기",
+  "sentences": [
+    "더 알아보기"
+  ]
+}
+  ]
+},
+  {
   "url": "/document-staging/nugu-sdk/platform/android/start",
-  "order": 182,
+  "order": 183,
   "indexes": [
     {
   "title": "시작하기",
@@ -14408,206 +14706,8 @@
   ]
 },
   {
-  "url": "/document-staging/nugu-sdk/platform/linux/start",
-  "order": 194,
-  "indexes": [
-    {
-  "title": "시작하기",
-  "hash": "",
-  "sentences": [
-    "시작하기"
-  ]
-},
-    {
-  "title": "시작하기 > Step 1: 최소 요구사항 확인하기",
-  "hash": "#step-1-최소-요구사항-확인하기",
-  "sentences": [
-    "Step 1: 최소 요구사항 확인하기",
-    "Ubuntu bionic(18.04)"
-  ]
-},
-    {
-  "title": "시작하기 > Step 2: NUGU SDK 설치하기",
-  "hash": "#step-2-nugu-sdk-설치하기",
-  "sentences": [
-    "Step 2: NUGU SDK 설치하기",
-    "NUGU SDK for Linux는 설치에 필요한 패키지(",
-    "*.deb",
-    ") 파일들을 쉽게 다운로드 받을 수 있도록 Ubuntu에서 제공하는",
-    "PPA",
-    "(",
-    "https://launchpad.net",
-    ")를 통해 배포하고 있습니다."
-  ]
-},
-    {
-  "title": "시작하기 > PPA 추가하기",
-  "hash": "#ppa-추가하기",
-  "sentences": [
-    "PPA 추가하기",
-    "아래 명령을 통해 시스템에 PPA를 추가할 수 있습니다.",
-    "Ubuntu",
-    "Debian",
-    "sudo add-apt-repository ppa:nugulinux/sdk\nsudo apt-get update",
-    "사용하고 있는 Debian 버전에 따라 NUGU SDK의 Bionic 또는 Xenial PPA 주소를 추가해야 합니다.",
-    "# Debian 버전이 Buster일 경우\n$ sudo vi /etc/apt/sources.list.d/nugu.list\ndeb http://ppa.launchpad.net/nugulinux/sdk/ubuntu bionic main\n\n# Debian 버전이 Stretch일 경우\n$ sudo vi /etc/apt/sources.list.d/nugu.list\ndeb http://ppa.launchpad.net/nugulinux/sdk/ubuntu xenial main",
-    "이제 NUGU SDK PPA에 대한 인증키를 설치해야 합니다.",
-    "sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key 5DE933034EEA59C4\nsudo apt-get update"
-  ]
-},
-    {
-  "title": "시작하기 > 패키지 설치하기",
-  "hash": "#패키지-설치하기",
-  "sentences": [
-    "패키지 설치하기",
-    "NUGU SDK for Linux는 아래의 패키지들로 구성되어 있습니다.",
-    "libnugu | NUGU SDK 동작에 필요한 패키지- shared library(*.so.{version} files)",
-    "libnugu-plugins-default | 기본 제공 플러그인 모음 패키지- gstreamer.so, opus.so, portaudio.so 등",
-    "libnugu-dev | 빌드에 필요한 패키지- header files, pkg-config(nugu.pc) 및 libnugu.so",
-    "libnugu-examples | 예제 프로그램 패키지- 콘솔 기반의 예제 프로그램, OAuth2 클라이언트 예제",
-    "아래 명령을 통해 시스템에 설치할 수 있습니다.",
-    "sudo apt-get install libnugu libnugu-plugins-default libnugu-dev libnugu-examples"
-  ]
-},
-    {
-  "title": "시작하기 > Step 3: 프로젝트 설정하기",
-  "hash": "#step-3-프로젝트-설정하기",
-  "sentences": [
-    "Step 3: 프로젝트 설정하기"
-  ]
-},
-    {
-  "title": "시작하기 > PoC 정보 입력하기",
-  "hash": "#poc-정보-입력하기",
-  "sentences": [
-    "PoC 정보 입력하기",
-    "NUGU PoC를 생성하기 위해서는 NUGU Developers를 통해 제휴가 필요합니다.\n더 자세한 내용은 NUGU SDK 소개에서 확인이 가능합니다.",
-    "체험판은 체험판 신청을 통해 발급 가능합니다.",
-    "발급받은 PoC 정보를 확인하기 위해서",
-    "NUGU SDK PoC목록",
-    "으로 이동해서 Client ID, Client Secret, Redirect URI 정보를 확인하세요.",
-    "체험판은 체험판 신청 내역에서 확인 가능합니다.",
-    "체험판은 Redirect URI가 필요하지 않습니다."
-  ]
-},
-    {
-  "title": "시작하기 > 음성인식 모델 파일 설정하기",
-  "hash": "#음성인식-모델-파일-설정하기",
-  "sentences": [
-    "음성인식 모델 파일 설정하기"
-  ]
-},
-    {
-  "title": "시작하기 > 다운로드 받기",
-  "hash": "#다운로드-받기",
-  "sentences": [
-    "다운로드 받기",
-    "NUGU SDK PoC목록",
-    "에서 음성인식 모델 파일을 다운로드 받습니다.",
-    "체험판은 체험판 신청 내역에서 음성인식 모델파일을 다운로드 받습니다."
-  ]
-},
-    {
-  "title": "시작하기 > 설정하기",
-  "hash": "#설정하기",
-  "sentences": [
-    "설정하기",
-    "다운로드가 완료되면, Linux 디바이스에 임의의 디렉토리를 생성한 후, 아래와 같은 파일명으로 복사해 주시면 됩니다.",
-    "nugu_model_wakeup_net.raw - keyword detection에 사용되는 model 파일 (1/2)",
-    "nugu_model_wakeup_search.raw - keyword detection에 사용되는 model 파일 (2/2)",
-    "nugu_model_epd.raw - VAD(Voice Activity Detection) 에 사용되는 model 파일"
-  ]
-},
-    {
-  "title": "시작하기 > OAuth2 client 구현하기",
-  "hash": "#oauth2-client-구현하기",
-  "sentences": [
-    "OAuth2 client 구현하기",
-    "NUGU SDK for Linux는 아래의 이유로 인해 iOS, Android와 달리 인증을 위한 기능을 제공하고 있지 않습니다.",
-    "Linux 기반의 제품은 대부분 디스플레이가 없어 별도의 연동 어플리케이션을 통한 사용자 인증을 필요로 합니다.",
-    "다른 플랫폼과 달리 GUI framework이 다양하기 때문에 표준화된 인증 UI를 SDK에서 제공해 주기 어렵습니다.",
-    "하지만, 인증을 쉽게 테스트할 수 있도록 아래의 NUGU SDK for Linux Github에 Python으로 작성된 별도의 웹기반 OAuth2 client 예제를 제공하고 있습니다.",
-    "NUGU SDK for Linux OAuth2 client python sample",
-    "NUGU SDK for Linux. Contribute to nugu-developers/nugu-linux development by creating an account on GitHub.",
-    "NUGU SDK PoC목록",
-    "에서 nugu-config.json 파일을 다운로드 받은 후, Client ID, Client Secret 정보를 활용하여 위 OAuth2 client 예제를 통해 인증을 진행할 수 있습니다.",
-    "체험판은 체험판 신청 내역에서 nugu-config.json 파일을 다운로드 받습니다."
-  ]
-},
-    {
-  "title": "시작하기 > Step 4: NUGU 사용하기",
-  "hash": "#step-4-nugu-사용하기",
-  "sentences": [
-    "Step 4: NUGU 사용하기"
-  ]
-},
-    {
-  "title": "시작하기 > GMainLoop 사용하기",
-  "hash": "#gmainloop-사용하기",
-  "sentences": [
-    "GMainLoop 사용하기",
-    "NUGU SDK for Linux는 event-driven 방식으로 어플리케이션을 개발할 수 있도록",
-    "glib",
-    "에서 제공하는",
-    "event loop",
-    "을 사용하고 있습니다. 따라서",
-    "main()",
-    "코드는 아래 구조로 작성되어야 합니다.",
-    "#include <glib.h>\n\nint main(int argc, char *argv[])\n{\n  GMainLoop *loop;\n\n  /* event loop 생성 */\n  loop = g_main_loop_new (NULL, FALSE);\n\n  /* 사용자의 초기화 코드 등록(nugu sdk 코드 등) */\n\n  /* event loop 시작 */\n  g_main_loop_run (loop);\n\n  /* event loop 해제 */\n  g_main_loop_unref (loop);\n\n  return 0;\n}"
-  ]
-},
-    {
-  "title": "시작하기 > NUGU 음성인식 사용하기",
-  "hash": "#nugu-음성인식-사용하기",
-  "sentences": [
-    "NUGU 음성인식 사용하기",
-    "음성인식을 요청하기 위해서는 아래와 같은 코드를 작성해야 합니다.",
-    "⁣1. 헤더 파일(nugu_client.hh, capability_factory.hh)을 include에 포함시키고,",
-    "NuguClientKit, NuguCapability",
-    "namespace를 사용하도록 설정합니다.",
-    "#include <clientkit/nugu_client.hh>\n#include <capability/capability_factory.hh>\n\nusing namespace NuguClientKit;\nusing namespace NuguCapability;",
-    "⁣2.",
-    "IASRHandler",
-    "객체를 생성하고, 음성인식 모델 파일을 설정합니다.",
-    "auto my_asr_listener(std::make_shared<MyASR>());\nauto asr_handler(std::shared_ptr<IASRHandler>(\n   CapabilityFactory::makeCapability<ASRAgent, IASRHandler>(my_asr_listener.get())));\nasr_handler->setAttribute(ASRAttribute { \"/var/lib/nugu/model\", \"CLIENT\", \"PARTIAL\" });",
-    "⁣3.",
-    "NuguClient",
-    "객체를 생성하고,",
-    "ASR Capability",
-    "추가 후, SDK를 초기화 합니다.",
-    "NuguClient* nugu_client = new NuguClient());\nnugu_client->getCapabilityBuilder()\n       ->add(CapabilityType::ASR, my_asr_listener.get())\n       ->construct();\nnugu_client->initialize();",
-    "⁣4. 음성인식 기능을 사용하기 위해 OAuth2 access-token 설정 후, NUGU 서비스 연결을 요청합니다.",
-    "auto network_manager(nugu_client->getNetworkManager());\nnetwork_manager->setToken(\"...\");\nnetwork_manager->connect();",
-    "전체 코드는 Github의 아래 wiki에서 확인할 수 있습니다.",
-    "NUGU SDK for Linux Wiki - Create your first application",
-    "NUGU SDK for Linux. Contribute to nugu-developers/nugu-linux development by creating an account on GitHub."
-  ]
-},
-    {
-  "title": "시작하기 > Build",
-  "hash": "#build",
-  "sentences": [
-    "Build",
-    "NUGU SDK for Linux는 빌드 설정을 쉽게 구성할 수 있도록",
-    "pkg-config",
-    "파일을 제공합니다. 따라서, 아래와 같이",
-    "nugu.pc",
-    "를 사용해 빌드 명령을 수행할 수 있습니다.",
-    "$ g++ -std=c++11 hello.cc `pkg-config --cflags --libs nugu` -o hello"
-  ]
-},
-    {
-  "title": "시작하기 > 더 알아보기",
-  "hash": "#더-알아보기",
-  "sentences": [
-    "더 알아보기"
-  ]
-}
-  ]
-},
-  {
   "url": "/document-staging/nugu-sdk/platform/ios/start",
-  "order": 172,
+  "order": 173,
   "indexes": [
     {
   "title": "시작하기",
@@ -14983,14 +15083,14 @@
 },
   {
   "url": "/document-staging/nugu-sdk/manage-poc/statistic",
-  "order": 144,
+  "order": 145,
   "indexes": [
 
   ]
 },
   {
   "url": "/document-staging/reference/status",
-  "order": 207,
+  "order": 208,
   "indexes": [
 
   ]
@@ -15004,7 +15104,7 @@
 },
   {
   "url": "/document-staging/nugu-sdk/capability-interface/system",
-  "order": 151,
+  "order": 152,
   "indexes": [
     {
   "title": "System",
@@ -15562,7 +15662,7 @@
 },
   {
   "url": "/document-staging/nugu-sdk/platform/android/nugu-display/templatehandler",
-  "order": 188,
+  "order": 189,
   "indexes": [
     {
   "title": "TemplateHandler",
@@ -15627,7 +15727,7 @@
 },
   {
   "url": "/document-staging/nugu-sdk/platform/android/nugu-display/templaterenderer",
-  "order": 187,
+  "order": 188,
   "indexes": [
     {
   "title": "TemplateRenderer",
@@ -15664,7 +15764,7 @@
 },
   {
   "url": "/document-staging/nugu-sdk/platform/android/nugu-display/templateview",
-  "order": 189,
+  "order": 190,
   "indexes": [
     {
   "title": "TemplateView",
@@ -15693,7 +15793,7 @@
 },
   {
   "url": "/document-staging/terms",
-  "order": 211,
+  "order": 212,
   "indexes": [
 
   ]
@@ -15796,7 +15896,7 @@
 },
   {
   "url": "/document-staging/nugu-sdk/platform/android/testing_sdk_integration",
-  "order": 192,
+  "order": 193,
   "indexes": [
     {
   "title": "테스트 환경 설정",
@@ -15809,7 +15909,7 @@
 },
   {
   "url": "/document-staging/nugu-sdk/platform/ios/testing_sdk_integration",
-  "order": 179,
+  "order": 180,
   "indexes": [
     {
   "title": "테스트 환경 설정",
@@ -15822,7 +15922,7 @@
 },
   {
   "url": "/document-staging/nugu-sdk/capability-interface/text",
-  "order": 154,
+  "order": 155,
   "indexes": [
     {
   "title": "Text",
@@ -15978,7 +16078,7 @@
 },
   {
   "url": "/document-staging/nugu-sdk/trialprocess",
-  "order": 141,
+  "order": 142,
   "indexes": [
     {
   "title": "체험판 신청하기",
@@ -16079,7 +16179,7 @@
 },
   {
   "url": "/document-staging/nugu-sdk/capability-interface/tts",
-  "order": 152,
+  "order": 153,
   "indexes": [
     {
   "title": "TTS",
@@ -17443,7 +17543,7 @@
 },
   {
   "url": "/document-staging/nugu-sdk/capability-interface/utility",
-  "order": 169,
+  "order": 170,
   "indexes": [
     {
   "title": "Utility",
@@ -17489,7 +17589,7 @@
 },
   {
   "url": "/document-staging/nugu-sdk/sdk-design-guide/voice-chrome",
-  "order": 201,
+  "order": 202,
   "indexes": [
     {
   "title": "Voice Chrome",
@@ -17601,7 +17701,7 @@
 },
   {
   "url": "/document-staging/nugu-sdk/platform/ios/web-server",
-  "order": 175,
+  "order": 176,
   "indexes": [
     {
   "title": "NUGU 서비스 관리 web server 연동",
