@@ -2,7 +2,7 @@
 depth_order: 2
 ---
 
-# Biz 사용자별 Announcement 전송
+# Biz 사용자별 Announcement 전송 V1
 
 등록된 Biz 사용자가 Biz API 수신 및 제휴사 계정 인증을 한 경우, 계정 인증을 통해 생성된 토큰을 바탕으로 개인에게 특화된 Announcement 메세지를 사용자의 디바이스에 발송 할 수 있습니다.
 
@@ -114,6 +114,6 @@ depth_order: 2
 | id                     | string          | 발송 대상 Biz 사용자 ID                                                                                                                                                                                   |
 | name                   | string          | 발송 대상 Biz 사용자 이름                                                                                                                                                                                   |
 | email                  | string          | 발송 대상 Biz 사용자 이메일                                                                                                                                                                                  |
-| resultCode             | enum            | 발송 결과OK : 발송 대상 기기 모두 성공SOME_OK : 발송 대상 기기 일부 성공FAIL : 발송 대상 기기 모두 실패NOT_AGREE : API 수신 거부NO_DEVICE : API 수신 허용 기기 없음                                                                              |
+| resultCode             | enum            | 발송 결과<br/>OK : 발송 대상 기기 모두 성공<br/>SOME_OK : 발송 대상 기기 일부 성공<br/>FAIL : 발송 대상 기기 모두 실패<br/>NOT_AGREE : API 수신 거부<br/>NO_DEVICE : API 수신 허용 기기 없음                                                     |
 | deviceResults          | array of object | 기기별 응답값                                                                                                                                                                                            |
 | deviceResults\[\].code | enum            | 기기별 발송 결과<br/>OK : 발송 성공<br/>NOT_CONNECTED : 사용자에 연결되지 않은 기기<br/>TIMEOUT : 기기와의 연결 실패<br/>CONNECT_ERROR : 기기가 꺼져 있거나, 네트워크에 문제가 있음<br/>NOT_SUPPORTED : 지원하지 않는 기기<br/>ERROR : 알 수 없는 에러(개발팀 문의 필요) |
