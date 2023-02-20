@@ -4508,38 +4508,6 @@
   ]
 },
   {
-  "url": "/document-staging/nugu-play/create-plays-with-play-builder/before-start/capability-interface",
-  "order": 17,
-  "indexes": [
-    {
-  "title": "Capability interface",
-  "hash": "",
-  "sentences": [
-    "Capability interface",
-    "디바이스의 여러 기능을 제어하기 위한 규격을 Capability Interface라 합니다. 응답을 재생하는 기능 외에 오디오 재생, 무드등 제어, 음량 조절 등 다양한 기능을 제어할 수 있습니다.",
-    "현재는 디바이스에서 오디오 스트리밍을 통해 음악을 재생하기 위한 AudioPlayer Interface와  NUGU nemo, Btv, T전화 등 Display Device에서 Display template를 사용할 수 있는 Display Interface 지원됩니다. Play를 생성하는 시점에 Play에서 지원하고자 하는 Capability Interface를 선택하면 사용할 수 있습니다.",
-    "각 Capability Interface는 다음의 세 요소로 구성되어 있습니다."
-  ]
-},
-    {
-  "title": "Capability interface > Built-in Intent",
-  "hash": "#built-in-intent",
-  "sentences": [
-    "Built-in Intent",
-    "기능을 제어하기 위해 기본으로 제공하는 Intent입니다. 사용자가 직접 정의하지 않아도 사용할 수 있습니다."
-  ]
-},
-    {
-  "title": "Capability interface > Directive",
-  "hash": "#directive",
-  "sentences": [
-    "Directive",
-    "디바이스의 기능을 제어하기 위해 Play에서 디바이스로 전달하는 명령어입니다."
-  ]
-}
-  ]
-},
-  {
   "url": "/document-staging/nugu-sdk/capability-interface",
   "order": 147,
   "indexes": [
@@ -4631,6 +4599,38 @@
     "그 외 event\n    \n      해당 capability interface 의 context\n      다른 capability interface 의 context 중 version 만 포함",
     "해당 capability interface 의 context",
     "다른 capability interface 의 context 중 version 만 포함"
+  ]
+}
+  ]
+},
+  {
+  "url": "/document-staging/nugu-play/create-plays-with-play-builder/before-start/capability-interface",
+  "order": 17,
+  "indexes": [
+    {
+  "title": "Capability interface",
+  "hash": "",
+  "sentences": [
+    "Capability interface",
+    "디바이스의 여러 기능을 제어하기 위한 규격을 Capability Interface라 합니다. 응답을 재생하는 기능 외에 오디오 재생, 무드등 제어, 음량 조절 등 다양한 기능을 제어할 수 있습니다.",
+    "현재는 디바이스에서 오디오 스트리밍을 통해 음악을 재생하기 위한 AudioPlayer Interface와  NUGU nemo, Btv, T전화 등 Display Device에서 Display template를 사용할 수 있는 Display Interface 지원됩니다. Play를 생성하는 시점에 Play에서 지원하고자 하는 Capability Interface를 선택하면 사용할 수 있습니다.",
+    "각 Capability Interface는 다음의 세 요소로 구성되어 있습니다."
+  ]
+},
+    {
+  "title": "Capability interface > Built-in Intent",
+  "hash": "#built-in-intent",
+  "sentences": [
+    "Built-in Intent",
+    "기능을 제어하기 위해 기본으로 제공하는 Intent입니다. 사용자가 직접 정의하지 않아도 사용할 수 있습니다."
+  ]
+},
+    {
+  "title": "Capability interface > Directive",
+  "hash": "#directive",
+  "sentences": [
+    "Directive",
+    "디바이스의 기능을 제어하기 위해 Play에서 디바이스로 전달하는 명령어입니다."
   ]
 }
   ]
@@ -5416,6 +5416,13 @@
   ]
 },
   {
+  "url": "/document-staging/nugu-sdk/platform/ios/dark-mode",
+  "order": 179,
+  "indexes": [
+
+  ]
+},
+  {
   "url": "/document-staging/nugu-sdk/platform/android/dark-mode",
   "order": 192,
   "indexes": [
@@ -5433,13 +5440,6 @@
     "에 어두운 테마를 적용 수 있습니다."
   ]
 }
-  ]
-},
-  {
-  "url": "/document-staging/nugu-sdk/platform/ios/dark-mode",
-  "order": 179,
-  "indexes": [
-
   ]
 },
   {
@@ -6824,20 +6824,15 @@
     "FullText : 텍스트로 화면을 구성할 때 사용합니다.",
     "ImageText : 이미지와 텍스트를 함께 구성할 때 사용합니다.",
     "TextList : 텍스트를 중심으로 리스트를 표현할 때 사용합니다.",
-    "ImageList : 이미지를 중심으로 리스트를 표현할 때 사용합니다."
+    "ImageList : 이미지를 중심으로 리스트를 표현할 때 사용합니다.",
+    "Close : Display Template을 명시적으로 닫을 때 사용합니다."
   ]
 },
     {
   "title": "Display Interface > FullText1",
   "hash": "#fulltext1",
   "sentences": [
-    "FullText1"
-  ]
-},
-    {
-  "title": "Display Interface > 형식",
-  "hash": "#형식",
-  "sentences": [
+    "FullText1",
     "형식",
     "{\n  \"type\": \"Display.FullText1\",\n  \"version\": \"1.0\",\n  \"playServiceId\": \"{{STRING}}\",\n  \"token\": \"{{STRING}}\",\n  \"duration\": \"{{STRING}}\",\n  \"title\": TitleObject,\n  \"background\": BackgroundObject,\n  \"content\": {\n    \"header\": TextObject,\n    \"body\": TextObject,\n    \"footer\": TextObject\n  }\n}",
     "type | string | Y | Display.FullText1",
@@ -6849,13 +6844,7 @@
     "background | BackgroundObject | N | -",
     "content.header | TextObject | N | 본문 제목- 줄바꿈 가능 (‘\\n’)",
     "content.body | TextObject | Y | 본문 내용- 줄바꿈 가능 (‘\\n’)- Scrollable (스크롤이 불가능한 디바이스[일부 Btv]에서는 최대 4줄까지만 표현)",
-    "content.footer | TextObject | N | 보조 설명"
-  ]
-},
-    {
-  "title": "Display Interface > Sample Code",
-  "hash": "#sample-code",
-  "sentences": [
+    "content.footer | TextObject | N | 보조 설명",
     "Sample Code",
     "{\n  \"type\": \"Display.FullText1\",\n  \"version\": \"1.0\",\n  \"playServiceId\": \"{{playServiceId}}\",\n  \"token\": \"{{token}}\",\n  \"title\": {\n    \"logo\": {\n      \"contentDescription\": \"{{contentDescription}}\",\n      \"sources\": [\n        {\n          \"url\": \"http://someurl.com/name.png\"\n        }\n      ]\n    },\n    \"text\": {\n      \"text\": \"NUGU 백과\"\n    }\n  },\n  \"background\": {\n    \"image\": {\n      \"contentDescription\": \"{{STRING}}\",\n      \"sources\": [\n        {\n          \"url\": \"http://someurl.com/name.png\",\n          \"size\": \"LARGE\"\n        }\n      ]\n    },\n    \"color\": \"\"\n  },\n  \"content\": {\n    \"header\": {\n      \"text\": \"독도\"\n    },\n    \"body\": {\n      \"text\": \"‘독도’는 동해의 남서부인 울릉도와 오키 제도 사이에 있는 섬으로, 동도와 서도를 포함하고 총 91개의 섬들로 이루어져 있습니다.\"\n    },\n    \"footer\": {\n      \"text\": \"출처 : 위키피디아\"\n    }\n  }\n}"
   ]
@@ -6871,13 +6860,7 @@
   "title": "Display Interface > FullText2",
   "hash": "#fulltext2",
   "sentences": [
-    "FullText2"
-  ]
-},
-    {
-  "title": "Display Interface > 형식",
-  "hash": "#형식-1",
-  "sentences": [
+    "FullText2",
     "형식",
     "{\n  \"type\": \"Display.FullText2\",\n  \"version\": \"1.0\",\n  \"playServiceId\": \"{{STRING}}\",\n  \"token\": \"{{STRING}}\",\n  \"duration\": \"{{STRING}}\",\n  \"title\": TitleObject,\n  \"background\": BackgroundObject,\n  \"content\": {\n    \"body\": TextObject,\n    \"footer\": TextObject\n  }\n}",
     "type | string | Y | Display.FullText2",
@@ -6888,13 +6871,7 @@
     "title | TitleObject | Y | -",
     "background | BackgroundObject | N | -",
     "content.body | TextObject | Y | 본문 내용- 줄바꿈 가능 (‘\\n’)- 최대 4줄까지 표현 (넘는 문자는 … 처리)",
-    "content.footer | TextObject | N | 보조 설명"
-  ]
-},
-    {
-  "title": "Display Interface > Sample Code",
-  "hash": "#sample-code-1",
-  "sentences": [
+    "content.footer | TextObject | N | 보조 설명",
     "Sample Code",
     "{\n  \"type\": \"Display.FullText2\",\n  \"version\": \"1.0\",\n  \"playServiceId\": \"{{playServiceId}}\",\n  \"token\": \"{{token}}\",\n  \"title\": {\n    \"logo\": {\n      \"contentDescription\": \"{{contentDescription}}\",\n      \"sources\": [\n        {\n          \"url\": \"http://someurl.com/name.png\"\n        }\n      ]\n    },\n    \"text\": {\n      \"text\": \"날짜/시간\"\n    }\n  },\n  \"background\": {\n    \"color\": \"#465865\"\n  },\n  \"content\": {\n    \"body\": {\n      \"text\": \"오늘은 12월 24일 수요일입니다.\\n오늘 미세먼지는 매우나쁨이네요.\\n그냥 집에만 있어야겠어요.\"\n    },\n    \"footer\": {\n      \"text\": \"오후 6:03\"\n    }\n  }\n}"
   ]
@@ -6903,13 +6880,7 @@
   "title": "Display Interface > ImageText1",
   "hash": "#imagetext1",
   "sentences": [
-    "ImageText1"
-  ]
-},
-    {
-  "title": "Display Interface > 형식",
-  "hash": "#형식-2",
-  "sentences": [
+    "ImageText1",
     "형식",
     "{\n  \"type\": \"Display.ImageText1\",\n  \"version\": \"1.0\",\n  \"playServiceId\": \"{{STRING}}\",\n  \"token\": \"{{STRING}}\",\n  \"duration\": \"{{STRING}}\",\n  \"title\": TitleObject,\n  \"background\": BackgroundObject,\n  \"content\": {\n    \"image\": ImageObject,\n    \"imageAlign\": \"{{STRING}}\",\n    \"header\": TextObject,\n    \"body\": TextObject,\n    \"footer\": TextObject\n  }\n}",
     "type | string | Y | Display.ImageText1",
@@ -6923,13 +6894,7 @@
     "content.imageAlign | string | Y | LEFT, RIGHT",
     "content.header | TextObject | Y | 본문 제목- 줄바꿈 가능 (‘\\n’)- 최대 3줄까지 표현 (넘는 문자는 … 처리)",
     "content.body | TextObject | N | 본문 내용",
-    "content.footer | TextObject | N | 보조 설명- 줄바꿈 가능 (‘\\n’)- 최대 2줄까지 표현 (넘는 문자는 … 처리)"
-  ]
-},
-    {
-  "title": "Display Interface > Sample Code",
-  "hash": "#sample-code-2",
-  "sentences": [
+    "content.footer | TextObject | N | 보조 설명- 줄바꿈 가능 (‘\\n’)- 최대 2줄까지 표현 (넘는 문자는 … 처리)",
     "Sample Code",
     "{\n  \"type\": \"Display.ImageText1\",\n  \"version\": \"1.0\",\n  \"playServiceId\": \"{{playServiceId}}\",\n  \"token\": \"{{token}}\",\n  \"title\": {\n    \"logo\": {\n      \"contentDescription\": \"{{contentDescription}}\",\n      \"sources\": [\n        {\n          \"url\": \"http://someurl.com/name.png\"\n        }\n      ]\n    },\n    \"text\": {\n      \"text\": \"추천 영화\"\n    }\n  },\n  \"background\": {\n    \"image\": {\n      \"contentDescription\": \"{{STRING}}\",\n      \"sources\": [\n        {\n          \"url\": \"http://someurl.com/name.png\",\n          \"size\": \"LARGE\"\n        }\n      ]\n    }\n  },\n  \"content\": {\n    \"header\": {\n      \"text\": \"알라딘\"\n    },\n    \"body\": {\n      \"text\": \"모험, 가족, 판타지\"\n    },\n    \"footer\": {\n      \"text\": \"머나먼 사막 속 신비의 아그라바 왕국의 시대. 좀도둑 ‘알라딘’은 마법사 ‘자파’의 의뢰로 마법...\"\n    },\n    \"image\": {\n      \"contentDescription\": \"{{STRING}}\",\n      \"sources\": [\n        {\n          \"url\": \"http://someurl.com/name.png\"\n        }\n      ]\n    }\n  }\n}"
   ]
@@ -6938,13 +6903,7 @@
   "title": "Display Interface > ImageText2",
   "hash": "#imagetext2",
   "sentences": [
-    "ImageText2"
-  ]
-},
-    {
-  "title": "Display Interface > 형식",
-  "hash": "#형식-3",
-  "sentences": [
+    "ImageText2",
     "형식",
     "{\n  \"type\": \"Display.ImageText2\",\n  \"version\": \"1.0\",\n  \"playServiceId\": \"{{STRING}}\",\n  \"token\": \"{{STRING}}\",\n  \"duration\": \"{{STRING}}\",\n  \"title\": TitleObject,\n  \"background\": BackgroundObject,\n  \"content\": {\n    \"image\": ImageObject,\n    \"imageAlign\": \"{{STRING}}\",\n    \"header\": TextObject,\n    \"body\": TextObject\n  }\n}",
     "type | string | Y | Display.ImageText2",
@@ -6958,13 +6917,7 @@
     "content.imageAlign | string | Y | LEFT, RIGHT",
     "content.header | TextObject | N | 본문 제목 최대 1줄까지 표현 (넘는 문자는 … 처리)",
     "content.body | TextObject | Y | 본문 내용- 줄바꿈 가능 (‘\\n’)- 최대 6줄까지 표현 (넘는 문자는 … 처리)",
-    "content.footer | TextObject | N | 보조 설명- 줄바꿈 가능 (‘\\n’)- 최대 2줄까지 표현 (넘는 문자는 … 처리)"
-  ]
-},
-    {
-  "title": "Display Interface > Sample Code",
-  "hash": "#sample-code-3",
-  "sentences": [
+    "content.footer | TextObject | N | 보조 설명- 줄바꿈 가능 (‘\\n’)- 최대 2줄까지 표현 (넘는 문자는 … 처리)",
     "Sample Code",
     "{\n  \"type\": \"Display.ImageText2\",\n  \"version\": \"1.0\",\n  \"playServiceId\": \"{{playServiceId}}\",\n  \"token\": \"{{token}}\",\n  \"title\": {\n    \"logo\": {\n      \"contentDescription\": \"{{contentDescription}}\",\n      \"sources\": [\n        {\n          \"url\": \"http://someurl.com/name.png\"\n        }\n      ]\n    },\n    \"text\": {\n      \"text\": \"추천 영화\"\n    }\n  },\n  \"background\": {\n    \"image\": {\n      \"contentDescription\": \"{{STRING}}\",\n      \"sources\": [\n        {\n          \"url\": \"http://someurl.com/name.png\",\n          \"size\": \"LARGE\"\n        }\n      ]\n    }\n  },\n  \"content\": {\n    \"header\": {\n      \"text\": \"알라딘\"\n    },\n    \"body\": {\n      \"text\": \"머나먼 사막 속 신비의 아그라바 왕국의 시대. 좀도둑 ‘알라딘’은 마법사 ‘자파’의 의뢰로 마법 램프를 찾아 나섰다가 주인에게 세 가지 소원을 들어주는 지니를 만나게 되고...\"\n    },\n    \"footer\": {\n      \"text\": \"모험, 가족, 판타지\"\n    },\n    \"image\": {\n      \"contentDescription\": \"{{STRING}}\",\n      \"sources\": [\n        {\n          \"url\": \"http://someurl.com/name.png\"\n        }\n      ]\n    }\n  }\n}"
   ]
@@ -6973,13 +6926,7 @@
   "title": "Display Interface > ImageText3",
   "hash": "#imagetext3",
   "sentences": [
-    "ImageText3"
-  ]
-},
-    {
-  "title": "Display Interface > 형식",
-  "hash": "#형식-4",
-  "sentences": [
+    "ImageText3",
     "형식",
     "{\n  \"type\": \"Display.ImageText3\",\n  \"version\": \"1.0\",\n  \"playServiceId\": \"{{STRING}}\",\n  \"token\": \"{{STRING}}\",\n  \"duration\": \"{{STRING}}\",\n  \"title\": TitleObject,\n  \"background\": BackgroundObject,\n  \"content\": {\n    \"image\": ImageObject,\n    \"header\": TextObject,\n    \"body\": TextObject,\n    \"footer\": TextObject\n  }\n}",
     "type | string | Y | Display.ImageText3",
@@ -6992,13 +6939,7 @@
     "content.image | ImageObject | Y |  ",
     "content.header | TextObject | Y | 본문 제목 최대 1줄까지 표현 (넘는 문자는 … 처리)",
     "content.body | TextObject | N | 본문 내용- 줄바꿈 가능 (‘\\n’)- Scrollable (스크롤이 불가능한 디바이스[일부 Btv]에서는 최대 4줄까지만 표현)",
-    "content.footer | TextObject | N | 보조설명- 최대 1줄까지 표현 (넘는 문자는 … 처리)"
-  ]
-},
-    {
-  "title": "Display Interface > Sample Code",
-  "hash": "#sample-code-4",
-  "sentences": [
+    "content.footer | TextObject | N | 보조설명- 최대 1줄까지 표현 (넘는 문자는 … 처리)",
     "Sample Code",
     "{\n  \"type\": \"Display.ImageText3\",\n  \"version\": \"1.0\",\n  \"playServiceId\": \"{{playServiceId}}\",\n  \"token\": \"{{token}}\",\n  \"title\": {\n    \"logo\": {\n      \"contentDescription\": \"{{contentDescription}}\",\n      \"sources\": [\n        {\n          \"url\": \"http://someurl.com/name.png\"\n        }\n      ]\n    },\n    \"text\": {\n      \"text\": \"추천 영화\"\n    }\n  },\n  \"background\": {\n    \"color\": \"#0F336C\"\n  },\n  \"content\": {\n    \"header\": {\n      \"text\": \"알라딘\"\n    },\n    \"body\": {\n      \"text\": \"머나먼 사막 속 신비의 아그라바 왕국의 시대. 좀도둑 ‘알라딘’은 마법사 ‘자파’의 의뢰로 마법 램프를 찾아 나섰다가 주인에게 세 가지 소원을 들어주는 지니를 만나게 되고...\"\n    },\n    \"footer\": {\n      \"text\": \"모험, 가족, 판타지\"\n    },\n    \"image\": {\n      \"contentDescription\": \"{{STRING}}\",\n      \"sources\": [\n        {\n          \"url\": \"http://someurl.com/name.png\"\n        }\n      ]\n    }\n  }\n}"
   ]
@@ -7007,13 +6948,7 @@
   "title": "Display Interface > ImageText4",
   "hash": "#imagetext4",
   "sentences": [
-    "ImageText4"
-  ]
-},
-    {
-  "title": "Display Interface > 형식",
-  "hash": "#형식-5",
-  "sentences": [
+    "ImageText4",
     "형식",
     "{\n  \"type\": \"Display.ImageText4\",\n  \"version\": \"1.0\",\n  \"playServiceId\": \"{{STRING}}\",\n  \"token\": \"{{STRING}}\",\n  \"duration\": \"{{STRING}}\",\n  \"title\": TitleObject,\n  \"background\": BackgroundObject,\n  \"content\": {\n    \"image\": ImageObject,\n    \"header\": TextObject,\n    \"body\": TextObject,\n    \"footer\": TextObject\n  }\n}",
     "type | string | Y | Display.ImageText4",
@@ -7026,13 +6961,7 @@
     "content.image | ImageObject | Y |  ",
     "content.header | TextObject | Y | 본문 제목- 최대 1줄까지 표현 (넘는 문자는 … 처리)",
     "content.body | TextObject | Y | 본문 내용- 최대 1줄까지 표현 (넘는 문자는 … 처리)",
-    "content.footer | TextObject | N | 보조설명- 최대 1줄까지 표현 (넘는 문자는 … 처리)"
-  ]
-},
-    {
-  "title": "Display Interface > Sample Code",
-  "hash": "#sample-code-5",
-  "sentences": [
+    "content.footer | TextObject | N | 보조설명- 최대 1줄까지 표현 (넘는 문자는 … 처리)",
     "Sample Code",
     "{\n  \"type\": \"Display.ImageText4\",\n  \"version\": \"1.0\",\n  \"playServiceId\": \"{{playServiceId}}\",\n  \"token\": \"{{token}}\",\n  \"title\": {\n    \"logo\": {\n      \"contentDescription\": \"{{contentDescription}}\",\n      \"sources\": [\n        {\n          \"url\": \"http://someurl.com/name.png\"\n        }\n      ]\n    },\n    \"text\": {\n      \"text\": \"추천 영화\"\n    }\n  },\n  \"background\": {\n    \"color\": \"#0F336C\"\n  },\n  \"content\": {\n    \"header\": {\n      \"text\": \"알라딘\"\n    },\n    \"body\": {\n      \"text\": \"2019.12.24 개봉\"\n    },\n    \"footer\": {\n      \"text\": \"모험, 가족, 판타지\"\n    },\n    \"image\": {\n      \"contentDescription\": \"{{STRING}}\",\n      \"sources\": [\n        {\n          \"url\": \"http://someurl.com/name.png\"\n        }\n      ]\n    }\n  }\n}"
   ]
@@ -7041,13 +6970,7 @@
   "title": "Display Interface > TextList1",
   "hash": "#textlist1",
   "sentences": [
-    "TextList1"
-  ]
-},
-    {
-  "title": "Display Interface > 형식",
-  "hash": "#형식-6",
-  "sentences": [
+    "TextList1",
     "형식",
     "{\n  \"type\": \"Display.TextList1\",\n  \"version\": \"1.0\",\n  \"playServiceId\": \"{{STRING}}\",\n  \"token\": \"{{STRING}}\",\n  \"duration\": \"{{STRING}}\",\n  \"title\": TitleObject,\n  \"background\": BackgroundObject,\n  \"badgeNumber\": true,\n  \"listItems\": [\n    {\n      \"token\": \"{{STRING}}\",\n      \"header\": TextObject,\n      \"body\": TextObject,\n      \"footer\": TextObject\n    },\n    {\n      \"token\": \"{{STRING}}\",\n      \"header\": TextObject,\n      \"body\": TextObject,\n      \"footer\": TextObject\n    }\n  ]\n}",
     "type | string | Y | Display.TextList1",
@@ -7062,13 +6985,7 @@
     "listItems.token | string | Y | 클릭은 한 item 전체에서 가능",
     "listItems.header | TextObject | Y | 본문 제목- 최대 1줄까지 표현 (넘는 문자는 … 처리)",
     "listItems.body | TextObject | Y | 본문 내용- 최대 1줄까지 표현 (넘는 문자는 … 처리)",
-    "listItems.footer | TextObject | N | 보조설명- 최대 1줄까지 표현 (넘는 문자는 … 처리)"
-  ]
-},
-    {
-  "title": "Display Interface > Sample Code",
-  "hash": "#sample-code-6",
-  "sentences": [
+    "listItems.footer | TextObject | N | 보조설명- 최대 1줄까지 표현 (넘는 문자는 … 처리)",
     "Sample Code",
     "{\n  \"type\": \"Display.TextList1\",\n  \"version\": \"1.0\",\n  \"playServiceId\": \"{{playServiceId}}\",\n  \"token\": \"{{token}}\",\n  \"title\": {\n    \"logo\": {\n      \"contentDescription\": \"{{contentDescription}}\",\n      \"sources\": [\n        {\n          \"url\": \"http://someurl.com/name.png\"\n        }\n      ]\n    },\n    \"text\": {\n      \"text\": \"발라드 차트\"\n    }\n  },\n  \"background\": {\n    \"image\": {\n      \"contentDescription\": \"{{STRING}}\",\n      \"sources\": [\n        {\n          \"url\": \"http://someurl.com/name.png\",\n          \"size\": \"LARGE\"\n        }\n      ]\n    }\n  },\n  \"listItems\": [\n    {\n      \"token\": \"{{111}}\",\n      \"header\": {\n        \"text\": \"1위\"\n      },\n      \"body\": {\n        \"text\": \"오늘도 빛나는 너에게\"\n      },\n      \"footer\": {\n        \"text\": \"마크툽(Maktub)\"\n      }\n    },\n    {\n      \"token\": \"{{222}}\",\n      \"header\": {\n        \"text\": \"2위\"\n      },\n      \"body\": {\n        \"text\": \"2002\"\n      },\n      \"footer\": {\n        \"text\": \"Anne-Marie\"\n      }\n    },\n    {\n      \"token\": \"{{333}}\",\n      \"header\": {\n        \"text\": \"3위\"\n      },\n      \"body\": {\n        \"text\": \"사계 (Four Seasons)\"\n      },\n      \"footer\": {\n        \"text\": \"태연(TAEYEON)\"\n      }\n    },\n    {\n      \"token\": \"{{444}}\",\n      \"header\": {\n        \"text\": \"4위\"\n      },\n      \"body\": {\n        \"text\": \"워커홀릭\"\n      },\n      \"footer\": {\n        \"text\": \"볼빨간 사춘기\"\n      }\n    }\n  ]\n}"
   ]
@@ -7077,13 +6994,7 @@
   "title": "Display Interface > TextList2",
   "hash": "#textlist2",
   "sentences": [
-    "TextList2"
-  ]
-},
-    {
-  "title": "Display Interface > 형식",
-  "hash": "#형식-7",
-  "sentences": [
+    "TextList2",
     "형식",
     "{\n  \"type\": \"Display.TextList2\",\n  \"version\": \"1.0\",\n  \"playServiceId\": \"{{STRING}}\",\n  \"token\": \"{{STRING}}\",\n  \"duration\": \"{{STRING}}\",\n  \"title\": TitleObject,\n  \"background\": BackgroundObject,\n  \"badgeNumber\": true,\n  \"listItems\": [\n    {\n      \"token\": \"{{STRING}}\",\n      \"image\": ImageObject,\n      \"header\": TextObject,\n      \"body\": TextObject,\n      \"footer\": TextObject\n    },\n    {\n      \"token\": \"{{STRING}}\",\n      \"image\": ImageObject,\n      \"header\": TextObject,\n      \"body\": TextObject,\n      \"footer\": TextObject\n    }\n  ]\n}",
     "type | string | Y | Display.TextList2",
@@ -7099,13 +7010,7 @@
     "listItems.image | ImageObject | Y | -",
     "listItems.header | TextObject | Y | 본문 제목- 최대 1줄까지 표현 (넘는 문자는 … 처리)",
     "listItems.body | TextObject | Y | 본문 내용- 최대 1줄까지 표현 (넘는 문자는 … 처리)",
-    "listItems.footer | TextObject | N | 보조설명- 최대 1줄까지 표현 (넘는 문자는 … 처리)"
-  ]
-},
-    {
-  "title": "Display Interface > Sample Code",
-  "hash": "#sample-code-7",
-  "sentences": [
+    "listItems.footer | TextObject | N | 보조설명- 최대 1줄까지 표현 (넘는 문자는 … 처리)",
     "Sample Code",
     "{\n  \"type\": \"Display.TextList2\",\n  \"version\": \"1.0\",\n  \"playServiceId\": \"{{playServiceId}}\",\n  \"token\": \"{{token}}\",\n  \"title\": {\n    \"logo\": {\n      \"contentDescription\": \"{{contentDescription}}\",\n      \"sources\": [\n        {\n          \"url\": \"http://someurl.com/name.png\"\n        }\n      ]\n    },\n    \"text\": {\n      \"text\": \"발라드 차트\"\n    }\n  },\n  \"background\": {\n    \"image\": {\n      \"contentDescription\": \"{{STRING}}\",\n      \"sources\": [\n        {\n          \"url\": \"http://someurl.com/name.png\",\n          \"size\": \"LARGE\"\n        }\n      ]\n    }\n  },\n  \"listItems\": [\n    {\n      \"token\": \"{{111}}\",\n      \"header\": {\n        \"text\": \"1\"\n      },\n      \"body\": {\n        \"text\": \"오늘도 빛나는 너에게\"\n      },\n      \"footer\": {\n        \"text\": \"마크툽(Maktub)\"\n      },\n      \"image\": {\n        \"contentDescription\": \"{{STRING}}\",\n        \"sources\": [\n          {\n            \"url\": \"http://someurl.com/name.png\",\n            \"size\": \"LARGE\"\n          }\n        ]\n      }\n    },\n    {\n      \"token\": \"{{222}}\",\n      \"header\": {\n        \"text\": \"2\"\n      },\n      \"body\": {\n        \"text\": \"2002\"\n      },\n      \"footer\": {\n        \"text\": \"Anne-Marie\"\n      },\n      \"image\": {\n        \"contentDescription\": \"{{STRING}}\",\n        \"sources\": [\n          {\n            \"url\": \"http://someurl.com/name.png\",\n            \"size\": \"LARGE\"\n          }\n        ]\n      }\n    },\n    {\n      \"token\": \"{{333}}\",\n      \"header\": {\n        \"text\": \"3\"\n      },\n      \"body\": {\n        \"text\": \"사계 (Four Seasons)\"\n      },\n      \"footer\": {\n        \"text\": \"태연(TAEYEON)\"\n      },\n      \"image\": {\n        \"contentDescription\": \"{{STRING}}\",\n        \"sources\": [\n          {\n            \"url\": \"http://someurl.com/name.png\",\n            \"size\": \"LARGE\"\n          }\n        ]\n      }\n    },\n    {\n      \"token\": \"{{444}}\",\n      \"header\": {\n        \"text\": \"4\"\n      },\n      \"body\": {\n        \"text\": \"워커홀릭\"\n      },\n      \"footer\": {\n        \"text\": \"볼빨간 사춘기\"\n      }\n    }\n  ]\n}"
   ]
@@ -7114,13 +7019,7 @@
   "title": "Display Interface > TextList3",
   "hash": "#textlist3",
   "sentences": [
-    "TextList3"
-  ]
-},
-    {
-  "title": "Display Interface > 형식",
-  "hash": "#형식-8",
-  "sentences": [
+    "TextList3",
     "형식",
     "{\n  \"type\": \"Display.TextList3\",\n  \"version\": \"1.0\",\n  \"playServiceId\": \"{{STRING}}\",\n  \"token\": \"{{STRING}}\",\n  \"duration\": \"{{STRING}}\",\n  \"title\": TitleObject,\n  \"background\": BackgroundObject,\n  \"badgeNumber\": true,\n  \"listItems\": [\n    {\n      \"token\": \"{{STRING}}\",\n      \"image\": ImageObject,\n      \"header\": TextObject,\n      \"body\": [\n        TextObjects\n      ],\n      \"footer\": TextObject\n    },\n    {\n      \"token\": \"{{STRING}}\",\n      \"image\": ImageObject,\n      \"header\": TextObject,\n      \"body\": [\n        TextObjects\n      ],\n      \"footer\": TextObject\n    }\n  ],\n  \"caption\": TextObject\n}",
     "type | string | Y | Display.TextList3",
@@ -7137,13 +7036,7 @@
     "listItems.header | TextObject | Y | 본문 제목- 최대 1줄까지 표현 (넘는 문자는 … 처리)",
     "listItems.body | array of TextObject | Y | 본문 내용- 줄바꿈 허용 / 최대 4줄 - footer 정의 시 3줄 제한 (footer객체는 빈객체({})로도 정의가 되어 있으면 3줄로 제한됨)",
     "listItems.footer | TextObject | N | 보조설명- 최대 1줄까지 표현 (넘는 문자는 … 처리)",
-    "caption | TextObject | N | 전체 리스트 아이템들에 대한 보조설명- 텍스트 길이 : 최대 2줄(단말에 따라 1줄)"
-  ]
-},
-    {
-  "title": "Display Interface > Sample Code",
-  "hash": "#sample-code-8",
-  "sentences": [
+    "caption | TextObject | N | 전체 리스트 아이템들에 대한 보조설명- 텍스트 길이 : 최대 2줄(단말에 따라 1줄)",
     "Sample Code",
     "{\n  \"type\": \"Display.TextList3\",\n  \"version\": \"1.0\",\n  \"playServiceId\": \"{{playServiceId}}\",\n  \"token\": \"{{token}}\",\n  \"title\": {\n    \"logo\": {\n      \"contentDescription\": \"{{contentDescription}}\",\n      \"sources\": [\n        {\n          \"url\": \"http://someurl.com/name.png\"\n        }\n      ]\n    },\n    \"text\": {\n      \"text\": \"추천 영화\"\n    }\n  },\n  \"background\": {\n    \"color\": \"#0F336C\"\n  },\n  \"badgeNumber\": true,\n  \"listItems\": [\n    {\n      \"token\": \"{{111}}\",\n      \"header\": {\n        \"text\": \"알라딘\"\n      },\n      \"body\": [\n        {\n          \"text\": \"감독 : 가이 리치\"\n        },\n        {\n          \"text\": \"출연 : 윌 스미스, 메나 마수드, 나오미 누구지?\"\n        },\n        {\n          \"text\": \"개봉일자 : 2019.5.23\"\n        },\n        {\n          \"text\": \"전체 관람가\"\n        }\n      ],\n      \"image\": {\n        \"contentDescription\": \"{{STRING}}\",\n        \"sources\": [\n          {\n            \"url\": \"http://someurl.com/name.png\",\n            \"size\": \"LARGE\"\n          }\n        ]\n      }\n    },\n    {\n      \"token\": \"{{222}}\",\n      \"header\": {\n        \"text\": \"어벤저스 엔드게임\"\n      },\n      \"body\": [\n        {\n          \"text\": \"감독: 안소니 루소, 조 루소\"\n        }\n      ],\n      \"image\": {\n        \"contentDescription\": \"{{STRING}}\",\n        \"sources\": [\n          {\n            \"url\": \"http://someurl.com/name.png\",\n            \"size\": \"LARGE\"\n          }\n        ]\n      }\n    }\n  ]\n}"
   ]
@@ -7152,13 +7045,7 @@
   "title": "Display Interface > TextList4",
   "hash": "#textlist4",
   "sentences": [
-    "TextList4"
-  ]
-},
-    {
-  "title": "Display Interface > 형식",
-  "hash": "#형식-9",
-  "sentences": [
+    "TextList4",
     "형식",
     "{\n  \"type\": \"Display.TextList4\",\n  \"version\": \"1.0\",\n  \"token\": \"{{STRING}}\",\n  \"duration\": \"{{STRING}}\",\n  \"title\": TitleObject,\n  \"background\": BackgroundObject,\n  \"listItems\": [\n    {\n      \"header\": TextObject,\n      \"body\": [\n        TextObjects\n      ],\n      \"button\": ButtonObject\n    }\n  ]\n}",
     "type | string | Y | Display.TextList4",
@@ -7171,13 +7058,7 @@
     "listItems | list | Y | Scrollable (스크롤이 불가능한 디바이스에서는 짤림)",
     "listItems.header | TextObject | Y | 본문 제목- 최대 1줄까지 표현 (넘는 문자는 … 처리)",
     "listItems.body | array of TextObject | Y | List 아이템의 본문 내용- 최대 1줄까지 표현 (넘는 문자는 … 처리)",
-    "listItems.button | ButtonObject | N | List 아이템의 버튼- body가 2줄인 경우에 최적화 되어 있음"
-  ]
-},
-    {
-  "title": "Display Interface > Sample Code",
-  "hash": "#sample-code-9",
-  "sentences": [
+    "listItems.button | ButtonObject | N | List 아이템의 버튼- body가 2줄인 경우에 최적화 되어 있음",
     "Sample Code",
     "{\n  \"type\": \"Display.TextList4\",\n  \"version\": \"1.0\",\n  \"playServiceId\": \"{{playServiceId}}\",\n  \"token\": \"{{token}}\",\n  \"title\": {\n    \"logo\": {\n      \"contentDescription\": \"{{contentDescription}}\",\n      \"sources\": [\n        {\n          \"url\": \"http://someurl.com/name.png\"\n        }\n      ]\n    },\n    \"text\": {\n      \"text\": \"추천 영화\"\n    }\n  },\n  \"background\": {\n    \"color\": \"#0F336C\"\n  },\n  \"listItems\": [\n    {\n      \"token\": \"{{111}}\",\n      \"header\": {\n        \"text\": \"알라딘\"\n      },\n      \"body\": [\n        {\n          \"text\": \"머나먼 사막 속 신비의 아그라바 왕국의 시대.\"\n        },\n        {\n          \"text\": \"좀도둑 ‘알라딘’은 마법사 ‘자파’의 의뢰로 마법 램프를 찾아 나섰다가 말았다가~\"\n        }\n      ],\n      \"button\": {\n        \"text\": \"상세보기\",\n        \"token\": \"{{button1}}\"\n      }\n    },\n    {\n      \"token\": \"{{222}}\",\n      \"header\": {\n        \"text\": \"알라딘\"\n      },\n      \"body\": [\n        {\n          \"text\": \"머나먼 사막 속 신비의 아그라바 왕국의 시대.\"\n        },\n        {\n          \"text\": \"좀도둑 ‘알라딘’은 마법사 ‘자파’의 의뢰로 마법 램프를 찾아 나섰다가 말았다가~\"\n        }\n      ],\n      \"button\": {\n        \"text\": \"상세보기\",\n        \"token\": \"{{button1}}\"\n      }\n    },\n    {\n      \"token\": \"{{333}}\",\n      \"header\": {\n        \"text\": \"알라딘\"\n      },\n      \"body\": [\n        {\n          \"text\": \"머나먼 사막 속 신비의 아그라바 왕국의 시대.\"\n        },\n        {\n          \"text\": \"좀도둑 ‘알라딘’은 마법사 ‘자파’의 의뢰로 마법 램프를 찾아 나섰다가 말았다가~\"\n        }\n      ],\n      \"button\": {\n        \"text\": \"상세보기\",\n        \"token\": \"{{button1}}\"\n      }\n    }\n  ]\n}"
   ]
@@ -7186,13 +7067,7 @@
   "title": "Display Interface > ImageList1",
   "hash": "#imagelist1",
   "sentences": [
-    "ImageList1"
-  ]
-},
-    {
-  "title": "Display Interface > 형식",
-  "hash": "#형식-10",
-  "sentences": [
+    "ImageList1",
     "형식",
     "{\n  \"type\": \"Display.ImageList1\",\n  \"version\": \"1.0\",\n  \"playServiceId\": \"{{STRING}}\",\n  \"token\": \"{{STRING}}\",\n  \"duration\": \"{{STRING}}\",\n  \"title\": TitleObject,\n  \"background\": BackgroundObject,\n  \"badgeNumber\": true,\n  \"listItems\": [\n    {\n      \"token\": \"{{STRING}}\",\n      \"image\": ImageObject,\n      \"header\": TextObject,\n      \"footer\": TextObject\n    },\n    {\n      \"token\": \"{{STRING}}\",\n      \"image\": ImageObject,\n      \"header\": TextObject,\n      \"footer\": TextObject\n    }\n  ]\n}",
     "type | string | Y | Display.ImageList1",
@@ -7208,13 +7083,7 @@
     "listItems.token | string | Y | 클릭은 한 item 전체에서 가능",
     "listItems.image | ImageObject | Y | -",
     "listItems.header | TextObject | Y | 본문 제목- 최대 1줄까지 표현 (넘는 문자는 … 처리)",
-    "listItems.footer | TextObject | N | 보조설명- 최대 1줄까지 표현 (넘는 문자는 … 처리)"
-  ]
-},
-    {
-  "title": "Display Interface > Sample Code",
-  "hash": "#sample-code-10",
-  "sentences": [
+    "listItems.footer | TextObject | N | 보조설명- 최대 1줄까지 표현 (넘는 문자는 … 처리)",
     "Sample Code",
     "{\n  \"type\": \"Display.ImageList1\",\n  \"version\": \"1.0\",\n  \"playServiceId\": \"{{playServiceId}}\",\n  \"token\": \"{{token}}\",\n  \"title\": {\n    \"logo\": {\n      \"contentDescription\": \"{{contentDescription}}\",\n      \"sources\": [\n        {\n          \"url\": \"http://someurl.com/name.png\"\n        }\n      ]\n    },\n    \"text\": {\n      \"text\": \"내 플레이리스트\"\n    }\n  },\n  \"background\": {\n    \"image\": {\n      \"contentDescription\": \"{{STRING}}\",\n      \"sources\": [\n        {\n          \"url\": \"http://someurl.com/name.png\",\n          \"size\": \"LARGE\"\n        }\n      ]\n    }\n  },\n  \"badgeNumber\": true,\n  \"listItems\": [\n    {\n      \"token\": \"{{111}}\",\n      \"image\": {\n        \"contentDescription\": \"{{STRING}}\",\n        \"sources\": [\n          {\n            \"url\": \"http://someurl.com/name.png\",\n            \"size\": \"LARGE\"\n          }\n        ]\n      },\n      \"header\": {\n        \"text\": \"감성 리메이크\"\n      },\n      \"footer\": {\n        \"text\": \"19곡\"\n      }\n    },\n    {\n      \"token\": \"{{222}}\",\n      \"image\": {\n        \"contentDescription\": \"{{STRING}}\",\n        \"sources\": [\n          {\n            \"url\": \"http://someurl.com/name.png\"\n          }\n        ]\n      },\n      \"header\": {\n        \"text\": \"Deep Plow\"\n      },\n      \"footer\": {\n        \"text\": \"29곡\"\n      }\n    },\n    {\n      \"token\": \"{{333}}\",\n      \"image\": {\n        \"contentDescription\": \"{{STRING}}\",\n        \"sources\": [\n          {\n            \"url\": \"http://someurl.com/name.png\"\n          }\n        ]\n      },\n      \"header\": {\n        \"text\": \"운동 할 때 무한 반복해도 절대 질리지 않는 트랙들!\"\n      },\n      \"footer\": {\n        \"text\": \"9곡\"\n      }\n    }\n  ]\n}"
   ]
@@ -7223,13 +7092,7 @@
   "title": "Display Interface > ImageList2",
   "hash": "#imagelist2",
   "sentences": [
-    "ImageList2"
-  ]
-},
-    {
-  "title": "Display Interface > 형식",
-  "hash": "#형식-11",
-  "sentences": [
+    "ImageList2",
     "형식",
     "{\n  \"type\": \"Display.ImageList1\",\n  \"version\": \"1.0\",\n  \"playServiceId\": \"{{STRING}}\",\n  \"token\": \"{{STRING}}\",\n  \"duration\": \"{{STRING}}\",\n  \"title\": TitleObject,\n  \"background\": BackgroundObject,\n  \"badgeNumber\": true,\n  \"badgeNumberStyle\": {\n    \"background\": \"#f0f\",\n    \"color\": \"red\",\n    \"border-radius\": \"10px\"\n  },\n  \"listItems\": [\n    {\n      \"token\": \"{{STRING}}\",\n      \"image\": ImageObject,\n      \"icon\": ImageObject,\n      \"header\": TextObject,\n      \"footer\": TextObject\n    },\n    {\n      \"token\": \"{{STRING}}\",\n      \"image\": ImageObject,\n      \"icon\": ImageObject,\n      \"header\": TextObject,\n      \"footer\": TextObject\n    }\n  ]\n}",
     "type | string | Y | Display.ImageList2",
@@ -7246,13 +7109,7 @@
     "listItems.image | ImageObject | Y | -",
     "listItems.icon | ImageObject | N | 상태 아이콘",
     "listItems.header | TextObject | Y | 본문 제목- 최대 1줄까지 표현 (넘는 문자는 … 처리)",
-    "listItems.footer | TextObject | N | 보조설명- 최대 1줄까지 표현 (넘는 문자는 … 처리)"
-  ]
-},
-    {
-  "title": "Display Interface > Sample Code",
-  "hash": "#sample-code-11",
-  "sentences": [
+    "listItems.footer | TextObject | N | 보조설명- 최대 1줄까지 표현 (넘는 문자는 … 처리)",
     "Sample Code",
     "{\n  \"type\": \"Display.ImageList2\",\n  \"version\": \"1.0\",\n  \"playServiceId\": \"{{playServiceId}}\",\n  \"token\": \"{{token}}\",\n  \"title\": {\n    \"logo\": {\n      \"contentDescription\": \"{{contentDescription}}\",\n      \"sources\": [\n        {\n          \"url\": \"http://someurl.com/name.png\"\n        }\n      ]\n    },\n    \"text\": {\n      \"text\": \"내 플레이리스트\"\n    }\n  },\n  \"background\": {\n    \"image\": {\n      \"contentDescription\": \"{{STRING}}\",\n      \"sources\": [\n        {\n          \"url\": \"http://someurl.com/name.png\",\n          \"size\": \"LARGE\"\n        }\n      ]\n    }\n  },\n  \"listItems\": [\n    {\n      \"token\": \"{{111}}\",\n      \"image\": {\n        \"contentDescription\": \"{{STRING}}\",\n        \"sources\": [\n          {\n            \"url\": \"http://someurl.com/name.png\",\n            \"size\": \"LARGE\"\n          }\n        ]\n      },\n      \"header\": {\n        \"text\": \"감성 리메이크\"\n      },\n      \"footer\": {\n        \"text\": \"19곡\"\n      },\n      \"icon\": {\n        \"sources\": [\n          {\n            \"url\": \"http://someurl.com/name.png\",\n            \"size\": \"SMALL\"\n          }\n        ]\n      }\n    },\n    {\n      \"token\": \"{{222}}\",\n      \"image\": {\n        \"contentDescription\": \"{{STRING}}\",\n        \"sources\": [\n          {\n            \"url\": \"http://someurl.com/name.png\"\n          }\n        ]\n      },\n      \"header\": {\n        \"text\": \"Deep Plow\"\n      },\n      \"footer\": {\n        \"text\": \"1분 34초\"\n      },\n      \"icon\": {\n        \"sources\": [\n          {\n            \"url\": \"http://someurl.com/name.png\",\n            \"size\": \"SMALL\"\n          }\n        ]\n      }\n    },\n    {\n      \"token\": \"{{333}}\",\n      \"image\": {\n        \"contentDescription\": \"{{STRING}}\",\n        \"sources\": [\n          {\n            \"url\": \"http://someurl.com/name.png\"\n          }\n        ]\n      },\n      \"header\": {\n        \"text\": \"운동 할 때 무한 반복해도 절대 질리지 않는 트랙들!\"\n      },\n      \"footer\": {\n        \"text\": \"9곡\"\n      }\n    }\n  ]\n}"
   ]
@@ -7261,13 +7118,7 @@
   "title": "Display Interface > ImageList3",
   "hash": "#imagelist3",
   "sentences": [
-    "ImageList3"
-  ]
-},
-    {
-  "title": "Display Interface > 형식",
-  "hash": "#형식-12",
-  "sentences": [
+    "ImageList3",
     "형식",
     "{\n  \"type\": \"Display.ImageList3\",\n  \"version\": \"1.0\",\n  \"token\": \"{{STRING}}\",\n  \"duration\": \"{{STRING}}\",\n  \"title\": TitleObject,\n  \"background\": BackgroundObject,\n  \"listItems\": [\n    {\n      \"token\": \"{{STRING}}\",\n      \"image\": ImageObject,\n      \"header\": TextObject,\n      \"icon\": ImageObject\n    }\n  ]\n}",
     "type | string | Y | Display.ImageList3",
@@ -7281,7 +7132,16 @@
     "listItems.token | string | Y | 클릭 시에 전달될 토",
     "listItems.header | TextObject | Y | List 제목- 최대 1줄까지 표현 (넘는 문자는 … 처리)",
     "listItems.image | ImageObject | Y | List 이미지- 리스트 제목 좌측에 위치하는 이미지",
-    "listItems.icon | TextObject | N | icon 이미지- 리스트 제목 우측에 위치하는 new 등의 배지"
+    "listItems.icon | TextObject | N | icon 이미지- 리스트 제목 우측에 위치하는 new 등의 배지",
+    "Sample Code",
+    "{\n  \"type\": \"Display.ImageList3\",\n  \"version\": \"1.0\",\n  \"playServiceId\": \"{{playServiceId}}\",\n  \"token\": \"{{token}}\",\n  \"title\": {\n    \"logo\": {\n      \"contentDescription\": \"{{contentDescription}}\",\n      \"sources\": [\n        {\n          \"url\": \"http://someurl.com/name.png\"\n        }\n      ]\n    },\n    \"text\": {\n      \"text\": \"내 플레이리스트\"\n    }\n  },\n  \"background\": {\n    \"image\": {\n      \"contentDescription\": \"{{STRING}}\",\n      \"sources\": [\n        {\n          \"url\": \"http://someurl.com/name.png\",\n          \"size\": \"LARGE\"\n        }\n      ]\n    }\n  },\n  \"listItems\": [\n    {\n      \"token\": \"{{111}}\",\n      \"image\": {\n        \"contentDescription\": \"{{STRING}}\",\n        \"sources\": [\n          {\n            \"url\": \"http://someurl.com/name.png\",\n            \"size\": \"LARGE\"\n          }\n        ]\n      },\n      \"header\": {\n        \"text\": \"감성 리메이크\"\n      },\n      \"icon\": {\n        \"contentDescription\": \"{{STRING}}\",\n        \"sources\": [\n          {\n            \"url\": \"http://someurl.com/name.png\",\n            \"size\": \"X_SMALL\"\n          }\n        ]\n      }\n    },\n    {\n      \"token\": \"{{222}}\",\n      \"image\": {\n        \"contentDescription\": \"{{STRING}}\",\n        \"sources\": [\n          {\n            \"url\": \"http://someurl.com/name.png\"\n          }\n        ]\n      },\n      \"header\": {\n        \"text\": \"Deep Plow\"\n      }\n    },\n    {\n      \"token\": \"{{333}}\",\n      \"image\": {\n        \"contentDescription\": \"{{STRING}}\",\n        \"sources\": [\n          {\n            \"url\": \"http://someurl.com/name.png\"\n          }\n        ]\n      },\n      \"header\": {\n        \"text\": \"운동 할 때 무한 반복해도 절대 질리지 않는 트랙들!\"\n      }\n    },\n    {\n      \"token\": \"{{111}}\",\n      \"image\": {\n        \"contentDescription\": \"{{STRING}}\",\n        \"sources\": [\n          {\n            \"url\": \"http://someurl.com/name.png\",\n            \"size\": \"LARGE\"\n          }\n        ]\n      },\n      \"header\": {\n        \"text\": \"감성 리메이크\"\n      }\n    },\n    {\n      \"token\": \"{{222}}\",\n      \"image\": {\n        \"contentDescription\": \"{{STRING}}\",\n        \"sources\": [\n          {\n            \"url\": \"http://someurl.com/name.png\"\n          }\n        ]\n      },\n      \"header\": {\n        \"text\": \"Deep Plow\"\n      }\n    },\n    {\n      \"token\": \"{{333}}\",\n      \"image\": {\n        \"contentDescription\": \"{{STRING}}\",\n        \"sources\": [\n          {\n            \"url\": \"http://someurl.com/name.png\"\n          }\n        ]\n      },\n      \"header\": {\n        \"text\": \"운동 할 때 무한 반복해도 절대 질리지 않는 트랙들!\"\n      }\n    },\n    {\n      \"token\": \"{{111}}\",\n      \"image\": {\n        \"contentDescription\": \"{{STRING}}\",\n        \"sources\": [\n          {\n            \"url\": \"http://someurl.com/name.png\",\n            \"size\": \"LARGE\"\n          }\n        ]\n      },\n      \"header\": {\n        \"text\": \"감성 리메이크\"\n      }\n    },\n    {\n      \"token\": \"{{222}}\",\n      \"image\": {\n        \"contentDescription\": \"{{STRING}}\",\n        \"sources\": [\n          {\n            \"url\": \"http://someurl.com/name.png\"\n          }\n        ]\n      },\n      \"header\": {\n        \"text\": \"Deep Plow\"\n      }\n    },\n    {\n      \"token\": \"{{333}}\",\n      \"image\": {\n        \"contentDescription\": \"{{STRING}}\",\n        \"sources\": [\n          {\n            \"url\": \"http://someurl.com/name.png\"\n          }\n        ]\n      },\n      \"header\": {\n        \"text\": \"운동 할 때 무한 반복해도 절대 질리지 않는 트랙들!\"\n      }\n    }\n  ]\n}"
+  ]
+},
+    {
+  "title": "Display Interface > 기타 directive",
+  "hash": "#기타-directive",
+  "sentences": [
+    "기타 directive"
   ]
 }
   ]
@@ -14463,253 +14323,6 @@
   ]
 },
   {
-  "url": "/document-staging/nugu-sdk/platform/android/start",
-  "order": 183,
-  "indexes": [
-    {
-  "title": "시작하기",
-  "hash": "",
-  "sentences": [
-    "시작하기"
-  ]
-},
-    {
-  "title": "시작하기 > Step 1:최소 요구사항",
-  "hash": "#step-1최소-요구사항",
-  "sentences": [
-    "Step 1:최소 요구사항",
-    "Android 5.0(API level 21) 이상에서 지원합니다.",
-    "Android 4.4(API level 19)에서도 동작하지만, TLS v1.2로 설정이 필요합니다."
-  ]
-},
-    {
-  "title": "시작하기 > Step 2: NUGU  SDK 설치하기",
-  "hash": "#step-2-nugu--sdk-설치하기",
-  "sentences": [
-    "Step 2: NUGU  SDK 설치하기"
-  ]
-},
-    {
-  "title": "시작하기 > 레포지토리 추가하기",
-  "hash": "#레포지토리-추가하기",
-  "sentences": [
-    "레포지토리 추가하기",
-    "프로젝트의 build.gradle에 레포지토리를 추가합니다.",
-    "repositories {\n    maven {\n        url \"https://nexus.nugu.co.kr/repository/maven-public/\"\n    }\n}"
-  ]
-},
-    {
-  "title": "시작하기 > 의존성 추가하기",
-  "hash": "#의존성-추가하기",
-  "sentences": [
-    "의존성 추가하기",
-    "어플리케이션 모듈의 build.gradle에, 전체 라이브러리를 사용하기 위해 아래 의존성을 추가합니다.",
-    "(전체 라이브러리에 대한 의존성은",
-    "여기",
-    "를 참조)",
-    "dependencies {\n    // Nugu Android Helper\n    implementation \"com.skt.nugu.sdk:nugu-android-helper:${latestVersion}\"\n    // Nugu Android UX Kit\n    implementation \"com.skt.nugu.sdk:nugu-ux-kit:${latestVersion}\"\n    // Nugu Android Login Kit\n    implementation \"com.skt.nugu.sdk:nugu-login-kit:${latestVersion}\"\n}"
-  ]
-},
-    {
-  "title": "시작하기 > Step 3: 프로젝트 설정하기",
-  "hash": "#step-3-프로젝트-설정하기",
-  "sentences": [
-    "Step 3: 프로젝트 설정하기"
-  ]
-},
-    {
-  "title": "시작하기 > PoC 정보 입력하기",
-  "hash": "#poc-정보-입력하기",
-  "sentences": [
-    "PoC 정보 입력하기",
-    "NUGU PoC를 생성하기 위해서는 NUGU Developers를 통해 제휴가 필요합니다.\n더 자세한 내용은 NUGU SDK 소개에서 확인이 가능합니다.",
-    "체험판은 체험판 신청을 통해 발급 가능합니다.",
-    "발급받은 PoC 정보를 확인하기 위해서",
-    "NUGU SDK PoC목록",
-    "으로 이동해서 Client ID, Client Secret, Redirect URI 정보를 확인하세요.",
-    "체험판은 체험판 신청 내역에서 확인 가능합니다.",
-    "NUGU SDK를 사용하는 앱 간에 URL Scheme 충돌을 방지하기 위해,\nRedirect URI는 nugu.user.{client-id}://auth로 설정하는 것을 권고합니다.",
-    "체험판은 Redirect URI가 필요하지 않습니다."
-  ]
-},
-    {
-  "title": "시작하기 > 리소스에 정보 추가하기",
-  "hash": "#리소스에-정보-추가하기",
-  "sentences": [
-    "리소스에 정보 추가하기",
-    "strings.xml 파일에 nugu_redirect_scheme, nugu_redirect_host를 추가합니다. 예를들어 redirectUri가",
-    "“example://sample”",
-    "라면 아래와 같이 추가합니다.",
-    "<string name=\"nugu_redirect_scheme\">example</string>\n<string name=\"nugu_redirect_host\">sample</string>"
-  ]
-},
-    {
-  "title": "시작하기 > 음성 인식 모델 파일 설정하기",
-  "hash": "#음성-인식-모델-파일-설정하기",
-  "sentences": [
-    "음성 인식 모델 파일 설정하기"
-  ]
-},
-    {
-  "title": "시작하기 > 다운로드 받기",
-  "hash": "#다운로드-받기-",
-  "sentences": [
-    "다운로드 받기",
-    "NUGU SDK PoC목록",
-    "에서 음성인식 모델 파일을 다운로드 받습니다.",
-    "체험판은 체험판 신청 내역에서 음성인식 모델파일을 다운로드 받습니다.",
-    "음성인식 파일 리소스에 대해서 압축되지 않도록 build.gradle 설정이 필요합니다.",
-    "android {\n   ...\n   aaptOptions {\n       noCompress \"raw\"\n   }\n}"
-  ]
-},
-    {
-  "title": "시작하기 > Configuration 파일 설정하기",
-  "hash": "#configuration-파일-설정하기",
-  "sentences": [
-    "Configuration 파일 설정하기"
-  ]
-},
-    {
-  "title": "시작하기 > 다운로드 받기",
-  "hash": "#다운로드-받기",
-  "sentences": [
-    "다운로드 받기",
-    "NUGU SDK PoC목록",
-    "에서 nugu-config.json 파일을 다운로드 받습니다.",
-    "체험판은 체험판 신청 내역에서  nugu-config.json 파일을 다운로드 받습니다."
-  ]
-},
-    {
-  "title": "시작하기 > 설정하기",
-  "hash": "#설정하기",
-  "sentences": [
-    "설정하기",
-    "다운로드 받은 파일을 Asset 폴더에 파일을 복사하고, ConfigurationStore을 초기화합니다.",
-    "ConfigurationStore.configure(context = context,\n                             filename = \"nugu-config.json\")"
-  ]
-},
-    {
-  "title": "시작하기 > 앱 권한 설정하기",
-  "hash": "#앱-권한-설정하기",
-  "sentences": [
-    "앱 권한 설정하기",
-    "AndroidManifest.xml에 아래 필수 권한을 추가합니다.",
-    "<uses-permission android:name=\"android.permission.RECORD_AUDIO\"/>\n<uses-permission android:name=\"android.permission.INTERNET\"/>",
-    "Manifest에 추가한 android.permission.RECORD_AUDIO 권한은 런타임에 추가로 요청하여 획득해야 합니다."
-  ]
-},
-    {
-  "title": "시작하기 > Step 4: NUGU 로그인 추가",
-  "hash": "#step-4-nugu-로그인-추가",
-  "sentences": [
-    "Step 4: NUGU 로그인 추가",
-    "NUGU 로그인은",
-    "NUGU 회원 연동 방식",
-    "과",
-    "NUGU 회원 미사용 방식",
-    "두 가지로 제공됩니다.",
-    "체험판은 NUGU 회원 미사용 방식만 가능합니다.",
-    "NUGU 서비스를 이용하기 위해서는 OAuth 2.0 인증이 필요합니다.\nOAuth 2.0 API 는 Authentication 에서 확인이 가능합니다."
-  ]
-},
-    {
-  "title": "시작하기 > NUGU 회원 연동 방식으로 로그인",
-  "hash": "#nugu-회원-연동-방식으로-로그인",
-  "sentences": [
-    "NUGU 회원 연동 방식으로 로그인",
-    "NUGU 회원 연동 방식을 사용하기 위해서는 T아이디 연동이 필요합니다."
-  ]
-},
-    {
-  "title": "시작하기 > 로그인 정보 설정",
-  "hash": "#로그인-정보-설정",
-  "sentences": [
-    "로그인 정보 설정",
-    "기기별 고유식별자(",
-    "deviceUniqueId",
-    ")를 변경 가능합니다. (이미 NuguOAuth.create 에서 설정 되어있다면 생략)",
-    "val newOptions = NuguOAuthOptions.Builder()\n            .deviceUniqueId(\"{your-device-uniqueId}\")\n            .build()\nNuguOAuth.getClient().setOptions(newOptions)"
-  ]
-},
-    {
-  "title": "시작하기 > Tid 로그인",
-  "hash": "#tid-로그인",
-  "sentences": [
-    "Tid 로그인",
-    "loginWithTid()",
-    "를 호출 후에",
-    "NuguOAuthInterface.OnLoginListener",
-    "를 통해 인증 결과를 받습니다.",
-    "authClient.loginWithTid( activity = this, listener = object : NuguOAuthInterface.OnLoginListener {\n            override fun onSuccess(credentials: Credentials) {\n                // Save Credentials\n            }\n\n            override fun onError(error: NuguOAuthError) {\n                // Called when the request failed.\n            }\n        })"
-  ]
-},
-    {
-  "title": "시작하기 > 로그인 정보 갱신",
-  "hash": "#로그인-정보-갱신",
-  "sentences": [
-    "로그인 정보 갱신",
-    "발급 받은 refresh-token이 이미 있다면, 이 후에는 인 앱 브라우저 없이 로그인 정보를 갱신할 수 있습니다.",
-    "authClient.loginSilentlyWithTid(\"{refresh-token}\", object : NuguOAuthInterface.OnLoginListener {\n            override fun onSuccess(credentials: Credentials) {\n                // Save Credentials \n            }\n\n            override fun onError(error: NuguOAuthError) {\n                // Called when the request failed.\n            }\n        })"
-  ]
-},
-    {
-  "title": "시작하기 > NUGU 회원 미사용 방식으로 로그인",
-  "hash": "#nugu-회원-미사용-방식으로-로그인",
-  "sentences": [
-    "NUGU 회원 미사용 방식으로 로그인"
-  ]
-},
-    {
-  "title": "시작하기 > 로그인 정보 설정",
-  "hash": "#로그인-정보-설정-1",
-  "sentences": [
-    "로그인 정보 설정",
-    "기기별 고유식별자(",
-    "deviceUniqueId",
-    ")를 변경 가능합니다. (이미 NuguOAuth.create 에서 설정 되어있다면 생략)",
-    "val newOptions = NuguOAuthOptions.Builder()\n            .deviceUniqueId(\"{your-device-uniqueId}\")\n            .build()\nNuguOAuth.getClient().setOptions(newOptions)"
-  ]
-},
-    {
-  "title": "시작하기 > 로그인",
-  "hash": "#로그인",
-  "sentences": [
-    "로그인",
-    "loginAnonymously()",
-    "를 호출 후에",
-    "NuguOAuthInterface.OnLoginListener",
-    "를 통해 인증 결과를 받습니다.",
-    "authClient.loginAnonymously(object : NuguOAuthInterface.OnLoginListener {\n            override fun onSuccess(credentials: Credentials) {\n                // Save credentials\n            }\n\n            override fun onError(error: NuguOAuthError) {\n                // Called when the request failed.\n            }\n        })"
-  ]
-},
-    {
-  "title": "시작하기 > Step5. NUGU 음성인식 사용하기",
-  "hash": "#step5-nugu-음성인식-사용하기",
-  "sentences": [
-    "Step5. NUGU 음성인식 사용하기",
-    "로그인 후, 우리는 NUGU의 모든 기능을 사용할 수 있습니다. 여기서는 NUGU의 모든 기능을 손쉽게 이용할 수 있도록 SDK에서 제공하는",
-    "NuguAndroidClient",
-    "클래스를 이용하여 음성인식을 시작하는 간단한 방법을 소개합니다.",
-    "인증 정보 처리를 위임할 AuthDelegate를 정의합니다.",
-    "// Parameter로 OAuth 옵션을 설정해야 합니다.\n   // 설정된 옵션은 이후 NuguOAuth.setOptions을 사용하여 변경 가능합니다.\n   val authDelegate = NuguOAuth.create(\n                   options = NuguOAuthOptions.Builder()\n                       .deviceUniqueId(deviceUniqueId(context))\n                       .build()\n               )",
-    "음성인식에 사용할 기본 AudioProvider를 생성합니다.",
-    "// AudioSourceManager : AudioProvider에 대한 기본 구현 클래스\n   // AudioRecordSourceFactory : Android의 AudioRecord를 소스로 사용하는 SDK에서 제공\n   val audioProvider = AudioSourceManager(AudioRecordSourceFactory())",
-    "음성인식에 사용할 EndPointDetector를 생성합니다. 위에서 받은 모델 파일의 경로를 인자로 넣어줍니다.",
-    "val endPointDetector = EndPointDetector(EPD_MODEL_FILE_PATH)",
-    "마지막으로 NuguAndroidClient를 생성하고, 음성인식을 시작합니다. 음성인식에 대한 결과는 각각의 리스너를 통해 받을 수 있습니다.",
-    "val client = NuguAndroidClient.Builder(\n      context,    // Android Context\n      authDelegate,\n      audioProvider\n   ).endPointDetector(endPointDetector).build()\n\n   client.asrAgent?.addOnResultListener(...)\n   client.asrAgent?.addOnStateChangeListener(...)\n   // 음성인식 시작\n   client.asrAgent?.startRecognition(initiator = ASRAgentInterface.Initiator.TAP)"
-  ]
-},
-    {
-  "title": "시작하기 > 더 알아보기",
-  "hash": "#더-알아보기",
-  "sentences": [
-    "더 알아보기"
-  ]
-}
-  ]
-},
-  {
   "url": "/document-staging/nugu-sdk/platform/ios/start",
   "order": 173,
   "indexes": [
@@ -14957,6 +14570,253 @@
     "func nuguClientRequestAccessToken() -> String? {\n   return \"{access-token}\"\n}",
     "⁣4. NUGU 서버와의 연결 이후 음성인식을 요청합니다.",
     "client.asrAgent.startRecognition(initiator: .user)"
+  ]
+},
+    {
+  "title": "시작하기 > 더 알아보기",
+  "hash": "#더-알아보기",
+  "sentences": [
+    "더 알아보기"
+  ]
+}
+  ]
+},
+  {
+  "url": "/document-staging/nugu-sdk/platform/android/start",
+  "order": 183,
+  "indexes": [
+    {
+  "title": "시작하기",
+  "hash": "",
+  "sentences": [
+    "시작하기"
+  ]
+},
+    {
+  "title": "시작하기 > Step 1:최소 요구사항",
+  "hash": "#step-1최소-요구사항",
+  "sentences": [
+    "Step 1:최소 요구사항",
+    "Android 5.0(API level 21) 이상에서 지원합니다.",
+    "Android 4.4(API level 19)에서도 동작하지만, TLS v1.2로 설정이 필요합니다."
+  ]
+},
+    {
+  "title": "시작하기 > Step 2: NUGU  SDK 설치하기",
+  "hash": "#step-2-nugu--sdk-설치하기",
+  "sentences": [
+    "Step 2: NUGU  SDK 설치하기"
+  ]
+},
+    {
+  "title": "시작하기 > 레포지토리 추가하기",
+  "hash": "#레포지토리-추가하기",
+  "sentences": [
+    "레포지토리 추가하기",
+    "프로젝트의 build.gradle에 레포지토리를 추가합니다.",
+    "repositories {\n    maven {\n        url \"https://nexus.nugu.co.kr/repository/maven-public/\"\n    }\n}"
+  ]
+},
+    {
+  "title": "시작하기 > 의존성 추가하기",
+  "hash": "#의존성-추가하기",
+  "sentences": [
+    "의존성 추가하기",
+    "어플리케이션 모듈의 build.gradle에, 전체 라이브러리를 사용하기 위해 아래 의존성을 추가합니다.",
+    "(전체 라이브러리에 대한 의존성은",
+    "여기",
+    "를 참조)",
+    "dependencies {\n    // Nugu Android Helper\n    implementation \"com.skt.nugu.sdk:nugu-android-helper:${latestVersion}\"\n    // Nugu Android UX Kit\n    implementation \"com.skt.nugu.sdk:nugu-ux-kit:${latestVersion}\"\n    // Nugu Android Login Kit\n    implementation \"com.skt.nugu.sdk:nugu-login-kit:${latestVersion}\"\n}"
+  ]
+},
+    {
+  "title": "시작하기 > Step 3: 프로젝트 설정하기",
+  "hash": "#step-3-프로젝트-설정하기",
+  "sentences": [
+    "Step 3: 프로젝트 설정하기"
+  ]
+},
+    {
+  "title": "시작하기 > PoC 정보 입력하기",
+  "hash": "#poc-정보-입력하기",
+  "sentences": [
+    "PoC 정보 입력하기",
+    "NUGU PoC를 생성하기 위해서는 NUGU Developers를 통해 제휴가 필요합니다.\n더 자세한 내용은 NUGU SDK 소개에서 확인이 가능합니다.",
+    "체험판은 체험판 신청을 통해 발급 가능합니다.",
+    "발급받은 PoC 정보를 확인하기 위해서",
+    "NUGU SDK PoC목록",
+    "으로 이동해서 Client ID, Client Secret, Redirect URI 정보를 확인하세요.",
+    "체험판은 체험판 신청 내역에서 확인 가능합니다.",
+    "NUGU SDK를 사용하는 앱 간에 URL Scheme 충돌을 방지하기 위해,\nRedirect URI는 nugu.user.{client-id}://auth로 설정하는 것을 권고합니다.",
+    "체험판은 Redirect URI가 필요하지 않습니다."
+  ]
+},
+    {
+  "title": "시작하기 > 리소스에 정보 추가하기",
+  "hash": "#리소스에-정보-추가하기",
+  "sentences": [
+    "리소스에 정보 추가하기",
+    "strings.xml 파일에 nugu_redirect_scheme, nugu_redirect_host를 추가합니다. 예를들어 redirectUri가",
+    "“example://sample”",
+    "라면 아래와 같이 추가합니다.",
+    "<string name=\"nugu_redirect_scheme\">example</string>\n<string name=\"nugu_redirect_host\">sample</string>"
+  ]
+},
+    {
+  "title": "시작하기 > 음성 인식 모델 파일 설정하기",
+  "hash": "#음성-인식-모델-파일-설정하기",
+  "sentences": [
+    "음성 인식 모델 파일 설정하기"
+  ]
+},
+    {
+  "title": "시작하기 > 다운로드 받기",
+  "hash": "#다운로드-받기-",
+  "sentences": [
+    "다운로드 받기",
+    "NUGU SDK PoC목록",
+    "에서 음성인식 모델 파일을 다운로드 받습니다.",
+    "체험판은 체험판 신청 내역에서 음성인식 모델파일을 다운로드 받습니다.",
+    "음성인식 파일 리소스에 대해서 압축되지 않도록 build.gradle 설정이 필요합니다.",
+    "android {\n   ...\n   aaptOptions {\n       noCompress \"raw\"\n   }\n}"
+  ]
+},
+    {
+  "title": "시작하기 > Configuration 파일 설정하기",
+  "hash": "#configuration-파일-설정하기",
+  "sentences": [
+    "Configuration 파일 설정하기"
+  ]
+},
+    {
+  "title": "시작하기 > 다운로드 받기",
+  "hash": "#다운로드-받기",
+  "sentences": [
+    "다운로드 받기",
+    "NUGU SDK PoC목록",
+    "에서 nugu-config.json 파일을 다운로드 받습니다.",
+    "체험판은 체험판 신청 내역에서  nugu-config.json 파일을 다운로드 받습니다."
+  ]
+},
+    {
+  "title": "시작하기 > 설정하기",
+  "hash": "#설정하기",
+  "sentences": [
+    "설정하기",
+    "다운로드 받은 파일을 Asset 폴더에 파일을 복사하고, ConfigurationStore을 초기화합니다.",
+    "ConfigurationStore.configure(context = context,\n                             filename = \"nugu-config.json\")"
+  ]
+},
+    {
+  "title": "시작하기 > 앱 권한 설정하기",
+  "hash": "#앱-권한-설정하기",
+  "sentences": [
+    "앱 권한 설정하기",
+    "AndroidManifest.xml에 아래 필수 권한을 추가합니다.",
+    "<uses-permission android:name=\"android.permission.RECORD_AUDIO\"/>\n<uses-permission android:name=\"android.permission.INTERNET\"/>",
+    "Manifest에 추가한 android.permission.RECORD_AUDIO 권한은 런타임에 추가로 요청하여 획득해야 합니다."
+  ]
+},
+    {
+  "title": "시작하기 > Step 4: NUGU 로그인 추가",
+  "hash": "#step-4-nugu-로그인-추가",
+  "sentences": [
+    "Step 4: NUGU 로그인 추가",
+    "NUGU 로그인은",
+    "NUGU 회원 연동 방식",
+    "과",
+    "NUGU 회원 미사용 방식",
+    "두 가지로 제공됩니다.",
+    "체험판은 NUGU 회원 미사용 방식만 가능합니다.",
+    "NUGU 서비스를 이용하기 위해서는 OAuth 2.0 인증이 필요합니다.\nOAuth 2.0 API 는 Authentication 에서 확인이 가능합니다."
+  ]
+},
+    {
+  "title": "시작하기 > NUGU 회원 연동 방식으로 로그인",
+  "hash": "#nugu-회원-연동-방식으로-로그인",
+  "sentences": [
+    "NUGU 회원 연동 방식으로 로그인",
+    "NUGU 회원 연동 방식을 사용하기 위해서는 T아이디 연동이 필요합니다."
+  ]
+},
+    {
+  "title": "시작하기 > 로그인 정보 설정",
+  "hash": "#로그인-정보-설정",
+  "sentences": [
+    "로그인 정보 설정",
+    "기기별 고유식별자(",
+    "deviceUniqueId",
+    ")를 변경 가능합니다. (이미 NuguOAuth.create 에서 설정 되어있다면 생략)",
+    "val newOptions = NuguOAuthOptions.Builder()\n            .deviceUniqueId(\"{your-device-uniqueId}\")\n            .build()\nNuguOAuth.getClient().setOptions(newOptions)"
+  ]
+},
+    {
+  "title": "시작하기 > Tid 로그인",
+  "hash": "#tid-로그인",
+  "sentences": [
+    "Tid 로그인",
+    "loginWithTid()",
+    "를 호출 후에",
+    "NuguOAuthInterface.OnLoginListener",
+    "를 통해 인증 결과를 받습니다.",
+    "authClient.loginWithTid( activity = this, listener = object : NuguOAuthInterface.OnLoginListener {\n            override fun onSuccess(credentials: Credentials) {\n                // Save Credentials\n            }\n\n            override fun onError(error: NuguOAuthError) {\n                // Called when the request failed.\n            }\n        })"
+  ]
+},
+    {
+  "title": "시작하기 > 로그인 정보 갱신",
+  "hash": "#로그인-정보-갱신",
+  "sentences": [
+    "로그인 정보 갱신",
+    "발급 받은 refresh-token이 이미 있다면, 이 후에는 인 앱 브라우저 없이 로그인 정보를 갱신할 수 있습니다.",
+    "authClient.loginSilentlyWithTid(\"{refresh-token}\", object : NuguOAuthInterface.OnLoginListener {\n            override fun onSuccess(credentials: Credentials) {\n                // Save Credentials \n            }\n\n            override fun onError(error: NuguOAuthError) {\n                // Called when the request failed.\n            }\n        })"
+  ]
+},
+    {
+  "title": "시작하기 > NUGU 회원 미사용 방식으로 로그인",
+  "hash": "#nugu-회원-미사용-방식으로-로그인",
+  "sentences": [
+    "NUGU 회원 미사용 방식으로 로그인"
+  ]
+},
+    {
+  "title": "시작하기 > 로그인 정보 설정",
+  "hash": "#로그인-정보-설정-1",
+  "sentences": [
+    "로그인 정보 설정",
+    "기기별 고유식별자(",
+    "deviceUniqueId",
+    ")를 변경 가능합니다. (이미 NuguOAuth.create 에서 설정 되어있다면 생략)",
+    "val newOptions = NuguOAuthOptions.Builder()\n            .deviceUniqueId(\"{your-device-uniqueId}\")\n            .build()\nNuguOAuth.getClient().setOptions(newOptions)"
+  ]
+},
+    {
+  "title": "시작하기 > 로그인",
+  "hash": "#로그인",
+  "sentences": [
+    "로그인",
+    "loginAnonymously()",
+    "를 호출 후에",
+    "NuguOAuthInterface.OnLoginListener",
+    "를 통해 인증 결과를 받습니다.",
+    "authClient.loginAnonymously(object : NuguOAuthInterface.OnLoginListener {\n            override fun onSuccess(credentials: Credentials) {\n                // Save credentials\n            }\n\n            override fun onError(error: NuguOAuthError) {\n                // Called when the request failed.\n            }\n        })"
+  ]
+},
+    {
+  "title": "시작하기 > Step5. NUGU 음성인식 사용하기",
+  "hash": "#step5-nugu-음성인식-사용하기",
+  "sentences": [
+    "Step5. NUGU 음성인식 사용하기",
+    "로그인 후, 우리는 NUGU의 모든 기능을 사용할 수 있습니다. 여기서는 NUGU의 모든 기능을 손쉽게 이용할 수 있도록 SDK에서 제공하는",
+    "NuguAndroidClient",
+    "클래스를 이용하여 음성인식을 시작하는 간단한 방법을 소개합니다.",
+    "인증 정보 처리를 위임할 AuthDelegate를 정의합니다.",
+    "// Parameter로 OAuth 옵션을 설정해야 합니다.\n   // 설정된 옵션은 이후 NuguOAuth.setOptions을 사용하여 변경 가능합니다.\n   val authDelegate = NuguOAuth.create(\n                   options = NuguOAuthOptions.Builder()\n                       .deviceUniqueId(deviceUniqueId(context))\n                       .build()\n               )",
+    "음성인식에 사용할 기본 AudioProvider를 생성합니다.",
+    "// AudioSourceManager : AudioProvider에 대한 기본 구현 클래스\n   // AudioRecordSourceFactory : Android의 AudioRecord를 소스로 사용하는 SDK에서 제공\n   val audioProvider = AudioSourceManager(AudioRecordSourceFactory())",
+    "음성인식에 사용할 EndPointDetector를 생성합니다. 위에서 받은 모델 파일의 경로를 인자로 넣어줍니다.",
+    "val endPointDetector = EndPointDetector(EPD_MODEL_FILE_PATH)",
+    "마지막으로 NuguAndroidClient를 생성하고, 음성인식을 시작합니다. 음성인식에 대한 결과는 각각의 리스너를 통해 받을 수 있습니다.",
+    "val client = NuguAndroidClient.Builder(\n      context,    // Android Context\n      authDelegate,\n      audioProvider\n   ).endPointDetector(endPointDetector).build()\n\n   client.asrAgent?.addOnResultListener(...)\n   client.asrAgent?.addOnStateChangeListener(...)\n   // 음성인식 시작\n   client.asrAgent?.startRecognition(initiator = ASRAgentInterface.Initiator.TAP)"
   ]
 },
     {
@@ -15899,8 +15759,8 @@
   ]
 },
   {
-  "url": "/document-staging/nugu-sdk/platform/android/testing_sdk_integration",
-  "order": 193,
+  "url": "/document-staging/nugu-sdk/platform/ios/testing_sdk_integration",
+  "order": 180,
   "indexes": [
     {
   "title": "테스트 환경 설정",
@@ -15912,8 +15772,8 @@
   ]
 },
   {
-  "url": "/document-staging/nugu-sdk/platform/ios/testing_sdk_integration",
-  "order": 180,
+  "url": "/document-staging/nugu-sdk/platform/android/testing_sdk_integration",
+  "order": 193,
   "indexes": [
     {
   "title": "테스트 환경 설정",
