@@ -243,12 +243,11 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 * ImageText : 이미지와 텍스트를 함께 구성할 때 사용합니다.
 * TextList : 텍스트를 중심으로 리스트를 표현할 때 사용합니다.
 * ImageList : 이미지를 중심으로 리스트를 표현할 때 사용합니다.
+* Close : Display Template을 명시적으로 닫을 때 사용합니다.
 
 ### FullText1
 
-#### 형식
-
-{% code %}
+{% code title="형식" %}
 ```json
 {
   "type": "Display.FullText1",
@@ -280,9 +279,7 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 | content.body   | TextObject       | Y    | 본문 내용<br/>- 줄바꿈 가능 ('\n')<br/>- Scrollable (스크롤이 불가능한 디바이스[일부 Btv]에서는 최대 4줄까지만 표현)                                                               |
 | content.footer | TextObject       | N    | 보조 설명                                                                                                                                            |
 
-#### Sample Code
-
-{% code %}
+{% code title="Sample Code" %}
 ```json
 {
   "type": "Display.FullText1",
@@ -335,9 +332,7 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 
 ### FullText2
 
-#### 형식
-
-{% code %}
+{% code title="형식" %}
 ```json
 {
   "type": "Display.FullText2",
@@ -367,9 +362,7 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 | content.body   | TextObject       | Y   | 본문 내용<br/>- 줄바꿈 가능 ('\n')<br/>- 최대 4줄까지 표현 (넘는 문자는 ... 처리)                                                                                       |
 | content.footer | TextObject       | N   | 보조 설명                                                                                                                                            |
 
-#### Sample Code
-
-{% code %}
+{% code title="Sample Code"%}
 ```json
 {
   "type": "Display.FullText2",
@@ -408,9 +401,7 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 
 ### ImageText1
 
-#### 형식
-
-{% code %}
+{% code title="형식" %}
 ```json
 {
   "type": "Display.ImageText1",
@@ -446,9 +437,7 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 | content.body       | TextObject       | N    | 본문 내용                                                                                                                                            |
 | content.footer     | TextObject       | N    | 보조 설명<br/>- 줄바꿈 가능 ('\n')<br/>- 최대 2줄까지 표현 (넘는 문자는 ... 처리)                                                                                       |
 
-#### Sample Code
-
-{% code %}
+{% code title="Sample Code"%}
 ```json
 {
   "type": "Display.ImageText1",
@@ -506,9 +495,7 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 
 ### ImageText2
 
-#### 형식
-
-{% code %}
+{% code title="형식" %}
 ```json
 {
   "type": "Display.ImageText2",
@@ -543,9 +530,7 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 | content.body       | TextObject       | Y    | 본문 내용<br/>- 줄바꿈 가능 ('\n')<br/>- 최대 6줄까지 표현 (넘는 문자는 ... 처리)                                                                                       |
 | content.footer     | TextObject       | N    | 보조 설명<br/>- 줄바꿈 가능 ('\n')<br/>- 최대 2줄까지 표현 (넘는 문자는 ... 처리)                                                                                       |
 
-#### Sample Code
-
-{% code %}
+{% code title="Sample Code" %}
 ```json
 {
   "type": "Display.ImageText2",
@@ -603,9 +588,7 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 
 ### ImageText3
 
-#### 형식
-
-{% code %}
+{% code title="형식" %}
 ```json
 {
   "type": "Display.ImageText3",
@@ -639,9 +622,7 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 | content.body   | TextObject       | N    | 본문 내용<br/>- 줄바꿈 가능 ('\n')<br/>- Scrollable (스크롤이 불가능한 디바이스[일부 Btv]에서는 최대 4줄까지만 표현)                                                               |
 | content.footer | TextObject       | N    | 보조설명<br/>- 최대 1줄까지 표현 (넘는 문자는 ... 처리)                                                                                                            |
 
-#### Sample Code
-
-{% code %}
+{% code title="Sample Code" %}
 ```json
 {
   "type": "Display.ImageText3",
@@ -691,9 +672,7 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 
 ### ImageText4
 
-#### 형식
-
-{% code %}
+{% code title="형식" %}
 ```json
 {
   "type": "Display.ImageText4",
@@ -727,9 +706,7 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 | content.body   | TextObject       | Y    | 본문 내용<br/>- 최대 1줄까지 표현 (넘는 문자는 ... 처리)                                                                                                           |
 | content.footer | TextObject       | N    | 보조설명<br/>- 최대 1줄까지 표현 (넘는 문자는 ... 처리)                                                                                                            |
 
-#### Sample Code
-
-{% code %}
+{% code title="Sample Code" %}
 ```json
 {
   "type": "Display.ImageText4",
@@ -779,9 +756,7 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 
 ### TextList1
 
-#### 형식
-
-{% code %}
+{% code title="형식" %}
 ```json
 {
   "type": "Display.TextList1",
@@ -826,9 +801,7 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 | listItems.body   | TextObject       | Y    | 본문 내용<br/>- 최대 1줄까지 표현 (넘는 문자는 ... 처리)                                                                                                           |
 | listItems.footer | TextObject       | N    | 보조설명<br/>- 최대 1줄까지 표현 (넘는 문자는 ... 처리)                                                                                                            |
 
-#### Sample Code
-
-{% code %}
+{% code title="Sample Code" %}
 ```json
 {
   "type": "Display.TextList1",
@@ -915,9 +888,7 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 
 ### TextList2
 
-#### 형식
-
-{% code %}
+{% code title="형식" %}
 ```json
 {
   "type": "Display.TextList2",
@@ -965,9 +936,7 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 | listItems.body   | TextObject       | Y    | 본문 내용<br/>- 최대 1줄까지 표현 (넘는 문자는 ... 처리)                                                                                                           |
 | listItems.footer | TextObject       | N    | 보조설명<br/>- 최대 1줄까지 표현 (넘는 문자는 ... 처리)                                                                                                            |
 
-#### Sample Code
-
-{% code %}
+{% code title="Sample Code" %}
 ```json
 {
   "type": "Display.TextList2",
@@ -1083,9 +1052,7 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 
 ### TextList3
 
-#### 형식
-
-{% code %}
+{% code title="형식" %}
 ```json
 {
   "type": "Display.TextList3",
@@ -1139,9 +1106,7 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 | listItems.footer | TextObject          | N    | 보조설명<br/>- 최대 1줄까지 표현 (넘는 문자는 ... 처리)                                                                                                            |
 | caption          | TextObject          | N    | 전체 리스트 아이템들에 대한 보조설명<br/>- 텍스트 길이 : 최대 2줄(단말에 따라 1줄)                                                                                             |
 
-#### Sample Code
-
-{% code %}
+{% code title="Sample Code" %}
 ```json
 {
   "type": "Display.TextList3",
@@ -1224,9 +1189,7 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 
 ### TextList4
 
-#### 형식
-
-{% code %}
+{% code title="형식" %}
 ```json
 {
   "type": "Display.TextList4",
@@ -1262,9 +1225,7 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 | listItems.body   | array of TextObject | Y   | List 아이템의 본문 내용<br/>- 최대 1줄까지 표현 (넘는 문자는 ... 처리)                                                                                                 |
 | listItems.button | ButtonObject        | N   | List 아이템의 버튼<br/>- body가 2줄인 경우에 최적화 되어 있음                                                                                                       |
 
-#### Sample Code
-
-{% code %}
+{% code title="Sample Code" %}
 ```json
 {
   "type": "Display.TextList4",
@@ -1351,9 +1312,7 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 
 ### ImageList1
 
-#### 형식
-
-{% code %}
+{% code title="형식" %}
 ```json
 {
   "type": "Display.ImageList1",
@@ -1399,9 +1358,7 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 | listItems.header | TextObject       | Y    | 본문 제목<br/>- 최대 1줄까지 표현 (넘는 문자는 ... 처리)                                                                                                                                                             |
 | listItems.footer | TextObject       | N    | 보조설명<br/>- 최대 1줄까지 표현 (넘는 문자는 ... 처리)                                                                                                                                                              |
 
-#### Sample Code
-
-{% code %}
+{% code title="Sample Code" %}
 ```json
 {
   "type": "Display.ImageList1",
@@ -1495,9 +1452,7 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 
 ### ImageList2
 
-#### 형식
-
-{% code %}
+{% code title="형식" %}
 ```json
 {
   "type": "Display.ImageList1",
@@ -1551,9 +1506,7 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 | listItems.header | TextObject       | Y    | 본문 제목<br/>- 최대 1줄까지 표현 (넘는 문자는 ... 처리)                                                                                                                                                             |
 | listItems.footer | TextObject       | N    | 보조설명<br/>- 최대 1줄까지 표현 (넘는 문자는 ... 처리)                                                                                                                                                              |
 
-#### Sample Code
-
-{% code %}
+{% code title="Sample Code" %}
 ```json
 {
   "type": "Display.ImageList2",
@@ -1662,9 +1615,7 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 
 ### ImageList3
 
-#### 형식
-
-{% code %}
+{% code title="형식" %}
 ```json
 {
   "type": "Display.ImageList3",
@@ -1695,14 +1646,12 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 | title            | TitleObject      | Y    |                                                                                                                                                  |
 | background       | BackgroundObject | N    |                                                                                                                                                  |
 | listItems        | list             | Y    | Scrollable (스크롤이 불가능한 디바이스에서는 짤림)                                                                                                                |
-| listItems.token  | string           | Y    | 클릭 시에 전달될 토                                                                                                                                      |
+| listItems.token  | string           | Y    | 클릭 시에 전달될 토큰                                                                                                                                     |
 | listItems.header | TextObject       | Y    | List 제목<br/>- 최대 1줄까지 표현 (넘는 문자는 ... 처리)                                                                                                         |
 | listItems.image  | ImageObject      | Y    | List 이미지<br/>- 리스트 제목 좌측에 위치하는 이미지                                                                                                               |
 | listItems.icon   | TextObject       | N    | icon 이미지<br/>- 리스트 제목 우측에 위치하는 new 등의 배지                                                                                                         |
 
-#### Sample Code
-
-{% code %}
+{% code title="Sample Code" %}
 ```json
 {
   "type": "Display.ImageList3",
@@ -1878,3 +1827,21 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 {% endcode %}
 
 ![](../../../../assets/images/display-interface-38.png)
+
+## 기타 directive
+
+### Close
+
+{% code title="형식" %}
+```json
+{
+  "type": "Display.Close",
+  "version": "1.0"
+}
+```
+{% endcode %}
+
+| Parameter | Type   | 필수  | Description        |
+|-----------|--------|-----|--------------------|
+| type      | string | Y   | Display.Close      |
+| version   | string | Y   | 인터페이스 버전, 기본값은 1.0 |

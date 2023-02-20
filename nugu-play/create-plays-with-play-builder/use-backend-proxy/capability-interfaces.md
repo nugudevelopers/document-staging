@@ -68,6 +68,7 @@ Event는 디바이스의 기능이 동작하면서 Play가 제어를 하기 위�
 
 ## Capability Interface의 종류
 
-Capability Interface 종류는 다음과 같습니다. 현재는 AudioPlayer Interface만 지원합니다.
+Capability Interface 종류는 다음과 같습니다. 현재는 AudioPlayer Interface와 Display Interface를 지원합니다.
 
 * AudioPlayer Interface : 스트리밍을 통한 음악 재생
+* Display Interface : 스크린을 포함한 디바이스에서 Template을 렌더링하여, 화면을 사용
