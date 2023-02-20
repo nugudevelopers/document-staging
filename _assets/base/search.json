@@ -7129,7 +7129,7 @@
     "title | TitleObject | Y |  ",
     "background | BackgroundObject | N |  ",
     "listItems | list | Y | Scrollable (스크롤이 불가능한 디바이스에서는 짤림)",
-    "listItems.token | string | Y | 클릭 시에 전달될 토",
+    "listItems.token | string | Y | 클릭 시에 전달될 토큰",
     "listItems.header | TextObject | Y | List 제목- 최대 1줄까지 표현 (넘는 문자는 … 처리)",
     "listItems.image | ImageObject | Y | List 이미지- 리스트 제목 좌측에 위치하는 이미지",
     "listItems.icon | TextObject | N | icon 이미지- 리스트 제목 우측에 위치하는 new 등의 배지",
