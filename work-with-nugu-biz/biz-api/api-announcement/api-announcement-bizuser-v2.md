@@ -6,13 +6,13 @@ depth_order: 2
 
 등록된 Biz 사용자가 Biz API 수신 및 제휴사 계정 인증을 한 경우, 계정 인증을 통해 생성된 토큰을 바탕으로 개인에게 특화된 Announcement 메세지를 사용자의 디바이스에 발송 할 수 있습니다.
 
-기존의 `Biz 사용자별 Announcement 전송 V1` 은 Response 의 응답 시간이 경우에 따라 길게 소요될 수가 있어서, V2버전의 경우 요청에 대한 응답을 미리 준 후 비동기로 요청을 처리하며, 처리된 결과는 문서에 정의된 `callbackUrl` 을 통해 전달 받을수 있도록 변경/개선 되었습니다.
+기존의 `Biz 사용자별 Announcement 전송 V1` 은 Response 의 응답 시간이 경우에 따라 길게 소요될 수가 있어서, V2버전의 경우 요청에 대한 응답을 미리 준 후 비동기로 요청을 처리하며, 처리된 결과는 문서에 정의된 `callback` 을 통해 전달 받을수 있도록 변경/개선 되었습니다.
 
 ## 1. URL <a id="biz-announcement-v2-1url"></a>
 
 {% code %}
 ```text
-[POST] https://biz-api.sktnugu.com/api/v2/enrolledUser/user/{userApiToken}/announcement?callBack={callBackUrl}
+[POST] https://biz-api.sktnugu.com/api/v2/enrolledUser/user/{userApiToken}/announcement?callBack={callback}
 ```
 {% endcode %}
 
@@ -54,7 +54,7 @@ depth_order: 2
 |----------------------|-------------|-----------------|-----|------------------------------------------------------------------------------------------------------------|
 | Publisher-Token      | Header      | string          | Y   | 퍼블리셔가 보유한 토큰                                                                                               |
 | userApiToken         | path        | string          | Y   | 발송할 사용자의 API 토큰                                                                                            |
-| callBackUrl          | query param | string          |     | 처리결과를 받을 URL(80/443포트만 허용)<br/>미입력시 전송되지 않는다.                                                              |
+| callBack             | query param | string          |     | 처리결과를 받을 URL(80/443포트만 허용)<br/>미입력시 전송되지 않는다.                                                              |
 | playServiceId        | body        | string          | Y   | 발송 대상 play<br/>대상 play의 합성음, TTS Domain을 기준으로 SKML을 생성                                                     |
 | tts                  | body        | object          |     | TTS를 구성하는 객체                                                                                               |
 | tts.text             | body        | string          | Y   | 발화문장<br/>발화문장, Display 객체 중 반드시 1개 이상은 존재해야 한다.                                                            |

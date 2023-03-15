@@ -16,22 +16,22 @@ Biz 사용자를 대상으로 Announcement 등 API를 발송할 때, 제휴사 �
 ## 1. 절차 <a id="biz-apitoken-v1-1."></a>
 
 1. Biz 사용자는 초대 링크로 진입할 경우 NUGU ID 로그인을 수행한다.
-2. Developers는 기등록된 제휴사의 인증 URL로 status, callBackUrl. email을 전달한다.
+2. Developers는 기등록된 제휴사의 인증 URL로 status, callBack, email을 전달한다.
    1. status, email 은 Developers에서 생성된 값으로서 수정되어서는 안된다.
-3. 제휴사는 인증과정을 통해 사용자 API Token을 생성하고, 전달받은 callBackUrl에 userApiToken과 status를 전달한다.
+3. 제휴사는 인증과정을 통해 사용자 API Token을 생성하고, 전달받은 callBack에 userApiToken과 status를 전달한다.
 
 ## 2. 인증 요청 [Developers 요청] <a id="biz-apitoken-v1-2.-developers"></a>
 
 * Developers에서 기등록된 제휴사의 인증 URL로 인증을 요청한다.
-* 인증 URL을 통해 로그인 등의 행위들로 사용자를 식별하여, Biz 사용자 API Token을 생성한후, 요청시 전달한 callBackUrl로 결과를 리턴한다.
+* 인증 URL을 통해 로그인 등의 행위들로 사용자를 식별하여, Biz 사용자 API Token을 생성한후, 요청시 전달한 callBack로 결과를 리턴한다.
 
 ### 2.1 Request <a id="biz-apitoken-v1-2.1request"></a>
 
-| 이름          | 유형          | 속성     | 필수  | 설명                                                     |
-|-------------|-------------|--------|-----|--------------------------------------------------------|
-| status      | query param | string | Y   | Developers에서 사용자를 식별하는 키값으로서 전달된 값을 바꾸어서는 안된다.         |
-| callBackUrl | query param | string | Y   | 인증을 마친후 생성한 Biz 사용자 API Token과 status를 전달할 URL         |
-| email       | query param | string | Y   | Developers에서 초대한 사용자 이메일을 식별하는 키값으로서 전달된 값을 변경해서는 안된다. |
+| 이름       | 유형          | 속성     | 필수  | 설명                                                     |
+|----------|-------------|--------|-----|--------------------------------------------------------|
+| status   | query param | string | Y   | Developers에서 사용자를 식별하는 키값으로서 전달된 값을 바꾸어서는 안된다.         |
+| callBack | query param | string | Y   | 인증을 마친후 생성한 Biz 사용자 API Token과 status를 전달할 URL         |
+| email    | query param | string | Y   | Developers에서 초대한 사용자 이메일을 식별하는 키값으로서 전달된 값을 변경해서는 안된다. |
 
 ### 2.2 Response <a id="biz-apitoken-v1-2.2response"></a>
 
