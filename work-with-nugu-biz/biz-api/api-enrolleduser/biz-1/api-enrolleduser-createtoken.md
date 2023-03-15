@@ -1,5 +1,5 @@
 ---
-depth_order: 7
+depth_order: 8
 ---
 
 # Biz 사용자 API Token 생성
