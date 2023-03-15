@@ -1,5 +1,5 @@
 ---
-depth_order: 4
+depth_order: 3
 ---
 
 # Biz 사용자 그룹별 Announcement 전송
