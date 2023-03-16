@@ -1,5 +1,5 @@
 ---
-depth_order: 4
+depth_order: 3
 ---
 
 # Biz 사용자 그룹별 Announcement 전송
@@ -10,7 +10,7 @@ depth_order: 4
 
 {% code %}
 ```text
-[POST] https://biz-api.sktnugu.com/api/v1/enrolledUser/group/{groupApiToken}/announcement?callBack={callBackUrl}
+[POST] https://biz-api.sktnugu.com/api/v1/enrolledUser/group/{groupApiToken}/announcement?callBack={callback}
 ```
 {% endcode %}
 

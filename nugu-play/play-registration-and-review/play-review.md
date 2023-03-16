@@ -157,7 +157,7 @@ NUGU play와 기본 NUGU서비스 간 간섭을 방지하고자 아래와 같은
 
 1. 간섭 여부를 판단하는 서비스의 범위
    * Play 심사 요청 시점에 서비스중인 NUGU서비스(Built-in 서비스)
-2. [NUGU 서비스 매뉴얼](https://nugu.co.kr/static/service) 페이지를 참고하세요.
+2. [NUGU 서비스 매뉴얼](https://nugu.co.kr/static/service/) 페이지를 참고하세요.
    * Play 심사 요청 시점에 서비스중인 다른 Play
 3. NUGU 모바일앱 > 좌측상단 메뉴바 > “NUGU play”란 페이지를 참고하세요.
    * Play 심사 요청 시점에 개발/심사중인 NUGU서비스 및 다른 Play

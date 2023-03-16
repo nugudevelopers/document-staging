@@ -158,10 +158,13 @@ NUGU 디바이스를 전용 디바이스로 등록하면, 사용 제외 Play 설
 * MY Q&A
 * 긴급 SOS
 * 도미노 피자
-* BBQ 치킨
-* 홈픽 택배
 * 길찾기
-* 오디오 북
 * 스마트 홈
-* 11번가 쇼핑
 * B tv 연동
+
+## Biz 전용 디바이스의 설치/사용 중 문제 발생 시 안내
+
+Biz 전용 디바이스의 설치 혹은 사용중 발생할 수 있는 문제에 대한 해결방법을 안내드립니다.
+
+* [Visual C++ 런타임라이브러리 (x86) 오류](./manage-shared-device/runtimelibrary-error)
+* [구동 시 빈화면 출력되는 경우](./manage-shared-device/empty-screen-error)
