@@ -10,7 +10,7 @@ depth_order: 1
 
 {% code %}
 ```text
-[POST] https://biz-api.sktnugu.com/api/v1/sharedDevice/group/{groupApiToken}/announcement?callBack={callBackUrl}
+[POST] https://biz-api.sktnugu.com/api/v1/sharedDevice/group/{groupApiToken}/announcement?callBack={callback}
 ```
 {% endcode %}
 
