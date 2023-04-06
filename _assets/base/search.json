@@ -2619,14 +2619,15 @@
   "hash": "#version",
   "sentences": [
     "Version",
-    "최신 버전은 1.6 입니다.",
+    "최신 버전은 1.7 입니다.",
     "1.0 | 2019.11.13 | 규격 추가",
     "1.1 | 2020.03.03 | lyric, favorite, repeat, shuffle, template.settings 관련 directive/event 추가AudioPlayer.Template1 에 lyrics, settings, badge 관련 필드 추가AudioPlayer.Play 에 cacheKey 필드 추가AudioPlayer.UpdateMetadata directive 추가AudioPlayer.Template1의 content.imageUrl을 Mandatory로 수정",
     "1.2 | 2020.03.12 | Request{Play/Resume/Next/Previous/Pause/Stop}Command Directive Request{Play/Resume/Next/Previous/Pause/Stop}CommandIssued Event 추가.",
     "1.3 | 2020.06.05 | PlaybackStopped event 에 reason 필드 추가.RequestCommandFailed event 추가.",
     "1.4 | 2020.08.12 | Context 에 playServiceId 추가",
     "1.5 | 2020.12.09 | PlaybackStopped event 의 reason 필드 값에 대한 조건 수정",
-    "1.6 | 2021.03.05 | AudioPlayer.Template1 의 lyrics 에 showButton 필드 추가AudioPlayer.Template2 에 lyrics 필드 추가AudioPlayer.Template2 에 subtitle1 필드 추가"
+    "1.6 | 2021.03.05 | AudioPlayer.Template1 의 lyrics 에 showButton 필드 추가AudioPlayer.Template2 에 lyrics 필드 추가AudioPlayer.Template2 에 subtitle1 필드 추가",
+    "1.7 | 2023.04.05 | context 에 playlistToken 필드 추가UpdateMetadata 에 playlist 필드 추가"
   ]
 },
     {
@@ -2744,13 +2745,14 @@
   "hash": "#context",
   "sentences": [
     "Context",
-    "{\n  \"AudioPlayer\": {\n    \"version\": \"1.4\",\n    \"playServiceId\":{{STRING}}\",\n    \"playerActivity\":{{STRING}}\",\n    \"token\": \"{{STRING}}\",\n    \"offsetInMilliseconds\": {{LONG}},\n    \"durationInMilliseconds\": {{LONG}},\n    \"lyricsVisible\": {{BOOLEAN}}\n  }\n}",
+    "{\n  \"AudioPlayer\": {\n    \"version\": \"1.7\",\n    \"playServiceId\": \"{{STRING}}\",\n    \"playerActivity\": \"{{STRING}}\",\n    \"token\": \"{{STRING}}\",\n    \"offsetInMilliseconds\": {{LONG}},\n    \"durationInMilliseconds\": {{LONG}},\n    \"lyricsVisible\": {{BOOLEAN}},\n    \"playlistToken\": \"{{STRING}}\"\n  }\n}",
     "playServiceId | string | N | 현재 사용 중인 음원의 playServiceId",
     "playerActivity | string | Y | 현재 state",
     "token | string | N | 현재 사용 중인 음원의 토큰",
     "offsetInMilliseconds | long | Y | 현재 사용 중인 음원의 offset",
     "durationInMilliseconds | long | N | 현재 사용 중인 음원의 전체 재생시간(알수 없으면 보내주지 않음)",
-    "lyricsVisible | boolean | N | AudioPlayer에서 가사 화면이 보여지고 있는지 여부가사를 보여줄 수 없는 Device에서는 lyricsVisible를 보내지 않음"
+    "lyricsVisible | boolean | N | AudioPlayer에서 가사 화면이 보여지고 있는지 여부가사를 보여줄 수 없는 Device에서는 lyricsVisible를 보내지 않음",
+    "playlistToken | string | N | 디바이스가 가지고 있는 playlist의 token(playlist를 사용할 수 없는 Device에서는 playlistToken를 보내지 않음)"
   ]
 },
     {
@@ -2766,7 +2768,7 @@
   "sentences": [
     "Play",
     "새로운 음원 또는 현재 음원 재생 요청입니다.(Play, Resume, Seek 요청이 포함되어 있습니다.)",
-    "{\n  \"header\": {\n    \"namespace\": \"AudioPlayer\",\n    \"name\": \"Play\",\n    \"messageId\": \"{{STRING}}\",\n    \"dialogRequestId\": \"{{STRING}}\",\n    \"version\": \"1.1\"\n  },\n  \"payload\": {\n    \"playServiceId\": \"{{STRING}}\",\n    \"sourceType\": \"{{STRING}}\",\n    \"cacheKey\": \"{{STRING}}\",\n    \"audioItem\": {\n      \"stream\": {\n        \"url\": \"{{STRING}}\",\n        \"offsetInMilliseconds\": {{LONG}},\n        \"progressReport\": {\n          \"progressReportDelayInMilliseconds\": {{LONG}},\n          \"progressReportIntervalInMilliseconds\": {{LONG}}\n        },\n        \"token\": \"{{STRING}}\",\n        \"expectedPreviousToken\": \"{{STRING}}\"\n      },\n      \"metadata\": {\n        \"template\": {}\n      }\n    }\n  }\n}",
+    "{\n  \"header\": {\n    \"namespace\": \"AudioPlayer\",\n    \"name\": \"Play\",\n    \"messageId\": \"{{STRING}}\",\n    \"dialogRequestId\": \"{{STRING}}\",\n    \"version\": \"1.7\"\n  },\n  \"payload\": {\n    \"playServiceId\": \"{{STRING}}\",\n    \"sourceType\": \"{{STRING}}\",\n    \"cacheKey\": \"{{STRING}}\",\n    \"audioItem\": {\n      \"stream\": {\n        \"url\": \"{{STRING}}\",\n        \"offsetInMilliseconds\": {{LONG}},\n        \"progressReport\": {\n          \"progressReportDelayInMilliseconds\": {{LONG}},\n          \"progressReportIntervalInMilliseconds\": {{LONG}}\n        },\n        \"token\": \"{{STRING}}\",\n        \"expectedPreviousToken\": \"{{STRING}}\"\n      },\n      \"metadata\": {\n        \"template\": {}\n      }\n    }\n  }\n}",
     "sourceType | string | N | URL or ATTACHMENT(default 는 URL)- ATTACHMENT 일 경우 stream에 url이 존재 하지 않음",
     "cacheKey | string | N | 디바이스에서 미디어 캐시를 위한 unique key(디바이스 캐시 기능은 필수가 아님)캐시가 불가능한 미디어 이면 디바이스로 내려주지 않음",
     "audioItem.stream | object | Y | -",
@@ -2785,7 +2787,7 @@
   "hash": "#audioitemmetadatatemplate---audioplayertemplate1",
   "sentences": [
     "audioItem.metadata.template - AudioPlayer.Template1",
-    "{\n  \"metadata\": {\n    \"disableTemplate\": {{BOOLEAN}},\n    \"template\": {\n      \"type\": \"AudioPlayer.Template1\",\n      \"title\": {\n        \"iconUrl\": \"{{STRING}}\",\n        \"text\": \"{{STRING}}\"\n      },\n      \"grammarGuide\": [\"{{STRING}}\"],\n      \"content\": {\n        \"title\": \"{{STRING}}\",\n        \"subtitle1\": \"{{STRING}}\",\n        \"subtitle2\": \"{{STRING}}\",\n        \"imageUrl\": \"{{STRING}}\",\n        \"durationSec\": \"{{STRING}}\",\n        \"backgroundImageUrl\": \"{{STRING}}\",\n        \"backgroundColor\": \"{{STRING}}\",\n        \"badgeImageUrl\": \"{{String}}\",\n        \"badgeMessage\": \"{{String}}\",\n        \"lyrics\": {\n          \"title\": \"{{String}}\",\n          \"lyricsType\": \"{{String}}\",\n          \"lyricsInfoList\": [\n            {\n              \"time\": {{Integer}},\n              \"text\": \"{{String}}\"\n            }\n          ],\n          \"showButton\": {\n            \"text\": \"{{String}}\"\n          }\n        },\n        \"settings\": {\n          \"favorite\": {{BOOLEAN}},\n          \"repeat\": \"{{String}}\",\n          \"shuffle\": {{BOOLEAN}}\n        }\n      }\n    }\n  }\n}",
+    "{\n  \"metadata\": {\n    \"disableTemplate\": {{BOOLEAN}},\n    \"template\": {\n      \"type\": \"AudioPlayer.Template1\",\n      \"title\": {\n        \"iconUrl\": \"{{STRING}}\",\n        \"text\": \"{{STRING}}\"\n      },\n      \"grammarGuide\": [\"{{STRING}}\"],\n      \"content\": {\n        \"title\": \"{{STRING}}\",\n        \"subtitle1\": \"{{STRING}}\",\n        \"subtitle2\": \"{{STRING}}\",\n        \"imageUrl\": \"{{STRING}}\",\n        \"durationSec\": \"{{STRING}}\",\n        \"backgroundImageUrl\": \"{{STRING}}\",\n        \"backgroundColor\": \"{{STRING}}\",\n        \"badgeImageUrl\": \"{{String}}\",\n        \"badgeMessage\": \"{{String}}\",\n        \"lyrics\": {\n          \"title\": \"{{String}}\",\n          \"lyricsType\": \"{{String}}\",\n          \"lyricsInfoList\": [\n            {\n              \"time\": {{Integer}},\n              \"text\": \"{{String}}\"\n            }\n          ],\n          \"showButton\": {\n            \"text\": \"{{String}}\"\n          }\n        },\n        \"settings\": {\n          \"favorite\": {{BOOLEAN}},\n          \"repeat\": \"{{String}}\",\n          \"shuffle\": {{BOOLEAN}}\n        }\n      },\n      \"playlist\": PlaylistObject\n    }\n  }\n}",
     "disableTemplate | bool | N | true면 스크린을 가진 디바이스에서 AudioPlayer 재생 시 template을 display하지 않음default - false",
     "template.type | string | Y | AudioPlayer template type- AudioPlayer.Template1- AudioPlayer.Template2",
     "template.title | object | Y | title object",
@@ -2813,7 +2815,9 @@
     "template.content.settings.favorite | boolean | N | 재생 중인 음원에 대한 좋아요 여부",
     "template.content.settings.repeat | string | N | 재생 목록에 대한 반복 설정- ALL : 전곡 반복- ONE : 한곡 반복- NONE : 반복 없음",
     "template.content.settings.shuffle | boolean | N | 재생 목록의 음원을 임의의 순서로 재생할지 여부",
-    "template.grammarGuide | list of string | N | 발화 도움말"
+    "template.grammarGuide | list of string | N | 발화 도움말",
+    "template.floatingBanner | FloatingBannerObject | N | display interface 규격의 floatingBanner 참고",
+    "template.playlist | playlist object | N | 재생목록"
   ]
 },
     {
@@ -2851,7 +2855,7 @@
   "sentences": [
     "Stop",
     "음원 재생 중지 요청입니다.",
-    "{\n  \"header\": {\n    \"namespace\": \"AudioPlayer\",\n    \"name\": \"Stop\",\n    \"messageId\": \"{{STRING}}\",\n    \"dialogRequestId\": \"{{STRING}}\",\n    \"version\": \"1.0\"\n  },\n  \"payload\": {\n    \"playServiceId\": \"{{STRING}}\"\n  }\n}"
+    "{\n  \"header\": {\n    \"namespace\": \"AudioPlayer\",\n    \"name\": \"Stop\",\n    \"messageId\": \"{{STRING}}\",\n    \"dialogRequestId\": \"{{STRING}}\",\n    \"version\": \"1.7\"\n  },\n  \"payload\": {\n    \"playServiceId\": \"{{STRING}}\"\n  }\n}"
   ]
 },
     {
@@ -2860,7 +2864,7 @@
   "sentences": [
     "Pause",
     "음원 일시정지 요청입니다.",
-    "{\n  \"header\": {\n    \"namespace\": \"AudioPlayer\",\n    \"name\": \"Pause\",\n    \"messageId\": \"{{STRING}}\",\n    \"dialogRequestId\": \"{{STRING}}\",\n    \"version\": \"1.0\"\n  },\n  \"payload\": {\n    \"playServiceId\": \"{{STRING}}\"\n  }\n}"
+    "{\n  \"header\": {\n    \"namespace\": \"AudioPlayer\",\n    \"name\": \"Pause\",\n    \"messageId\": \"{{STRING}}\",\n    \"dialogRequestId\": \"{{STRING}}\",\n    \"version\": \"1.7\"\n  },\n  \"payload\": {\n    \"playServiceId\": \"{{STRING}}\"\n  }\n}"
   ]
 },
     {
@@ -2869,10 +2873,11 @@
   "sentences": [
     "UpdateMetadata",
     "음원의 Metadata UI 설정 정보를 갱신 요청입니다.",
-    "{\n  \"header\": {\n    \"namespace\": \"AudioPlayer\",\n    \"name\": \"UpdateMetadata\",\n    \"messageId\": \"{{STRING}}\",\n    \"dialogRequestId\": \"{{STRING}}\",\n    \"version\": \"1.1\"\n  },\n  \"payload\": {\n    \"playServiceId\": \"{{STRING}}\",\n    \"metadata\": {\n      \"template\": {\n        \"content\": {\n          \"settings\": {\n            \"favorite\": {{BOOLEAN}},\n            \"repeat\": \"{{STRING}}\",\n            \"shuffle\": {{BOOLEAN}}\n          }\n        }\n      }\n    }\n  }\n}",
+    "{\n  \"header\": {\n    \"namespace\": \"AudioPlayer\",\n    \"name\": \"UpdateMetadata\",\n    \"messageId\": \"{{STRING}}\",\n    \"dialogRequestId\": \"{{STRING}}\",\n    \"version\": \"1.7\"\n  },\n  \"payload\": {\n    \"playServiceId\": \"{{STRING}}\",\n    \"metadata\": {\n      \"template\": {\n        \"content\": {\n          \"settings\": {\n            \"favorite\": {{BOOLEAN}},\n            \"repeat\": \"{{STRING}}\",\n            \"shuffle\": {{BOOLEAN}}\n          }\n        },\n        \"playlist\": PlaylistObject\n      }\n    }\n  }\n}",
     "metadata.template.content.settings.favorite | boolean | N | AudioPlayer.Template1의 settings.favorite 와 연동",
     "metadata.template.content.settings.repeat | string | N | AudioPlayer.Template1의 settings.repeat 과 연동- ALL : 전곡 반복- ONE : 한곡 반복- NONE : 반복 없음",
-    "metadata.template.content.settings.shuffle | boolean | N | AudioPlayer.Template1의 settings.shuffle 과 연동"
+    "metadata.template.content.settings.shuffle | boolean | N | AudioPlayer.Template1의 settings.shuffle 과 연동",
+    "metadata.template.playlist | Playlist Object | N | PlaylistTemplate1playlist.type은 수정 불가하며, 나머지 field들은 수정 가능"
   ]
 },
     {
@@ -2881,7 +2886,7 @@
   "sentences": [
     "ShowLyrics",
     "가사화면 표시 요청입니다.",
-    "{\n  \"header\": {\n    \"namespace\": \"AudioPlayer\",\n    \"name\": \"ShowLyrics\",\n    \"messageId\": \"{{STRING}}\",\n    \"dialogRequestId\": \"{{STRING}}\",\n    \"version\": \"1.1\"\n  },\n  \"payload\": {\n    \"playServiceId\": \"{{STRING}}\"\n  }\n}"
+    "{\n  \"header\": {\n    \"namespace\": \"AudioPlayer\",\n    \"name\": \"ShowLyrics\",\n    \"messageId\": \"{{STRING}}\",\n    \"dialogRequestId\": \"{{STRING}}\",\n    \"version\": \"1.7\"\n  },\n  \"payload\": {\n    \"playServiceId\": \"{{STRING}}\"\n  }\n}"
   ]
 },
     {
@@ -2890,7 +2895,7 @@
   "sentences": [
     "HideLyrics",
     "가사화면 닫기 요청입니다.",
-    "{\n  \"header\": {\n    \"namespace\": \"AudioPlayer\",\n    \"name\": \"HideLyrics\",\n    \"messageId\": \"{{STRING}}\",\n    \"dialogRequestId\": \"{{STRING}}\",\n    \"version\": \"1.1\"\n  },\n  \"payload\": {\n    \"playServiceId\": \"{{STRING}}\"\n  }\n}"
+    "{\n  \"header\": {\n    \"namespace\": \"AudioPlayer\",\n    \"name\": \"HideLyrics\",\n    \"messageId\": \"{{STRING}}\",\n    \"dialogRequestId\": \"{{STRING}}\",\n    \"version\": \"1.7\"\n  },\n  \"payload\": {\n    \"playServiceId\": \"{{STRING}}\"\n  }\n}"
   ]
 },
     {
@@ -2899,7 +2904,7 @@
   "sentences": [
     "ControlLyricsPage",
     "가사화면 스크롤 위치 이동 요청입니다.",
-    "{\n  \"header\": {\n    \"namespace\": \"AudioPlayer\",\n    \"name\": \"ControlLyricsPage\",\n    \"messageId\": \"{{STRING}}\",\n    \"dialogRequestId\": \"{{STRING}}\",\n    \"version\": \"1.1\"\n  },\n  \"payload\": {\n    \"playServiceId\": \"{{STRING}}\",\n    \"direction\": \"{{STRING}}\"\n  }\n}",
+    "{\n  \"header\": {\n    \"namespace\": \"AudioPlayer\",\n    \"name\": \"ControlLyricsPage\",\n    \"messageId\": \"{{STRING}}\",\n    \"dialogRequestId\": \"{{STRING}}\",\n    \"version\": \"1.7\"\n  },\n  \"payload\": {\n    \"playServiceId\": \"{{STRING}}\",\n    \"direction\": \"{{STRING}}\"\n  }\n}",
     "direction | string | Y | 이전과 다음 PREVIOUS, NEXT"
   ]
 },
@@ -2909,7 +2914,7 @@
   "sentences": [
     "RequestPlayCommand",
     "Nugu mobile application 에서 새로운 곡 재생을 요청하기 위한 Directive.",
-    "{\n  \"header\": {\n    \"namespace\": \"AudioPlayer\",\n    \"name\": \"RequestPlayCommand\",\n    \"messageId\": \"{{STRING}}\",\n    \"dialogRequestId\": \"{{STRING}}\",\n    \"version\": \"1.2\"\n  },\n  \"payload\": {}\n}",
+    "{\n  \"header\": {\n    \"namespace\": \"AudioPlayer\",\n    \"name\": \"RequestPlayCommand\",\n    \"messageId\": \"{{STRING}}\",\n    \"dialogRequestId\": \"{{STRING}}\",\n    \"version\": \"1.7\"\n  },\n  \"payload\": {}\n}",
     "payload | object | Y | Play 에서 곡 재생을 위해 필요한 정보"
   ]
 },
@@ -2919,7 +2924,7 @@
   "sentences": [
     "RequestResumeCommand",
     "Nugu mobile application 에서 현재 재생중인 play 에 대한 제어를 위한 Directive.",
-    "{\n  \"header\": {\n    \"namespace\": \"AudioPlayer\",\n    \"name\": \"RequestResumeCommand\",\n    \"messageId\": \"{{STRING}}\",\n    \"dialogRequestId\": \"{{STRING}}\",\n    \"version\": \"1.2\"\n  },\n  \"payload\": {}\n}"
+    "{\n  \"header\": {\n    \"namespace\": \"AudioPlayer\",\n    \"name\": \"RequestResumeCommand\",\n    \"messageId\": \"{{STRING}}\",\n    \"dialogRequestId\": \"{{STRING}}\",\n    \"version\": \"1.7\"\n  },\n  \"payload\": {}\n}"
   ]
 },
     {
@@ -2928,7 +2933,7 @@
   "sentences": [
     "RequestNextCommand",
     "Nugu mobile application 에서 현재 재생중인 play 에 대한 제어를 위한 Directive.",
-    "{\n  \"header\": {\n    \"namespace\": \"AudioPlayer\",\n    \"name\": \"RequestNextCommand\",\n    \"messageId\": \"{{STRING}}\",\n    \"dialogRequestId\": \"{{STRING}}\",\n    \"version\": \"1.2\"\n  },\n  \"payload\": {}\n}"
+    "{\n  \"header\": {\n    \"namespace\": \"AudioPlayer\",\n    \"name\": \"RequestNextCommand\",\n    \"messageId\": \"{{STRING}}\",\n    \"dialogRequestId\": \"{{STRING}}\",\n    \"version\": \"1.7\"\n  },\n  \"payload\": {}\n}"
   ]
 },
     {
@@ -2937,7 +2942,7 @@
   "sentences": [
     "RequestPreviousCommand",
     "Nugu mobile application 에서 현재 재생중인 play 에 대한 제어를 위한 Directive.",
-    "{\n  \"header\": {\n    \"namespace\": \"AudioPlayer\",\n    \"name\": \"RequestPreviousCommand\",\n    \"messageId\": \"{{STRING}}\",\n    \"dialogRequestId\": \"{{STRING}}\",\n    \"version\": \"1.2\"\n  },\n  \"payload\": {}\n}"
+    "{\n  \"header\": {\n    \"namespace\": \"AudioPlayer\",\n    \"name\": \"RequestPreviousCommand\",\n    \"messageId\": \"{{STRING}}\",\n    \"dialogRequestId\": \"{{STRING}}\",\n    \"version\": \"1.7\"\n  },\n  \"payload\": {}\n}"
   ]
 },
     {
@@ -2946,7 +2951,7 @@
   "sentences": [
     "RequestPauseCommand",
     "Nugu mobile application 에서 현재 재생중인 play 에 대한 제어를 위한 Directive.",
-    "{\n  \"header\": {\n    \"namespace\": \"AudioPlayer\",\n    \"name\": \"RequestPauseCommand\",\n    \"messageId\": \"{{STRING}}\",\n    \"dialogRequestId\": \"{{STRING}}\",\n    \"version\": \"1.2\"\n  },\n  \"payload\": {}\n}"
+    "{\n  \"header\": {\n    \"namespace\": \"AudioPlayer\",\n    \"name\": \"RequestPauseCommand\",\n    \"messageId\": \"{{STRING}}\",\n    \"dialogRequestId\": \"{{STRING}}\",\n    \"version\": \"1.7\"\n  },\n  \"payload\": {}\n}"
   ]
 },
     {
@@ -2955,7 +2960,7 @@
   "sentences": [
     "RequestStopCommand",
     "Nugu mobile application 에서 현재 재생중인 play 에 대한 제어를 위한 Directive.",
-    "{\n  \"header\": {\n    \"namespace\": \"AudioPlayer\",\n    \"name\": \"RequestStopCommand\",\n    \"messageId\": \"{{STRING}}\",\n    \"dialogRequestId\": \"{{STRING}}\",\n    \"version\": \"1.2\"\n  },\n  \"payload\": {}\n}"
+    "{\n  \"header\": {\n    \"namespace\": \"AudioPlayer\",\n    \"name\": \"RequestStopCommand\",\n    \"messageId\": \"{{STRING}}\",\n    \"dialogRequestId\": \"{{STRING}}\",\n    \"version\": \"1.7\"\n  },\n  \"payload\": {}\n}"
   ]
 },
     {
@@ -2970,7 +2975,7 @@
   "hash": "#playbackstarted",
   "sentences": [
     "PlaybackStarted",
-    "{\n  \"header\": {\n    \"namespace\": \"AudioPlayer\",\n    \"name\": \"PlaybackStarted\",\n    \"messageId\": \"{{STRING}}\",\n    \"dialogRequestId\": \"{{STRING}}\",\n    \"version\": \"1.4\"\n  },\n  \"payload\": {\n    \"token\": \"{{STRING}}\",\n    \"offsetInMilliseconds\": {{LONG}},\n    \"playServiceId\": \"{{STRING}}\"\n  }\n}",
+    "{\n  \"header\": {\n    \"namespace\": \"AudioPlayer\",\n    \"name\": \"PlaybackStarted\",\n    \"messageId\": \"{{STRING}}\",\n    \"dialogRequestId\": \"{{STRING}}\",\n    \"version\": \"1.7\"\n  },\n  \"payload\": {\n    \"token\": \"{{STRING}}\",\n    \"offsetInMilliseconds\": {{LONG}},\n    \"playServiceId\": \"{{STRING}}\"\n  }\n}",
     "token | string | Y | 현재 재생 중인 stream의 token",
     "offsetInMilliseconds | long | Y | 현재 재생 중인 stream의 offset 값"
   ]
@@ -2980,7 +2985,7 @@
   "hash": "#playbackpaused",
   "sentences": [
     "PlaybackPaused",
-    "{\n  \"header\": {\n    \"namespace\": \"AudioPlayer\",\n    \"name\": \"PlaybackPaused\",\n    \"messageId\": \"{{STRING}}\",\n    \"dialogRequestId\": \"{{STRING}}\",\n    \"version\": \"1.4\"\n  },\n  \"payload\": {\n    \"token\": \"{{STRING}}\",\n    \"offsetInMilliseconds\": {{LONG}},\n    \"playServiceId\": \"{{STRING}}\"\n  }\n}",
+    "{\n  \"header\": {\n    \"namespace\": \"AudioPlayer\",\n    \"name\": \"PlaybackPaused\",\n    \"messageId\": \"{{STRING}}\",\n    \"dialogRequestId\": \"{{STRING}}\",\n    \"version\": \"1.7\"\n  },\n  \"payload\": {\n    \"token\": \"{{STRING}}\",\n    \"offsetInMilliseconds\": {{LONG}},\n    \"playServiceId\": \"{{STRING}}\"\n  }\n}",
     "token | string | Y | 현재 재생 중인 stream의 token",
     "offsetInMilliseconds | long | Y | 현재 재생 중인 stream의 offset 값"
   ]
@@ -2990,7 +2995,7 @@
   "hash": "#playbackresumed",
   "sentences": [
     "PlaybackResumed",
-    "{\n  \"header\": {\n    \"namespace\": \"AudioPlayer\",\n    \"name\": \"PlaybackResumed\",\n    \"messageId\": \"{{STRING}}\",\n    \"dialogRequestId\": \"{{STRING}}\",\n    \"version\": \"1.4\"\n  },\n  \"payload\": {\n    \"token\": \"{{STRING}}\",\n    \"offsetInMilliseconds\": {{LONG}},\n    \"playServiceId\": \"{{STRING}}\"\n  }\n}",
+    "{\n  \"header\": {\n    \"namespace\": \"AudioPlayer\",\n    \"name\": \"PlaybackResumed\",\n    \"messageId\": \"{{STRING}}\",\n    \"dialogRequestId\": \"{{STRING}}\",\n    \"version\": \"1.7\"\n  },\n  \"payload\": {\n    \"token\": \"{{STRING}}\",\n    \"offsetInMilliseconds\": {{LONG}},\n    \"playServiceId\": \"{{STRING}}\"\n  }\n}",
     "token | string | Y | 현재 재생 중인 stream의 token",
     "offsetInMilliseconds | long | Y | 현재 재생 중인 stream의 offset 값"
   ]
@@ -3000,7 +3005,7 @@
   "hash": "#playbackfinished",
   "sentences": [
     "PlaybackFinished",
-    "{\n  \"header\": {\n    \"namespace\": \"AudioPlayer\",\n    \"name\": \"PlaybackFinished\",\n    \"messageId\": \"{{STRING}}\",\n    \"dialogRequestId\": \"{{STRING}}\",\n    \"version\": \"1.4\"\n  },\n  \"payload\": {\n    \"token\": \"{{STRING}}\",\n    \"offsetInMilliseconds\": {{LONG}},\n    \"playServiceId\": \"{{STRING}}\"\n  }\n}",
+    "{\n  \"header\": {\n    \"namespace\": \"AudioPlayer\",\n    \"name\": \"PlaybackFinished\",\n    \"messageId\": \"{{STRING}}\",\n    \"dialogRequestId\": \"{{STRING}}\",\n    \"version\": \"1.7\"\n  },\n  \"payload\": {\n    \"token\": \"{{STRING}}\",\n    \"offsetInMilliseconds\": {{LONG}},\n    \"playServiceId\": \"{{STRING}}\"\n  }\n}",
     "token | string | Y | 현재 재생 중인 stream의 token",
     "offsetInMilliseconds | long | Y | 현재 재생 중인 stream의 offset 값"
   ]
@@ -3010,7 +3015,7 @@
   "hash": "#playbackstopped",
   "sentences": [
     "PlaybackStopped",
-    "{\n  \"header\": {\n    \"namespace\": \"AudioPlayer\",\n    \"name\": \"PlaybackStopped\",\n    \"messageId\": \"{{STRING}}\",\n    \"dialogRequestId\": \"{{STRING}}\",\n    \"version\": \"1.4\"\n  },\n  \"payload\": {\n    \"token\": \"{{STRING}}\",\n    \"offsetInMilliseconds\": {{LONG}},\n    \"playServiceId\": \"{{STRING}}\",\n    \"reason\": \"{{STRING}}\"\n  }\n}",
+    "{\n  \"header\": {\n    \"namespace\": \"AudioPlayer\",\n    \"name\": \"PlaybackStopped\",\n    \"messageId\": \"{{STRING}}\",\n    \"dialogRequestId\": \"{{STRING}}\",\n    \"version\": \"1.7\"\n  },\n  \"payload\": {\n    \"token\": \"{{STRING}}\",\n    \"offsetInMilliseconds\": {{LONG}},\n    \"playServiceId\": \"{{STRING}}\",\n    \"reason\": \"{{STRING}}\"\n  }\n}",
     "token | string | Y | 현재 재생 중인 stream의 token",
     "offsetInMilliseconds | long | Y | 현재 재생 중인 stream의 offset 값",
     "reason | string | N | 이 이벤트가 만들어진 이유를 명시하기 위한 객체 STOP, PLAY_ANOTHER 중 하나.- PLAY_ANOTHER : 동일 play 내에서 다른 곡 재생을 위해 이전에 재생하던 곡을 정지했을 때 올려주는 값.- STOP : 그 외 정지의 경우."
@@ -3021,7 +3026,7 @@
   "hash": "#playbackfailed",
   "sentences": [
     "PlaybackFailed",
-    "{\n  \"header\": {\n    \"namespace\": \"AudioPlayer\",\n    \"name\": \"PlaybackFailed\",\n    \"messageId\": \"{{STRING}}\",\n    \"dialogRequestId\": \"{{STRING}}\",\n    \"version\": \"1.4\"\n  },\n  \"payload\": {\n    \"token\": \"{{STRING}}\",\n    \"offsetInMilliseconds\": {{LONG}},\n    \"error\": {\n      \"type\": \"{{STRING}}\",\n      \"message\": \"{{STRING}}\"\n    },\n    \"currentPlaybackState\": {\n      \"token\": \"{{STRING}}\",\n      \"offsetInMilliseconds\": {{LONG}},\n      \"playerActivity\": \"{{STRING}}\"\n    },\n    \"playServiceId\": \"{{STRING}}\"\n  }\n}",
+    "{\n  \"header\": {\n    \"namespace\": \"AudioPlayer\",\n    \"name\": \"PlaybackFailed\",\n    \"messageId\": \"{{STRING}}\",\n    \"dialogRequestId\": \"{{STRING}}\",\n    \"version\": \"1.7\"\n  },\n  \"payload\": {\n    \"token\": \"{{STRING}}\",\n    \"offsetInMilliseconds\": {{LONG}},\n    \"error\": {\n      \"type\": \"{{STRING}}\",\n      \"message\": \"{{STRING}}\"\n    },\n    \"currentPlaybackState\": {\n      \"token\": \"{{STRING}}\",\n      \"offsetInMilliseconds\": {{LONG}},\n      \"playerActivity\": \"{{STRING}}\"\n    },\n    \"playServiceId\": \"{{STRING}}\"\n  }\n}",
     "token | string | Y | 재생에 실패한 stream의 token",
     "offsetInMilliseconds | long | Y | PlaybackFailed를 보낼 때 재생 중인 stream의 offset 값",
     "error.type | string | Y | MEDIA_ERROR_UNKNOWNMEDIA_ERROR_INVALID_REQUESTMEDIA_ERROR_SERVICE_UNAVAILABLEMEDIA_ERROR_INTERNAL_SERVER_ERRORMEDIA_ERROR_INTERNAL_DEVICE_ERROR",
@@ -3038,7 +3043,7 @@
     "ProgressReportDelayElapsed",
     "Play directive로 전달된 stream이 재생을 시작한 뒤 progressReportDelayInMilliseconds",
     "offsetInMilliseconds는 stream의 시작을 기준으로 offset을 의미 (컨텐츠 재생 시간 0부터 절대값을 의미)",
-    "{\n  \"header\": {\n    \"namespace\": \"AudioPlayer\",\n    \"name\": \"ProgressReportDelayElapsed\",\n    \"messageId\": \"{{STRING}}\",\n    \"dialogRequestId\": \"{{STRING}}\",\n    \"version\": \"1.4\"\n  },\n  \"payload\": {\n    \"token\": \"{{STRING}}\",\n    \"offsetInMilliseconds\": {{LONG}},\n    \"playServiceId\": \"{{STRING}}\"\n  }\n}",
+    "{\n  \"header\": {\n    \"namespace\": \"AudioPlayer\",\n    \"name\": \"ProgressReportDelayElapsed\",\n    \"messageId\": \"{{STRING}}\",\n    \"dialogRequestId\": \"{{STRING}}\",\n    \"version\": \"1.7\"\n  },\n  \"payload\": {\n    \"token\": \"{{STRING}}\",\n    \"offsetInMilliseconds\": {{LONG}},\n    \"playServiceId\": \"{{STRING}}\"\n  }\n}",
     "token | string | Y | 현재 재생 중인 stream의 token",
     "offsetInMilliseconds | long | Y | 현재 재생 중인 stream의 offset 값"
   ]
@@ -3050,7 +3055,7 @@
     "ProgressReportIntervalElapsed",
     "Play directive로 전달된 stream이 재생을 시작한 뒤 progressIntervalDelayInMilliseconds 주기마다 Event 전달",
     "offsetInMilliseconds는 stream의 시작을 기준으로 offset을 의미 (컨텐츠 재생 시간 0부터 절대값을 의미)",
-    "{\n  \"header\": {\n    \"namespace\": \"AudioPlayer\",\n    \"name\": \"ProgressReportIntervalElapsed\",\n    \"messageId\": \"{{STRING}}\",\n    \"dialogRequestId\": \"{{STRING}}\",\n    \"version\": \"1.4\"\n  },\n  \"payload\": {\n    \"token\": \"{{STRING}}\",\n    \"offsetInMilliseconds\": {{LONG}},\n    \"playServiceId\": \"{{STRING}}\"\n  }\n}",
+    "{\n  \"header\": {\n    \"namespace\": \"AudioPlayer\",\n    \"name\": \"ProgressReportIntervalElapsed\",\n    \"messageId\": \"{{STRING}}\",\n    \"dialogRequestId\": \"{{STRING}}\",\n    \"version\": \"1.7\"\n  },\n  \"payload\": {\n    \"token\": \"{{STRING}}\",\n    \"offsetInMilliseconds\": {{LONG}},\n    \"playServiceId\": \"{{STRING}}\"\n  }\n}",
     "token | string | Y | 현재 재생 중인 stream의 token",
     "offsetInMilliseconds | long | Y | 현재 재생 중인 stream의 offset 값"
   ]
@@ -3061,7 +3066,7 @@
   "sentences": [
     "NextCommandIssued",
     "사용자가 다음 음원 재생을 요청하면 전송됩니다.",
-    "{\n  \"header\": {\n    \"namespace\": \"AudioPlayer\",\n    \"name\": \"NextCommandIssued\",\n    \"messageId\": \"{{STRING}}\",\n    \"dialogRequestId\": \"{{STRING}}\",\n    \"version\": \"1.0\"\n  },\n  \"payload\": {\n    \"playServiceId\": \"{{STRING}}\",\n    \"token\": \"{{STRING}}\",\n    \"offsetInMilliseconds\": {{LONG}}\n  }\n}",
+    "{\n  \"header\": {\n    \"namespace\": \"AudioPlayer\",\n    \"name\": \"NextCommandIssued\",\n    \"messageId\": \"{{STRING}}\",\n    \"dialogRequestId\": \"{{STRING}}\",\n    \"version\": \"1.7\"\n  },\n  \"payload\": {\n    \"playServiceId\": \"{{STRING}}\",\n    \"token\": \"{{STRING}}\",\n    \"offsetInMilliseconds\": {{LONG}}\n  }\n}",
     "token | string | Y | 현재 재생 중인 stream의 token",
     "offsetInMilliseconds | long | Y | 현재 재생 중인 stream의 offset 값"
   ]
@@ -3072,7 +3077,7 @@
   "sentences": [
     "PreviousCommandIssued",
     "사용자가 이전 음원 재생을 요청하면 전송됩니다.",
-    "{\n  \"header\": {\n    \"namespace\": \"AudioPlayer\",\n    \"name\": \"PreviousCommandIssued\",\n    \"messageId\": \"{{STRING}}\",\n    \"dialogRequestId\": \"{{STRING}}\",\n    \"version\": \"1.0\"\n  },\n  \"payload\": {\n    \"playServiceId\": \"{{STRING}}\",\n    \"token\": \"{{STRING}}\",\n    \"offsetInMilliseconds\": {{LONG}}\n  }\n}",
+    "{\n  \"header\": {\n    \"namespace\": \"AudioPlayer\",\n    \"name\": \"PreviousCommandIssued\",\n    \"messageId\": \"{{STRING}}\",\n    \"dialogRequestId\": \"{{STRING}}\",\n    \"version\": \"1.7\"\n  },\n  \"payload\": {\n    \"playServiceId\": \"{{STRING}}\",\n    \"token\": \"{{STRING}}\",\n    \"offsetInMilliseconds\": {{LONG}}\n  }\n}",
     "token | string | Y | 현재 재생 중인 stream의 token",
     "offsetInMilliseconds | long | Y | 현재 재생 중인 stream의 offset 값"
   ]
@@ -3083,7 +3088,7 @@
   "sentences": [
     "FavoriteCommandIssued",
     "사용자가 현재 음원 즐겨찾기(좋아요 포함)를 요청하면 전송됩니다.",
-    "{\n  \"header\": {\n    \"namespace\": \"AudioPlayer\",\n    \"name\": \"FavoriteCommandIssued\",\n    \"messageId\": \"{{STRING}}\",\n    \"dialogRequestId\": \"{{STRING}}\",\n    \"version\": \"1.1\"\n  },\n  \"payload\": {\n    \"playServiceId\": \"{{STRING}}\",\n    \"favorite\": {{BOOLEAN}}\n  }\n}",
+    "{\n  \"header\": {\n    \"namespace\": \"AudioPlayer\",\n    \"name\": \"FavoriteCommandIssued\",\n    \"messageId\": \"{{STRING}}\",\n    \"dialogRequestId\": \"{{STRING}}\",\n    \"version\": \"1.7\"\n  },\n  \"payload\": {\n    \"playServiceId\": \"{{STRING}}\",\n    \"favorite\": {{BOOLEAN}}\n  }\n}",
     "favorite | boolean | Y | 재생 중인 음원에 대한 좋아요 여부"
   ]
 },
@@ -3093,7 +3098,7 @@
   "sentences": [
     "RepeatCommandIssued",
     "사용자가 현재 음원 반복 재생을 요청하면 전송됩니다.",
-    "{\n  \"header\": {\n    \"namespace\": \"AudioPlayer\",\n    \"name\": \"RepeatCommandIssued\",\n    \"messageId\": \"{{STRING}}\",\n    \"dialogRequestId\": \"{{STRING}}\",\n    \"version\": \"1.1\"\n  },\n  \"payload\": {\n    \"playServiceId\": \"{{STRING}}\",\n    \"repeat\": {{BOOLEAN}}\n  }\n}",
+    "{\n  \"header\": {\n    \"namespace\": \"AudioPlayer\",\n    \"name\": \"RepeatCommandIssued\",\n    \"messageId\": \"{{STRING}}\",\n    \"dialogRequestId\": \"{{STRING}}\",\n    \"version\": \"1.7\"\n  },\n  \"payload\": {\n    \"playServiceId\": \"{{STRING}}\",\n    \"repeat\": {{BOOLEAN}}\n  }\n}",
     "repeat | boolean | Y | 재생 목록에 대한 반복 설정 - ALL : 전곡 반복 - ONE : 한곡 반복 - NONE : 반복 없음"
   ]
 },
@@ -3103,7 +3108,7 @@
   "sentences": [
     "ShuffleCommandIssued",
     "사용자가 셔플 재생을 요청하면 전송됩니다.",
-    "{\n  \"header\": {\n    \"namespace\": \"AudioPlayer\",\n    \"name\": \"ShuffleCommandIssued\",\n    \"messageId\": \"{{STRING}}\",\n    \"dialogRequestId\": \"{{STRING}}\",\n    \"version\": \"1.1\"\n  },\n  \"payload\": {\n    \"playServiceId\": \"{{STRING}}\",\n    \"shuffle\": {{BOOLEAN}}\n  }\n}",
+    "{\n  \"header\": {\n    \"namespace\": \"AudioPlayer\",\n    \"name\": \"ShuffleCommandIssued\",\n    \"messageId\": \"{{STRING}}\",\n    \"dialogRequestId\": \"{{STRING}}\",\n    \"version\": \"1.7\"\n  },\n  \"payload\": {\n    \"playServiceId\": \"{{STRING}}\",\n    \"shuffle\": {{BOOLEAN}}\n  }\n}",
     "shuffle | boolean | Y | 재생 목록의 음원을 임의의 순서로 재생할지 여부"
   ]
 },
@@ -3113,7 +3118,7 @@
   "sentences": [
     "ShowLyricsSucceeded",
     "ShowLyrics Directive가 발생하여 가사화면을 성공적으로 띄운다음 발생되는 Event",
-    "{\n  \"header\": {\n    \"namespace\": \"AudioPlayer\",\n    \"name\": \"ShowLyricsSucceeded\",\n    \"messageId\": \"{{STRING}}\",\n    \"dialogRequestId\": \"{{STRING}}\",\n    \"version\": \"1.4\"\n  },\n  \"payload\": {\n    \"playServiceId\": \"{{STRING}}\"\n  }\n}"
+    "{\n  \"header\": {\n    \"namespace\": \"AudioPlayer\",\n    \"name\": \"ShowLyricsSucceeded\",\n    \"messageId\": \"{{STRING}}\",\n    \"dialogRequestId\": \"{{STRING}}\",\n    \"version\": \"1.7\"\n  },\n  \"payload\": {\n    \"playServiceId\": \"{{STRING}}\"\n  }\n}"
   ]
 },
     {
@@ -3122,7 +3127,7 @@
   "sentences": [
     "ShowLyricsFailed",
     "ShowLyrics Directive가 발생하였는데 가사화면을 띄우지 못한 경우 발생되는 Event",
-    "{\n  \"header\": {\n    \"namespace\": \"AudioPlayer\",\n    \"name\": \"ShowLyricsFailed\",\n    \"messageId\": \"{{STRING}}\",\n    \"dialogRequestId\": \"{{STRING}}\",\n    \"version\": \"1.4\"\n  },\n  \"payload\": {\n    \"playServiceId\": \"{{STRING}}\"\n  }\n}"
+    "{\n  \"header\": {\n    \"namespace\": \"AudioPlayer\",\n    \"name\": \"ShowLyricsFailed\",\n    \"messageId\": \"{{STRING}}\",\n    \"dialogRequestId\": \"{{STRING}}\",\n    \"version\": \"1.7\"\n  },\n  \"payload\": {\n    \"playServiceId\": \"{{STRING}}\"\n  }\n}"
   ]
 },
     {
@@ -3131,7 +3136,7 @@
   "sentences": [
     "HideLyricsSucceeded",
     "HideLyrics Directive가 발생하여 가사화면을 성공적으로 닫은 다음 발생되는 Event",
-    "{\n  \"header\": {\n    \"namespace\": \"AudioPlayer\",\n    \"name\": \"HideLyricsSucceeded\",\n    \"messageId\": \"{{STRING}}\",\n    \"dialogRequestId\": \"{{STRING}}\",\n    \"version\": \"1.4\"\n  },\n  \"payload\": {\n    \"playServiceId\": \"{{STRING}}\"\n  }\n}"
+    "{\n  \"header\": {\n    \"namespace\": \"AudioPlayer\",\n    \"name\": \"HideLyricsSucceeded\",\n    \"messageId\": \"{{STRING}}\",\n    \"dialogRequestId\": \"{{STRING}}\",\n    \"version\": \"1.7\"\n  },\n  \"payload\": {\n    \"playServiceId\": \"{{STRING}}\"\n  }\n}"
   ]
 },
     {
@@ -3140,7 +3145,7 @@
   "sentences": [
     "HideLyricsFailed",
     "HideLyrics Directive가 발생하였는데 가사화면을 닫지 못한 경우 발생되는 Event",
-    "{\n  \"header\": {\n    \"namespace\": \"AudioPlayer\",\n    \"name\": \"HideLyricsFailed\",\n    \"messageId\": \"{{STRING}}\",\n    \"dialogRequestId\": \"{{STRING}}\",\n    \"version\": \"1.4\"\n  },\n  \"payload\": {\n    \"playServiceId\": \"{{STRING}}\"\n  }\n}"
+    "{\n  \"header\": {\n    \"namespace\": \"AudioPlayer\",\n    \"name\": \"HideLyricsFailed\",\n    \"messageId\": \"{{STRING}}\",\n    \"dialogRequestId\": \"{{STRING}}\",\n    \"version\": \"1.7\"\n  },\n  \"payload\": {\n    \"playServiceId\": \"{{STRING}}\"\n  }\n}"
   ]
 },
     {
@@ -3149,7 +3154,7 @@
   "sentences": [
     "ControlLyricsPageSucceeded",
     "ControlLyricsPage Directive가 발생하여 가사화면을 성공적으로 이동한 다음 발생되는 Event",
-    "{\n  \"header\": {\n    \"namespace\": \"AudioPlayer\",\n    \"name\": \"ControlLyricsPageSucceeded\",\n    \"messageId\": \"{{STRING}}\",\n    \"dialogRequestId\": \"{{STRING}}\",\n    \"version\": \"1.4\"\n  },\n  \"payload\": {\n    \"playServiceId\": \"{{STRING}}\",\n    \"direction\": \"{{STRING}}\"\n  }\n}",
+    "{\n  \"header\": {\n    \"namespace\": \"AudioPlayer\",\n    \"name\": \"ControlLyricsPageSucceeded\",\n    \"messageId\": \"{{STRING}}\",\n    \"dialogRequestId\": \"{{STRING}}\",\n    \"version\": \"1.7\"\n  },\n  \"payload\": {\n    \"playServiceId\": \"{{STRING}}\",\n    \"direction\": \"{{STRING}}\"\n  }\n}",
     "direction | string | Y | 이전과 다음을 수행한 결과PREVIOUS, NEXT"
   ]
 },
@@ -3159,7 +3164,7 @@
   "sentences": [
     "ControlLyricsPageFailed",
     "ControlLyricsPage Directive가 발생하였는데 가사화면을 이동하지 못한 경우 발생되는 Event",
-    "{\n  \"header\": {\n    \"namespace\": \"AudioPlayer\",\n    \"name\": \"ControlLyricsPageFailed\",\n    \"messageId\": \"{{STRING}}\",\n    \"dialogRequestId\": \"{{STRING}}\",\n    \"version\": \"1.4\"\n  },\n  \"payload\": {\n    \"playServiceId\": \"{{STRING}}\",\n    \"direction\": \"{{STRING}}\"\n  }\n}",
+    "{\n  \"header\": {\n    \"namespace\": \"AudioPlayer\",\n    \"name\": \"ControlLyricsPageFailed\",\n    \"messageId\": \"{{STRING}}\",\n    \"dialogRequestId\": \"{{STRING}}\",\n    \"version\": \"1.7\"\n  },\n  \"payload\": {\n    \"playServiceId\": \"{{STRING}}\",\n    \"direction\": \"{{STRING}}\"\n  }\n}",
     "direction | string | Y | 이전과 다음을 수행한 결과PREVIOUS, NEXT"
   ]
 },
@@ -3168,7 +3173,7 @@
   "hash": "#requestplaycommandissued",
   "sentences": [
     "RequestPlayCommandIssued",
-    "{\n  \"header\": {\n    \"namespace\": \"AudioPlayer\",\n    \"name\": \"RequestPlayCommandIssued\",\n    \"messageId\": \"{{STRING}}\",\n    \"dialogRequestId\": \"{{STRING}}\",\n    \"version\": \"1.4\"\n  },\n  \"payload\": {}\n}",
+    "{\n  \"header\": {\n    \"namespace\": \"AudioPlayer\",\n    \"name\": \"RequestPlayCommandIssued\",\n    \"messageId\": \"{{STRING}}\",\n    \"dialogRequestId\": \"{{STRING}}\",\n    \"version\": \"1.7\"\n  },\n  \"payload\": {}\n}",
     "payload | string | Y | RequestPlayCommand Directive 에 포함되어 있는 payload 를 그대로 포함."
   ]
 },
@@ -3178,7 +3183,7 @@
   "sentences": [
     "RequestResumeCommandIssued",
     "RequestResumeCommand Directive 를 받은 디바이스가 발생시키는 Event.",
-    "{\n  \"header\": {\n    \"namespace\": \"AudioPlayer\",\n    \"name\": \"RequestResumeCommandIssued\",\n    \"messageId\": \"{{STRING}}\",\n    \"dialogRequestId\": \"{{STRING}}\",\n    \"version\": \"1.4\"\n  },\n  \"payload\": {\n    \"token\": \"{{STRING}}\",\n    \"offsetInMilliseconds\": {{LONG}},\n    \"playServiceId\": \"{{STRING}}\"\n  }\n}",
+    "{\n  \"header\": {\n    \"namespace\": \"AudioPlayer\",\n    \"name\": \"RequestResumeCommandIssued\",\n    \"messageId\": \"{{STRING}}\",\n    \"dialogRequestId\": \"{{STRING}}\",\n    \"version\": \"1.7\"\n  },\n  \"payload\": {\n    \"token\": \"{{STRING}}\",\n    \"offsetInMilliseconds\": {{LONG}},\n    \"playServiceId\": \"{{STRING}}\"\n  }\n}",
     "token | string | Y | 현재 재생 중인 stream의 token",
     "offsetInMilliseconds | long | Y | 현재 재생 중인 stream의 offset 값"
   ]
@@ -3189,7 +3194,7 @@
   "sentences": [
     "RequestNextCommandIssued",
     "RequestNextCommand Directive 를 받은 디바이스가 발생시키는 Event.",
-    "{\n  \"header\": {\n    \"namespace\": \"AudioPlayer\",\n    \"name\": \"RequestNextCommandIssued\",\n    \"messageId\": \"{{STRING}}\",\n    \"dialogRequestId\": \"{{STRING}}\",\n    \"version\": \"1.4\"\n  },\n  \"payload\": {\n    \"token\": \"{{STRING}}\",\n    \"offsetInMilliseconds\": {{LONG}},\n    \"playServiceId\": \"{{STRING}}\"\n  }\n}",
+    "{\n  \"header\": {\n    \"namespace\": \"AudioPlayer\",\n    \"name\": \"RequestNextCommandIssued\",\n    \"messageId\": \"{{STRING}}\",\n    \"dialogRequestId\": \"{{STRING}}\",\n    \"version\": \"1.7\"\n  },\n  \"payload\": {\n    \"token\": \"{{STRING}}\",\n    \"offsetInMilliseconds\": {{LONG}},\n    \"playServiceId\": \"{{STRING}}\"\n  }\n}",
     "token | string | Y | 현재 재생 중인 stream의 token",
     "offsetInMilliseconds | long | Y | 현재 재생 중인 stream의 offset 값"
   ]
@@ -3200,7 +3205,7 @@
   "sentences": [
     "RequestPreviousCommandIssued",
     "RequestPreviousCommand Directive 를 받은 디바이스가 발생시키는 Event.",
-    "{\n  \"header\": {\n    \"namespace\": \"AudioPlayer\",\n    \"name\": \"RequestPreviousCommandIssued\",\n    \"messageId\": \"{{STRING}}\",\n    \"dialogRequestId\": \"{{STRING}}\",\n    \"version\": \"1.4\"\n  },\n  \"payload\": {\n    \"token\": \"{{STRING}}\",\n    \"offsetInMilliseconds\": {{LONG}},\n    \"playServiceId\": \"{{STRING}}\"\n  }\n}",
+    "{\n  \"header\": {\n    \"namespace\": \"AudioPlayer\",\n    \"name\": \"RequestPreviousCommandIssued\",\n    \"messageId\": \"{{STRING}}\",\n    \"dialogRequestId\": \"{{STRING}}\",\n    \"version\": \"1.7\"\n  },\n  \"payload\": {\n    \"token\": \"{{STRING}}\",\n    \"offsetInMilliseconds\": {{LONG}},\n    \"playServiceId\": \"{{STRING}}\"\n  }\n}",
     "token | string | Y | 현재 재생 중인 stream의 token",
     "offsetInMilliseconds | long | Y | 현재 재생 중인 stream의 offset 값"
   ]
@@ -3211,7 +3216,7 @@
   "sentences": [
     "RequestPauseCommandIssued",
     "RequestPauseCommand Directive 를 받은 디바이스가 발생시키는 Event.",
-    "{\n  \"header\": {\n    \"namespace\": \"AudioPlayer\",\n    \"name\": \"RequestPauseCommandIssued\",\n    \"messageId\": \"{{STRING}}\",\n    \"dialogRequestId\": \"{{STRING}}\",\n    \"version\": \"1.4\"\n  },\n  \"payload\": {\n    \"token\": \"{{STRING}}\",\n    \"offsetInMilliseconds\": {{LONG}},\n    \"playServiceId\": \"{{STRING}}\"\n  }\n}",
+    "{\n  \"header\": {\n    \"namespace\": \"AudioPlayer\",\n    \"name\": \"RequestPauseCommandIssued\",\n    \"messageId\": \"{{STRING}}\",\n    \"dialogRequestId\": \"{{STRING}}\",\n    \"version\": \"1.7\"\n  },\n  \"payload\": {\n    \"token\": \"{{STRING}}\",\n    \"offsetInMilliseconds\": {{LONG}},\n    \"playServiceId\": \"{{STRING}}\"\n  }\n}",
     "token | string | Y | 현재 재생 중인 stream의 token",
     "offsetInMilliseconds | long | Y | 현재 재생 중인 stream의 offset 값"
   ]
@@ -3222,7 +3227,7 @@
   "sentences": [
     "RequestStop CommandIssued",
     "RequestStopCommand Directive 를 받은 디바이스가 발생시키는 Event.",
-    "{\n  \"header\": {\n    \"namespace\": \"AudioPlayer\",\n    \"name\": \"RequestStopCommandIssued\",\n    \"messageId\": \"{{STRING}}\",\n    \"dialogRequestId\": \"{{STRING}}\",\n    \"version\": \"1.4\"\n  },\n  \"payload\": {\n    \"token\": \"{{STRING}}\",\n    \"offsetInMilliseconds\": {{LONG}},\n    \"playServiceId\": \"{{STRING}}\"\n  }\n}",
+    "{\n  \"header\": {\n    \"namespace\": \"AudioPlayer\",\n    \"name\": \"RequestStopCommandIssued\",\n    \"messageId\": \"{{STRING}}\",\n    \"dialogRequestId\": \"{{STRING}}\",\n    \"version\": \"1.7\"\n  },\n  \"payload\": {\n    \"token\": \"{{STRING}}\",\n    \"offsetInMilliseconds\": {{LONG}},\n    \"playServiceId\": \"{{STRING}}\"\n  }\n}",
     "token | string | Y | 현재 재생 중인 stream의 token",
     "offsetInMilliseconds | long | Y | 현재 재생 중인 stream의 offset 값"
   ]
@@ -3520,6 +3525,13 @@
   ]
 },
   {
+  "url": "/document-staging/nugu-play/create-plays-with-play-builder/before-start/backend-proxy",
+  "order": 16,
+  "indexes": [
+
+  ]
+},
+  {
   "url": "/document-staging/nugu-play/create-plays-with-play-builder/use-backend-proxy/backend-proxy",
   "order": 45,
   "indexes": [
@@ -3605,13 +3617,6 @@
     "이외의 모든 값 (“”, null 포함) - Play Builder > 외부 서버 연결 정보 > 연동 실패 시 Prompt 영역에서 지정한 기본(Default) Prompt를 보내 줍니다."
   ]
 }
-  ]
-},
-  {
-  "url": "/document-staging/nugu-play/create-plays-with-play-builder/before-start/backend-proxy",
-  "order": 16,
-  "indexes": [
-
   ]
 },
   {
@@ -4994,53 +4999,6 @@
   ]
 },
   {
-  "url": "/document-staging/nugu-sdk/platform/linux/component",
-  "order": 198,
-  "indexes": [
-    {
-  "title": "구성요소",
-  "hash": "",
-  "sentences": [
-    "구성요소"
-  ]
-},
-    {
-  "title": "구성요소 > 구성요소 목록",
-  "hash": "#구성요소-목록",
-  "sentences": [
-    "구성요소 목록",
-    "NUGU Component (Common)\n    \n      \nNuguClientKit: NUGU 서비스를 쉽게 개발할 수 있도록 도와주는 기능을 제공합니다.\n      \nNuguCapability: Capability를 쉽게 제어할 수 있는 API를 제공합니다.\n      \nNuguCore: NUGU 서비스 개발에 필요한 구성요소들을 제공합니다.",
-    "NuguClientKit: NUGU 서비스를 쉽게 개발할 수 있도록 도와주는 기능을 제공합니다.",
-    "NuguCapability: Capability를 쉽게 제어할 수 있는 API를 제공합니다.",
-    "NuguCore: NUGU 서비스 개발에 필요한 구성요소들을 제공합니다.",
-    "NUGU Component (Depends on platform)\n    \n      Plug-in: 디바이스 특성에 맞게 미디어 드라이버를 구현할 수 있는 API를 제공합니다.\n      \ngstreamer: plug-in에서 제공하는 player_driver를 이용해서 gstreamer를 통한 미디어 재생 기능을 제공합니다.\n      \nportaudio: plug-in에서 제공하는 recorder_driver, pcm_driver를 이용해서 portaudio를 통한 음성 데이터 입/출력 기능을 제공합니다.\n      \nopus: plug-in에서 제공하는 decoder_deriver를 이용해서 opus 코덱을 디코딩 합니다.",
-    "Plug-in: 디바이스 특성에 맞게 미디어 드라이버를 구현할 수 있는 API를 제공합니다.",
-    "gstreamer: plug-in에서 제공하는 player_driver를 이용해서 gstreamer를 통한 미디어 재생 기능을 제공합니다.",
-    "portaudio: plug-in에서 제공하는 recorder_driver, pcm_driver를 이용해서 portaudio를 통한 음성 데이터 입/출력 기능을 제공합니다.",
-    "opus: plug-in에서 제공하는 decoder_deriver를 이용해서 opus 코덱을 디코딩 합니다.",
-    "Vendor Component\n    \n      \nlibnugu-kwd: NUGU의 키워드를 감지하는 기능을 제공합니다.\n      \nlibnugu-epd: 발화의 시작과 끝을 감지하는 기능을 제공합니다.",
-    "libnugu-kwd: NUGU의 키워드를 감지하는 기능을 제공합니다.",
-    "libnugu-epd: 발화의 시작과 끝을 감지하는 기능을 제공합니다."
-  ]
-},
-    {
-  "title": "구성요소 > Github",
-  "hash": "#github",
-  "sentences": [
-    "Github"
-  ]
-},
-    {
-  "title": "구성요소 > NUGU",
-  "hash": "#nugu",
-  "sentences": [
-    "NUGU",
-    "nugu-linux | https://github.com/nugu-developers/nugu-linux"
-  ]
-}
-  ]
-},
-  {
   "url": "/document-staging/nugu-sdk/platform/ios/component",
   "order": 176,
   "indexes": [
@@ -5099,6 +5057,53 @@
     "External",
     "RxSwift | https://github.com/ReactiveX/RxSwift",
     "Lottie-iOS | https://github.com/airbnb/lottie-ios"
+  ]
+}
+  ]
+},
+  {
+  "url": "/document-staging/nugu-sdk/platform/linux/component",
+  "order": 198,
+  "indexes": [
+    {
+  "title": "구성요소",
+  "hash": "",
+  "sentences": [
+    "구성요소"
+  ]
+},
+    {
+  "title": "구성요소 > 구성요소 목록",
+  "hash": "#구성요소-목록",
+  "sentences": [
+    "구성요소 목록",
+    "NUGU Component (Common)\n    \n      \nNuguClientKit: NUGU 서비스를 쉽게 개발할 수 있도록 도와주는 기능을 제공합니다.\n      \nNuguCapability: Capability를 쉽게 제어할 수 있는 API를 제공합니다.\n      \nNuguCore: NUGU 서비스 개발에 필요한 구성요소들을 제공합니다.",
+    "NuguClientKit: NUGU 서비스를 쉽게 개발할 수 있도록 도와주는 기능을 제공합니다.",
+    "NuguCapability: Capability를 쉽게 제어할 수 있는 API를 제공합니다.",
+    "NuguCore: NUGU 서비스 개발에 필요한 구성요소들을 제공합니다.",
+    "NUGU Component (Depends on platform)\n    \n      Plug-in: 디바이스 특성에 맞게 미디어 드라이버를 구현할 수 있는 API를 제공합니다.\n      \ngstreamer: plug-in에서 제공하는 player_driver를 이용해서 gstreamer를 통한 미디어 재생 기능을 제공합니다.\n      \nportaudio: plug-in에서 제공하는 recorder_driver, pcm_driver를 이용해서 portaudio를 통한 음성 데이터 입/출력 기능을 제공합니다.\n      \nopus: plug-in에서 제공하는 decoder_deriver를 이용해서 opus 코덱을 디코딩 합니다.",
+    "Plug-in: 디바이스 특성에 맞게 미디어 드라이버를 구현할 수 있는 API를 제공합니다.",
+    "gstreamer: plug-in에서 제공하는 player_driver를 이용해서 gstreamer를 통한 미디어 재생 기능을 제공합니다.",
+    "portaudio: plug-in에서 제공하는 recorder_driver, pcm_driver를 이용해서 portaudio를 통한 음성 데이터 입/출력 기능을 제공합니다.",
+    "opus: plug-in에서 제공하는 decoder_deriver를 이용해서 opus 코덱을 디코딩 합니다.",
+    "Vendor Component\n    \n      \nlibnugu-kwd: NUGU의 키워드를 감지하는 기능을 제공합니다.\n      \nlibnugu-epd: 발화의 시작과 끝을 감지하는 기능을 제공합니다.",
+    "libnugu-kwd: NUGU의 키워드를 감지하는 기능을 제공합니다.",
+    "libnugu-epd: 발화의 시작과 끝을 감지하는 기능을 제공합니다."
+  ]
+},
+    {
+  "title": "구성요소 > Github",
+  "hash": "#github",
+  "sentences": [
+    "Github"
+  ]
+},
+    {
+  "title": "구성요소 > NUGU",
+  "hash": "#nugu",
+  "sentences": [
+    "NUGU",
+    "nugu-linux | https://github.com/nugu-developers/nugu-linux"
   ]
 }
   ]
@@ -5395,6 +5400,13 @@
   ]
 },
   {
+  "url": "/document-staging/nugu-sdk/platform/ios/dark-mode",
+  "order": 181,
+  "indexes": [
+
+  ]
+},
+  {
   "url": "/document-staging/nugu-sdk/platform/android/dark-mode",
   "order": 194,
   "indexes": [
@@ -5412,13 +5424,6 @@
     "에 어두운 테마를 적용 수 있습니다."
   ]
 }
-  ]
-},
-  {
-  "url": "/document-staging/nugu-sdk/platform/ios/dark-mode",
-  "order": 181,
-  "indexes": [
-
   ]
 },
   {

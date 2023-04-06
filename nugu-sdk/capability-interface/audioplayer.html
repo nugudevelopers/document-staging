@@ -8,7 +8,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
 
-<meta http-equiv="Last-Modified" content="2023-03-16 08:47:22 +0000">
+<meta http-equiv="Last-Modified" content="2023-04-06 01:14:47 +0000">
 <meta http-equiv="Title" content="Developers | Guide - AudioPlayer">
 <meta http-equiv="Description" content="Play 에서 전달하는 음원을 재생하기 위한 규격">
 <title>Developers | Guide - AudioPlayer</title>
@@ -17,9 +17,9 @@
 <meta property="og:title" content="Developers | Guide - AudioPlayer">
 <meta property="og:description" content="Play 에서 전달하는 음원을 재생하기 위한 규격">
 <meta property="og:image" content="https://nugudevelopers.github.io/document-staging/assets/img/logo-nugu.svg">
-<script type="text/javascript" src="/document-staging/_assets/base/jquery-3.6.0.min.js"></script><script type="text/javascript" src="/document-staging/_assets/base/navigation.js"></script><script type="text/javascript" src="/document-staging/_assets/base/tabs.js"></script><script type="text/javascript" src="/document-staging/_assets/base/code.js"></script><link rel="stylesheet" href="/document-staging/_assets/css/syntax.css">
-<link rel="stylesheet" href="/document-staging/_assets/css/style.css">
-<script type="text/javascript" src="/document-staging/_assets/js/main.js"></script><script type="text/javascript" src="/document-staging/_assets/js/jsrender.min.js"></script><script type="text/javascript" src="/document-staging/_assets/base/header.js"></script>
+<script type="text/javascript" src="/document-staging/_assets/base/jquery-3.6.0.min.js"></script><script type="text/javascript" src="/document-staging/_assets/base/navigation.js"></script><script type="text/javascript" src="/document-staging/_assets/base/code.js"></script><script type="text/javascript" src="/document-staging/_assets/base/tabs.js"></script><link rel="stylesheet" href="/document-staging/_assets/css/style.css">
+<link rel="stylesheet" href="/document-staging/_assets/css/syntax.css">
+<script type="text/javascript" src="/document-staging/_assets/js/jsrender.min.js"></script><script type="text/javascript" src="/document-staging/_assets/js/main.js"></script><script type="text/javascript" src="/document-staging/_assets/base/header.js"></script>
     <link rel="apple-touch-icon" sizes="57x57" href="/document-staging/_assets/favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/document-staging/_assets/favicon/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="/document-staging/_assets/favicon/apple-icon-72x72.png">
@@ -2406,7 +2406,7 @@
                     <h2 id="version">Version<a href="#version" class="go-hash hash-internal a-internal"></a><div class="copy-link" data-header-link="/document-staging/nugu-sdk/capability-interface/audioplayer#version"></div>
 </h2>
 
-<p>최신 버전은 1.6 입니다.</p>
+<p>최신 버전은 1.7 입니다.</p>
 
 <table>
   <thead>
@@ -2452,6 +2452,11 @@
       <td>2021.03.05</td>
       <td>AudioPlayer.Template1 의 lyrics 에 showButton 필드 추가<br>AudioPlayer.Template2 에 lyrics 필드 추가<br>AudioPlayer.Template2 에 subtitle1 필드 추가</td>
     </tr>
+    <tr>
+      <td>1.7</td>
+      <td>2023.04.05</td>
+      <td>context 에 playlistToken 필드 추가<br>UpdateMetadata 에 playlist 필드 추가</td>
+    </tr>
   </tbody>
 </table>
 
@@ -2468,17 +2473,17 @@
 
 <p>AudioPlayer interface 규격에 따른 디바이스의 동작 제어는 AudioPlayerAgent 가 처리합니다.</p>
 
-<div id="tabs-25" class="tabs">
+<div id="tabs-26" class="tabs">
     <ul class="tab-nav">
         
-            <li data-tabs-content-id="tab-content-26" class="active"><span>Android</span></li>
+            <li data-tabs-content-id="tab-content-27" class="active"><span>Android</span></li>
         
-            <li data-tabs-content-id="tab-content-36" class=""><span>iOS</span></li>
+            <li data-tabs-content-id="tab-content-37" class=""><span>iOS</span></li>
         
-            <li data-tabs-content-id="tab-content-46" class=""><span>Linux</span></li>
+            <li data-tabs-content-id="tab-content-47" class=""><span>Linux</span></li>
         
     </ul>
-    <div id="tab-content-26" class="tab-cont active">
+    <div id="tab-content-27" class="tab-cont active">
     
 <p>NuguAndroidClient instance 를 통해 AudioPlayerAgent instance 에 접근할 수 있습니다.</p>
 
@@ -2500,7 +2505,7 @@
 
 
 </div>
-<div id="tab-content-36" class="tab-cont">
+<div id="tab-content-37" class="tab-cont">
     
 <p>NuguClient instance 를 통해 AudioPlayerAgent instance 에 접근할 수 있습니다.</p>
 
@@ -2522,7 +2527,7 @@
 
 
 </div>
-<div id="tab-content-46" class="tab-cont">
+<div id="tab-content-47" class="tab-cont">
     
 <p><a href="https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1CapabilityFactory.html#a46d96b1bc96903f02905c92ba8794bf6">CapabilityFactory::makeCapability</a> 함수로 <a href="https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1IAudioPlayerHandler.html">AudioPlayerAgent</a> 를 생성하고 <a href="https://nugu-developers.github.io/nugu-linux/classNuguClientKit_1_1NuguClient.html">NuguClient</a> 에 추가해 주어야합니다.</p>
 
@@ -2562,17 +2567,17 @@
 
 <p><a href="#play" class="hash-internal a-internal">Play</a> directive 로 전달된 음원에 대한 재생 상태를 모니터링 할 수 있습니다.</p>
 
-<div id="tabs-66" class="tabs">
+<div id="tabs-67" class="tabs">
     <ul class="tab-nav">
         
-            <li data-tabs-content-id="tab-content-67" class="active"><span>Android</span></li>
+            <li data-tabs-content-id="tab-content-68" class="active"><span>Android</span></li>
         
-            <li data-tabs-content-id="tab-content-82" class=""><span>iOS</span></li>
+            <li data-tabs-content-id="tab-content-83" class=""><span>iOS</span></li>
         
-            <li data-tabs-content-id="tab-content-98" class=""><span>Linux</span></li>
+            <li data-tabs-content-id="tab-content-99" class=""><span>Linux</span></li>
         
     </ul>
-    <div id="tab-content-67" class="tab-cont active">
+    <div id="tab-content-68" class="tab-cont active">
     
 <p>AudioPlayerAgentInterface.Listener 를 추가합니다.</p>
 
@@ -2604,7 +2609,7 @@
 
 
 </div>
-<div id="tab-content-82" class="tab-cont">
+<div id="tab-content-83" class="tab-cont">
     
 <p>AudioPlayerAgentDelegate 를 추가합니다.</p>
 
@@ -2638,7 +2643,7 @@
 
 
 </div>
-<div id="tab-content-98" class="tab-cont">
+<div id="tab-content-99" class="tab-cont">
     
 <p><a href="https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1IAudioPlayerListener.html">IAudioPlayerListener</a> 를 추가합니다.</p>
 
@@ -2696,17 +2701,17 @@
 
 <p><a href="#audioitemmetadatatemplate---audioplayertemplate1" class="hash-internal a-internal">AudioPlayer.Template1</a> 에 포함된 가사의 화면은 <code class="language-plaintext highlighter-rouge">사용자 발화</code> 에 따라 <a href="#showlyrics" class="hash-internal a-internal">ShowLyrics</a>, <a href="#hidelyrics" class="hash-internal a-internal">HideLyrics</a>, <a href="#controllyricspage" class="hash-internal a-internal">ControlLyricsPage</a> directive 로 제어될 수 있습니다.</p>
 
-<div id="tabs-129" class="tabs">
+<div id="tabs-130" class="tabs">
     <ul class="tab-nav">
         
-            <li data-tabs-content-id="tab-content-130" class="active"><span>Android</span></li>
+            <li data-tabs-content-id="tab-content-131" class="active"><span>Android</span></li>
         
-            <li data-tabs-content-id="tab-content-166" class=""><span>iOS</span></li>
+            <li data-tabs-content-id="tab-content-167" class=""><span>iOS</span></li>
         
-            <li data-tabs-content-id="tab-content-192" class=""><span>Linux</span></li>
+            <li data-tabs-content-id="tab-content-193" class=""><span>Linux</span></li>
         
     </ul>
-    <div id="tab-content-130" class="tab-cont active">
+    <div id="tab-content-131" class="tab-cont active">
     
 <p>DisplayAggregatorInterface.Renderer 를 추가합니다.</p>
 
@@ -2782,7 +2787,7 @@
 
 
 </div>
-<div id="tab-content-166" class="tab-cont">
+<div id="tab-content-167" class="tab-cont">
     
 <p>AudioPlayerDisplayDelegate 를 추가합니다.</p>
 
@@ -2836,7 +2841,7 @@
 
 
 </div>
-<div id="tab-content-192" class="tab-cont">
+<div id="tab-content-193" class="tab-cont">
     
 <p><a href="https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1IAudioPlayerListener.html">IAudioPlayerListener</a> 를 추가합니다.</p>
 
@@ -2910,17 +2915,17 @@
 
 <p>PUI, GUI 등으로 사용자가 <a href="#nextcommandissued" class="hash-internal a-internal">다음</a>/<a href="#previouscommandissued" class="hash-internal a-internal">이전</a>/<a href="#favoritecommandissued" class="hash-internal a-internal">즐겨찾기</a>/<a href="#repeatcommandissued" class="hash-internal a-internal">반복</a>/<a href="#shufflecommandissued" class="hash-internal a-internal">셔플</a> 요청을 event 로 전달할 수 있습니다.</p>
 
-<div id="tabs-229" class="tabs">
+<div id="tabs-230" class="tabs">
     <ul class="tab-nav">
         
-            <li data-tabs-content-id="tab-content-230" class="active"><span>Android</span></li>
+            <li data-tabs-content-id="tab-content-231" class="active"><span>Android</span></li>
         
-            <li data-tabs-content-id="tab-content-247" class=""><span>iOS</span></li>
+            <li data-tabs-content-id="tab-content-248" class=""><span>iOS</span></li>
         
-            <li data-tabs-content-id="tab-content-264" class=""><span>Linux</span></li>
+            <li data-tabs-content-id="tab-content-265" class=""><span>Linux</span></li>
         
     </ul>
-    <div id="tab-content-230" class="tab-cont active">
+    <div id="tab-content-231" class="tab-cont active">
     
 <article class="code">
     
@@ -2958,7 +2963,7 @@
 
 
 </div>
-<div id="tab-content-247" class="tab-cont">
+<div id="tab-content-248" class="tab-cont">
     
 <article class="code">
     
@@ -2996,7 +3001,7 @@
 
 
 </div>
-<div id="tab-content-264" class="tab-cont">
+<div id="tab-content-265" class="tab-cont">
     
 <article class="code">
     
@@ -3059,16 +3064,18 @@
 9
 10
 11
+12
 </pre></td>
 <td class="rouge-code"><pre><span class="p">{</span><span class="w">
   </span><span class="nl">"AudioPlayer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.4"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"playServiceId"</span><span class="p">:{{</span><span class="err">STRING</span><span class="p">}}</span><span class="s2">",
-    "</span><span class="err">playerActivity</span><span class="s2">":{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.7"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"playerActivity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"offsetInMilliseconds"</span><span class="p">:</span><span class="w"> </span><span class="p">{{</span><span class="err">LONG</span><span class="p">}},</span><span class="w">
     </span><span class="nl">"durationInMilliseconds"</span><span class="p">:</span><span class="w"> </span><span class="p">{{</span><span class="err">LONG</span><span class="p">}},</span><span class="w">
-    </span><span class="nl">"lyricsVisible"</span><span class="p">:</span><span class="w"> </span><span class="p">{{</span><span class="err">BOOLEAN</span><span class="p">}}</span><span class="w">
+    </span><span class="nl">"lyricsVisible"</span><span class="p">:</span><span class="w"> </span><span class="p">{{</span><span class="err">BOOLEAN</span><span class="p">}},</span><span class="w">
+    </span><span class="nl">"playlistToken"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></pre></td>
@@ -3121,6 +3128,12 @@
       <td>boolean</td>
       <td>N</td>
       <td>AudioPlayer에서 가사 화면이 보여지고 있는지 여부<br>가사를 보여줄 수 없는 Device에서는 lyricsVisible를 보내지 않음</td>
+    </tr>
+    <tr>
+      <td>playlistToken</td>
+      <td>string</td>
+      <td>N</td>
+      <td>디바이스가 가지고 있는 playlist의 token<br>(playlist를 사용할 수 없는 Device에서는 playlistToken를 보내지 않음)</td>
     </tr>
   </tbody>
 </table>
@@ -3177,7 +3190,7 @@
     </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Play"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.1"</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.7"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
@@ -3337,6 +3350,7 @@
 40
 41
 42
+43
 </pre></td>
 <td class="rouge-code"><pre><span class="p">{</span><span class="w">
   </span><span class="nl">"metadata"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -3376,7 +3390,8 @@
           </span><span class="nl">"repeat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{String}}"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"shuffle"</span><span class="p">:</span><span class="w"> </span><span class="p">{{</span><span class="err">BOOLEAN</span><span class="p">}}</span><span class="w">
         </span><span class="p">}</span><span class="w">
-      </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"playlist"</span><span class="p">:</span><span class="w"> </span><span class="err">PlaylistObject</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -3563,6 +3578,18 @@
       <td>list of string</td>
       <td>N</td>
       <td>발화 도움말</td>
+    </tr>
+    <tr>
+      <td>template.floatingBanner</td>
+      <td>FloatingBannerObject</td>
+      <td>N</td>
+      <td>display interface 규격의 floatingBanner 참고</td>
+    </tr>
+    <tr>
+      <td>template.playlist</td>
+      <td>playlist object</td>
+      <td>N</td>
+      <td>재생목록</td>
     </tr>
   </tbody>
 </table>
@@ -3817,7 +3844,7 @@
     </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Stop"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.7"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="w">
@@ -3860,7 +3887,7 @@
     </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pause"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.7"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="w">
@@ -3907,6 +3934,7 @@
 21
 22
 23
+24
 </pre></td>
 <td class="rouge-code"><pre><span class="p">{</span><span class="w">
   </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -3914,7 +3942,7 @@
     </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UpdateMetadata"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.1"</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.7"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
@@ -3926,7 +3954,8 @@
             </span><span class="nl">"repeat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"shuffle"</span><span class="p">:</span><span class="w"> </span><span class="p">{{</span><span class="err">BOOLEAN</span><span class="p">}}</span><span class="w">
           </span><span class="p">}</span><span class="w">
-        </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"playlist"</span><span class="p">:</span><span class="w"> </span><span class="err">PlaylistObject</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
@@ -3964,6 +3993,12 @@
       <td>N</td>
       <td>AudioPlayer.Template1의 settings.shuffle 과 연동</td>
     </tr>
+    <tr>
+      <td>metadata.template.playlist</td>
+      <td>Playlist Object</td>
+      <td>N</td>
+      <td>PlaylistTemplate1<br>playlist.type은 수정 불가하며, 나머지 field들은 수정 가능</td>
+    </tr>
   </tbody>
 </table>
 
@@ -3999,7 +4034,7 @@
     </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ShowLyrics"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.1"</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.7"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="w">
@@ -4042,7 +4077,7 @@
     </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HideLyrics"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.1"</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.7"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="w">
@@ -4086,7 +4121,7 @@
     </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ControlLyricsPage"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.1"</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.7"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
@@ -4149,7 +4184,7 @@
     </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RequestPlayCommand"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.2"</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.7"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -4209,7 +4244,7 @@
     </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RequestResumeCommand"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.2"</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.7"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -4250,7 +4285,7 @@
     </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RequestNextCommand"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.2"</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.7"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -4291,7 +4326,7 @@
     </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RequestPreviousCommand"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.2"</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.7"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -4332,7 +4367,7 @@
     </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RequestPauseCommand"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.2"</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.7"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -4373,7 +4408,7 @@
     </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RequestStopCommand"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.2"</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.7"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -4417,7 +4452,7 @@
     </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PlaybackStarted"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.4"</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.7"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
@@ -4487,7 +4522,7 @@
     </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PlaybackPaused"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.4"</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.7"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
@@ -4557,7 +4592,7 @@
     </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PlaybackResumed"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.4"</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.7"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
@@ -4627,7 +4662,7 @@
     </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PlaybackFinished"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.4"</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.7"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
@@ -4698,7 +4733,7 @@
     </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PlaybackStopped"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.4"</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.7"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
@@ -4784,7 +4819,7 @@
     </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PlaybackFailed"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.4"</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.7"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
@@ -4901,7 +4936,7 @@
     </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ProgressReportDelayElapsed"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.4"</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.7"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
@@ -4976,7 +5011,7 @@
     </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ProgressReportIntervalElapsed"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.4"</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.7"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
@@ -5048,7 +5083,7 @@
     </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NextCommandIssued"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.7"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
@@ -5120,7 +5155,7 @@
     </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PreviousCommandIssued"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.7"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
@@ -5191,7 +5226,7 @@
     </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FavoriteCommandIssued"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.1"</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.7"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
@@ -5255,7 +5290,7 @@
     </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RepeatCommandIssued"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.1"</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.7"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
@@ -5319,7 +5354,7 @@
     </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ShuffleCommandIssued"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.1"</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.7"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
@@ -5384,7 +5419,7 @@
     </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ShowLyricsSucceeded"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.4"</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.7"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="w">
@@ -5429,7 +5464,7 @@
     </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ShowLyricsFailed"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.4"</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.7"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="w">
@@ -5474,7 +5509,7 @@
     </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HideLyricsSucceeded"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.4"</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.7"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="w">
@@ -5519,7 +5554,7 @@
     </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HideLyricsFailed"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.4"</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.7"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="w">
@@ -5565,7 +5600,7 @@
     </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ControlLyricsPageSucceeded"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.4"</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.7"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
@@ -5631,7 +5666,7 @@
     </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ControlLyricsPageFailed"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.4"</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.7"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
@@ -5690,7 +5725,7 @@
     </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RequestPlayCommandIssued"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.4"</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.7"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -5754,7 +5789,7 @@
     </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RequestResumeCommandIssued"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.4"</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.7"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
@@ -5828,7 +5863,7 @@
     </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RequestNextCommandIssued"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.4"</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.7"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
@@ -5902,7 +5937,7 @@
     </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RequestPreviousCommandIssued"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.4"</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.7"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
@@ -5976,7 +6011,7 @@
     </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RequestPauseCommandIssued"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.4"</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.7"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
@@ -6050,7 +6085,7 @@
     </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RequestStopCommandIssued"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.4"</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.7"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
@@ -6121,7 +6156,7 @@
     </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RequestCommandFailed"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.4"</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.7"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
