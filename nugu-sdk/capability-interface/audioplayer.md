@@ -7,7 +7,7 @@ description: Play 에서 전달하는 음원을 재생하기 위한 규격
 
 ## Version
 
-최신 버전은 1.6 입니다.
+최신 버전은 1.7 입니다.
 
 | Version | Date       | Description                                                                                                                                                                                                                                                                         |
 |---------|------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -18,6 +18,7 @@ description: Play 에서 전달하는 음원을 재생하기 위한 규격
 | 1.4     | 2020.08.12 | Context 에 playServiceId 추가                                                                                                                                                                                                                                                          |
 | 1.5     | 2020.12.09 | PlaybackStopped event 의 reason 필드 값에 대한 조건 수정                                                                                                                                                                                                                                       |
 | 1.6     | 2021.03.05 | AudioPlayer.Template1 의 lyrics 에 showButton 필드 추가<br/>AudioPlayer.Template2 에 lyrics 필드 추가<br/>AudioPlayer.Template2 에 subtitle1 필드 추가                                                                                                                                              |
+| 1.7     | 2023.04.05 | context 에 playlistToken 필드 추가<br/>UpdateMetadata 에 playlist 필드 추가 |
 
 ## State Diagram
 
@@ -292,13 +293,14 @@ audio_player_handler->requestShuffleCommand(false)
 ```json
 {
   "AudioPlayer": {
-    "version": "1.4",
-    "playServiceId":{{STRING}}",
-    "playerActivity":{{STRING}}",
+    "version": "1.7",
+    "playServiceId": "{{STRING}}",
+    "playerActivity": "{{STRING}}",
     "token": "{{STRING}}",
     "offsetInMilliseconds": {{LONG}},
     "durationInMilliseconds": {{LONG}},
-    "lyricsVisible": {{BOOLEAN}}
+    "lyricsVisible": {{BOOLEAN}},
+    "playlistToken": "{{STRING}}"
   }
 }
 ```
@@ -312,6 +314,7 @@ audio_player_handler->requestShuffleCommand(false)
 | offsetInMilliseconds    | long     | Y          | 현재 사용 중인 음원의 offset                                                               |
 | durationInMilliseconds  | long     | N          | 현재 사용 중인 음원의 전체 재생시간(알수 없으면 보내주지 않음)                                              |
 | lyricsVisible           | boolean  | N          | AudioPlayer에서 가사 화면이 보여지고 있는지 여부<br/>가사를 보여줄 수 없는 Device에서는 lyricsVisible를 보내지 않음 |
+| playlistToken           | string   | N          | 디바이스가 가지고 있는 playlist의 token<br/>(playlist를 사용할 수 없는 Device에서는 playlistToken를 보내지 않음) |
 
 ## Directives
 
@@ -327,7 +330,7 @@ audio_player_handler->requestShuffleCommand(false)
     "name": "Play",
     "messageId": "{{STRING}}",
     "dialogRequestId": "{{STRING}}",
-    "version": "1.1"
+    "version": "1.7"
   },
   "payload": {
     "playServiceId": "{{STRING}}",
@@ -409,7 +412,8 @@ audio_player_handler->requestShuffleCommand(false)
           "repeat": "{{String}}",
           "shuffle": {{BOOLEAN}}
         }
-      }
+      },
+      "playlist": PlaylistObject
     }
   }
 }
@@ -446,6 +450,8 @@ audio_player_handler->requestShuffleCommand(false)
 | template.content.settings.repeat            | string              | N         | 재생 목록에 대한 반복 설정<br/>- **ALL** : 전곡 반복<br/>- **ONE** : 한곡 반복<br/>- **NONE** : 반복 없음                   |
 | template.content.settings.shuffle           | boolean             | N         | 재생 목록의 음원을 임의의 순서로 재생할지 여부                                                                           |
 | template.grammarGuide                       | list of string      | N         | 발화 도움말                                                                                               |
+| template.floatingBanner                       | FloatingBannerObject | N         | display interface 규격의 floatingBanner 참고 |
+| template.playlist                       | playlist object	| N         | 재생목록 |
 
 #### audioItem.metadata.template - AudioPlayer.Template2
 
@@ -521,7 +527,7 @@ audio_player_handler->requestShuffleCommand(false)
     "name": "Stop",
     "messageId": "{{STRING}}",
     "dialogRequestId": "{{STRING}}",
-    "version": "1.0"
+    "version": "1.7"
   },
   "payload": {
     "playServiceId": "{{STRING}}"
@@ -542,7 +548,7 @@ audio_player_handler->requestShuffleCommand(false)
     "name": "Pause",
     "messageId": "{{STRING}}",
     "dialogRequestId": "{{STRING}}",
-    "version": "1.0"
+    "version": "1.7"
   },
   "payload": {
     "playServiceId": "{{STRING}}"
@@ -563,7 +569,7 @@ audio_player_handler->requestShuffleCommand(false)
     "name": "UpdateMetadata",
     "messageId": "{{STRING}}",
     "dialogRequestId": "{{STRING}}",
-    "version": "1.1"
+    "version": "1.7"
   },
   "payload": {
     "playServiceId": "{{STRING}}",
@@ -575,7 +581,8 @@ audio_player_handler->requestShuffleCommand(false)
             "repeat": "{{STRING}}",
             "shuffle": {{BOOLEAN}}
           }
-        }
+        },
+        "playlist": PlaylistObject
       }
     }
   }
@@ -588,6 +595,7 @@ audio_player_handler->requestShuffleCommand(false)
 | metadata.template.content.settings.favorite | boolean | N          | AudioPlayer.Template1의 settings.favorite 와 연동                                                                  |
 | metadata.template.content.settings.repeat   | string  | N          | AudioPlayer.Template1의 settings.repeat 과 연동<br/>- **ALL** : 전곡 반복<br/>- **ONE** : 한곡 반복<br/>- **NONE** : 반복 없음 |
 | metadata.template.content.settings.shuffle  | boolean | N          | AudioPlayer.Template1의 settings.shuffle 과 연동                                                                   |
+| metadata.template.playlist | Playlist Object	| N          | PlaylistTemplate1<br/>playlist.type은 수정 불가하며, 나머지 field들은 수정 가능 |
 
 ### ShowLyrics
 
@@ -601,7 +609,7 @@ audio_player_handler->requestShuffleCommand(false)
     "name": "ShowLyrics",
     "messageId": "{{STRING}}",
     "dialogRequestId": "{{STRING}}",
-    "version": "1.1"
+    "version": "1.7"
   },
   "payload": {
     "playServiceId": "{{STRING}}"
@@ -622,7 +630,7 @@ audio_player_handler->requestShuffleCommand(false)
     "name": "HideLyrics",
     "messageId": "{{STRING}}",
     "dialogRequestId": "{{STRING}}",
-    "version": "1.1"
+    "version": "1.7"
   },
   "payload": {
     "playServiceId": "{{STRING}}"
@@ -643,7 +651,7 @@ audio_player_handler->requestShuffleCommand(false)
     "name": "ControlLyricsPage",
     "messageId": "{{STRING}}",
     "dialogRequestId": "{{STRING}}",
-    "version": "1.1"
+    "version": "1.7"
   },
   "payload": {
     "playServiceId": "{{STRING}}",
@@ -669,7 +677,7 @@ audio_player_handler->requestShuffleCommand(false)
     "name": "RequestPlayCommand",
     "messageId": "{{STRING}}",
     "dialogRequestId": "{{STRING}}",
-    "version": "1.2"
+    "version": "1.7"
   },
   "payload": {}
 }
@@ -692,7 +700,7 @@ audio_player_handler->requestShuffleCommand(false)
     "name": "RequestResumeCommand",
     "messageId": "{{STRING}}",
     "dialogRequestId": "{{STRING}}",
-    "version": "1.2"
+    "version": "1.7"
   },
   "payload": {}
 }
@@ -711,7 +719,7 @@ audio_player_handler->requestShuffleCommand(false)
     "name": "RequestNextCommand",
     "messageId": "{{STRING}}",
     "dialogRequestId": "{{STRING}}",
-    "version": "1.2"
+    "version": "1.7"
   },
   "payload": {}
 }
@@ -730,7 +738,7 @@ audio_player_handler->requestShuffleCommand(false)
     "name": "RequestPreviousCommand",
     "messageId": "{{STRING}}",
     "dialogRequestId": "{{STRING}}",
-    "version": "1.2"
+    "version": "1.7"
   },
   "payload": {}
 }
@@ -749,7 +757,7 @@ audio_player_handler->requestShuffleCommand(false)
     "name": "RequestPauseCommand",
     "messageId": "{{STRING}}",
     "dialogRequestId": "{{STRING}}",
-    "version": "1.2"
+    "version": "1.7"
   },
   "payload": {}
 }
@@ -768,7 +776,7 @@ audio_player_handler->requestShuffleCommand(false)
     "name": "RequestStopCommand",
     "messageId": "{{STRING}}",
     "dialogRequestId": "{{STRING}}",
-    "version": "1.2"
+    "version": "1.7"
   },
   "payload": {}
 }
@@ -787,7 +795,7 @@ audio_player_handler->requestShuffleCommand(false)
     "name": "PlaybackStarted",
     "messageId": "{{STRING}}",
     "dialogRequestId": "{{STRING}}",
-    "version": "1.4"
+    "version": "1.7"
   },
   "payload": {
     "token": "{{STRING}}",
@@ -813,7 +821,7 @@ audio_player_handler->requestShuffleCommand(false)
     "name": "PlaybackPaused",
     "messageId": "{{STRING}}",
     "dialogRequestId": "{{STRING}}",
-    "version": "1.4"
+    "version": "1.7"
   },
   "payload": {
     "token": "{{STRING}}",
@@ -839,7 +847,7 @@ audio_player_handler->requestShuffleCommand(false)
     "name": "PlaybackResumed",
     "messageId": "{{STRING}}",
     "dialogRequestId": "{{STRING}}",
-    "version": "1.4"
+    "version": "1.7"
   },
   "payload": {
     "token": "{{STRING}}",
@@ -865,7 +873,7 @@ audio_player_handler->requestShuffleCommand(false)
     "name": "PlaybackFinished",
     "messageId": "{{STRING}}",
     "dialogRequestId": "{{STRING}}",
-    "version": "1.4"
+    "version": "1.7"
   },
   "payload": {
     "token": "{{STRING}}",
@@ -891,7 +899,7 @@ audio_player_handler->requestShuffleCommand(false)
     "name": "PlaybackStopped",
     "messageId": "{{STRING}}",
     "dialogRequestId": "{{STRING}}",
-    "version": "1.4"
+    "version": "1.7"
   },
   "payload": {
     "token": "{{STRING}}",
@@ -919,7 +927,7 @@ audio_player_handler->requestShuffleCommand(false)
     "name": "PlaybackFailed",
     "messageId": "{{STRING}}",
     "dialogRequestId": "{{STRING}}",
-    "version": "1.4"
+    "version": "1.7"
   },
   "payload": {
     "token": "{{STRING}}",
@@ -962,7 +970,7 @@ audio_player_handler->requestShuffleCommand(false)
     "name": "ProgressReportDelayElapsed",
     "messageId": "{{STRING}}",
     "dialogRequestId": "{{STRING}}",
-    "version": "1.4"
+    "version": "1.7"
   },
   "payload": {
     "token": "{{STRING}}",
@@ -991,7 +999,7 @@ audio_player_handler->requestShuffleCommand(false)
     "name": "ProgressReportIntervalElapsed",
     "messageId": "{{STRING}}",
     "dialogRequestId": "{{STRING}}",
-    "version": "1.4"
+    "version": "1.7"
   },
   "payload": {
     "token": "{{STRING}}",
@@ -1019,7 +1027,7 @@ audio_player_handler->requestShuffleCommand(false)
     "name": "NextCommandIssued",
     "messageId": "{{STRING}}",
     "dialogRequestId": "{{STRING}}",
-    "version": "1.0"
+    "version": "1.7"
   },
   "payload": {
     "playServiceId": "{{STRING}}",
@@ -1047,7 +1055,7 @@ audio_player_handler->requestShuffleCommand(false)
     "name": "PreviousCommandIssued",
     "messageId": "{{STRING}}",
     "dialogRequestId": "{{STRING}}",
-    "version": "1.0"
+    "version": "1.7"
   },
   "payload": {
     "playServiceId": "{{STRING}}",
@@ -1075,7 +1083,7 @@ audio_player_handler->requestShuffleCommand(false)
     "name": "FavoriteCommandIssued",
     "messageId": "{{STRING}}",
     "dialogRequestId": "{{STRING}}",
-    "version": "1.1"
+    "version": "1.7"
   },
   "payload": {
     "playServiceId": "{{STRING}}",
@@ -1101,7 +1109,7 @@ audio_player_handler->requestShuffleCommand(false)
     "name": "RepeatCommandIssued",
     "messageId": "{{STRING}}",
     "dialogRequestId": "{{STRING}}",
-    "version": "1.1"
+    "version": "1.7"
   },
   "payload": {
     "playServiceId": "{{STRING}}",
@@ -1127,7 +1135,7 @@ audio_player_handler->requestShuffleCommand(false)
     "name": "ShuffleCommandIssued",
     "messageId": "{{STRING}}",
     "dialogRequestId": "{{STRING}}",
-    "version": "1.1"
+    "version": "1.7"
   },
   "payload": {
     "playServiceId": "{{STRING}}",
@@ -1153,7 +1161,7 @@ audio_player_handler->requestShuffleCommand(false)
     "name": "ShowLyricsSucceeded",
     "messageId": "{{STRING}}",
     "dialogRequestId": "{{STRING}}",
-    "version": "1.4"
+    "version": "1.7"
   },
   "payload": {
     "playServiceId": "{{STRING}}"
@@ -1174,7 +1182,7 @@ audio_player_handler->requestShuffleCommand(false)
     "name": "ShowLyricsFailed",
     "messageId": "{{STRING}}",
     "dialogRequestId": "{{STRING}}",
-    "version": "1.4"
+    "version": "1.7"
   },
   "payload": {
     "playServiceId": "{{STRING}}"
@@ -1195,7 +1203,7 @@ audio_player_handler->requestShuffleCommand(false)
     "name": "HideLyricsSucceeded",
     "messageId": "{{STRING}}",
     "dialogRequestId": "{{STRING}}",
-    "version": "1.4"
+    "version": "1.7"
   },
   "payload": {
     "playServiceId": "{{STRING}}"
@@ -1216,7 +1224,7 @@ audio_player_handler->requestShuffleCommand(false)
     "name": "HideLyricsFailed",
     "messageId": "{{STRING}}",
     "dialogRequestId": "{{STRING}}",
-    "version": "1.4"
+    "version": "1.7"
   },
   "payload": {
     "playServiceId": "{{STRING}}"
@@ -1237,7 +1245,7 @@ audio_player_handler->requestShuffleCommand(false)
     "name": "ControlLyricsPageSucceeded",
     "messageId": "{{STRING}}",
     "dialogRequestId": "{{STRING}}",
-    "version": "1.4"
+    "version": "1.7"
   },
   "payload": {
     "playServiceId": "{{STRING}}",
@@ -1263,7 +1271,7 @@ audio_player_handler->requestShuffleCommand(false)
     "name": "ControlLyricsPageFailed",
     "messageId": "{{STRING}}",
     "dialogRequestId": "{{STRING}}",
-    "version": "1.4"
+    "version": "1.7"
   },
   "payload": {
     "playServiceId": "{{STRING}}",
@@ -1287,7 +1295,7 @@ audio_player_handler->requestShuffleCommand(false)
     "name": "RequestPlayCommandIssued",
     "messageId": "{{STRING}}",
     "dialogRequestId": "{{STRING}}",
-    "version": "1.4"
+    "version": "1.7"
   },
   "payload": {}
 }
@@ -1310,7 +1318,7 @@ audio_player_handler->requestShuffleCommand(false)
     "name": "RequestResumeCommandIssued",
     "messageId": "{{STRING}}",
     "dialogRequestId": "{{STRING}}",
-    "version": "1.4"
+    "version": "1.7"
   },
   "payload": {
     "token": "{{STRING}}",
@@ -1338,7 +1346,7 @@ audio_player_handler->requestShuffleCommand(false)
     "name": "RequestNextCommandIssued",
     "messageId": "{{STRING}}",
     "dialogRequestId": "{{STRING}}",
-    "version": "1.4"
+    "version": "1.7"
   },
   "payload": {
     "token": "{{STRING}}",
@@ -1366,7 +1374,7 @@ audio_player_handler->requestShuffleCommand(false)
     "name": "RequestPreviousCommandIssued",
     "messageId": "{{STRING}}",
     "dialogRequestId": "{{STRING}}",
-    "version": "1.4"
+    "version": "1.7"
   },
   "payload": {
     "token": "{{STRING}}",
@@ -1394,7 +1402,7 @@ audio_player_handler->requestShuffleCommand(false)
     "name": "RequestPauseCommandIssued",
     "messageId": "{{STRING}}",
     "dialogRequestId": "{{STRING}}",
-    "version": "1.4"
+    "version": "1.7"
   },
   "payload": {
     "token": "{{STRING}}",
@@ -1422,7 +1430,7 @@ audio_player_handler->requestShuffleCommand(false)
     "name": "RequestStopCommandIssued",
     "messageId": "{{STRING}}",
     "dialogRequestId": "{{STRING}}",
-    "version": "1.4"
+    "version": "1.7"
   },
   "payload": {
     "token": "{{STRING}}",
@@ -1448,7 +1456,7 @@ audio_player_handler->requestShuffleCommand(false)
     "name": "RequestCommandFailed",
     "messageId": "{{STRING}}",
     "dialogRequestId": "{{STRING}}",
-    "version": "1.4"
+    "version": "1.7"
   },
   "payload": {
     "error": {
