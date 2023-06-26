@@ -9,14 +9,14 @@ depth_order: 8
 \1. `transportFactory`에 `GrpcTransportFactory`를 생성합니다.
 \2. `NuguServerInfo`의 builder 이용하여`DeviceGW` 값은 환경에 맞게 주소를 변경합니다. 아래 심사용과 테스트용 주소가 준비되어 있습니다.
 
-   * 심사용 : `review-dggprc.sktnugu.com` 
-   * 테스트용 : `test-dggprc.sktnugu.com`
+   * 심사용 : `review-dggrpc.sktnugu.com` 
+   * 테스트용 : `test-dggrpc.sktnugu.com`
 
 {% code %}
 ```kotlin
 val transport = GrpcTransportFactory(
    NuguServerInfo.Builder()
-       .deviceGW("review-dggprc.sktnugu.com")
+       .deviceGW("review-dggrpc.sktnugu.com")
        .build()
 )
 ```
