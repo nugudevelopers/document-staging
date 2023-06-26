@@ -3525,13 +3525,6 @@
   ]
 },
   {
-  "url": "/document-staging/nugu-play/create-plays-with-play-builder/before-start/backend-proxy",
-  "order": 16,
-  "indexes": [
-
-  ]
-},
-  {
   "url": "/document-staging/nugu-play/create-plays-with-play-builder/use-backend-proxy/backend-proxy",
   "order": 45,
   "indexes": [
@@ -3620,8 +3613,15 @@
   ]
 },
   {
-  "url": "/document-staging/nugu-sdk/platform/ios/background",
-  "order": 177,
+  "url": "/document-staging/nugu-play/create-plays-with-play-builder/before-start/backend-proxy",
+  "order": 16,
+  "indexes": [
+
+  ]
+},
+  {
+  "url": "/document-staging/nugu-sdk/platform/android/background",
+  "order": 187,
   "indexes": [
     {
   "title": "Background 동작 처리",
@@ -3635,8 +3635,8 @@
   ]
 },
   {
-  "url": "/document-staging/nugu-sdk/platform/android/background",
-  "order": 187,
+  "url": "/document-staging/nugu-sdk/platform/ios/background",
+  "order": 177,
   "indexes": [
     {
   "title": "Background 동작 처리",
@@ -4492,6 +4492,38 @@
   ]
 },
   {
+  "url": "/document-staging/nugu-play/create-plays-with-play-builder/before-start/capability-interface",
+  "order": 17,
+  "indexes": [
+    {
+  "title": "Capability interface",
+  "hash": "",
+  "sentences": [
+    "Capability interface",
+    "디바이스의 여러 기능을 제어하기 위한 규격을 Capability Interface라 합니다. 응답을 재생하는 기능 외에 오디오 재생, 무드등 제어, 음량 조절 등 다양한 기능을 제어할 수 있습니다.",
+    "현재는 디바이스에서 오디오 스트리밍을 통해 음악을 재생하기 위한 AudioPlayer Interface와  NUGU nemo, Btv, T전화 등 Display Device에서 Display template를 사용할 수 있는 Display Interface 지원됩니다. Play를 생성하는 시점에 Play에서 지원하고자 하는 Capability Interface를 선택하면 사용할 수 있습니다.",
+    "각 Capability Interface는 다음의 세 요소로 구성되어 있습니다."
+  ]
+},
+    {
+  "title": "Capability interface > Built-in Intent",
+  "hash": "#built-in-intent",
+  "sentences": [
+    "Built-in Intent",
+    "기능을 제어하기 위해 기본으로 제공하는 Intent입니다. 사용자가 직접 정의하지 않아도 사용할 수 있습니다."
+  ]
+},
+    {
+  "title": "Capability interface > Directive",
+  "hash": "#directive",
+  "sentences": [
+    "Directive",
+    "디바이스의 기능을 제어하기 위해 Play에서 디바이스로 전달하는 명령어입니다."
+  ]
+}
+  ]
+},
+  {
   "url": "/document-staging/nugu-sdk/capability-interface",
   "order": 149,
   "indexes": [
@@ -4583,38 +4615,6 @@
     "그 외 event\n    \n      해당 capability interface 의 context\n      다른 capability interface 의 context 중 version 만 포함",
     "해당 capability interface 의 context",
     "다른 capability interface 의 context 중 version 만 포함"
-  ]
-}
-  ]
-},
-  {
-  "url": "/document-staging/nugu-play/create-plays-with-play-builder/before-start/capability-interface",
-  "order": 17,
-  "indexes": [
-    {
-  "title": "Capability interface",
-  "hash": "",
-  "sentences": [
-    "Capability interface",
-    "디바이스의 여러 기능을 제어하기 위한 규격을 Capability Interface라 합니다. 응답을 재생하는 기능 외에 오디오 재생, 무드등 제어, 음량 조절 등 다양한 기능을 제어할 수 있습니다.",
-    "현재는 디바이스에서 오디오 스트리밍을 통해 음악을 재생하기 위한 AudioPlayer Interface와  NUGU nemo, Btv, T전화 등 Display Device에서 Display template를 사용할 수 있는 Display Interface 지원됩니다. Play를 생성하는 시점에 Play에서 지원하고자 하는 Capability Interface를 선택하면 사용할 수 있습니다.",
-    "각 Capability Interface는 다음의 세 요소로 구성되어 있습니다."
-  ]
-},
-    {
-  "title": "Capability interface > Built-in Intent",
-  "hash": "#built-in-intent",
-  "sentences": [
-    "Built-in Intent",
-    "기능을 제어하기 위해 기본으로 제공하는 Intent입니다. 사용자가 직접 정의하지 않아도 사용할 수 있습니다."
-  ]
-},
-    {
-  "title": "Capability interface > Directive",
-  "hash": "#directive",
-  "sentences": [
-    "Directive",
-    "디바이스의 기능을 제어하기 위해 Play에서 디바이스로 전달하는 명령어입니다."
   ]
 }
   ]
@@ -5400,13 +5400,6 @@
   ]
 },
   {
-  "url": "/document-staging/nugu-sdk/platform/ios/dark-mode",
-  "order": 181,
-  "indexes": [
-
-  ]
-},
-  {
   "url": "/document-staging/nugu-sdk/platform/android/dark-mode",
   "order": 194,
   "indexes": [
@@ -5424,6 +5417,13 @@
     "에 어두운 테마를 적용 수 있습니다."
   ]
 }
+  ]
+},
+  {
+  "url": "/document-staging/nugu-sdk/platform/ios/dark-mode",
+  "order": 181,
+  "indexes": [
+
   ]
 },
   {
@@ -15828,8 +15828,8 @@
   ]
 },
   {
-  "url": "/document-staging/nugu-sdk/platform/ios/testing_sdk_integration",
-  "order": 182,
+  "url": "/document-staging/nugu-sdk/platform/android/testing_sdk_integration",
+  "order": 195,
   "indexes": [
     {
   "title": "테스트 환경 설정",
@@ -15841,8 +15841,8 @@
   ]
 },
   {
-  "url": "/document-staging/nugu-sdk/platform/android/testing_sdk_integration",
-  "order": 195,
+  "url": "/document-staging/nugu-sdk/platform/ios/testing_sdk_integration",
+  "order": 182,
   "indexes": [
     {
   "title": "테스트 환경 설정",

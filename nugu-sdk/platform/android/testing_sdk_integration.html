@@ -8,15 +8,15 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
 
-<meta http-equiv="Last-Modified" content="2023-04-06 01:14:47 +0000">
+<meta http-equiv="Last-Modified" content="2023-06-26 23:10:34 +0000">
 <meta http-equiv="Title" content="Developers | Guide - 테스트 환경 설정">
 <title>Developers | Guide - 테스트 환경 설정</title>
 <meta property="og:url" content="https://nugudevelopers.github.io/document-staging/nugu-sdk/platform/android/testing_sdk_integration">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Developers | Guide - 테스트 환경 설정">
 <meta property="og:image" content="https://nugudevelopers.github.io/document-staging/assets/img/logo-nugu.svg">
-<script type="text/javascript" src="/document-staging/_assets/base/jquery-3.6.0.min.js"></script><script type="text/javascript" src="/document-staging/_assets/base/navigation.js"></script><script type="text/javascript" src="/document-staging/_assets/base/code.js"></script><script type="text/javascript" src="/document-staging/_assets/base/tabs.js"></script><link rel="stylesheet" href="/document-staging/_assets/css/style.css">
-<link rel="stylesheet" href="/document-staging/_assets/css/syntax.css">
+<script type="text/javascript" src="/document-staging/_assets/base/jquery-3.6.0.min.js"></script><script type="text/javascript" src="/document-staging/_assets/base/navigation.js"></script><script type="text/javascript" src="/document-staging/_assets/base/code.js"></script><script type="text/javascript" src="/document-staging/_assets/base/tabs.js"></script><link rel="stylesheet" href="/document-staging/_assets/css/syntax.css">
+<link rel="stylesheet" href="/document-staging/_assets/css/style.css">
 <script type="text/javascript" src="/document-staging/_assets/js/jsrender.min.js"></script><script type="text/javascript" src="/document-staging/_assets/js/main.js"></script><script type="text/javascript" src="/document-staging/_assets/base/header.js"></script>
     <link rel="apple-touch-icon" sizes="57x57" href="/document-staging/_assets/favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/document-staging/_assets/favicon/apple-icon-60x60.png">
@@ -2404,9 +2404,9 @@
 ⁣2. <code class="language-plaintext highlighter-rouge">NuguServerInfo</code>의 builder 이용하여<code class="language-plaintext highlighter-rouge">DeviceGW</code> 값은 환경에 맞게 주소를 변경합니다. 아래 심사용과 테스트용 주소가 준비되어 있습니다.</p>
 
 <ul>
-  <li>심사용 : <code class="language-plaintext highlighter-rouge">review-dggprc.sktnugu.com</code>
+  <li>심사용 : <code class="language-plaintext highlighter-rouge">review-dggrpc.sktnugu.com</code>
 </li>
-  <li>테스트용 : <code class="language-plaintext highlighter-rouge">test-dggprc.sktnugu.com</code>
+  <li>테스트용 : <code class="language-plaintext highlighter-rouge">test-dggrpc.sktnugu.com</code>
 </li>
 </ul>
 
@@ -2426,7 +2426,7 @@
 </pre></td>
 <td class="rouge-code"><pre><span class="kd">val</span> <span class="py">transport</span> <span class="p">=</span> <span class="nc">GrpcTransportFactory</span><span class="p">(</span>
    <span class="nc">NuguServerInfo</span><span class="p">.</span><span class="nc">Builder</span><span class="p">()</span>
-       <span class="p">.</span><span class="nf">deviceGW</span><span class="p">(</span><span class="s">"review-dggprc.sktnugu.com"</span><span class="p">)</span>
+       <span class="p">.</span><span class="nf">deviceGW</span><span class="p">(</span><span class="s">"review-dggrpc.sktnugu.com"</span><span class="p">)</span>
        <span class="p">.</span><span class="nf">build</span><span class="p">()</span>
 <span class="p">)</span>
 </pre></td>
