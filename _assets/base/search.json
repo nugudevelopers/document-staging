@@ -4999,6 +4999,53 @@
   ]
 },
   {
+  "url": "/document-staging/nugu-sdk/platform/linux/component",
+  "order": 198,
+  "indexes": [
+    {
+  "title": "구성요소",
+  "hash": "",
+  "sentences": [
+    "구성요소"
+  ]
+},
+    {
+  "title": "구성요소 > 구성요소 목록",
+  "hash": "#구성요소-목록",
+  "sentences": [
+    "구성요소 목록",
+    "NUGU Component (Common)\n    \n      \nNuguClientKit: NUGU 서비스를 쉽게 개발할 수 있도록 도와주는 기능을 제공합니다.\n      \nNuguCapability: Capability를 쉽게 제어할 수 있는 API를 제공합니다.\n      \nNuguCore: NUGU 서비스 개발에 필요한 구성요소들을 제공합니다.",
+    "NuguClientKit: NUGU 서비스를 쉽게 개발할 수 있도록 도와주는 기능을 제공합니다.",
+    "NuguCapability: Capability를 쉽게 제어할 수 있는 API를 제공합니다.",
+    "NuguCore: NUGU 서비스 개발에 필요한 구성요소들을 제공합니다.",
+    "NUGU Component (Depends on platform)\n    \n      Plug-in: 디바이스 특성에 맞게 미디어 드라이버를 구현할 수 있는 API를 제공합니다.\n      \ngstreamer: plug-in에서 제공하는 player_driver를 이용해서 gstreamer를 통한 미디어 재생 기능을 제공합니다.\n      \nportaudio: plug-in에서 제공하는 recorder_driver, pcm_driver를 이용해서 portaudio를 통한 음성 데이터 입/출력 기능을 제공합니다.\n      \nopus: plug-in에서 제공하는 decoder_deriver를 이용해서 opus 코덱을 디코딩 합니다.",
+    "Plug-in: 디바이스 특성에 맞게 미디어 드라이버를 구현할 수 있는 API를 제공합니다.",
+    "gstreamer: plug-in에서 제공하는 player_driver를 이용해서 gstreamer를 통한 미디어 재생 기능을 제공합니다.",
+    "portaudio: plug-in에서 제공하는 recorder_driver, pcm_driver를 이용해서 portaudio를 통한 음성 데이터 입/출력 기능을 제공합니다.",
+    "opus: plug-in에서 제공하는 decoder_deriver를 이용해서 opus 코덱을 디코딩 합니다.",
+    "Vendor Component\n    \n      \nlibnugu-kwd: NUGU의 키워드를 감지하는 기능을 제공합니다.\n      \nlibnugu-epd: 발화의 시작과 끝을 감지하는 기능을 제공합니다.",
+    "libnugu-kwd: NUGU의 키워드를 감지하는 기능을 제공합니다.",
+    "libnugu-epd: 발화의 시작과 끝을 감지하는 기능을 제공합니다."
+  ]
+},
+    {
+  "title": "구성요소 > Github",
+  "hash": "#github",
+  "sentences": [
+    "Github"
+  ]
+},
+    {
+  "title": "구성요소 > NUGU",
+  "hash": "#nugu",
+  "sentences": [
+    "NUGU",
+    "nugu-linux | https://github.com/nugu-developers/nugu-linux"
+  ]
+}
+  ]
+},
+  {
   "url": "/document-staging/nugu-sdk/platform/ios/component",
   "order": 176,
   "indexes": [
@@ -5057,53 +5104,6 @@
     "External",
     "RxSwift | https://github.com/ReactiveX/RxSwift",
     "Lottie-iOS | https://github.com/airbnb/lottie-ios"
-  ]
-}
-  ]
-},
-  {
-  "url": "/document-staging/nugu-sdk/platform/linux/component",
-  "order": 198,
-  "indexes": [
-    {
-  "title": "구성요소",
-  "hash": "",
-  "sentences": [
-    "구성요소"
-  ]
-},
-    {
-  "title": "구성요소 > 구성요소 목록",
-  "hash": "#구성요소-목록",
-  "sentences": [
-    "구성요소 목록",
-    "NUGU Component (Common)\n    \n      \nNuguClientKit: NUGU 서비스를 쉽게 개발할 수 있도록 도와주는 기능을 제공합니다.\n      \nNuguCapability: Capability를 쉽게 제어할 수 있는 API를 제공합니다.\n      \nNuguCore: NUGU 서비스 개발에 필요한 구성요소들을 제공합니다.",
-    "NuguClientKit: NUGU 서비스를 쉽게 개발할 수 있도록 도와주는 기능을 제공합니다.",
-    "NuguCapability: Capability를 쉽게 제어할 수 있는 API를 제공합니다.",
-    "NuguCore: NUGU 서비스 개발에 필요한 구성요소들을 제공합니다.",
-    "NUGU Component (Depends on platform)\n    \n      Plug-in: 디바이스 특성에 맞게 미디어 드라이버를 구현할 수 있는 API를 제공합니다.\n      \ngstreamer: plug-in에서 제공하는 player_driver를 이용해서 gstreamer를 통한 미디어 재생 기능을 제공합니다.\n      \nportaudio: plug-in에서 제공하는 recorder_driver, pcm_driver를 이용해서 portaudio를 통한 음성 데이터 입/출력 기능을 제공합니다.\n      \nopus: plug-in에서 제공하는 decoder_deriver를 이용해서 opus 코덱을 디코딩 합니다.",
-    "Plug-in: 디바이스 특성에 맞게 미디어 드라이버를 구현할 수 있는 API를 제공합니다.",
-    "gstreamer: plug-in에서 제공하는 player_driver를 이용해서 gstreamer를 통한 미디어 재생 기능을 제공합니다.",
-    "portaudio: plug-in에서 제공하는 recorder_driver, pcm_driver를 이용해서 portaudio를 통한 음성 데이터 입/출력 기능을 제공합니다.",
-    "opus: plug-in에서 제공하는 decoder_deriver를 이용해서 opus 코덱을 디코딩 합니다.",
-    "Vendor Component\n    \n      \nlibnugu-kwd: NUGU의 키워드를 감지하는 기능을 제공합니다.\n      \nlibnugu-epd: 발화의 시작과 끝을 감지하는 기능을 제공합니다.",
-    "libnugu-kwd: NUGU의 키워드를 감지하는 기능을 제공합니다.",
-    "libnugu-epd: 발화의 시작과 끝을 감지하는 기능을 제공합니다."
-  ]
-},
-    {
-  "title": "구성요소 > Github",
-  "hash": "#github",
-  "sentences": [
-    "Github"
-  ]
-},
-    {
-  "title": "구성요소 > NUGU",
-  "hash": "#nugu",
-  "sentences": [
-    "NUGU",
-    "nugu-linux | https://github.com/nugu-developers/nugu-linux"
   ]
 }
   ]
@@ -5400,6 +5400,13 @@
   ]
 },
   {
+  "url": "/document-staging/nugu-sdk/platform/ios/dark-mode",
+  "order": 181,
+  "indexes": [
+
+  ]
+},
+  {
   "url": "/document-staging/nugu-sdk/platform/android/dark-mode",
   "order": 194,
   "indexes": [
@@ -5417,13 +5424,6 @@
     "에 어두운 테마를 적용 수 있습니다."
   ]
 }
-  ]
-},
-  {
-  "url": "/document-staging/nugu-sdk/platform/ios/dark-mode",
-  "order": 181,
-  "indexes": [
-
   ]
 },
   {
@@ -11452,7 +11452,7 @@
     "Play kit",
     ">",
     "Play 관리",
-    "심사 착수 후 2~3주(워킹데이 10~15일)입니다.메뉴에서 Play 심사에 필요한 각종 정보(기본 정보, 연동 정보, 배포 정보, 심사 정보)들을 모두 빠짐없이 등록을 한 후에 심사 요청을 하면 Play에 대한 심사가 시작됩니다.(",
+    "메뉴에서 Play 심사에 필요한 각종 정보(기본 정보, 연동 정보, 배포 정보, 심사 정보)들을 모두 빠짐없이 등록을 한 후에 심사 요청을 하면 Play에 대한 심사가 시작됩니다.(",
     "심사 요청",
     ")",
     "Play 심사 중에는 Play 정보를 수정할 수 없기 때문에 수정이 필요한 경우에는 심사 요청을 취소하고, 정보를 수정하여 다시 요청하면 됩니다.(",
@@ -11474,17 +11474,16 @@
     "심사 프로세스",
     "개발 완료 및 충분한 테스트를 마친 Play는",
     "심사 요청",
-    "이후 다음의 프로세스에 따라 심사합니다.",
-    "심사 소요 기간은 각 기준을 충족했을 때, 심사 착수 후 2~3주(워킹데이 10~15일)입니다.",
+    "이후 다음의 프로세스에 따라 심사합니다.\\",
     "심사완료 직전, 수정 피드백 반영을 위해 일시 반려할 수 있습니다.",
     "매 단계에서 심사 기준이 충족되지 않는 경우, 피드백과 함께 반려 처리됩니다."
   ]
 },
     {
-  "title": "Play 심사 > 1. 등록 정보 및 정책 검증 (심사 착수 후 1~2일)",
-  "hash": "#1-등록-정보-및-정책-검증-심사-착수-후-12일",
+  "title": "Play 심사 > 1. 등록 정보 및 정책 검증",
+  "hash": "#1-등록-정보-및-정책-검증",
   "sentences": [
-    "1. 등록 정보 및 정책 검증 (심사 착수 후 1~2일)",
+    "1. 등록 정보 및 정책 검증",
     "Play 등록 정보 검증\n    \n      등록 정보의 법적 권리 및 사실 여부 확인\n      Play 사용자에게 노출되는 정보의 오탈자 및 내용 적절성 확인",
     "등록 정보의 법적 권리 및 사실 여부 확인",
     "Play 사용자에게 노출되는 정보의 오탈자 및 내용 적절성 확인",
@@ -11495,10 +11494,10 @@
   ]
 },
     {
-  "title": "Play 심사 > 2. 기능 및 품질 검증 (4~5일)",
-  "hash": "#2-기능-및-품질-검증-45일",
+  "title": "Play 심사 > 2. 기능 및 품질 검증",
+  "hash": "#2-기능-및-품질-검증",
   "sentences": [
-    "2. 기능 및 품질 검증 (4~5일)",
+    "2. 기능 및 품질 검증",
     "기능 검증\n    \n      Play Builder에 작성하신 내용을 바탕으로 기능 검증을 수행합니다. 발화 테스트 및 로그 분석을 통해 아래의 기능적 결과가 정상인지 확인합니다.\n        \n          음성 인식(음성 발화 -> text 변환) 결과\n          User Utterance Model(intent, entity) 분석 결과\n          Action Output의 동작 결과\n          Backend Proxy 및 계정 서버(OAuth2.0 연동 시) 연동",
     "Play Builder에 작성하신 내용을 바탕으로 기능 검증을 수행합니다. 발화 테스트 및 로그 분석을 통해 아래의 기능적 결과가 정상인지 확인합니다.\n        \n          음성 인식(음성 발화 -> text 변환) 결과\n          User Utterance Model(intent, entity) 분석 결과\n          Action Output의 동작 결과\n          Backend Proxy 및 계정 서버(OAuth2.0 연동 시) 연동",
     "음성 인식(음성 발화 -> text 변환) 결과",
@@ -11520,10 +11519,10 @@
   ]
 },
     {
-  "title": "Play 심사 > 3. 결과 피드백 및 엔진 튜닝(4~5일)",
-  "hash": "#3-결과-피드백-및-엔진-튜닝45일",
+  "title": "Play 심사 > 3. 결과 피드백 및 엔진 튜닝",
+  "hash": "#3-결과-피드백-및-엔진-튜닝",
   "sentences": [
-    "3. 결과 피드백 및 엔진 튜닝(4~5일)",
+    "3. 결과 피드백 및 엔진 튜닝",
     "앞선 검증 결과를 개발자에게 전달합니다.\n    \n      심사 합격 및 수정 피드백\n        \n          검증 결과, 심사 합격 기준을 충족한 경우 “심사완료” 상태로 변경합니다.\n          심사 합격 기준을 거의 충족했으나, 일부 수정할 부분이 있는 경우 개별적으로 심사 피드백을 전달합니다. 이 과정에서 빌드 내용 수정이 필요한 경우 일시적으로 반려 처리 할 수 있습니다.\n        \n      \n      심사 불합격\n        \n          검증 결과, 심사 합격 기준을 충족하지 못한 경우 반려 사유와 함께 “심사 반려“ 상태로 변경합니다. 수정 후 재심사요청 하실 수 있으며, 반려 사유에 대한 문의는 Support > 문의사항 을 통해 문의해주세요.\n          Play Builder에 입력된 User Utterance Model을 기반으로, 음성인식 성능을 향상시키고자 기술 검토 및 엔진 튜닝을 진행합니다. Play 서비스 범위에 따라 엔진 튜닝에 추가적인 기간이 소요될 수 있습니다.",
     "심사 합격 및 수정 피드백\n        \n          검증 결과, 심사 합격 기준을 충족한 경우 “심사완료” 상태로 변경합니다.\n          심사 합격 기준을 거의 충족했으나, 일부 수정할 부분이 있는 경우 개별적으로 심사 피드백을 전달합니다. 이 과정에서 빌드 내용 수정이 필요한 경우 일시적으로 반려 처리 할 수 있습니다.",
     "검증 결과, 심사 합격 기준을 충족한 경우 “심사완료” 상태로 변경합니다.",
