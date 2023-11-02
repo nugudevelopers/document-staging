@@ -18,7 +18,7 @@ Play 심사 승인이 거절되면 Play 반려 사유 리포트를 Play 기본 �
 
 ## 심사 프로세스 <a id="review-process"></a>
 
-개발 완료 및 충분한 테스트를 마친 Play는 [심사 요청](#review-request) 이후 다음의 프로세스에 따라 심사합니다.\
+개발 완료 및 충분한 테스트를 마친 Play는 [심사 요청](#review-request) 이후 다음의 프로세스에 따라 심사합니다.
 
 ![](../../assets/images/play-review-01.png)
 
