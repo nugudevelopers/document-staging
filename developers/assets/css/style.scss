@@ -114,8 +114,6 @@ html {
   overflow: hidden;
 
   body {
-    font-family: $default-font;
-
     .wrap {
       position: relative;
       display: flex;
@@ -402,7 +400,7 @@ html {
         @include font-size(24);
         @include line-height(29);
         font-weight: 700;
-        font-family: $helvetica-font;
+        font-family: $default-font;
         color: $grey-85;
         text-align: center;
         justify-content: center;
