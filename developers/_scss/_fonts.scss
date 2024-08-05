@@ -50,10 +50,3 @@ $font: "../fonts/";
   url($font + 'AppleSDGothicNeoEB.otf') format('opentype');
 }
 
-@font-face {
-  font-family: 'Helvetica Neue';
-  font-style: normal;
-  font-weight: 700;
-  src: url($font + 'HelveticaNeueB.woff') format('woff'),
-  url($font + 'HelveticaNeueB.otf') format('opentype');
-}
