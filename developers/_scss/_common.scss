@@ -2,7 +2,6 @@
 
 @import "reset";
 @import "mixins";
-@import "fonts";
 
 // 기본 z-index
 $z: 1;
@@ -44,7 +43,7 @@ $green-normal: #44CD7A;
 // --------------------------------------
 // # Font
 // --------------------------------------
-$default-font: 'Apple SD Gothic Neo',system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+$default-font: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
 
 // --------------------------------------
 // # Icon
