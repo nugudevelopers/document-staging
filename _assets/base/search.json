@@ -4492,38 +4492,6 @@
   ]
 },
   {
-  "url": "/document-staging/nugu-play/create-plays-with-play-builder/before-start/capability-interface",
-  "order": 17,
-  "indexes": [
-    {
-  "title": "Capability interface",
-  "hash": "",
-  "sentences": [
-    "Capability interface",
-    "디바이스의 여러 기능을 제어하기 위한 규격을 Capability Interface라 합니다. 응답을 재생하는 기능 외에 오디오 재생, 무드등 제어, 음량 조절 등 다양한 기능을 제어할 수 있습니다.",
-    "현재는 디바이스에서 오디오 스트리밍을 통해 음악을 재생하기 위한 AudioPlayer Interface와  NUGU nemo, Btv, T전화 등 Display Device에서 Display template를 사용할 수 있는 Display Interface 지원됩니다. Play를 생성하는 시점에 Play에서 지원하고자 하는 Capability Interface를 선택하면 사용할 수 있습니다.",
-    "각 Capability Interface는 다음의 세 요소로 구성되어 있습니다."
-  ]
-},
-    {
-  "title": "Capability interface > Built-in Intent",
-  "hash": "#built-in-intent",
-  "sentences": [
-    "Built-in Intent",
-    "기능을 제어하기 위해 기본으로 제공하는 Intent입니다. 사용자가 직접 정의하지 않아도 사용할 수 있습니다."
-  ]
-},
-    {
-  "title": "Capability interface > Directive",
-  "hash": "#directive",
-  "sentences": [
-    "Directive",
-    "디바이스의 기능을 제어하기 위해 Play에서 디바이스로 전달하는 명령어입니다."
-  ]
-}
-  ]
-},
-  {
   "url": "/document-staging/nugu-sdk/capability-interface",
   "order": 149,
   "indexes": [
@@ -4615,6 +4583,38 @@
     "그 외 event\n    \n      해당 capability interface 의 context\n      다른 capability interface 의 context 중 version 만 포함",
     "해당 capability interface 의 context",
     "다른 capability interface 의 context 중 version 만 포함"
+  ]
+}
+  ]
+},
+  {
+  "url": "/document-staging/nugu-play/create-plays-with-play-builder/before-start/capability-interface",
+  "order": 17,
+  "indexes": [
+    {
+  "title": "Capability interface",
+  "hash": "",
+  "sentences": [
+    "Capability interface",
+    "디바이스의 여러 기능을 제어하기 위한 규격을 Capability Interface라 합니다. 응답을 재생하는 기능 외에 오디오 재생, 무드등 제어, 음량 조절 등 다양한 기능을 제어할 수 있습니다.",
+    "현재는 디바이스에서 오디오 스트리밍을 통해 음악을 재생하기 위한 AudioPlayer Interface와  NUGU nemo, Btv, T전화 등 Display Device에서 Display template를 사용할 수 있는 Display Interface 지원됩니다. Play를 생성하는 시점에 Play에서 지원하고자 하는 Capability Interface를 선택하면 사용할 수 있습니다.",
+    "각 Capability Interface는 다음의 세 요소로 구성되어 있습니다."
+  ]
+},
+    {
+  "title": "Capability interface > Built-in Intent",
+  "hash": "#built-in-intent",
+  "sentences": [
+    "Built-in Intent",
+    "기능을 제어하기 위해 기본으로 제공하는 Intent입니다. 사용자가 직접 정의하지 않아도 사용할 수 있습니다."
+  ]
+},
+    {
+  "title": "Capability interface > Directive",
+  "hash": "#directive",
+  "sentences": [
+    "Directive",
+    "디바이스의 기능을 제어하기 위해 Play에서 디바이스로 전달하는 명령어입니다."
   ]
 }
   ]
@@ -4999,53 +4999,6 @@
   ]
 },
   {
-  "url": "/document-staging/nugu-sdk/platform/linux/component",
-  "order": 198,
-  "indexes": [
-    {
-  "title": "구성요소",
-  "hash": "",
-  "sentences": [
-    "구성요소"
-  ]
-},
-    {
-  "title": "구성요소 > 구성요소 목록",
-  "hash": "#구성요소-목록",
-  "sentences": [
-    "구성요소 목록",
-    "NUGU Component (Common)\n    \n      \nNuguClientKit: NUGU 서비스를 쉽게 개발할 수 있도록 도와주는 기능을 제공합니다.\n      \nNuguCapability: Capability를 쉽게 제어할 수 있는 API를 제공합니다.\n      \nNuguCore: NUGU 서비스 개발에 필요한 구성요소들을 제공합니다.",
-    "NuguClientKit: NUGU 서비스를 쉽게 개발할 수 있도록 도와주는 기능을 제공합니다.",
-    "NuguCapability: Capability를 쉽게 제어할 수 있는 API를 제공합니다.",
-    "NuguCore: NUGU 서비스 개발에 필요한 구성요소들을 제공합니다.",
-    "NUGU Component (Depends on platform)\n    \n      Plug-in: 디바이스 특성에 맞게 미디어 드라이버를 구현할 수 있는 API를 제공합니다.\n      \ngstreamer: plug-in에서 제공하는 player_driver를 이용해서 gstreamer를 통한 미디어 재생 기능을 제공합니다.\n      \nportaudio: plug-in에서 제공하는 recorder_driver, pcm_driver를 이용해서 portaudio를 통한 음성 데이터 입/출력 기능을 제공합니다.\n      \nopus: plug-in에서 제공하는 decoder_deriver를 이용해서 opus 코덱을 디코딩 합니다.",
-    "Plug-in: 디바이스 특성에 맞게 미디어 드라이버를 구현할 수 있는 API를 제공합니다.",
-    "gstreamer: plug-in에서 제공하는 player_driver를 이용해서 gstreamer를 통한 미디어 재생 기능을 제공합니다.",
-    "portaudio: plug-in에서 제공하는 recorder_driver, pcm_driver를 이용해서 portaudio를 통한 음성 데이터 입/출력 기능을 제공합니다.",
-    "opus: plug-in에서 제공하는 decoder_deriver를 이용해서 opus 코덱을 디코딩 합니다.",
-    "Vendor Component\n    \n      \nlibnugu-kwd: NUGU의 키워드를 감지하는 기능을 제공합니다.\n      \nlibnugu-epd: 발화의 시작과 끝을 감지하는 기능을 제공합니다.",
-    "libnugu-kwd: NUGU의 키워드를 감지하는 기능을 제공합니다.",
-    "libnugu-epd: 발화의 시작과 끝을 감지하는 기능을 제공합니다."
-  ]
-},
-    {
-  "title": "구성요소 > Github",
-  "hash": "#github",
-  "sentences": [
-    "Github"
-  ]
-},
-    {
-  "title": "구성요소 > NUGU",
-  "hash": "#nugu",
-  "sentences": [
-    "NUGU",
-    "nugu-linux | https://github.com/nugu-developers/nugu-linux"
-  ]
-}
-  ]
-},
-  {
   "url": "/document-staging/nugu-sdk/platform/ios/component",
   "order": 176,
   "indexes": [
@@ -5104,6 +5057,53 @@
     "External",
     "RxSwift | https://github.com/ReactiveX/RxSwift",
     "Lottie-iOS | https://github.com/airbnb/lottie-ios"
+  ]
+}
+  ]
+},
+  {
+  "url": "/document-staging/nugu-sdk/platform/linux/component",
+  "order": 198,
+  "indexes": [
+    {
+  "title": "구성요소",
+  "hash": "",
+  "sentences": [
+    "구성요소"
+  ]
+},
+    {
+  "title": "구성요소 > 구성요소 목록",
+  "hash": "#구성요소-목록",
+  "sentences": [
+    "구성요소 목록",
+    "NUGU Component (Common)\n    \n      \nNuguClientKit: NUGU 서비스를 쉽게 개발할 수 있도록 도와주는 기능을 제공합니다.\n      \nNuguCapability: Capability를 쉽게 제어할 수 있는 API를 제공합니다.\n      \nNuguCore: NUGU 서비스 개발에 필요한 구성요소들을 제공합니다.",
+    "NuguClientKit: NUGU 서비스를 쉽게 개발할 수 있도록 도와주는 기능을 제공합니다.",
+    "NuguCapability: Capability를 쉽게 제어할 수 있는 API를 제공합니다.",
+    "NuguCore: NUGU 서비스 개발에 필요한 구성요소들을 제공합니다.",
+    "NUGU Component (Depends on platform)\n    \n      Plug-in: 디바이스 특성에 맞게 미디어 드라이버를 구현할 수 있는 API를 제공합니다.\n      \ngstreamer: plug-in에서 제공하는 player_driver를 이용해서 gstreamer를 통한 미디어 재생 기능을 제공합니다.\n      \nportaudio: plug-in에서 제공하는 recorder_driver, pcm_driver를 이용해서 portaudio를 통한 음성 데이터 입/출력 기능을 제공합니다.\n      \nopus: plug-in에서 제공하는 decoder_deriver를 이용해서 opus 코덱을 디코딩 합니다.",
+    "Plug-in: 디바이스 특성에 맞게 미디어 드라이버를 구현할 수 있는 API를 제공합니다.",
+    "gstreamer: plug-in에서 제공하는 player_driver를 이용해서 gstreamer를 통한 미디어 재생 기능을 제공합니다.",
+    "portaudio: plug-in에서 제공하는 recorder_driver, pcm_driver를 이용해서 portaudio를 통한 음성 데이터 입/출력 기능을 제공합니다.",
+    "opus: plug-in에서 제공하는 decoder_deriver를 이용해서 opus 코덱을 디코딩 합니다.",
+    "Vendor Component\n    \n      \nlibnugu-kwd: NUGU의 키워드를 감지하는 기능을 제공합니다.\n      \nlibnugu-epd: 발화의 시작과 끝을 감지하는 기능을 제공합니다.",
+    "libnugu-kwd: NUGU의 키워드를 감지하는 기능을 제공합니다.",
+    "libnugu-epd: 발화의 시작과 끝을 감지하는 기능을 제공합니다."
+  ]
+},
+    {
+  "title": "구성요소 > Github",
+  "hash": "#github",
+  "sentences": [
+    "Github"
+  ]
+},
+    {
+  "title": "구성요소 > NUGU",
+  "hash": "#nugu",
+  "sentences": [
+    "NUGU",
+    "nugu-linux | https://github.com/nugu-developers/nugu-linux"
   ]
 }
   ]
@@ -15827,8 +15827,8 @@
   ]
 },
   {
-  "url": "/document-staging/nugu-sdk/platform/ios/testing_sdk_integration",
-  "order": 182,
+  "url": "/document-staging/nugu-sdk/platform/android/testing_sdk_integration",
+  "order": 195,
   "indexes": [
     {
   "title": "테스트 환경 설정",
@@ -15840,8 +15840,8 @@
   ]
 },
   {
-  "url": "/document-staging/nugu-sdk/platform/android/testing_sdk_integration",
-  "order": 195,
+  "url": "/document-staging/nugu-sdk/platform/ios/testing_sdk_integration",
+  "order": 182,
   "indexes": [
     {
   "title": "테스트 환경 설정",
