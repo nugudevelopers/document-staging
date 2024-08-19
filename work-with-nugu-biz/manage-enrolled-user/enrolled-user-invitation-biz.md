@@ -90,7 +90,7 @@ Biz 사용자 관리 > 사용자 그룹 관리에서 초대할 사용자가 소�
 
 ![](../../assets/images/enrolled-user-invitation-trial-09.png)
 
-![](../../assets/images/enrolled-user-invitation-biz-04.jpg)
+![](../../assets/images/enrolled-user-invitation-biz-04.png)
 
 ### Biz Service 추가 정보 등록 (Optional)
 
