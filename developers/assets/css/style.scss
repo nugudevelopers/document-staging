@@ -114,6 +114,8 @@ html {
   overflow: hidden;
 
   body {
+    font-family: $default-font;
+
     .wrap {
       position: relative;
       display: flex;
@@ -1032,7 +1034,7 @@ code.highlighter-rouge {
   ul.tab-nav {
     display: flex;
     @include padding-left(0);
-    margin-bottom: 0;
+    @include margin-bottom(0);
 
     > li {
       @include height(50);
@@ -1133,10 +1135,6 @@ code.highlighter-rouge {
         color: $grey-85;
       }
     }
-
-    //&:after {
-    //  @extend %arrow;
-    //}
   }
 
   .api-summary {
